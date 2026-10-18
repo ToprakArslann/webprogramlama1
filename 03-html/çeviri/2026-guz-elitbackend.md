@@ -1,228 +1,164 @@
-# MDN Web Geliştirme — HTML Öğrenme Rehberi (Türkçe)
+# HTML ile İçeriği Yapılandırma
 
-> Bu belge, MDN Web Docs'un HTML eğitim serisi içeriklerinin Türkçe çevirisidir.
-
----
-
+Bu belge, MDN Web Docs (Mozilla Developer Network) bünyesindeki **"Structuring content with HTML"** modülünün tüm derslerini, sınavlarını ve uygulama meydan okumalarını (challenges) orijinal sayfa yapısı, boşlukları, kod blokları, tabloları ve teknik sözdizimleri birebir korunarak Türkçeye aktarılmış eksiksiz başvuru kaynağıdır.
 
 ---
 
-# Structuring content with HTML
+## İçindekiler
 
-HTML, herhangi bir web sitesinin içeriğini ve yapısını tanımlayan teknolojidir. Doğru yazıldığında, içeriğin semantik anlamını da makine tarafından okunabilir bir biçimde tanımlamalıdır; bu da erişilebilirlik, arama motoru optimizasyonu ve tarayıcıların içerik için sunduğu yerleşik özelliklerden en iyi şekilde yararlanmak açısından hayati önem taşır. Bu modül, dilin temellerini kapsar; ardından belge yapısı, bağlantılar, listeler, görseller, formlar ve daha fazlası gibi temel alanlara bakar.
-
-## Önkoşullar
-
-Bu modüle başlamadan önce herhangi bir HTML bilgisine ihtiyacınız yoktur; ancak bilgisayar kullanımı ve web'i pasif olarak kullanma konusunda en azından temel bir aşinalığınız olmalıdır. Temel bir çalışma ortamı kurmuş olmalısınız (bkz. Temel yazılım yükleme) ve dosyaları oluşturup yönetmeyi bilmelisiniz (bkz. Dosyalarla çalışma). Bunların ikisi de Web ile başlama tam başlangıç modülümüzün parçalarıdır.
-
-> Not: Bir bilgisayar, tablet veya dosya oluşturamadığınız başka bir cihaz kullanıyorsanız, kodu CodePen veya JSFiddle gibi çevrimiçi bir editörde çalıştırmayı deneyebilirsiniz.
-
-## Eğitimler ve alıştırmalar
-
-### Basic HTML syntax
-
-HTML'in mutlak temellerini kapsar; başlamak için gereken her şeyi sağlar — öğeleri, öznitelikleri ve diğer önemli terimleri tanımlar, bunların dil içinde nerede yer aldığını gösterir. Ayrıca tipik bir HTML sayfasının nasıl yapılandırıldığını ve bir HTML öğesinin nasıl yapılandırıldığını gösterir, dilin diğer önemli temel özelliklerini açıklar. Bu arada, sizi HTML ile biraz oynatarak merakınızı da artırır!
-
-### What's in the head? Web page metadata
-
-Bir HTML belgesinin head bölümü, sayfa tarayıcıda yüklendiğinde görüntülenmeyen kısımdır. Sayfanın `<title>` öğesi, CSS bağlantıları (HTML içeriğinizi CSS ile biçimlendirmek istiyorsanız), özel favicon bağlantıları ve başka metadata (HTML hakkında veri; örneğin yazarı ve belgeyi tanımlayan önemli anahtar kelimeler) gibi bilgiler içerir.
-
-### Headings and paragraphs
-
-HTML'in temel görevlerinden biri, bir tarayıcının bir HTML belgesini geliştiricinin amaçladığı şekilde gösterebilmesi için metne yapı kazandırmaktır. Bu makale, başlıkları ve paragrafları tanımlayarak temel sayfa yapısının nasıl sağlanabileceğini açıklar.
-
-### Emphasis and importance
-
-Önceki makale, HTML'de semantiğin neden önemli olduğuna baktı ve başlıklar ile paragraflara odaklandı. Bu makale, semantik temasını sürdürerek metne vurgu ve önem uygulayan HTML öğelerini inceler (basılı medyadaki italik ve kalın metinle paralel olarak).
-
-### Lists
-
-Listeler hayatın her yerindedir — alışveriş listenizden, her gün evinize gitmek için bilinçaltınızda takip ettiğiniz yön tarifleri listesine, bu eğitimlerde izlediğiniz talimat listelerine kadar! HTML'in farklı liste türlerini tanımlamamıza olanak sağlayan kullanışlı bir öğe kümesine sahip olması sizi şaşırtmayabilir. Web'de üç liste türü vardır: sırasız, sıralı ve açıklama listeleri. Bu ders, farklı türleri nasıl kullanacağınızı gösterir.
-
-### Advanced text features
-
-HTML'de, Emphasis and importance makalesinde yer vermediğimiz metin semantiğini tanımlayan daha birçok öğe vardır. Bu makalede açıklanan öğeler daha az bilinir, ancak yine de bilinmeleri yararlıdır (ve bu, hiçbir şekilde tam bir liste değildir). Burada alıntıları, bilgisayar kodunu ve diğer ilgili metni, alt simge ve üst simgeyi, iletişim bilgilerini ve daha fazlasını işaretlemeyi öğreneceksiniz.
-
-### Marking up a letter Challenge
-
-Hepimiz er ya da geç bir mektup yazmayı öğreniriz; bu, metin biçimlendirme becerilerinizi sınamak için de yararlı bir örnektir. Bu alıştırmada, HTML metin biçimlendirme becerilerinizin yanı sıra bağlantıları ve HTML `<head>` öğesinin doğru kullanımını test etmek için işaretlemeniz gereken bir mektup olacak.
-
-### Structuring documents
-
-Sayfanızın tek tek parçalarını tanımlamanın yanı sıra (örneğin “bir paragraf” ya da “bir görsel”), HTML web sitenizin alanlarını tanımlamak için kullanılan bir dizi blok düzeyi öğeye de sahiptir (örneğin “başlık”, “gezinti menüsü”, “ana içerik sütunu”). Bu makale, temel bir web sitesi yapısının nasıl planlanacağını ve bu yapıyı temsil etmek için HTML'in nasıl yazılacağını inceler.
-
-### Creating links
-
-Bağlantılar (hiper bağlantılar olarak da bilinir) gerçekten önemlidir — Web'i web yapan şey onlardır. Bu makale, bir bağlantı oluşturmak için gereken sözdizimini gösterir ve bağlantı için en iyi uygulamaları tartışır.
-
-### Structuring a page of content Challenge
-
-CSS kullanarak düzenlemeye hazır bir içerik sayfasını yapılandırmak ustalaşılması gereken çok önemli bir beceridir; bu nedenle bu alıştırmada, bir sayfanın sonunda nasıl görünebileceğini düşünme ve bir yerleşim oluşturmak için uygun yapısal semantik öğeleri seçme yeteneğiniz sınanır.
-
-### HTML images
-
-Başlangıçta web sadece metinden ibaretti ve gerçekten oldukça sıkıcıydı. Neyse ki, web sayfalarının içine görselleri (ve diğer daha ilginç içerik türlerini) gömme yeteneği çok geçmeden eklendi. Bu makalede, `<img>` öğesinin temelleri, onu `<figure>` kullanarak altyazılarla açıklama ve CSS background images ile ilişkisi dahil olmak üzere ayrıntılı olarak nasıl kullanılacağına bakacağız.
-
-### HTML video and audio
-
-Artık bir web sayfasına basit görseller eklemeye alıştığımıza göre, bir sonraki adım HTML belgelerinize video ve audio oynatıcıları eklemeye başlamaktır! Bu makalede bunu `<video>` ve `<audio>` öğeleriyle nasıl yapacağımızı inceleyeceğiz; ardından videolarınıza captions/subtitles eklemeye bakarak bitireceğiz.
-
-### Creepy-crawly splash page Challenge
-
-Bu alıştırmada, son birkaç derste tartışılan tekniklerden bazıları konusundaki bilginizi test edeceğiz; böcekler ve diğer sürüngen yaratıklar hakkında bir splash page'e bazı görseller ve video eklemeniz istenecek.
-
-### HTML table basics
-
-Bu makale, HTML tablolarına başlamanızı sağlar; satırlar, hücreler, başlıklar, hücreleri birden çok sütun ve satır boyunca genişletme ve biçimlendirme amacıyla bir sütundaki tüm hücreleri birlikte gruplandırma gibi temel konuları kapsar.
-
-### HTML table accessibility
-
-Bu makalede, captions/summaries, satırları table head, body ve footer bölümlerine gruplandırma ve sütunlar ile satırlar için scope ayarlama gibi daha fazla HTML tablo erişilebilirlik özelliğine bakıyoruz.
-
-### Structuring a planet data table Challenge
-
-Bu alıştırmada, size Güneş Sistemi'mizdeki gezegenler hakkında bazı veriler sunuyoruz. Göreviniz bunları erişilebilir bir HTML tablo halinde yapılandırmaktır.
-
-### Forms and buttons in HTML
-
-HTML formları ve düğmeleri, kullanıcılarla etkileşim kurmak için güçlü araçlardır — çoğunlukla kullanıcılarдан veri toplamak veya onların bir kullanıcı arabirimini kontrol etmesine izin vermek için kullanılırlar. Bu makalede formlar ve düğmelerin temellerine giriş yapıyoruz.
-
-### Debugging HTML
-
-HTML yazmak iyidir, peki bir şey ters giderse ve koddaki hatanın nerede olduğunu bulamazsanız ne olur? Bu makale, HTML'deki hataları bulmanıza ve düzeltmenize yardımcı olabilecek bazı araçları tanıtacaktır.
-
-### Test your skills
-
-Yeterince ilerlediğinizden emin olmak için, en önemli bilgileri koruyup korumadığınızı denetleyen “Test your skills” makalelerini öğretici makalelerin arasına yerleştirilmiş halde bulacaksınız. Hepsini birlikte keşfetmek isterseniz, bunları Test your skills: HTML altında listelenmiş olarak bulabilirsiniz.
-
-## Ek eğitimler
-
-Bu eğitimler öğrenme yolunun bir parçası değildir, ancak yine de ilginçtir — ana Core makalelerini bitirdiğinizde bunları isteğe bağlı olarak çalışılacak genişleme hedefleri olarak düşünebilirsiniz.
-
-### Including vector graphics in HTML
-
-Vektör grafikleri birçok durumda çok kullanışlıdır — dosya boyutları küçüktür ve son derece ölçeklenebilirdir, bu yüzden yakınlaştırıldıklarında veya büyük boyuta büyütüldüklerinde pikselleşmezler. Bu makalede, bunlardan birini web sayfanıza nasıl ekleyeceğinizi göstereceğiz.
-
-### From object to iframe — general embedding technologies
-
-Geliştiriciler genellikle görüntü, video ve audio gibi medyayı web sayfalarına gömme konusunu düşünür. Bu makalede biraz yan bir adım atarak, web sayfalarınıza çok çeşitli içerik türlerini gömmeye olanak tanıyan bazı öğelere bakıyoruz: `<iframe>`, `<embed>` ve `<object>` öğeleri. Bu öğeler, diğer web sayfaları ve PDF dosyaları gibi harici kaynakları gömmeye olanak tanır.
-
-## Ayrıca bkz.
-
-### Learn HTML and CSS, Scrimba MDN learning partner
-
-Scrimba'nın Learn HTML and CSS kursu, beş harika proje oluşturarak ve dağıtarak HTML ve CSS öğretir; dersler ve alıştırmalar etkileşimlidir ve bilgili eğitmenler tarafından sunulur.
-
-### Learn HTML, Codecademy
-
-HTML temellerini öğrenmek için başka yararlı bir kaynak.
-
-### The basics of semantic HTML, Scrimba MDN learning partner
-
-Bu etkileşimli ders, HTML'in yararlı bir açıklamasını sunar ve özellikle semantik yönünün neden önemli olduğuna odaklanır.
-
-## Genel bakış: Temel öğrenme modülleri
-
-Next
-
-Daha iyi bir internet için planınız.
-
+1. [Temel HTML sözdizimi](#1-temel-html-sözdizimi)
+2. [Web sayfası meta verileri](#2-web-sayfası-meta-verileri)
+3. [Başlıklar ve paragraflar](#3-başlıklar-ve-paragraflar)
+4. [Vurgu ve önem derecesi](#4-vurgu-ve-önem-derecesi)
+5. [Listeler](#5-listeler)
+6. [Test: HTML metin temelleri](#6-test-html-metin-temelleri)
+7. [İleri düzey metin özellikleri](#7-ileri-düzey-metin-özellikleri)
+8. [Test: İleri düzey HTML metinleri](#8-test-ileri-düzey-html-metinleri)
+9. [Uygulama Görevi: Mektup işaretleme](#9-uygulama-görevi-mektup-işaretleme)
+10. [Belgeleri yapılandırma](#10-belgeleri-yapılandırma)
+11. [Bağlantı oluşturma](#11-bağlantı-oluşturma)
+12. [Test: Bağlantılar](#12-test-bağlantılar)
+13. [Uygulama Görevi: Kuş gözlem sitesi](#13-uygulama-görevi-kuş-gözlem-sitesi)
+14. [Görseller](#14-görseller)
+15. [Test: Görseller](#15-test-görseller)
+16. [Video ve ses](#16-video-ve-ses)
+17. [Test: Ses ve video](#17-test-ses-ve-video)
+18. [Uygulama Görevi: Tanıtım sayfası](#18-uygulama-görevi-tanıtım-sayfası)
+19. [Tablo temelleri](#19-tablo-temelleri)
+20. [Tablo erişilebilirliği](#20-tablo-erişilebilirliği)
+21. [Uygulama Görevi: Gezegen veri tablosu](#21-uygulama-görevi-gezegen-veri-tablosu)
+22. [Formlar ve butonlar](#22-formlar-ve-butonlar)
+23. [Test: Formlar ve butonlar](#23-test-formlar-ve-butonlar)
+24. [Uygulama Görevi: Geri bildirim formu](#24-uygulama-görevi-geri-bildirim-formu)
+25. [HTML hata ayıklama](#25-html-hata-ayıklama)
+26. [Test: HTML testleri indeksi](#26-test-html-testleri-indeksi)
+27. [Ek kılavuzlar](#27-ek-kılavuzlar)
+    * 27.1. [Vektör grafikleri](#271-vektör-grafikleri)
+    * 27.2. [Gömme teknolojileri](#272-gömme-teknolojileri)
 
 ---
 
-# Basic HTML syntax
+# 1. Temel HTML sözdizimi
 
-Bu makalede HTML'in temel taşlarını, terminolojiyi, sözdizimini ve yapıyı ele alıyoruz. Yol boyunca, temel HTML yazmaya aşina olmanız için bazı etkileşimli alıştırmaları tamamlayacaksınız.
+**HTML** > **Basic HTML syntax** | English (US)
 
-## Önkoşullar
+Bu makalede terminoloji, sözdizimi ve yapı dahil olmak üzere HTML'in temellerini ele alıyoruz. Bu süreçte, temel HTML yazma konusunda pratik kazanmanız için bazı etkileşimli görevleri tamamlayacaksınız.
 
-Temel yazılımın yüklü olması ve dosyalarla çalışma hakkında temel bilgi.
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Temel yazılımların kurulu olması ve dosyalarla çalışma konusunda temel bilgiye sahip olunması. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Bir HTML elementinin anatomisi — element, açılış etiketi (opening tag), içerik (content), kapanış etiketi (closing tag), nitelikler (attributes).<br>• HTML body ve sayfa içeriği için bir kapsayıcı olarak üstlendiği amaç.<br>• Void (boş) elementlerin ne olduğu ve diğer elementlerden nasıl ayrıldıkları.<br>• HTML belgelerinin en üstünde bir doctype bulunmasının gerekliliği; bunun orijinal amacı ve günümüzde neden bir tarihsel kalıntı niteliğinde olduğu.<br>• HTML elementlerinin doğru bir şekilde iç içe (nested) yerleştirilmesi gerektiğinin kavranması. |
 
-## Öğrenme çıktıları
-
-- HTML öğesinin anatomisi: öğe, açılış etiketi, içerik, kapanış etiketi, öznitelikler.
-- HTML body öğesi ve sayfa içeriği için bir kapsayıcı olarak amacı.
-- Void elements nedir ve diğer öğelerden nasıl farklı oldukları.
-- HTML belgelerinin en üstünde bir doctype olmasının gerekliliği; bunun özgün amacı ve günümüzde bir tür tarihî kalıntı oluşu.
-- HTML'in doğru şekilde iç içe yerleştirilmesi gerektiğini anlamak.
+---
 
 ## HTML nedir?
 
-HTML (HyperText Markup Language), web tarayıcılarına ziyaret ettiğiniz web sayfalarını nasıl yapılandıracaklarını söyleyen bir markup language'dir. HTML, içeriğin farklı parçalarını kapsamak, sarmalamak veya işaretlemek için kullandığınız bir dizi öğeden oluşur; böylece onların belirli bir biçimde görünmesini veya davranmasını sağlar. Saran etiketler, içeriği başka bir sayfaya bağlanan bir hyperlink'e dönüştürebilir, kelimeleri italik yapabilir ve benzeri şeyler yapabilir. Örneğin şu metin satırını düşünün:
+HTML (**HyperText Markup Language**), ziyaret ettiğiniz web sayfalarını nasıl yapılandıracaklarını web tarayıcılarına bildiren bir *işaretleme dilidir (markup language)*. HTML; içeriğin belirli bir biçimde görünmesini veya davranmasını sağlamak amacıyla, içeriğin farklı kısımlarını içine almak, sarmak veya işaretlemek için kullandığınız bir dizi **element**ten oluşur. Kapsayan etiketler, bir içeriği başka bir sayfaya bağlanan bir köprüye (hyperlink) dönüştürebilir, sözcükleri italik yapabilir ve benzeri birçok işlevi gerçekleştirebilir. Örneğin, aşağıdaki metin satırını ele alalım:
 
+```text
 My cat is very grumpy
+```
 
-Bu metnin bir paragraph olduğunu, onu paragraph ( `<p>` ) etiketleri içine alarak belirtebiliriz:
+Bu metnin bir paragraf olduğunu, onu paragraf (`<p>`) etiketleri içine sararak belirtebiliriz:
 
 ```html
 <p>My cat is very grumpy</p>
 ```
 
-Ya da bu metnin üst düzey bir heading olduğunu, onu `<h1>` etiketleri içine alarak belirtebiliriz:
+Veya bu metnin en üst düzey bir başlık olduğunu, onu `<h1>` etiketleri içine alarak belirtebiliriz:
 
 ```html
 <h1>My cat is very grumpy</h1>
 ```
 
-HTML, `.html` dosya uzantısına sahip HTML documents ya da kısaca documents denen text files içinde yer alır. Daha önce web pages'den söz ederken, bir HTML document web page'in içeriğini barındırır ve yapısını belirtir.
+HTML, `.html` dosya uzantısına sahip ve **HTML belgeleri** (veya kısaca *belgeler / documents*) olarak adlandırılan metin dosyalarının içinde yaşar. Daha önce "web sayfaları" olarak adlandırdığımız şeylerin temelinde, web sayfasının içeriğini barındıran ve yapısını belirleyen bir HTML belgesi yer alır.
 
-Karşılaşacağınız en yaygın HTML dosyası `index.html`'dir; bu dosya genellikle bir web sitesinin home page içeriğini barındırmak için kullanılır. Bir web sitesinin farklı yerlerinde kendi `index.html` dosyalarına sahip alt klasörler görmek de yaygındır; böylece bir web sitesinin farklı konumlarda birden fazla index file'ı olabilir.
+En sık karşılaşacağınız HTML dosyası `index.html` dosyasıdır; bu dosya genel olarak bir web sitesinin ana sayfa içeriğini barındırmak için kullanılır. Ayrıca kendi `index.html` dosyalarına sahip alt klasörlerin bulunması da yaygındır; bu sayede bir web sitesi farklı konumlarda birden çok dizin dosyasına sahip olabilir.
 
-> Not: HTML'de tags büyük/küçük harfe duyarlı değildir. Yani büyük harf veya küçük harf ile yazılabilirler. Örneğin, bir `<title>` tag'i `<title>`, `<TITLE>`, `<Title>`, `<TiTlE>` vb. biçimlerde yazılabilir ve çalışır. Ancak tutarlılık ve okunabilirlik için tüm tag'leri küçük harfle yazmak iyi uygulamadır.
+> **Note:** HTML'deki etiketler büyük/küçük harfe duyarlı değildir (case-insensitive). Bu, etiketlerin büyük veya küçük harfle yazılabileceği anlamına gelir. Örneğin bir `<title>` etiketi `<title>`, `<TITLE>`, `<Title>`, `<TiTlE>` vb. şekillerde yazılabilir ve çalışmaya devam eder. Ancak tutarlılık ve okunabilirlik açısından tüm etiketleri **küçük harfle** yazmak en iyi uygulamadır (best practice).
 
-## Bir HTML öğesinin anatomisi
+---
 
-Önceki bölümdeki paragraph öğemizi daha ayrıntılı inceleyelim:
+## Bir HTML elementinin anatomisi
 
-Tam öğemiz şunlardan oluşur:
+Önceki bölümdeki paragraf elementimizi daha ayrıntılı inceleyelim:
 
-- Açılış etiketi: Öğenin adından oluşur (bu örnekte paragraph için `p`), açılı ve kapanış parantezleri içine alınır. Bu açılış etiketi, öğenin nerede başladığını veya etkisini göstermeye başladığını işaret eder. Bu örnekte paragraph metninin başlangıcından önce gelir.
-- İçerik: Öğenin içeriğidir. Bu örnekte paragraph metni olan "My cat is very grumpy"'dir.
-- Kapanış etiketi: Bu, açılış etiketiyle aynıdır; ancak öğe adından önce bir ileri eğik çizgi içerir. Bu, öğenin nerede bittiğini işaret eder. Kapanış etiketini eklememek, başlangıç seviyesindeki kullanıcıların sık yaptığı ve tuhaf sonuçlar doğurabilen bir hatadır.
+```text
+       Opening tag                                     Closing tag
+     ┌─────────────┐                                 ┌─────────────┐
+     │             │                                 │             │
+     ▼             ▼                                 ▼             ▼
+    <p>            My cat is very grumpy             </p>
+    └──┬───────────┴─────────────────────────────────┴───────────┬──┘
+       │                        Content                          │
+       │                   ┌───────────────┐                     │
+       │                   │               │                     │
+       └───────────────────┤    Element    ├─────────────────────┘
+                           │               │
+                           └───────────────┘
+```
 
-> Not: HTML tags hakkında etkileşimli bir açıklama için öğrenme ortağımız Scrimba'nın HTML tags MDN learning partner scrim'ine göz atın.
+Tam bir element şu parçalardan meydana gelir:
 
-## İlk HTML öğenizi oluşturma
+* **The opening tag (Açılış etiketi):** Elementin adından (bu örnekte paragraf için `p`) oluşur ve açılış ile kapanış açılı ayraçları (`<` ve `>`) içine sarılır. Bu açılış etiketi, elementin nereden başladığını veya nerede yürürlüğe girdiğini işaret eder. Bu örnekte paragraf metninin başlangıcından önce yer alır.
+* **The content (İçerik):** Elementin içeriğidir. Bu örnekte paragraf metninin kendisidir: `"My cat is very grumpy"`.
+* **The closing tag (Kapanış etiketi):** Açılış etiketiyle aynıdır; tek farkı, element adının önüne bir eğik çizgi (`/`) almasıdır. Bu etiket elementin nerede bittiğini belirler. Kapanış etiketini koymayı unutmak, yeni başlayanların sıkça yaptığı ve garip sonuçlara yol açabilen yaygın bir hatadır.
+* **The element (Element):** Açılış etiketi, içerik ve kapanış etiketinin tamamının oluşturduğu yapıdır.
 
-Kendi HTML öğelerinizi yazma konusunda biraz pratik yapalım:
+---
 
-1. Aşağıdaki code block'ta bulunan example'ı düzenlemek için "Play"e tıklayın.
-2. Metin satırını `<em>` ve `</em>` etiketleriyle sarın. Öğeyi açmak için açılış etiketini (`<em>`) satırın başına koyun. Öğeyi kapatmak için kapanış etiketini (`</em>`) satırın sonuna koyun. Bunu yapmak, rendered text'i italik text olarak biçimlendirmelidir.
-3. İsterseniz daha fazlasını araştırıp text example'a başka HTML öğeleri de uygulamayı deneyin.
+## İlk HTML elementinizi oluşturma
 
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Çok takılırsanız, code block'un altındaki solution'a bakabilirsiniz.
+Kendi HTML elementlerinizi yazma konusunda pratik yapalım:
+
+1. Örneği düzenlemek için kod bloğundaki adımları izleyin.
+2. Metin satırını `<em>` ve `</em>` etiketleriyle sarın. Elementi açmak için açılış etiketini (`<em>`) satırın başına yerleştirin. Elementi kapatmak için kapanış etiketini (`</em>`) satırın sonuna yerleştirin. Bunu yapmak, ekranda gösterilen metni italik olarak biçimlendirmelidir.
+3. Kendinizi cesur hissediyorsanız, daha fazla HTML elementi araştırıp bunları metin örneğine uygulamayı deneyin.
 
 ```html
 This is my text.
 ```
 
-Click here to show the solution
+Etiket uygulandıktan sonra:
 
-## Öğelerin iç içe yerleştirilmesi
+```html
+<em>This is my text.</em>
+```
 
-Öğeler başka öğelerin içine yerleştirilebilir. Buna nesting denir. Eğer kedimizin çok suratsız olduğunu belirtmek isteseydik, `very` kelimesini bir `<strong>` öğesi içine alabilirdik; bu da kelimeye güçlü metin biçimlendirmesi verir:
+Tarayıcı çıktısı:
+
+*This is my text.*
+
+---
+
+## Elementleri iç içe yerleştirme
+
+Elementler başka elementlerin içine yerleştirilebilir. Buna **iç içe yerleştirme (nesting)** adı verilir. Kedimizin çok huysuz olduğunu vurgulamak isteseydik, `very` kelimesini bir `<strong>` elementi içine alabilirdik; bu da kelimeye daha güçlü bir metin biçimlendirmesi kazandırır:
 
 ```html
 <p>My cat is <strong>very</strong> grumpy.</p>
 ```
 
-Bu code block'ta "My cat is very grumpy." metninin tamamı bir paragraph olarak tanımlanır. `very` kelimesi ayrıca güçlü önem taşıyan bir şey olarak tanımlanır.
+Bu kod bloğunda `"My cat is very grumpy."` metninin tamamı bir paragraf olarak tanımlanmıştır. `"very"` kelimesi ise ayrıca güçlü bir öneme (strong importance) sahip olarak tanımlanmıştır.
 
-İç içe yerleştirmenin doğru ve yanlış yolları vardır. Yukarıdaki code block'ta önce `<p>` öğesini açarız, sonra `<strong>` öğesini açarız. Doğru nesting için önce `<strong>` öğesini kapatır, sonra `<p>` öğesini kapatırız.
+İç içe yerleştirmenin doğru ve yanlış bir yolu vardır. Yukarıdaki kod bloğunda önce `<p>` elementini açtık, ardından `<strong>` elementini açtık. Doğru iç içe yerleştirme için önce `<strong>` elementini kapatmalı, ardından `<p>` elementini kapatmalıyız.
 
-Aşağıda yanlış nesting örneği vardır:
+Aşağıdaki örnek iç içe yerleştirmenin **yanlış** yapılışına bir örnektir:
 
 ```html
+<!-- YANLIŞ KULLANIM: Etiketler birbiriyle çakışıyor -->
 <p>My cat is <strong>very grumpy.</p></strong>
 ```
 
-Etiketlerin, birbirlerinin içinde ya da dışında kalacak şekilde açılıp kapanması gerekir. Önceki code block'ta öğeler üst üste bindiği için tarayıcı niyetinizi tahmin etmek zorunda kalır. Bu tür tahminler beklenmedik sonuçlara yol açabilir.
+Etiketler, birbirinin içinde ya da dışında olacak şekilde açılıp kapanmalıdır. Önceki kod bloğunda elementler birbiriyle çakıştığı için, tarayıcı sizin niyetinizi tahmin etmek zorunda kalır. Bu tür bir tahmin öngörülemeyen sonuçlara yol açabilir.
 
-## Void elements
+---
 
-Her öğe açılış etiketi + içerik + kapanış etiketi kalıbını izlemez. Bazı öğeler tek bir etiketten oluşur; bu genellikle belgeye bir şey eklemek/gömmelemek için kullanılır. Bu tür öğelere void elements denir; yani "başka HTML içeriği barındıramayan öğeler".
+## Boş elementler
 
-Örneğin, `<br>` öğesi bir satır metne line break ekler ve bunun birden fazla satıra bölünmesine neden olur:
+Tüm elementler açılış etiketi, içerik ve ardından kapanış etiketi düzenini takip etmez. Bazı elementler tek bir etiketten oluşur ve genellikle belgeye bir şey eklemek/gömmek amacıyla kullanılır. Bu tür elementlere **void elements (boş elementler)** adı verilir; bu terim "başka HTML içeriği barındıramayan elementler" anlamına gelir.
+
+Örneğin, `<br>` elementi bir metin satırına satır sonu (line break) ekleyerek metnin birden fazla satıra bölünmesini sağlar:
 
 ```html
 <p>
@@ -230,156 +166,358 @@ This is a single paragraph, but we are going to <br />break it onto two lines.
 </p>
 ```
 
-Bu şu şekilde gösterilir:
+Bu kod şu şekilde işlenir (render edilir):
 
-This is a single paragraph, but we are going to
+This is a single paragraph, but we are going to  
 break it onto two lines.
 
-> Not: Bazı HTML örneklerinde, void element etiketinin sonunda bir `/` görürsünüz; örneğin `<br />`. Bu farklı bir markup syntax stilidir; yanlış değildir, ancak bu "closing slash" gerekli değildir.
-
-## Öznitelikler
-
-Öğelerin öznitelikleri de olabilir. Öznitelikler şu şekilde görünür:
-
-Öznitelikler, öğenin içeriğinin parçası olmayan ek bilgiler içerir. `class` özniteliği, öğeyi stiller (CSS) veya scripting information (JavaScript) ile hedeflemek için kullanılabilecek tanımlayıcı bir ad sağlar.
-
-Bir özniteliğin şunlara sahip olması gerekir:
-
-- Öğenin adıyla arasında bir boşluk. Bir öğenin birden fazla özniteliği olduğunda, öznitelikler de aralarında boşluk olacak şekilde ayrılmalıdır.
-- Eşittir işareti (`=`) ile takip edilen öznitelik adı.
-- Açılış ve kapanış tırnak işaretleri içine alınmış bir öznitelik değeri.
-
-## Bir öğeye öznitelik ekleme
-
-Şimdi tekrar sıra sizde. Bu bölümde, sayfada bir image görüntülemek için kullanılan `<img>` öğesini inceleyeceksiniz. `<img>` öğesi şu öznitelikleri alabilir:
-
-- `src`: image'in URL (web address)'ini belirten gerekli bir öznitelik. Örneğin:
-
-  `src="https://mdn.github.io/shared-assets/images/examples/fx-nightly-512.png"`.
-
-- `alt`: image'i göremeyen kişilere açıklamak için bir text description belirtir. Örneğin: `alt="The Firefox Nightly icon"`. Bu öznitelik teknik olarak gerekli değildir, ancak anlam taşıyan tüm images için bir text description sağlamanız gerçekten gerekir (saf dekoratif olanlar hariç).
-- `width`: image'in pixel cinsinden genişliğini belirtir. Örneğin: `width="300"`.
-- `height`: image'in pixel cinsinden yüksekliğini belirtir. Örneğin: `height="300"`.
-
-Görevi tamamlamak için aşağıdaki adımları izleyin:
-
-1. Aşağıdaki code block'ta bulunan example'ı düzenlemek için "Play"e tıklayın.
-2. Çevrimiçi favori bir image bulun, üzerine sağ tıklayın ve Copy Image Link/Address'e basın. Alternatif olarak yukarıdaki image URL'sini kopyalayın.
-3. MDN Playground'a geri dönün, `<img>` öğesine `src` özniteliğini ekleyin ve değerini 2. adımdaki URL yapın.
-4. `alt` özniteliğini image için uygun bir açıklama olacak şekilde ayarlayın.
-5. `width` özniteliğini örneğin `300` gibi bir değere ayarlayın; böylece image'i output panelinde biraz daha iyi görebilirsiniz. Gerekirse değeri ayarlayın.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Çok takılırsanız, code block'un altındaki solution'a bakabilirsiniz.
-
-```html
-<img />
-```
-
-Click here to show the solution
-
-## Boolean attributes
-
-Bazen HTML özniteliklerinin values olmadan yazıldığını görürsünüz. Bunlara Boolean attributes denir. Bir boolean attribute eklendiğinde, ona atanmış değer ne olursa olsun (hatta hiç değer verilmemiş olsa bile) değeri `true` olur. Bir öznitelik HTML tag'inde yer almıyorsa, değeri `false` olur.
-
-Örneğin, kullanıcıların veri girmesini engellemek için form `<input>` öğelerine atayabileceğiniz `disabled` özniteliğini düşünün. Mesela:
-
-```html
-<label for="first-input">This input is disabled</label>
-
-<input id="first-input" type="text" disabled="disabled" />
-
-<br />
-```
-
-Kısaltma olarak, `disabled` özniteliğini değer vermeden yazmak da kabul edilebilir:
-
+> **Note:** Bazı HTML örneklerinde, boş bir element etiketinin sonuna bir `/` eklendiğini görebilirsiniz; örneğin `<br />`. Bu farklı bir biçimlendirme sözdizimi tarzıdır (XHTML kalıntısıdır); yanlış değildir, ancak bu "kapanış eğik çizgisi" HTML5 için gerekli değildir.
 
 ---
 
-# What's in the head? Web page metadata
+## Nitelikler
 
-Bir HTML belgesinin head bölümü, sayfa tarayıcıda yüklendiğinde görüntülenmeyen kısımdır. Sayfanın `<title>` öğesi, CSS bağlantıları (HTML içeriğinizi CSS ile biçimlendirmeyi seçerseniz), özel favicons bağlantıları ve diğer metadata (HTML hakkında veri; örneğin yazar ve belgeyi tanımlayan önemli anahtar kelimeler) gibi metadata bilgileri içerir.
+Elementler ayrıca **niteliklere (attributes)** sahip olabilir. Nitelikler şu şekilde görünür:
 
-Web tarayıcıları, HTML belgesini doğru şekilde işlemek için head içinde bulunan bilgileri kullanır. Bu makalede, yukarıdakilerin tümünü ve daha fazlasını ele alacağız; böylece markup ile çalışmak için iyi bir temel kazanmış olacaksınız.
+```text
+                 Attribute
+            ┌─────────────────┐
+            │                 │
+            ▼                 ▼
+   <p class="editor-note">My cat is very grumpy</p>
+```
 
-## Önkoşullar
+Nitelikler, element hakkında içeriğinin parçası olmayan ek bilgiler barındırır. `class` niteliği, elementi stillerle (CSS) veya betik bilgileriyle (JavaScript) hedeflemek için kullanılabilecek tanımlayıcı bir ad sağlar.
 
-Önceki derste ele alındığı gibi temel HTML aşinalığı.
+Bir nitelik şunlara sahip olmalıdır:
 
-## Öğrenme çıktıları
+* Nitelik ile element adı arasında bir boşluk. Bir element birden fazla niteliğe sahip olduğunda, nitelikler de birbirlerinden boşluklarla ayrılmalıdır.
+* Nitelik adı, ardından gelen bir eşittir işareti (`=`).
+* Açılış ve kapanış tırnak işaretleri içine alınmış bir nitelik değeri.
 
-- Document character encoding ve title ayarlama.
-- Arama motorları için metadata sağlama.
-- Tarayıcılar ve mobil platformlarda kullanılacak icons ile bağlama.
-- Stylesheets ve script files ile bağlama.
-- `<html>` açılış tag'inde `lang` özniteliğini kullanarak belgenin dilini ayarlama gerekliliği.
+---
 
-## HTML head nedir?
+## Bir elemente nitelik ekleme
 
-Önceki makalede ele aldığımız basit HTML belgesine dönelim:
+Sayfada bir görsel göstermek için kullanılan `<img>` elementini inceleyelim. `<img>` elementi aşağıdakiler de dahil olmak üzere birçok nitelik alabilir:
+
+* `src`: Görselin URL'sini (web adresini) belirten **zorunlu** bir niteliktir. Örneğin:  
+  `src="https://mdn.github.io/shared-assets/images/examples/fx-nightly-512.png"`
+* `alt`: Görseli göremeyen kişiler için metin açıklaması belirtir. Örneğin: `alt="The Firefox Nightly icon"`. Bu nitelik teknik olarak zorunlu olmasa da, anlam ileten tüm görseller için (tamamen dekoratif olanların aksine) mutlaka bir metin açıklaması sağlamalısınız.
+* `width`: Görselin genişliğini piksel cinsinden belirtir. Örneğin: `width="300"`.
+* `height`: Görselin yüksekliğini piksel cinsinden belirtir. Örneğin: `height="300"`.
+
+Örnek kullanım:
+
+```html
+<img src="https://mdn.github.io/shared-assets/images/examples/fx-nightly-512.png" 
+     alt="The Firefox Nightly icon" 
+     width="300" 
+     height="300" />
+```
+
+---
+
+## Boolean nitelikler
+
+Bazen HTML niteliklerinin değer atanmadan yazıldığını görürsünüz. Bunlara **Boolean nitelikler (Boolean attributes)** denir. Bir boolean nitelik eklendiğinde, kendisine hangi değer atanırsa atansın (hatta hiçbir değer atanmasa bile) değeri `true` olarak kabul edilir. Bir nitelik HTML etiketinde yer almıyorsa, değeri `false` olarak kabul edilir.
+
+Örneğin, kullanıcının form alanlarına veri girmesini engellemek için `<input>` elementlerine atayabileceğiniz `disabled` niteliğini ele alalım:
+
+```html
+<label for="first-input">This input is disabled</label>
+<input id="first-input" type="text" disabled="disabled" />
+<br />
+```
+
+Kısa yazım olarak, `disabled` niteliğini bir değer belirtmeden yazmak tamamen geçerlidir:
+
+```html
+<label for="second-input">This input is also disabled</label>
+<input id="second-input" type="text" disabled />
+<br />
+```
+
+Karşılaştırma amacıyla, devre dışı bırakılmamış bir `<input>` elementi de ekleyelim:
+
+```html
+<label for="third-input">This input isn't disabled; you can type into it</label>
+<input id="third-input" type="text" />
+```
+
+> **Note:** Yukarıdaki koddaki `<label>` elementleri, açıklayıcı etiketleri form kontrolleriyle ilişkilendirmenin bir yolunu sağlar. Bunları en iyi uygulama olduğu ve form girdileri arasında bir miktar ayrım sağladığı için ekledik.
+
+---
+
+## Nitelik değerleri etrafındaki tırnak işaretlerini atlama
+
+Belirli durumlarda nitelik değerlerinin etrafındaki tırnak işaretlerini atlamak mümkündür. Ancak bu durum başka koşullarda işaretlemenizi bozabileceğinden, **tırnak işaretlerini her zaman eklemenizi öneririz**. Nedenini inceleyelim.
+
+Aşağıdaki kod parçacığında yer alan `<a>` elementi **bağlantı (anchor)** olarak adlandırılır. Bağlantılar metni sarar ve linke dönüştürür. `href` niteliği bağlantının işaret ettiği URL'yi belirtir. Aşağıda gösterilen `href` niteliği değerinin etrafındaki tırnak işaretlerini hiçbir olumsuz sonuç olmadan atlayabilirsiniz, çünkü içinde hiç boşluk karakteri yoktur:
+
+```html
+<a href=https://www.mozilla.org/>favorite website</a>
+```
+
+Ancak boşluk içeren nitelik değerlerinde tırnak işaretlerini atladığınızda sorunlarla karşılaşırsınız. Aşağıda gösterilen ve bağlantı üzerine fare imleci getirildiğinde bir ipucu (tooltip) olarak görünmesi gereken sayfa açıklamasını (`"The Mozilla homepage"`) sağlayan `title` niteliğini ele alalım:
+
+```html
+<!-- YANLIŞ KULLANIM: Tırnak işaretleri eksik -->
+<a href=https://www.mozilla.org/ title=The Mozilla homepage>favorite website</a>
+```
+
+`title` niteliği değerinin etrafına tırnak işaretleri konulmadığı için tarayıcı bunu üç ayrı nitelik olarak yorumlar: değeri `The` olan bir `title` niteliği ve iki adet Boolean nitelik (`Mozilla` ve `homepage`). Doğal olarak amaçladığımız şey bu değildir!
+
+**Kural:** Nitelik değerlerinin etrafına daima tırnak işaretleri koyun. Bu, hataları ve istenmeyen davranışları önler ve daha okunabilir kod sağlar.
+
+---
+
+## Tek tırnak mı yoksa çift tırnak mı?
+
+Bu makalede tüm nitelik değerlerimizi çift tırnak (`"`) içine aldık. Ancak bazı HTML kodlarında tek tırnak (`'`) kullanıldığını da görebilirsiniz. Bu bir stil tercihidir; hangisini tercih edeceğinizi seçmekte özgürsünüz. Bu iki satır tamamen eşdeğerdir:
+
+```html
+<a href='https://www.example.com'>A link to my example.</a>
+<a href="https://www.example.com">A link to my example.</a>
+```
+
+Tek tırnak ve çift tırnakları birbiriyle **karıştırmadığınızdan** emin olun. Aşağıdaki örnek tırnakları karıştırmaktadır; tarayıcı açısından `href` niteliği değeri henüz sonlandırılmadığı için bu durum hatalara yol açacaktır:
+
+```html
+<!-- HATALI KULLANIM -->
+<a href="https://www.example.com'>A link to my example.</a>
+```
+
+Bir tür tırnak işareti kullanıyorsanız, diğer tür tırnak işaretini nitelik değerlerinizin içine sorunsuzca dahil edebilirsiniz:
+
+```html
+<a href="https://www.example.com" title="Isn't this fun?">A link to my example.</a>
+```
+
+Aynı türdeki tırnak işaretlerini (çift tırnak içinde çift tırnak gibi) kullanmak için **karakter referanslarını (character references)** kullanabilirsiniz. Örneğin şu kullanım yapıyı bozar:
+
+```html
+<!-- HATALI KULLANIM -->
+<a href="https://www.example.com" title="An "interesting" reference">A link to my example.</a>
+```
+
+Bunun yerine şu şekilde yazmanız gerekir:
+
+```html
+<a href="https://www.example.com" title="An &quot;interesting&quot; reference">A link to my example.</a>
+```
+
+---
+
+## Bir HTML belgesinin anatomisi
+
+Tekil HTML elementleri tek başlarına pek kullanışlı değildir. Şimdi tek tek elementlerin bir araya gelerek bütün bir HTML sayfasını nasıl oluşturduğunu inceleyelim.
+
+Aşağıdaki örnek çok basit, eksiksiz bir web sayfasıdır:
 
 ```html
 <!doctype html>
-
 <html lang="en-US">
-
-<head>
-
-<meta charset="utf-8" />
-
-<title>My test page</title>
-
-</head>
-
-<body>
-
-<p>This is my page</p>
-
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+  </body>
 </html>
 ```
 
-HTML head, `<head>` öğesinin içeriğidir. `<body>` öğesinin içeriğinin aksine (bunlar tarayıcıda yüklendiğinde sayfada görüntülenir), head içeriği sayfada görüntülenmez. Bunun yerine head'in görevi, belge hakkında metadata taşımaktır. Yukarıdaki örnekte head oldukça küçüktür:
+Bu örneğin parçaları şu şekildedir:
+
+1. `<!doctype html>`: Doctype (belge türü tanımı). HTML'in ilk dönemlerinde (1991-1992), doctype'ların HTML sayfasının "iyi bir HTML" sayılması için uyması gereken bir kurallar kümesine bağlantı görevi görmesi amaçlanmıştı. Doctype'lar eskiden şuna benzer görünürdü:
+   ```html
+   <!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
+   Modern zamanlarda doctype, diğer her şeyin doğru çalışması için dahil edilmesi gereken tarihsel bir kalıntıdır. `<!doctype html>`, geçerli bir doctype sayılan en kısa karakter dizisidir ve tüm web sayfalarının en üstüne eklenmelidir. Bilmeniz gereken tek şey budur!
+2. `<html></html>`: `<html>` elementi. Bu element sayfadaki tüm içeriği sarar. Bazen **kök element (root element)** olarak da adlandırılır.
+3. `<head></head>`: `<head>` elementi. Bu element, kullanıcıların göreceği içeriğin parçası olmayan, sayfayla ilgili bilgilerin yer aldığı bir kapsayıcı görevi görür. Bu alan arama sonuçlarında gösterilecek anahtar kelimeleri ve sayfa açıklamasını, içeriği stillendirmek için CSS'i, karakter seti bildirimlerini ve daha fazlasını içerebilir.
+4. `<meta charset="utf-8">`: Bir `<meta>` elementi. Bu element sayfayı tanımlayan metadata'yı temsil eder. `charset` niteliği belgenizin kullanacağı karakter kodlamasını (character encoding) belirtir. `UTF-8`, insan tarafından yazılan dillerin büyük çoğunluğundaki çoğu karakteri kapsar; bu da sayfanın farklı dilleri başarıyla görüntüleyebileceği anlamına gelir. Bunu ayarlamamak için hiçbir neden yoktur ve ileride çıkabilecek sorunları önlemeye yardımcı olur.
+5. `<title></title>`: `<title>` elementi. Sayfanın başlığını belirler; bu başlık, sayfanın yüklendiği tarayıcı sekmesinde görünen başlıktır. Sayfa başlığı ayrıca sayfaya yer işareti (bookmark) eklendiğinde onu tanımlamak için de kullanılır.
+6. `<body></body>`: `<body>` elementi. Metin, görseller, videolar, oyunlar, oynatılabilir ses parçaları vb. dahil olmak üzere sayfada görüntülenen tüm içeriği barındırır.
+
+---
+
+## Bir HTML belgesine özellikler ekleme
+
+Örnek kurulum ve yönergeler:
+
+1. Önceki bölümde listelenen HTML sayfası örneğini kod editörünüzde yeni bir dosyaya kopyalayın.
+2. `<body>` elementinin açılış etiketinin hemen altına belge için ana bir başlık ekleyin. Bu başlık `<h1></h1>` etiketleriyle sarılmalıdır.
+3. İlginizi çeken bir konu hakkında metin içerecek şekilde paragraf içeriğini düzenleyin.
+4. Önemli kelimeleri bir `<strong>` elementi içine alarak kalınlaştırın.
+5. Paragrafınıza iki bağlantı ekleyin. Bu işlem `<a>` elementi kullanılarak gerçekleştirilir.
+6. Belgenize paragrafın altına daha önce açıklandığı gibi bir görsel ekleyin. Eğer ekranda çok büyük görünüyorsa, boyutunu küçültmek için bir `width` niteliği ekleyin.
+7. Dosyayı `index.html` olarak kaydedin ve sonuçları görmek için yeni bir tarayıcı sekmesinde açın.
+
+---
+
+## HTML'de boşluk kullanımı
+
+Önceki örneklerde koda çok sayıda boşluk dahil ettik. Çoğu durumda bu tamamen isteğe bağlıdır ve esas olarak kodu daha okunabilir hale getirmek için dahil edilir. Örneğin, bu iki kod parçacığı tamamen eşdeğerdir:
+
+```html
+<p id="noWhitespace">Dogs are silly.</p>
+
+<p id="whitespace">Dogs
+are
+silly.</p>
+```
+
+Her ikisi de tamamen aynı şekilde işlenir:
+
+Dogs are silly.
+
+Dogs are silly.
+
+Hemen hemen tüm elementlerde (istisnalar mevcuttur; örneğin `<pre>`), HTML elementi içeriğinde ne kadar boşluk kullanırsanız kullanın, HTML ayrıştırıcısı (parser) kodu işlerken her ardışık boşluk dizisini tek bir boşluğa indirger.
+
+Bir kod biçimlendirme stili seçmek size bağlıdır. Her iç içe yerleştirilmiş elemente, içinde bulunduğu elementten iki boşluk daha fazla girinti (indentation) vermek yaygın bir tercihtir; MDN'de kullandığımız stil de budur:
+
+```html
+<section>
+  <div>
+    <p>A paragraph of content.</p>
+  </div>
+</section>
+```
+
+---
+
+## Karakter referansları: HTML'e özel karakterler dahil etme
+
+HTML'de `<`, `>`, `"`, `'` ve `&` karakterleri özel karakterlerdir. Bunlar HTML sözdiziminin doğrudan birer parçasıdır. Peki bu özel karakterleri metninizin içine nasıl dahil edebilirsiniz? Örneğin, bir ampersand (`&`) veya küçüktür (`<`) işaretinin kod olarak yorumlanmadan içeriğinizde harfi harfine kullanılmasını nasıl sağlarsınız?
+
+Bunu **karakter referansları (character references)** ile yaparsınız. Bunlar, tam olarak bu koşullarda kullanılmak üzere karakterleri temsil eden özel kodlardır. Her karakter referansı bir ampersand (`&`) ile başlar ve bir noktalı virgül (`;`) ile biter.
+
+| Literal character (Düz karakter) | Character reference equivalent (Eşdeğer karakter referansı) | Anlamı / Kısaltma kökeni |
+| :---: | :---: | :--- |
+| `<` | `&lt;` | "less than" (küçüktür) |
+| `>` | `&gt;` | "greater than" (büyüktür) |
+| `"` | `&quot;` | "quotation" (tırnak işareti) |
+| `'` | `&apos;` | "apostrophe" (kesme işareti) |
+| `&` | `&amp;` | "ampersand" (ve işareti) |
+
+Aşağıdaki örnekte iki paragraf bulunmaktadır:
+
+```html
+<p>In HTML, you define a paragraph using the <p> element.</p>
+<p>In HTML, you define a paragraph using the &lt;p&gt; element.</p>
+```
+
+Bu kod şu şekilde işlenir:
+
+In HTML, you define a paragraph using the  
+element.  
+In HTML, you define a paragraph using the `<p>` element.
+
+İlk paragraf bozulmuştur; çünkü tarayıcı ikinci `<p>` ifadesini yeni bir paragrafın başlangıcı olarak yorumlamıştır. İkinci paragraf ise sorunsuz işlenir, çünkü `<p>` içeriğinin açılı ayraçları karakter referanslarıyla temsil edilmiştir.
+
+> **Note:** HTML belgenizin karakter kodlaması `UTF-8` olarak ayarlandığı sürece diğer simgeler için entity referansları kullanmanıza gerek yoktur; modern tarayıcılar gerçek simgeleri sorunsuz bir şekilde işleyecektir.
+
+---
+
+## HTML yorumları
+
+HTML, kodun içine yorum yazmak için bir mekanizmaya sahiptir. Tarayıcılar yorumları yoksayar, bu nedenle yorumlar kullanıcıya görünmez. Yorumların amacı, kodun nasıl çalıştığını açıklamak için koda notlar eklemenize izin vermektir. Bu, bir kod tabanına uzun bir süre ara verip hatırlayamadığınızda veya daha önce hiç görmemiş başka biri üzerinde çalışmaya başladığında son derece yararlıdır.
+
+Bir HTML yorumu yazmak için, onu aşağıda gösterildiği gibi `<!--` ve `-->` özel işaretleyicileri içine sarın:
+
+```html
+<p>I'm not inside a comment</p>
+<!-- <p>I am!</p> -->
+```
+
+Bu kod şu şekilde işlenir:
+
+I'm not inside a comment
+
+Canlı çıktıda yalnızca ilk paragraf görüntülenir; ikinci satır bir HTML yorumu olduğu için ekrana yansıtılmaz.
+
+---
+
+## Özet
+
+Makalenin sonuna ulaştınız! HTML'in temellerini keşfetmekten keyif aldığınızı umuyoruz.
+
+Bu noktada HTML'in neye benzediğini ve temel düzeyde nasıl çalıştığını anlamış olmalısınız. Ayrıca birkaç element ve nitelik yazabilecek durumda olmalısınız. Bu modülün sonraki makaleleri, burada tanıtılan bazı konuları daha derinlemesine ele alacak ve ek konular sunacaktır.
+
+> **Note:** HTML hakkında daha fazla bilgi edinmeye başladıkça, web sayfalarını stillendirmek (örneğin renkleri, yazı tiplerini ve boşlukları değiştirmek) için kullanılan dil olan **CSS**'in temellerini de öğrenmeyi düşünebilirsiniz. HTML ve CSS çoğu web sayfasında birlikte kullanılır ve bunları aynı anda öğrenmek oldukça etkili olabilir.
+
+---
+# 2. Web sayfası meta verileri
+
+**HTML** > **What's in the head? Web page metadata** | English (US)
+
+Bir HTML belgesinin head kısmı, sayfa web tarayıcısında yüklendiğinde görüntülenmeyen kısımdır. Sayfa `<title>` elementi, CSS bağlantıları (HTML içeriğinizi CSS ile stillendirmek istiyorsanız), özel favicon bağlantıları ve diğer metadata (HTML hakkında yazar ve belgeyi tanımlayan önemli anahtar kelimeler gibi veriler) gibi bilgileri içerir.
+
+Web tarayıcıları, HTML belgesini doğru şekilde işlemek için `head` içinde yer alan bilgileri kullanır. Bu makalede, işaretleme diliyle çalışırken sağlam bir temel oluşturmanız için yukarıdakilerin tümünü ve daha fazlasını ele alacağız.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Önceki derste ele alındığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • HTML head ve belgenin metadata kapsayıcısı olarak üstlendiği amaç.<br>• Belge karakter kodlamasını (character encoding) ve başlığını (`<title>`) ayarlama.<br>• Arama motorları için metadata sağlama.<br>• Tarayıcılarda ve mobil platformlarda kullanılmak üzere simgelere (icons/favicons) bağlantı verme.<br>• Stil sayfalarına (stylesheets) ve betik (script) dosyalarına bağlantı verme.<br>• Açılış `<html>` etiketinde `lang` niteliğini kullanarak belgenin dilini belirleme gerekliliği. |
+
+---
+
+## HTML head nedir?
+
+Önceki makalede ele aldığımız basit HTML belgesine tekrar göz atalım:
+
+```html
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+  </body>
+</html>
+```
+
+HTML head, `<head>` elementinin içeriğidir. Bir tarayıcıda yüklendiğinde sayfada görüntülenen `<body>` elementinin içeriğinin aksine, head'in içeriği sayfada görüntülenmez. Bunun yerine head'in görevi, belge hakkında **metadata (üst veri)** barındırmaktır. Yukarıdaki örnekte head oldukça küçüktür:
 
 ```html
 <head>
-
-<meta charset="utf-8" />
-
-<title>My test page</title>
-
+  <meta charset="utf-8" />
+  <title>My test page</title>
 </head>
 ```
 
-Ancak daha büyük sayfalarda head oldukça büyüyebilir. Sevdiğiniz bazı web sitelerine gidip developer tools ile head içeriklerini incelemeyi deneyin. Buradaki amacımız, head içine konabilecek her şeyi göstermek değil; bunun yerine head'e eklemek isteyeceğiniz ana öğeleri kullanmayı öğretmek ve size aşinalık kazandırmaktır. Hadi başlayalım.
+Bununla birlikte, daha büyük sayfalarda head oldukça kapsamlı hale gelebilir. En sevdiğiniz web sitelerinden bazılarına giderek geliştirici araçlarını (developer tools) açıp head içeriklerini incelemeyi deneyin. Buradaki amacımız head içine konulabilecek her şeyi tek tek göstermek değil; head içine dahil etmek isteyeceğiniz başlıca elementleri nasıl kullanacağınızı öğretmek ve aşinalık kazandırmaktır.
 
-## Bir title ekleme
+---
 
-`<title>` öğesini zaten kullandık — bu, belgeye bir title eklemek için kullanılabilir. Ancak bu, body içeriğinize üst düzey bir heading eklemek için kullanılan h1 öğesiyle karıştırılabilir — bu da bazen page title olarak anılır. Fakat bunlar farklı şeylerdir!
+## Bir başlık ekleme
 
-h1 öğesi, tarayıcıda yüklendiğinde sayfada görünür — genellikle page content'in title'ını (hikâye başlığı, haber manşeti veya kullanımınıza uygun başka bir şey) işaretlemek için sayfa başına bir kez kullanılmalıdır.
+`<title>` elementinin işlevini daha önce görmüştük — bu element belgeye bir başlık eklemek için kullanılır. Ancak bu element, gövde içeriğinize en üst düzey başlık eklemek için kullanılan ve bazen sayfa başlığı olarak da anılan `<h1>` elementi ile karıştırılabilir. Fakat ikisi tamamen farklı şeylerdir!
 
-`<title>` öğesi ise tüm HTML document'in title'ını temsil eden metadata'dır (belgenin içeriğini değil).
+* `<h1>` elementi, tarayıcıda yüklendiğinde sayfanın içinde görünür — genel olarak sayfa içeriğinizin başlığını (makale başlığı, haber manşeti veya kullanımınıza uygun olan metin) işaretlemek için sayfa başına bir kez kullanılmalıdır.
+* `<title>` elementi ise sayfa içeriğinin değil, bütün bir HTML belgesinin başlığını temsil eden bir metadata'dır.
 
-## Bir example inceleme
+### Bir örneği inceleme
 
-1. Bu alıştırmada, GitHub repo'muza gidip `title-example.html` sayfamızın bir kopyasını indirmeniz gerekecek. Bunu yapmak için, ya:
-   1. Sayfadaki kodu kopyalayıp kod editörünüzde yeni bir text file içine yapıştırın, sonra uygun bir yere kaydedin.
-   2. GitHub sayfasındaki "Raw" düğmesine basın; bu, ham kodun görünmesini sağlar (muhtemelen yeni bir browser tab'da). Ardından tarayıcınızın Save Page As… menüsünü seçin ve dosyayı kaydetmek için uygun bir yer belirleyin.
-2. Şimdi dosyayı tarayıcınızda açın. Şuna benzer bir şey görmelisiniz:
-3. Artık `<h1>` içeriğinin nerede göründüğü ve `<title>` içeriğinin nerede göründüğü tamamen açık olmalıdır!
-4. Ayrıca kodu kod editörünüzde açıp bu öğelerin içeriğini düzenlemeyi, sonra sayfayı tarayıcınızda yenilemeyi de denemelisiniz. Bununla biraz eğlenin.
+1. Bu alıştırmada `title-example.html` sayfasını kod editörünüzde açın veya kodunu kopyalayıp yeni bir dosyaya yapıştırın.
+2. Dosyayı tarayıcınızda açın. Tarayıcı sekmesinde `<title>` metnini, sayfa gövdesinde ise `<h1>` başlık metnini göreceksiniz.
+3. Artık `<h1>` içeriğinin nerede, `<title>` içeriğinin nerede göründüğü son derece nettir!
 
-`<title>` öğesinin içeriği başka şekillerde de kullanılır. Örneğin, sayfayı yer imlerine eklemeyi denerseniz (Bookmarks > Bookmark This Page veya Firefox'ta URL çubuğundaki yıldız simgesi), `<title>` içeriğinin önerilen bookmark name olarak doldurulduğunu görürsünüz.
+`<title>` elementinin içeriği başka alanlarda da kullanılır. Örneğin, sayfayı yer imlerine eklemeye çalıştığınızda (Firefox'ta *Yer İmleri > Bu Sayfayı Yer İmlerine Ekle* veya adres çubuğundaki yıldız simgesi), yer imi adı olarak `<title>` içeriğinin önerildiğini görürsünüz. Ayrıca `<title>` içeriği arama motoru sonuçlarında da başlık olarak kullanılır.
 
-`<title>` içeriği search results içinde de kullanılır; aşağıda göreceksiniz.
+---
 
-## Metadata: `<meta>` öğesi
+## Meta veriler: `<meta>` elementi
 
-Metadata, veriyi tanımlayan veridir ve HTML'nin bir belgeye metadata eklemek için "resmî" bir yolu vardır — `<meta>` öğesi. Elbette bu makalede sözünü ettiğimiz diğer şeyler de metadata olarak düşünülebilir. Sayfanızın `<head>` bölümüne eklenebilecek çok çeşitli `<meta>` öğeleri vardır; ancak bu aşamada hepsini açıklamaya çalışmayacağız, çünkü bu sadece fazla karışık olurdu. Bunun yerine, sıkça görebileceğiniz birkaç şeyi açıklayacağız; böylece fikir edinmiş olacaksınız.
+Metadata, veriyi tanımlayan veridir ve HTML'in bir belgeye metadata eklemek için sunduğu resmi yöntem `<meta>` elementidir. Sayfanızın `<head>` bölümüne eklenebilecek pek çok farklı türde `<meta>` elementi vardır. Şimdi en yaygın kullanılanları inceleyelim.
 
-### Belgenizin character encoding'ini belirtme
+### Belgenizin karakter kodlamasını belirtme
 
 Yukarıda gördüğümüz örnekte şu satır yer alıyordu:
 
@@ -387,1404 +525,1193 @@ Yukarıda gördüğümüz örnekte şu satır yer alıyordu:
 <meta charset="utf-8" />
 ```
 
-Bu öğe, belgenin character encoding'ini — yani belgenin kullanmasına izin verilen character set'i — belirtir.
+Bu element belgenin karakter kodlamasını —belgenin kullanmasına izin verilen karakter kümesini— belirtir. `utf-8`, insan dillerinin neredeyse tamamındaki tüm karakterleri içeren evrensel bir karakter kümesidir. Bu, web sayfanızın herhangi bir dili görüntüleyebileceği anlamına gelir; bu nedenle oluşturduğunuz her web sayfasına bunu eklemeniz önerilir! Örneğin sayfanız hem İngilizceyi hem de Japoncayı sorunsuz şekilde işleyebilir.
 
-utf-8, hemen her insan dilinden neredeyse her karakteri içeren evrensel bir character set'tir. Bu, web sayfanızın herhangi bir dili gösterebileceği anlamına gelir; bu yüzden oluşturduğunuz her web sayfasında bunu ayarlamak iyi bir fikirdir! Örneğin, sayfanız İngilizce ve Japonca'yı rahatça destekleyebilir:
+Eğer karakter kodlamanızı örneğin `ISO-8859-1` (Latin alfabesi için karakter kümesi) olarak ayarlarsanız, Japonca karakterler içeren sayfanız bozulabilir:
 
-Eğer character encoding'inizi örneğin ISO-8859-1'e ayarlarsanız (Latin alfabesi için character set), sayfanızın render edilmesi çok bozulmuş görünebilir:
+> [!NOTE]
+> Chrome gibi bazı tarayıcılar hatalı kodlamaları otomatik olarak düzeltir, bu nedenle kullandığınız tarayıcıya bağlı olarak bu sorunu görmeyebilirsiniz. Yine de diğer tarayıcılarda olası sorunları önlemek için sayfanıza mutlaka `utf-8` kodlamasını eklemelisiniz.
 
-> Not: Bazı tarayıcılar (Chrome gibi) yanlış encoding'leri otomatik olarak düzeltir; bu yüzden hangi tarayıcıyı kullandığınıza bağlı olarak bu sorunu görmeyebilirsiniz. Yine de diğer tarayıcılarda olası sorunları önlemek için sayfanızda yine de `utf-8` encoding'i ayarlamalısınız.
-
-### Character encoding ile deneme yapma
-
-Bunu denemek için, `<title>` bölümünde elde ettiğiniz basit HTML template'e (title-example.html sayfası) geri dönün, meta charset değerini ISO-8859-1 olarak değiştirmeyi ve sayfanıza Japonca eklemeyi deneyin. Kullandığımız kod şu idi:
+Karakter kodlamasını test etmek için şu kodu deneyebilirsiniz:
 
 ```html
 <p>Japanese example: ご飯が熱い。</p>
 ```
 
-### Bir yazar ve açıklama ekleme
+### Yazar ve açıklama ekleme
 
-Birçok `<meta>` öğesi `name` ve `content` özniteliklerini içerir:
+Pek çok `<meta>` elementi `name` ve `content` niteliklerini içerir:
 
-- `name`, meta öğesinin türünü; ne tür bilgi içerdiğini belirtir.
-- `content`, gerçek meta içeriğini belirtir.
+* `name`: Meta elementinin türünü; ne tür bir bilgi barındırdığını belirtir.
+* `content`: Gerçek meta içeriğini belirtir.
 
-Sayfanıza eklemesi yararlı olan bu tür iki meta öğe, sayfanın yazarını tanımlar ve sayfanın kısa bir açıklamasını sağlar. Bir örneğe bakalım:
+Sayfanıza eklenmesi faydalı olan iki meta element, sayfanın yazarını tanımlar ve sayfanın kısa bir açıklamasını sunar:
 
+```html
+<meta name="author" content="Chris Mills" />
+<meta
+  name="description"
+  content="The MDN Web Docs Learning Area aims to provide
+complete beginners to the Web with all they need to know to get
+started with developing websites and applications." />
+```
+
+* **Yazar belirtmek** birçok açıdan faydalıdır: İçerikle ilgili bir sorunuz olduğunda sayfayı kimin yazdığını bilmek ve iletişime geçebilmek yararlıdır. Bazı içerik yönetim sistemleri yazar bilgilerini otomatik olarak ayıklayabilir.
+* **Açıklama belirtmek**, sayfanızın içeriğiyle ilgili anahtar kelimeleri içermesi bakımından çok kullanışlıdır; çünkü sayfanızın arama motorlarında yapılan ilgili aramalarda daha üst sıralarda yer alma potansiyelini artırır (bu tür faaliyetlere **Arama Motoru Optimizasyonu** veya **SEO** denir).
+
+Açıklama ayrıca arama motoru sonuç sayfalarında (SERP) snippet olarak gösterilir.
+
+> [!NOTE]
+> Artık kullanılmayan birçok `<meta>` özelliği bulunmaktadır. Örneğin, arama motorlarının sayfanın alaka düzeyini belirlemesi amacıyla anahtar kelimeler sağlaması beklenen anahtar kelime meta elementi (`<meta name="keywords" content="...">`), spam göndericilerin yüzlerce anahtar kelime doldurarak sonuçları manipüle etmesi nedeniyle artık arama motorları tarafından tamamen göz ardı edilmektedir.
+
+### Diğer meta veri türleri
+
+Web'de gezinirken başka metadata türleriyle de karşılaşırsınız. Web sitelerinde göreceğiniz özelliklerin çoğu, belirli platformlara (örneğin sosyal ağ sitelerine) kullanabilecekleri özel bilgiler sağlamak için tasarlanmış tescilli yapılardır.
+
+Örneğin, **Open Graph Data (OGP)**, Facebook tarafından web siteleri için daha zengin metadata sağlamak amacıyla geliştirilmiş bir metadata protokolüdür. MDN Web Docs kaynak kodunda şunları bulabilirsiniz:
+
+```html
+<meta
+  property="og:image"
+  content="https://developer.mozilla.org/mdn-social-share.png" />
+<meta
+  property="og:description"
+  content="The Mozilla Developer Network (MDN) provides
+information about Open Web technologies including HTML, CSS, and APIs for both websites
+and HTML Apps." />
+<meta property="og:title" content="Mozilla Developer Network" />
+```
+
+Bu sayede Facebook veya diğer platformlarda MDN Web Docs bağlantısı paylaşıldığında, bağlantı bir görsel, başlık ve açıklama ile birlikte zengin bir kart görünümünde görüntülenir.
 
 ---
 
-# Türkçe çeviri
+## Sitenize özel simgeler ekleme
 
-HTML
-Başlıklar ve paragraflar
-Başlıklar ve paragraflar
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-One of HTML's main jobs is to give text structure so that a tarayıcı can display an HTML document the way its developer
-intends. This article explains how HTML can be used to provide fundamental page structure by defining başlıks and
-paragrafs.
-Önkoşullar:
-Basic HTML familiarity, as covered in Basic HTML Syntax.
-Learning
-outcomes:
-How to create a good document structure with başlıks and content beneath those
-başlıks.
-Using semantic HTML rather than presentational HTML, and why this is important.
-The need for başlık levels to be used logically, i.e., no skipping levels or using them
-arbitrarily because you want to achieve a certain font size (that's a job for CSS).
-SEO benefits: for example, keywords are boosted in başlıks.
-Accessibility benefits: Assistive technology (AT) such as ekran okuyucus use başlıks
-(and other landmarks) as signposts to navigate content. HTML documents are very
-difficult for AT users to use without başlıks.
-Başlıklar ve paragraflar
-Most structured text consists of başlıks and paragrafs, whether you are reading a story, a newspaper, a college
-textbook, a magazine, etc.
-İngilizce (ABD)
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-1/6
+Site tasarımınızı daha da zenginleştirmek için metadata'nıza özel simge referansları ekleyebilirsiniz; bunlar belirli bağlamlarda görüntülenir. Bunların en yaygın kullanılanı **favicon**'dur ("favorites icon" - favoriler simgesinin kısaltması; tarayıcılardaki "favoriler" veya "yer imleri" listelerinde kullanımına atıfta bulunur).
 
-Structured content makes the reading experience easier and more enjoyable.
-In HTML, each paragraf has to be wrapped in a <p>  element, like so:
-HTML
-<p>I am a paragraf, oh yes I am.</p>
-Each başlık has to be wrapped in a başlık element:
-HTML
-<h1>I am the title of the story.</h1>
-There are six başlık elements: h1, h2, h3, h4, h5, and h6. Each element represents a different level of content in the
-document; <h1>  represents the main başlık, <h2>  represents subbaşlıks, <h3>  represents sub-subbaşlıks, and
-so on.
-Implementing structural hierarchy
-For example, in this story, the <h1>  element represents the title of the story, the <h2>  elements represent the title of
-each chapter, and the <h3>  elements represent subsections of each chapter:
-HTML
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-2/6
+Favicon uzun yıllardır kullanılmaktadır. Bu türün ilk simgesidir: birden çok yerde kullanılan 16 piksellik kare bir simgedir. Açık olan her sayfayı içeren tarayıcı sekmesinde ve yer imleri panelinde yer imlerine eklenmiş sayfaların yanında gösterilir.
 
-<h1>The Crushing Bore</h1>
-<p>By Chris Mills</p>
-<h2>Chapter 1: The dark night</h2>
-<p>
-It was a dark night. Somewhere, an owl hooted. The rain lashed down on the…
-</p>
-<h2>Chapter 2: The eternal silence</h2>
-<p>Our protagonist could not so much as a whisper out of the shadowy figure…</p>
-<h3>The specter speaks</h3>
-<p>
-Several more hours had passed, when all of a sudden the specter sat bolt
-upright and exclaimed, "Please have mercy on my soul!"
-</p>
-It's really up to you what the elements involved represent, as long as the hierarchy makes sense. You just need to bear in
-mind a few best practices as you create such structures:
-Preferably, you should use a single <h1>  per page—this is the top level başlık, and all others sit below this in
-the hierarchy.
-Make sure you use the başlıks in the correct order in the hierarchy. Don't use <h3>  elements to represent
-subbaşlıks, followed by <h2>  elements to represent sub-subbaşlıks—that doesn't make sense and will lead
-to weird results.
-Of the six başlık levels available, you should aim to use no more than three per page, unless you feel it is
-necessary. Documents with many levels (for example, a deep başlık hierarchy) become unwieldy and difficult to
-navigate. On such occasions, it is advisable to spread the content over multiple pages if possible.
-Why do we need structure?
-To answer this question, let's take a look at 
-—a nice hummus recipe. This document's body currently
-contains multiple pieces of content. They aren't marked up in any way, but they are separated with line breaks
-(Enter/Return pressed to go onto the next line).
-However, when you 
-, you'll see that the text appears as a big chunk!
-text-start.html
-open the document in your tarayıcı
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-3/6
+Bir favicon sayfaya şu şekilde eklenir:
 
-This is because there are no elements to give the content structure, so the tarayıcı does not know what is a başlık and
-what is a paragraf. Furthermore:
-Users looking at a web sayfası tend to scan quickly to find relevant content, often just reading the başlıks, to
-begin with. (We usually 
-.) If they can't see anything useful within a few
-seconds, they'll likely get frustrated and go somewhere else.
-Search engines indexing your page consider the contents of başlıks as important keywords for influencing the
-page's search rankings. Without başlıks, your page will perform poorly in terms of SEO (Search Engine
-Optimization).
-Severely visually impaired people often don't read web sayfasıs; they listen to them instead. This is done with
-software called a 
-. This software provides ways to get fast access to given text content. Among
-the various techniques used, they provide an outline of the document by reading out the başlıks, allowing their
-users to find the information they need quickly. If başlıks are not available, they will be forced to listen to the
-whole document read out loud.
-To style content with CSS, or make it do interesting things with JavaScript, you need to have elements wrapping
-the relevant content, so CSS/JavaScript can effectively target it.
-Therefore, we need to give our content structural markup.
-Giving content structure
-Let's jump straight in and get you to solve a small code challenge to gain practice with HTML başlıks and paragrafs:
-1. Click "Play" in the code block below to edit the example in the MDN Playground.
-2. Wrap the appropriate text at the start of the content inside an <h1>  element to turn it into a main başlık.
-3. There are two pairs of words that should be wrapped inside <h2>  elements to turn them into second level
-başlıks.
-4. Wrap the remaining sentences in <p>  elements to turn them into paragrafs. One <p>  element should sit below
-each <h2>  element.
-spend a very short time on a web sayfası
-ekran okuyucu
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-4/6
+1. `.ico`, `.gif` veya `.png` gibi desteklenen bir formatta web sitesi klasör yapınızın içine kaydedin.
+2. HTML'inizin `<head>` bloğuna, favicon dosyasının yolunu referans veren bir `<link>` elementi ekleyin:
 
-If you make a mistake, you can clear your work using the Reset button in the MDN Playground. If you get really stuck,
-you can view the solution below the code block.
-HTML
-Favorite body parts The brain Lovely shape and color. Also does thinkin' stuff.
-The feet Knobbly and ugly, but useful for getting about.
-Favorite body parts The brain Lovely shape and color. Also does thinkin' stuff. The feet Knobbly and
-ugly, but useful for getting about.
-Click here to show the solution
-Why do we need semantics?
-Semantics are relied on everywhere around us—we rely on previous experience to tell us what the function of an
-everyday object is; when we see something, we know what its function will be. So, for example, we expect a red traffic
-light to mean "stop," and a green traffic light to mean "go." Things can get tricky very quickly if the wrong semantics are
-applied. (Do any countries use red to mean "go"? We hope not.)
-In a similar way, we need to make sure we are using the correct elements, giving our content the correct meaning,
-function, or appearance. In this context, the <h1>  element is also a semantic element, which gives the text it wraps
-around the role (or meaning) of "a top level başlık on your page."
-HTML
-<h1>This is a top level başlık</h1>
-By default, the tarayıcı will give it a large font size to make it look like a başlık (although you could style it to look like
-anything you wanted using CSS). More importantly, its semantic value will be used in multiple ways, for example by
-search engines and ekran okuyucus (as mentioned above).
-On the other hand, you could make any element look like a top level başlık. Consider the following:
-HTML
-<span style="font-size: 32px; margin: 21px 0; display: block;">
-Is this a top level başlık?
-</span>
-This is a <span>  element. It has no semantics. You use it to wrap content when you want to apply CSS to it (or do
-something to it with JavaScript) without giving it any extra meaning. (You'll find out more about these later on in the
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-5/6
+```html
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+```
 
-course.) We've applied some CSS to it to make it look like a top level başlık, but since it has no semantic value, it will
-not get any of the extra benefits described above. It is a good idea to use the relevant HTML element for the job.
-Summary
-This concludes our study of HTML başlıks and paragrafs. Sonraki, we will look at more aspects of semantic HTML:
-giving words emphasis.
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-15.10.2026 20:22
-Başlıklar ve paragraflar - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragrafs
-6/6
+> [!NOTE]
+> Bu örnekte favicon yolunun `/` ile başlaması, "dosyayı sitenizin en üst düzey (root / kök) dizininde ara" anlamına gelir. Modern tarayıcılar genellikle sitenin kök dizininde bulunan `favicon.ico` dosyasını otomatik olarak favicon kabul eder, bu nedenle birçok site `<link>` elementini yazma gereği bile duymaz. Ancak simgeyi başka bir konumda barındırmak istiyorsanız açık bir `<link>` elementi kullanışlıdır.
 
+Farklı cihazlar ve bağlamlar için farklı simgeler de ekleyebilirsiniz:
+
+```html
+<!-- Yüksek çözünürlüklü Retina ekranlı iPad Pro için: -->
+<link
+  rel="apple-touch-icon"
+  sizes="167x167"
+  href="/apple-touch-icon-167x167.png" />
+<!-- 3x çözünürlüklü iPhone için: -->
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/apple-touch-icon-180x180.png" />
+<!-- Retina olmayan iPad, iPad mini vb. için: -->
+<link
+  rel="apple-touch-icon"
+  sizes="152x152"
+  href="/apple-touch-icon-152x152.png" />
+<!-- 2x çözünürlüklü iPhone ve diğer cihazlar için: -->
+<link rel="apple-touch-icon" href="/apple-touch-icon-120x120.png" />
+<!-- Temel favicon -->
+<link rel="icon" href="/favicon.ico" />
+```
 
 ---
 
-# Vurgu ve önem
+## HTML'e CSS ve JavaScript uygulama
 
-## HTML
+Modern çağda kullanacağınız hemen hemen tüm web siteleri, estetik bir görünüm için **CSS**'i; video oynatıcılar, haritalar ve oyunlar gibi etkileşimli işlevleri güçlendirmek içinse **JavaScript**'i kullanır. Bunlar bir web sayfasına çoğunlukla sırasıyla `<link>` ve `<script>` elementleri kullanılarak uygulanır.
 
-# Vurgu ve önem
-
-## İngilizce (ABD)
-
-# Vurgu ve önem
-
-Önceki
-
-Genel bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Önceki makale, HTML'de semantiğin neden önemli olduğuna baktı ve başlıklar ile paragraflara odaklandı. Bu makale, semantik temasını sürdürerek metne vurgu ve önem uygulayan HTML öğelerine bakar (basılı medyadaki italik ve kalın metne paralel olarak).
-
-### Ön koşullar:
-
-Temel HTML bilgisi; Basic HTML Syntax bölümünde ele alındığı gibi.
-
-### Öğrenme çıktıları:
-
-HTML'de vurguyu ve önemi ifade eden anlam ve bunları uygulayan temel öğeler, örneğin `<em>` ve `<strong>`.
-
-Artık hiç kullanılmaması gereken sunumsal işaretlemeyi tanımlama (ör. `<big>` ve `<font>`); bunlar kullanımdan kaldırılmıştır.
-
-Yeni semantik anlam kazanacak şekilde yeniden amaçlandırılmış sunumsal işaretlemeyi tanımlama (ör. `<i>` ve `<b>`).
-
-## Vurgu ve önem nedir?
-
-İnsan dilinde, bir cümlenin anlamını değiştirmek için belirli kelimeleri sık sık vurgularız ve çoğu zaman belirli kelimeleri önemli ya da bir bakıma farklı olarak işaretlemek isteriz. HTML, metin içeriğini bu tür etkilerle işaretlememize olanak tanıyan çeşitli semantik öğeler sağlar ve bu bölümde en yaygın olanlardan birkaçına bakacağız.
-
-## Vurgu
-
-Sözlü dilde vurgu eklemek istediğimizde, belirli kelimeleri vurgulayarak söylediklerimizin anlamını ince biçimde değiştiririz. Benzer şekilde, yazılı dilde de kelimeleri italik yaparak vurgulama eğilimindeyiz. Örneğin, aşağıdaki iki cümle farklı anlamlara sahiptir.
-
-Ben geç kalmadığın için memnunum.
-
-Ben geç kalmadığın için memnunum.
-
-İlk cümle, kişinin geç kalmamış olmasından gerçekten rahatlama duyulduğunu ifade eder. Buna karşılık, hem "memnun" hem de "geç" kelimeleri italik yazılmış ikinci cümle, kişinin biraz geç gelmesinden duyulan rahatsızlığı ifade eden alaycı ya da pasif-agresif bir ton taşır.
-
-HTML'de bu tür durumları işaretlemek için `<em>` (vurgu) öğesini kullanırız. Belgeyi okumayı daha ilginç hale getirmenin yanı sıra, bunlar ekran okuyucular tarafından da tanınır; ekran okuyucular bunları farklı bir ses tonuyla okuyacak şekilde yapılandırılabilir. Tarayıcılar bunu varsayılan olarak italik biçimde gösterir, ancak sadece italik görünüm elde etmek için bu etiketi kullanmamalısınız. Bunun için bir `<span>` öğesi ve biraz CSS ya da belki bir `<i>` öğesi kullanırsınız (aşağıya bakın).
+* `<link>` elementi daima belgenizin head bölümüne yerleştirilmelidir. İki temel nitelik alır: belgenin stil sayfası olduğunu belirten `rel="stylesheet"` ve stil dosyasına giden yolu içeren `href`:
 
 ```html
-<p>Ben <em>memnun</em> oldum çünkü geç <em>kalmadın</em>.</p>
+<link rel="stylesheet" href="my-css-file.css" />
 ```
 
-## Güçlü önem
-
-Önemli kelimeleri vurgulamak için, konuşurken genellikle onları daha belirgin söyler ve yazıda kalın yaparız. Örneğin:
-
-Bu sıvı son derece zehirlidir.
-
-Sana güveniyorum. Geç kalma!
-
-HTML'de bu tür durumları işaretlemek için `<strong>` (güçlü önem) öğesini kullanırız. Belgeyi daha kullanışlı hale getirmenin yanı sıra, bunlar da ekran okuyucular tarafından tanınır; ekran okuyucular bunları farklı bir ses tonuyla okuyacak şekilde yapılandırılabilir. Tarayıcılar bunu varsayılan olarak kalın metin biçiminde gösterir, ancak sadece kalın görünüm elde etmek için bu etiketi kullanmamalısınız. Bunun için bir `<span>` öğesi ve biraz CSS ya da belki bir `<b>` öğesi kullanırsınız (aşağıya bakın).
+* `<script>` elementi de head içine yerleştirilebilir ve yüklemek istediğiniz JavaScript'in yolunu içeren bir `src` niteliği ile sayfa HTML'i ayrıştırmayı bitirdikten sonra JavaScript'i yüklemesini tarayıcıya bildiren bir boolean nitelik olan `defer` niteliğini içermelidir:
 
 ```html
-<p>Bu sıvı <strong>son derece zehirlidir</strong>.</p>
-
-<p>Sana güveniyorum. <strong>Geç</strong> kalma!</p>
+<script src="my-js-file.js" defer></script>
 ```
 
-İsterseniz güçlü önem ve vurguyu birbirinin içine yuvalayabilirsiniz:
+`defer` niteliği, JavaScript henüz sayfada mevcut olmayan bir HTML elementine erişmeye çalışırken hata vermesin diye, JavaScript çalışmadan önce tüm HTML'in yüklenmesini garanti eder.
+
+> [!NOTE]
+> `<script>` elementi boş bir element (void element) gibi görünebilir, ancak **değildir**; bu yüzden mutlaka bir kapanış etiketine (`</script>`) ihtiyaç duyar. Harici bir betik dosyasına işaret etmek yerine betik kodunuzu doğrudan `<script>` etiketleri arasına da yazabilirsiniz.
+
+---
+
+## Belgenin birincil dilini ayarlama
+
+Son olarak, sayfanızın dilini belirtebileceğinizi (ve kesinlikle belirtmeniz gerektiğini) belirtmek gerekir. Bu, açılış `<html>` etiketine `lang` niteliği eklenerek yapılır:
 
 ```html
-<p>Bu sıvı <strong>son derece zehirlidir</strong> — eğer onu içerseniz, <strong><em>ölebilirsiniz</em></strong>.</p>
+<html lang="en-US">
+  …
+</html>
 ```
 
-Bu sıvı son derece zehirlidir.
+Bu ayar birçok açıdan yararlıdır:
+1. Dil ayarlandığında HTML belgeniz arama motorları tarafından daha etkili indekslenir (örneğin dile özel sonuçlarda doğru görünür).
+2. Ekran okuyucu kullanan görme engelli kişiler için faydalıdır (örneğin "six" kelimesi hem İngilizcede hem de Fransızcada vardır ancak tamamen farklı telaffuz edilir).
 
-Sana güveniyorum. Geç kalma!
-
-Bu sıvı son derece zehirlidir — eğer onu içerseniz, ölebilirsiniz.
-
-## Vurgu ve önemle oynayalım
-
-Bu bölümde vurgu ve önem ile oynamanızı istiyoruz:
-
-1. Aşağıdaki kod bloğunda örneği MDN Playground'da düzenlemek için "Play" düğmesine tıklayın.
-2. Ana başlıkta "Emphasis" kelimesine vurgu, "importance" kelimesine güçlü önem verin.
-3. İlk paragrafta kahve makinesi adına güçlü önem verin ve kahveyi tanımlamak için kullanılan sıfatları vurgulayın.
-4. İkinci paragrafta sıcaklık açıklamasına (`"cold"`) ve yapmanız gereken eyleme (`"wrap up warm to avoid falling ill"`) güçlü önem verin. `"falling ill"` ifadesine hem vurgulanmış hem de önemli olacak şekilde ek işaretleme verin.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Gerçekten takılırsanız, çözümü kod bloğunun altında görebilirsiniz.
+Belgenizin alt bölümlerinin farklı dillerde tanınmasını da sağlayabilirsiniz. Örneğin, Japonca bölümümüzün Japonca olarak tanınmasını şu şekilde sağlayabiliriz:
 
 ```html
-<h1>Vurgu ve önem</h1>
-
-<p>
-
-Yeni kahve makinemin adı The Percolator 2000. En
-
-sublime ve wonderful kahveyi üretir.
-
-</p>
-
-<p>
-
-Kışın en soğuk günlerinde, hava cold olacaktır. Hasta olmamak için sıcak giyinmelisiniz.
-
-</p>
+<p>Japanese example: <span lang="ja">ご飯が熱い。</span>.</p>
 ```
 
-Vurgu ve önem
+Bu dil kodları **ISO 639-1** standardı tarafından tanımlanmıştır.
 
-Yeni kahve makinemin adı The Percolator 2000. En sublime ve wonderful kahveyi üretir.
-
-Kışın en soğuk günlerinde, hava cold olacaktır. Hasta olmamak için sıcak giyinmelisiniz.
-
-Çözümü göstermek için buraya tıklayın
-
-## İtalik, kalın, altı çizili…
-
-Şimdiye kadar tartıştığımız öğelerin ilişkili semantik anlamları nettir. `<b>`, `<i>` ve `<u>` ile durum biraz daha karmaşıktır. Bunlar, CSS'in hâlâ zayıf desteklendiği ya da hiç desteklenmediği bir dönemde insanların kalın, italik veya altı çizili metin yazabilmesi için ortaya çıktı. Yalnızca görünümü etkileyen, semantiği etkilemeyen bu tür öğeler sunumsal öğeler olarak bilinir ve artık kullanılmamalıdır; çünkü daha önce gördüğümüz gibi semantik, erişilebilirlik, SEO vb. için çok önemlidir.
-
-HTML5, `<b>`, `<i>` ve `<u>` öğelerini yeni ve bir miktar kafa karıştırıcı semantik rollerle yeniden tanımladı.
-
-Unutabileceğiniz en iyi kural şudur: Geleneksel olarak kalın, italik ya da altı çizili ile aktarılan bir anlamı vermek için `<b>`, `<i>` veya `<u>` kullanmak ancak daha uygun bir öğe yoksa uygundur; ve genellikle vardır. `<strong>`, `<em>`, `<mark>` veya `<span>` daha uygun olabilir mi diye düşünün.
-
-Her zaman erişilebilirlik odaklı düşünün. İtalik kavramı, ekran okuyucu kullanan kişiler ya da Latin alfabesi dışındaki bir yazı sistemi kullanan kişiler için pek yararlı değildir.
-
-`<i>`, geleneksel olarak italikle aktarılan bir anlamı vermek için kullanılır: yabancı kelimeler, taksonomik adlandırmalar, teknik terimler, bir düşünce…
-
-`<b>`, geleneksel olarak kalın ile aktarılan bir anlamı vermek için kullanılır: anahtar kelimeler, ürün adları, giriş cümlesi…
-
-`<u>`, geleneksel olarak altı çizili ile aktarılan bir anlamı vermek için kullanılır: özel ad, yanlış yazım…
-
-Not: İnsanlar altı çiziliyi güçlü biçimde bağlantılarla ilişkilendirir. Bu nedenle web'de yalnızca bağlantıların altını çizmek en iyisidir. Anlamsal olarak uygun olduğunda `<u>` öğesini kullanın, ancak web'de varsayılan altı çizgiyi daha uygun bir şeyle değiştirmek için CSS kullanmayı düşünün. Aşağıdaki örnek bunun nasıl yapılabileceğini gösterir.
-
-```html
-<!-- bilimsel adlar -->
-
-<p>
-
-Kızıl boğazlı sinekkuşu (<i>Archilochus colubris</i>) Doğu Kuzey Amerika'daki en yaygın
-
-sinekkuşudur.
-
-</p>
-
-<!-- yabancı kelimeler -->
-
-<p>
-
-Menü, <i lang="uk-latn">vatrushka</i>,
-
-<i lang="id">nasi goreng</i> ve <i lang="fr">soupe à l'oignon</i> gibi egzotik kelimeler deniziydi.
-
-</p>
-
-<!-- bilinen bir yanlış yazım -->
-
-<p>Bir gün nasıl daha iyi <u class="spelling-error">spel</u> yazılacağını öğreneceğim.</p>
-
-<!-- tanım verilirken tanımlanan terim -->
-
-<dl>
-
-<dt>Anlamsal HTML</dt>
-
-<dd>
-
-Öğeleri görünüşlerine göre değil, anlamsal anlamlarına göre kullanın.
-
-</dd>
-
-</dl>
-```
-
-Kızıl boğazlı sinekkuşu (Archilochus colubris) Doğu Kuzey Amerika'daki en yaygın sinekkuşudur.
-
-Menü, vatrushka, nasi goreng ve soupe à l'oignon gibi egzotik kelimeler deniziydi.
-
-Bir gün nasıl daha iyi spel yazılacağını öğreneceğim.
-
-Anlamsal HTML
-
-Öğeleri görünüşlerine göre değil, anlamsal anlamlarına göre kullanın.
+---
 
 ## Özet
 
-Şimdilik vurgu ve önem konusunu burada bitiriyoruz. Şimdi HTML'de listeleri nasıl temsil edeceğimize bakalım.
-
-Önceki
-
-Genel bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Daha iyi bir internet için planınız.
+Bu bölüm, HTML head konusundaki hızlı turumuzun sonunu işaret ediyor. Bir sonraki makalede HTML'de başlıklar ve paragraflara (**Headings and paragraphs**) bakacağız.
 
 ---
 
-# Listeler
+# 3. Başlıklar ve paragraflar
 
-## HTML
+**HTML** > **Headings and paragraphs** | English (US)
 
-# Listeler
+HTML'in ana görevlerinden biri, bir tarayıcının bir HTML belgesini geliştiricisinin amaçladığı şekilde görüntüleyebilmesi için metne yapı kazandırmaktır. Bu makale, başlıkları ve paragrafları tanımlayarak temel sayfa yapısını sağlamak için HTML'in nasıl kullanılabileceğini açıklar.
 
-## İngilizce (ABD)
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Başlıklar ve bu başlıkların altındaki içeriklerle iyi bir belge yapısı oluşturma.<br>• Prezentasyonel (görsel) HTML yerine anlamsal (semantic) HTML kullanma ve bunun neden önemli olduğu.<br>• Başlık düzeylerinin mantıksal bir sırayla kullanılması gerekliliği (düzey atlamamak veya belirli bir yazı tipi boyutuna ulaşmak için gelişigüzel kullanmamak).<br>• SEO faydaları: örneğin anahtar kelimelerin başlıklarda daha fazla ağırlık kazanması.<br>• Erişilebilirlik faydaları: Ekran okuyucuların içerikte gezinmek için başlıkları işaret direkleri olarak kullanması. |
 
-Önceki
+---
 
-Genel bakış: HTML ile içeriği yapılandırma
+## Başlıklar ve paragraflar
 
-Sonraki
+Yapılandırılmış metinlerin çoğu; ister bir hikaye, gazete, ders kitabı veya dergi okuyor olun, başlıklardan ve paragraflardan oluşur. Yapılandırılmış içerik, okuma deneyimini kolaylaştırır ve daha keyifli hale getirir.
 
-Şimdi dikkatimizi listelere çevirelim. Listeler hayatın her yerindedir — alışveriş listenizden, her gün farkında olmadan evinize giderken takip ettiğiniz yönler listesine, bu eğitimlerde izlediğiniz yönergeler listesine kadar! HTML'nin farklı türde listeler tanımlamamıza olanak sağlayan kullanışlı bir öğe kümesine sahip olması şaşırtıcı olmayabilir. Web'de üç tür liste vardır: sırasız, sıralı ve açıklama listeleri. Bu ders, bunları nasıl kullanacağınızı gösterir.
+HTML'de her paragraf bir `<p>` elementi içine sarılmalıdır:
 
-### Ön koşullar:
+```html
+<p>I am a paragraph, oh yes I am.</p>
+```
 
-Temel HTML bilgisi; Basic HTML Syntax bölümünde ele alındığı gibi.
+Her başlık bir başlık elementi içine sarılmalıdır:
 
-### Öğrenme çıktıları:
+```html
+<h1>I am the title of the story.</h1>
+```
 
-Üç liste türü için HTML yapısı — sırasız, sıralı ve açıklama.
+HTML'de altı başlık elementi bulunur: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` ve `<h6>`. Her element belgedeki farklı bir içerik düzeyini temsil eder: `<h1>` ana başlığı, `<h2>` alt başlıkları, `<h3>` alt-alt başlıkları temsil eder ve bu şekilde devam eder.
 
-Her liste türü için doğru kullanım.
+---
 
-Gezinme menüleri gibi listelerin daha geniş kullanım alanları.
+## Yapısal hiyerarşiyi uygulama
+
+Örneğin bir hikayede `<h1>` hikayenin başlığını, `<h2>` her bölümün başlığını ve `<h3>` her bölümün alt kısımlarını temsil eder:
+
+```html
+<h1>The Crushing Bore</h1>
+
+<p>By Chris Mills</p>
+
+<h2>Chapter 1: The dark night</h2>
+
+<p>
+  It was a dark night. Somewhere, an owl hooted. The rain lashed down on the…
+</p>
+
+<h2>Chapter 2: The eternal silence</h2>
+
+<p>Our protagonist could not so much as a whisper out of the shadowy figure…</p>
+
+<h3>The specter speaks</h3>
+
+<p>
+  Several more hours had passed, when all of a sudden the specter sat bolt
+  upright and exclaimed, "Please have mercy on my soul!"
+</p>
+```
+
+Hiyerarşi mantıklı olduğu sürece ilgili elementlerin neyi temsil ettiği size bağlıdır. Bu tür yapıları oluştururken aklınızda bulundurmanız gereken birkaç en iyi uygulama şunlardır:
+
+* **Tercihen sayfa başına tek bir `<h1>` kullanmalısınız** — bu en üst düzey başlıktır ve diğer tüm başlıklar hiyerarşide bunun altında yer alır.
+* **Başlıkları hiyerarşide doğru sırada kullandığınızdan emin olun.** Alt başlıkları temsil etmek için `<h3>`, ardından alt-alt başlıkları temsil etmek için `<h2>` kullanmayın; bu anlamsızdır ve garip sonuçlara yol açar.
+* **Kullanılabilir altı başlık düzeyinden, gerekli hissetmediğiniz sürece sayfa başına üçten fazlasını kullanmamayı hedeflemelisiniz.** Çok sayıda düzeye sahip belgeler hantal ve gezinmesi zor hale gelir.
+
+---
+
+## Neden yapıya ihtiyacımız var?
+
+Bu soruyu yanıtlamak için biçimlendirilmemiş ham bir metni ele alalım. İçeriğe yapı kazandıracak hiçbir element olmadığında, tarayıcı neyin başlık neyin paragraf olduğunu bilemez ve tüm metni tek bir devasa blok olarak görüntüler.
+
+Ayrıca:
+* **Kullanıcılar** sayfayı hızla tarayarak ilgili içeriği bulma eğilimindedir; başlangıçta sadece başlıkları okurlar. Birkaç saniye içinde yararlı bir şey göremezlerse sayfayı terk ederler.
+* Sayfanızı indeksleyen **arama motorları**, başlıkların içeriğini sayfanın arama sıralamasını etkileyen önemli anahtar kelimeler olarak değerlendirir. Başlıklar olmadan sayfanız SEO açısından zayıf kalır.
+* **Ekran okuyucular**, başlıkları sesli okuyarak belgenin genel hatlarını sunar ve kullanıcıların ihtiyaç duydukları bilgiyi hızla bulmalarını sağlar. Başlıklar yoksa, kullanıcı tüm belgeyi baştan sona dinlemek zorunda kalır.
+* İçeriği **CSS** ile stillendirmek veya **JavaScript** ile etkileşimli hale getirmek için, ilgili içeriği saran elementlere ihtiyacınız vardır.
+
+Bu nedenle içeriğimize yapısal işaretleme (structural markup) kazandırmalıyız.
+
+---
+
+## İçeriğe yapı kazandırma alıştırması
+
+Görev:
+1. İçeriğin başındaki ana metni `<h1>` elementi içine sararak ana başlığa dönüştürün.
+2. İki çift kelimeyi `<h2>` elementleri içine alarak ikinci düzey başlıklara dönüştürün.
+3. Kalan cümleleri `<p>` elementleri içine alarak paragraflara dönüştürün. Her `<h2>` altına bir `<p>` gelmelidir.
+
+```html
+<h1>Favorite body parts</h1>
+
+<h2>The brain</h2>
+
+<p>Lovely shape and color. Also does thinkin' stuff.</p>
+
+<h2>The feet</h2>
+
+<p>Knobbly and ugly, but useful for getting about.</p>
+```
+
+---
+
+## Neden anlambilime (semantiğe) ihtiyacımız var?
+
+Çevremizdeki her yerde semantiğe (anlambilime) güveniriz. Örneğin kırmızı bir trafik ışığının "dur", yeşil bir trafik ışığının "geç" anlamına geldiğini biliriz. Yanlış semantik uygulandığında işler çok hızlı bir şekilde karışır.
+
+Benzer şekilde, doğru elementleri kullandığımızdan, içeriğimize doğru anlamı, işlevi veya görünümü kazandırdığımızdan emin olmalıyız. `<h1>` elementi, sardığı metne "sayfanızdaki en üst düzey başlık" rolünü (veya anlamını) veren anlamsal bir elementtir:
+
+```html
+<h1>This is a top level heading</h1>
+```
+
+Varsayılan olarak tarayıcı başlık gibi görünmesi için ona büyük bir yazı tipi boyutu verir. Daha da önemlisi, anlamsal değeri arama motorları ve ekran okuyucular tarafından kullanılır.
+
+Buna karşılık, herhangi bir elementi CSS ile en üst düzey başlık gibi *gösterebilirsiniz*:
+
+```html
+<span style="font-size: 32px; margin: 21px 0; display: block;">
+  Is this a top level heading?
+</span>
+```
+
+Bu bir `<span>` elementidir. Hiçbir anlamsal değeri yoktur. Ekstra bir anlam yüklemeden sadece CSS uygulamak için kullanılır. Başlık gibi görünse bile hiçbir anlamsal fayda sağlamaz. Bu nedenle her iş için ilgili HTML elementini kullanmak en doğrusudur.
+
+---
+
+## Özet
+
+Bu bölümle birlikte HTML başlıkları ve paragrafları incelememizi tamamladık. Sırada kelimelere vurgu kazandırma (**Emphasis and importance**) konusu var.
+
+---
+
+# 4. Vurgu ve önem derecesi
+
+**HTML** > **Emphasis and importance** | English (US)
+
+Önceki makalede HTML'de semantiğin neden önemli olduğuna baktık ve başlıklara ile paragraflara odaklandık. Bu makale, metne vurgu ve önem kazandıran HTML elementlerini inceleyerek semantik temasını sürdürmektedir.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Vurgu (emphasis) ve önemin (importance) anlamı; bunları HTML'de uygulayan `<em>` ve `<strong>` gibi temel elementler.<br>• Artık kesinlikle kullanılmaması gereken prezentasyonel işaretlemeler (`<big>` ve `<font>` gibi kullanım dışı / deprecated etiketler).<br>• Yeni anlamsal anlamlar verilerek yeniden tanımlanmış prezentasyonel işaretlemeler (`<i>` ve `<b>`). |
+
+---
+
+## Vurgu ve önem nedir?
+
+İnsan dilinde, bir cümlenin anlamını değiştirmek için genellikle belirli kelimeleri vurgularız ve belirli kelimeleri önemli veya farklı olarak işaretlemek isteriz. HTML, metinsel içeriği bu tür etkilerle işaretlememizi sağlayan çeşitli semantik elementler sunar.
+
+### Vurgu
+
+Konuşma dilinde vurgu eklemek istediğimizde belirli kelimeleri baskılı söyleriz ve söylediğimiz şeyin anlamını incelikle değiştiririz. Benzer şekilde, yazı dilinde kelimeleri italik yaparak vurgulama eğilimindeyizdir. Örneğin, aşağıdaki iki cümle farklı anlamlara sahiptir:
+
+> I am glad you weren't late. (Geç kalmadığına sevindim.)
+>
+> I am *glad* you weren't *late*. (*Geç* kalmadığına *sevindim*.)
+
+İlk cümle, kişinin geç kalmadığına gerçekten rahatlamış görünmektedir. Buna karşılık, hem "glad" hem de "late" kelimelerinin italik olduğu ikincisi, alaycı veya pasif-agresif bir ton taşır; kişinin biraz geç gelmesine duyulan rahatsızlığı ifade eder.
+
+HTML'de bu tür durumları işaretlemek için `<em>` (emphasis) elementini kullanırız. Belgeyi okumayı daha ilginç kılmanın yanı sıra, bunlar ekran okuyucular tarafından tanınır ve farklı bir ses tonuyla seslendirilebilir. Tarayıcılar bunu varsayılan olarak italik biçimlendirir, ancak bu etiketi yalnızca italik stil elde etmek için kullanmamalısınız.
+
+```html
+<p>I am <em>glad</em> you weren't <em>late</em>.</p>
+```
+
+### Güçlü önem
+
+Önemli kelimeleri vurgulamak için, konuşma dilinde onları baskılı söyler, yazı dilinde ise **kalın (bold)** yaparız. Örneğin:
+
+> This liquid is **highly toxic**. (Bu sıvı **son derece zehirlidir**.)
+>
+> I am counting on you. **Do not** be late! (Sana güveniyorum. **Sakın** geç kalma!)
+
+HTML'de bu tür durumları işaretlemek için `<strong>` (strong importance) elementini kullanırız. Bunlar da ekran okuyucular tarafından tanınır. Tarayıcılar bunu varsayılan olarak kalın metin şeklinde biçimlendirir. Yalnızca kalın stil elde etmek için bu etiketi kullanmamalısınız.
+
+```html
+<p>This liquid is <strong>highly toxic</strong>.</p>
+
+<p>I am counting on you. <strong>Do not</strong> be late!</p>
+```
+
+İstenirse `<strong>` ve `<em>` birbirinin içine yerleştirilebilir:
+
+```html
+<p>This liquid is <strong>highly toxic</strong> — if you drink it, <strong>you may <em>die</em></strong>.</p>
+```
+
+---
+
+## Vurgu ve önem alıştırması
+
+Görev:
+1. Ana başlıkta "Emphasis" kelimesine vurgu (`<em>`), "importance" kelimesine ise güçlü önem (`<strong>`) verin.
+2. İlk paragrafta kahve makinesi adına güçlü önem verin ve kahveyi tanımlamak için kullanılan sıfatları vurgulayın.
+3. İkinci paragrafta sıcaklık açıklamasına ("cold") ve yapılması gereken eyleme ("wrap up warm to avoid falling ill") güçlü önem verin. "falling ill" ifadesine ekstra işaretleme ekleyerek hem vurgulu hem de önemli olmasını sağlayın.
+
+Çözüm:
+
+```html
+<h1><em>Emphasis</em> and <strong>importance</strong></h1>
+
+<p>
+  My new coffee machine is called <strong>The Percolator 2000</strong>. It
+  produces the most <em>sublime</em> and <em>wonderful</em> brew.
+</p>
+
+<p>
+  In the dead of winter, it will be <strong>cold</strong>. You should
+  <strong>wrap up warm to avoid <em>falling ill</em></strong>.
+</p>
+```
+
+---
+
+## İtalik, kalın, altı çizili…
+
+Şimdiye kadar tartıştığımız elementler net anlamsal karşılıklara sahiptir. `<b>`, `<i>` ve `<u>` etiketlerinin durumu ise biraz daha karmaşıktır. Bunlar, CSS'in henüz desteklenmediği veya zayıf desteklendiği bir dönemde insanların kalın, italik veya altı çizili metin yazabilmeleri için ortaya çıkmıştı. Yalnızca sunumu etkileyen ve semantiği etkilemeyen bu tür elementler **prezentasyonel elementler** olarak bilinir ve artık kullanılmamalıdır.
+
+HTML5; `<b>`, `<i>` ve `<u>` etiketlerini yeni, biraz kafa karıştırıcı anlamsal rollerle yeniden tanımladı:
+
+* `<i>`: Geleneksel olarak italik ile aktarılan anlamları iletmek için kullanılır: yabancı kelimeler, taksonomik adlandırmalar, teknik terimler, bir düşünce...
+* `<b>`: Geleneksel olarak kalın ile aktarılan anlamları iletmek için kullanılır: anahtar kelimeler, ürün adları, giriş cümlesi...
+* `<u>`: Geleneksel olarak altı çizili ile aktarılan anlamları iletmek için kullanılır: özel isim, yazım hatası...
+
+> [!NOTE]
+> İnsanlar altı çizili metni güçlü bir şekilde köprülerle (linklerle) ilişkilendirir. Bu nedenle web üzerinde yalnızca bağlantıların altını çizmek en iyi uygulamadır. `<u>` elementini yalnızca anlamsal olarak uygun olduğunda kullanın ve gerekirse alt çizgiyi CSS ile farklılaştırın.
+
+Örnekler:
+
+```html
+<!-- Bilimsel adlar -->
+<p>
+  The Ruby-throated Hummingbird (<i>Archilochus colubris</i>) is the most common
+  hummingbird in Eastern North America.
+</p>
+
+<!-- Yabancı kelimeler -->
+<p>
+  The menu was a sea of exotic words like <i lang="uk-latn">vatrushka</i>,
+  <i lang="id">nasi goreng</i> and <i lang="fr">soupe à l'oignon</i>.
+</p>
+
+<!-- Bilinen bir yazım hatası -->
+<p>Someday I'll learn how to <u class="spelling-error">spel</u> better.</p>
+
+<!-- Bir tanım içinde tanımlanan terim -->
+<dl>
+  <dt>Semantic HTML</dt>
+  <dd>
+    Use the elements based on their <b>semantic</b> meaning, not their
+    appearance.
+  </dd>
+</dl>
+```
+
+---
+
+## Özet
+
+Vurgu ve önem konusunu tamamladık. Sırada HTML'de listelerin nasıl temsil edildiğini inceleyeceğimiz **Lists** makalesi var.
+
+---
+
+# 5. Listeler
+
+**HTML** > **Lists** | English (US)
+
+Şimdi dikkatimizi listelere çevirelim. Listeler hayatın her yerindedir — alışveriş listenizden her gün evinize gitmek için bilinçaltınızda takip ettiğiniz yol tariflerine, bu eğitimlerde izlediğiniz talimat listelerine kadar! HTML'in farklı liste türlerini tanımlamamıza olanak tanıyan kullanışlı bir element kümesine sahip olması şaşırtıcı değildir. Web üzerinde üç tür liste bulunur: sırasız (unordered), sıralı (ordered) ve açıklama (description) listeleri.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Üç liste türü (sırasız, sıralı ve açıklama) için HTML yapısı.<br>• Her liste türü için doğru kullanım senaryoları.<br>• Gezinti menüleri (navigation menus) gibi listelerin daha geniş kullanım alanları. |
+
+---
 
 ## Sırasız listeler
 
-Sırasız listeler, öğelerin sırasının önemli olmadığı öğe listelerini işaretlemek için kullanılır. Bir market alışveriş listesini örnek alalım:
+Sırasız listeler, öğelerin sırasının önemli olmadığı durumları işaretlemek için kullanılır. Alışveriş listesini ele alalım:
 
-- süt
-- yumurta
-- ekmek
-- humus
+```plain
+milk
+eggs
+bread
+hummus
+```
 
-Bu örnekte öğeler herhangi bir sırada olabilir. Bu listeyi HTML'de oluşturmak için önce tüm listeyi bir `<ul>` (unordered list) öğesi içine alırız. Sonra her öğeyi bir `<li>` (list item) öğesi içine alırız:
+Bu örnekte öğelerin sırası fark etmez. HTML'de bu listeyi oluşturmak için önce listenin tamamını bir `<ul>` (unordered list) elementi içine sararız. Ardından her öğeyi bir `<li>` (list item) elementi içine sararız:
 
 ```html
 <ul>
-<li>süt</li>
-<li>yumurta</li>
-<li>ekmek</li>
-<li>humus</li>
+  <li>milk</li>
+  <li>eggs</li>
+  <li>bread</li>
+  <li>hummus</li>
 </ul>
 ```
 
-## Sırasız bir listeyi işaretleme
+---
 
-Size biraz pratik yaptırmak için, önceki listeyi kendiniz işaretlemeyi denemenizi istiyoruz:
+## Sıralı listeler
 
-1. Aşağıdaki oluşturulmuş kod çıktısında örneği düzenlemek için "Play" düğmesine tıklayın.
-2. Tek tek metin öğelerini sırasız bir listeye dönüştürün.
+Sıralı listeler, öğelerin sırasının *önemli olduğu* listelerdir. Bir yol tarifini ele alalım:
 
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Takılırsanız, önceki kod parçasına geri dönün.
+```plain
+Drive to the end of the road
+Turn right
+Go straight across the first two roundabouts
+Turn left at the third roundabout
+The school is on your right, 300 meters up the road
+```
 
-süt yumurta ekmek humus
-
-## Sıralı
-
-Sıralı listeler, öğelerin sırasının önemli olduğu listelerdir. Bir yol tarifi kümesini örnek alalım:
-
-- Yolun sonuna kadar sürün
-- Sağa dönün
-- İlk iki kavşaktan dümdüz geçin
-- Üçüncü kavşakta sola dönün
-- Okul, yolun sağında, 300 metre ileridedir
-
-İşaretleme yapısı sırasız listelerle aynıdır; tek fark, liste öğelerini `<ul>` yerine bir `<ol>` öğesi içine almanız gerektiğidir:
+İşaretleme yapısı, liste öğelerini `<ul>` yerine bir `<ol>` (ordered list) elementi içine sarmanız dışında sırasız listelerle tamamen aynıdır:
 
 ```html
 <ol>
-<li>Yolun sonuna kadar sürün</li>
-<li>Sağa dönün</li>
-<li>İlk iki kavşaktan dümdüz geçin</li>
-<li>Üçüncü kavşakta sola dönün</li>
-<li>Okul, yolun sağında, 300 metre ileridedir</li>
+  <li>Drive to the end of the road</li>
+  <li>Turn right</li>
+  <li>Go straight across the first two roundabouts</li>
+  <li>Turn left at the third roundabout</li>
+  <li>The school is on your right, 300 meters up the road</li>
 </ol>
 ```
 
-## Sıralı bir listeyi işaretleme
-
-Yine pratik zamanı! Bir önceki görevdeki gibi, önceki sıralı listeyi kendiniz işaretlemeyi denemenizi istiyoruz.
-
-1. Aşağıdaki oluşturulmuş kod çıktısında örneği düzenlemek için "Play" düğmesine tıklayın.
-2. Tek tek metin öğelerini sıralı bir listeye dönüştürün.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Takılırsanız, önceki kod parçasına geri dönün.
-
-Yolun sonuna kadar sürün Sağa dönün İlk iki kavşaktan dümdüz geçin Üçüncü kavşakta sola dönün Okul, yolun sağında, 300 metre ileridedir
+---
 
 ## Tarif sayfamızı işaretleme
 
-Şimdi gerçek bir meydan okumaya! Bu noktada, daha karmaşık bir içerik bölümünü işaretlemek için ihtiyacınız olan tüm bilgiye sahipsiniz. En sevdiğimiz humus tarifinin yönergelerini işaretlemenizi istiyoruz.
-
-İsterseniz şunlardan birini yapabilirsiniz:
-
-Yerel bir kopyasını kaydedin: `text-start.html` başlangıç dosyası ve işi kod düzenleyicinizde yapın.
-
-Aşağıdaki oluşturulmuş kod çıktısında örneği düzenlemek için "Play" düğmesine tıklayın.
-
-İzlemeniz gereken yönergeler:
-
-1. Ana sayfa başlığını bir `<h1>` öğesiyle ve üç alt başlığı `<h2>` öğeleriyle işaretleyin.
-2. `<p>` öğeleriyle işaretlenmesi anlamlı olan beş metin satırı vardır. Bunu şimdi yapın.
-3. Malzeme listesini sırasız liste olarak işaretleyin.
-4. Talimat listesini sıralı liste olarak işaretleyin.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Gerçekten takılırsanız, çözümü kod çıktısının altında görebilirsiniz.
+Hummus tarifi içeriğini doğru yapısal elementlerle işaretleyelim:
 
 ```html
-Quick hummus recipe
+<h1>Quick hummus recipe</h1>
 
-Bu tarif, hızlı ve lezzetli humus yapar; hiçbir zahmeti yoktur. Yıllar içinde okuduğum birçok farklı tariften uyarlanmıştır.
+<p>This recipe makes quick, tasty hummus, with no messing. It has been adapted from a number of different recipes that I have read over the years.</p>
 
-Humus, Yunan ve Orta Doğu yemeklerinde yoğun biçimde kullanılan lezzetli, koyu bir ezmedir. Salata, ızgara etler ve pita ekmekleriyle çok lezzetlidir.
+<p>Hummus is a delicious thick paste used heavily in Greek and Middle Eastern dishes. It is very tasty with salad, grilled meats and pitta breads.</p>
 
-Ingredients
+<h2>Ingredients</h2>
 
-1 can (400g) of chick peas (garbanzo beans)
-
-175g of tahini
-
-6 sundried tomatoes
-
-Half a red pepper
-
-A pinch of cayenne pepper
-
-1 clove of garlic
-
-A dash of olive oil
-
-Instructions
-
-Garlic'in kabuğunu çıkarın ve kabaca doğrayın
-
-Biberin tüm çekirdeklerini ve sapını çıkarın ve kabaca doğrayın
-
-Tüm malzemeleri bir food processor içine ekleyin
-```
-
-```text
-Tüm malzemeleri bir ezmeye dönüştürün
-
-Kaba "chunky" humus istiyorsanız, kısa süre işleyin
-
-Pürüzsüz humus istiyorsanız, daha uzun süre işleyin
-
-Farklı bir lezzet için, az miktarda limon ve kişniş, chili pepper, lime ve chipotle, harissa ve mint ya da spinach ve feta cheese eklemeyi deneyebilirsiniz. Deneyin ve sizin için neyin işe yaradığını görün.
-
-Storage
-
-Hazırladığınız humusu kapalı bir kapta buzdolabında saklayın. Yapıldıktan sonra yaklaşık bir hafta boyunca kullanabilmelisiniz. Eğer köpürmeye başlarsa, mutlaka atmalısınız.
-
-Humus dondurmak için uygundur; çözdürüp birkaç ay içinde kullanmalısınız.
-```
-
-Quick hummus recipe Bu tarif, hızlı ve lezzetli humus yapar; hiçbir zahmeti yoktur. Yıllar içinde okuduğum birçok farklı tariften uyarlanmıştır. Humus, Yunan ve Orta Doğu yemeklerinde yoğun biçimde kullanılan lezzetli, koyu bir ezmedir. Salata, ızgara etler ve pita ekmekleriyle çok lezzetlidir. Ingredients 1 can (400g) of chick peas (garbanzo beans) 175g of tahini 6 sundried tomatoes Half a red pepper A pinch of cayenne pepper 1 clove of garlic A dash of olive oil Instructions Garlic'in kabuğunu çıkarın ve kabaca doğrayın Biberin tüm çekirdeklerini ve sapını çıkarın ve kabaca doğrayın Tüm malzemeleri bir food processor içine ekleyin Tüm malzemeleri bir ezmeye dönüştürün Kaba "chunky" humus istiyorsanız, kısa süre işleyin Pürüzsüz humus istiyorsanız, daha uzun süre işleyin Farklı bir lezzet için, az miktarda limon ve kişniş, chili pepper, lime ve chipotle, harissa ve mint ya da spinach ve feta cheese eklemeyi deneyebilirsiniz. Deneyin ve sizin için neyin işe yaradığını görün. Storage Hazırladığınız humusu kapalı bir kapta buzdolabında saklayın. Yapıldıktan sonra yaklaşık bir hafta boyunca kullanabilmelisiniz. Eğer köpürmeye başlarsa, mutlaka atmalısınız. Humus dondurmak için uygundur; çözdürüp birkaç ay içinde kullanmalısınız.
-
-Çözümü göstermek için buraya tıklayın
-
-## İç içe listeler
-
-Bir listenin içine başka bir liste yerleştirmek tamamen uygundur. Üst düzey bir madde altında yer alacak bazı alt maddeler isteyebilirsiniz. Tarif örneğimizden ikinci listeyi ele alalım:
-
-```html
-<ol>
-<li>Garlic'in kabuğunu çıkarın ve kabaca doğrayın.</li>
-<li>Biberin tüm çekirdeklerini ve sapını çıkarın ve kabaca doğrayın.</li>
-<li>Tüm malzemeleri bir food processor içine ekleyin.</li>
-<li>Tüm malzemeleri bir ezmeye dönüştürün.</li>
-<li>Eğer kaba "chunky" humus istiyorsanız, kısa süre işleyin.</li>
-<li>Eğer pürüzsüz humus istiyorsanız, daha uzun süre işleyin.</li>
-</ol>
-```
-
-Son iki madde, kendilerinden bir önceki maddeyle çok yakından ilişkili olduğundan (o maddenin alt talimatları ya da seçenekleri gibi okunurlar), bunları kendi sırasız listelerinin içine yerleştirip o listeyi mevcut dördüncü maddenin içine koymak mantıklı olabilir. Bu şu şekilde görünür:
-
-```html
-<ol>
-<li>Garlic'in kabuğunu çıkarın ve kabaca doğrayın.</li>
-<li>Biberin tüm çekirdeklerini ve sapını çıkarın ve kabaca doğrayın.</li>
-<li>Tüm malzemeleri bir food processor içine ekleyin.</li>
-<li>
-Tüm malzemeleri bir ezmeye dönüştürün.
 <ul>
-<li>
-Eğer kaba "chunky" humus istiyorsanız, kısa süre işleyin.
-</li>
-<li>Eğer pürüzsüz humus istiyorsanız, daha uzun süre işleyin.</li>
+  <li>1 can (400g) of chick peas (garbanzo beans)</li>
+  <li>175g of tahini</li>
+  <li>6 sundried tomatoes</li>
+  <li>Half a red pepper</li>
+  <li>A pinch of cayenne pepper</li>
+  <li>1 clove of garlic</li>
+  <li>A dash of olive oil</li>
 </ul>
-</li>
+
+<h2>Instructions</h2>
+
+<ol>
+  <li>Remove the skin from the garlic, and chop coarsely</li>
+  <li>Remove all the seeds and stalk from the pepper, and chop coarsely</li>
+  <li>Add all the ingredients into a food processor</li>
+  <li>Process all the ingredients into a paste</li>
+  <li>If you want a coarse "chunky" hummus, process it for a short time</li>
+  <li>If you want a smooth hummus, process it for a longer time</li>
+</ol>
+
+<p>For a different flavor, you could try blending in a small measure of lemon and coriander, chili pepper, lime and chipotle, harissa and mint, or spinach and feta cheese. Experiment and see what works for you.</p>
+
+<h2>Storage</h2>
+
+<p>Refrigerate the finished hummus in a sealed container. You should be able to use it for about a week after you've made it. If it starts to become fizzy, you should definitely discard it.</p>
+
+<p>Hummus is suitable for freezing; you should thaw it and use it within a couple of months.</p>
+```
+
+---
+
+## Listeleri iç içe yerleştirme
+
+Bir listeyi diğerinin içine yerleştirmek (nesting) tamamen geçerlidir. Örneğin, tarifimizin son iki maddesi bir önceki maddeyle yakından ilişkili seçenekler olduğundan, bunları dördüncü maddenin içine sırasız bir alt liste olarak yerleştirebiliriz:
+
+```html
+<ol>
+  <li>Remove the skin from the garlic, and chop coarsely.</li>
+  <li>Remove all the seeds and stalk from the pepper, and chop coarsely.</li>
+  <li>Add all the ingredients into a food processor.</li>
+  <li>
+    Process all the ingredients into a paste.
+    <ul>
+      <li>
+        If you want a coarse "chunky" hummus, process it for a short time.
+      </li>
+      <li>If you want a smooth hummus, process it for a longer time.</li>
+    </ul>
+  </li>
 </ol>
 ```
 
-Bir önceki göreve geri dönmeyi ve ikinci listeyi böyle güncellemeyi deneyin.
+---
 
 ## Açıklama listeleri
 
-Açıklama listelerinin amacı, terimler ve tanımlar ya da sorular ve cevaplar gibi öğe kümelerini ve bunlara ilişkin açıklamaları işaretlemektir. Terimler ve tanımlardan oluşan bir kümeye örnek bakalım:
+Açıklama listelerinin amacı, terimler ve tanımlar veya sorular ve yanıtlar gibi bir dizi öğeyi ve bunlarla ilişkili açıklamaları işaretlemektir. Bir dizi terim ve tanım örneğine bakalım:
 
-- soliloquy
-- monologue
-- aside
+```plain
+soliloquy
+In drama, where a character speaks to themselves...
+monologue
+In drama, where a character speaks their thoughts out loud...
+aside
+In drama, where a character shares a comment only with the audience...
+```
 
-Dramada, bir karakterin kendi kendine konuşarak iç düşüncelerini ya da duygularını temsil ettiği ve bunu yaparken de izleyiciye aktardığı durum.
+Açıklama listeleri diğer liste türlerinden farklı bir kapsayıcı kullanır: `<dl>` (description list). Ayrıca her terim bir `<dt>` (description term) elementi içine sarılır ve her tanım/açıklama bir `<dd>` (description definition) elementi içine sarılır:
 
-Dramada, bir karakterin düşüncelerini izleyicilerle ve mevcut diğer karakterlerle paylaşmak için yüksek sesle konuştuğu durum.
+```html
+<dl>
+  <dt>soliloquy</dt>
+  <dd>
+    In drama, where a character speaks to themselves, representing their inner
+    thoughts or feelings and in the process relaying them to the audience (but
+    not to other characters.)
+  </dd>
+  <dt>monologue</dt>
+  <dd>
+    In drama, where a character speaks their thoughts out loud to share them
+    with the audience and any other characters present.
+  </dd>
+  <dt>aside</dt>
+  <dd>
+    In drama, where a character shares a comment only with the audience for
+    humorous or dramatic effect. This is usually a feeling, thought, or piece of
+    additional background information.
+  </dd>
+</dl>
+```
 
-Dramada, bir karakterin yalnızca izleyiciyle mizahi ya da dramatik etki için bir yorum paylaştığı durum. Bu genellikle bir duygu, düşünce ya da ek arka plan bilgisidir.
+Tarayıcı varsayılan stilleri, açıklamaları terimlerden biraz daha içeriden (girintili olarak) görüntüler.
 
-Açıklama listeleri diğer liste türlerinden farklı bir kapsayıcı kullanır — `<dl>`; ayrıca her terim bir `<dt>` (description term) öğesi içine alınır ve her açıklama bir `<dd>` (description definition) öğesi içine alınır.
+### Tek bir terim için birden fazla açıklama
 
-## Açıklama listesi örneği
+Tek bir terimin birden fazla açıklamaya sahip olmasına izin verilir:
 
-Örneğimizi işaretlemeyi bitirelim:
+```html
+<dl>
+  <dt>aside</dt>
+  <dd>
+    In drama, where a character shares a comment only with the audience for
+    humorous or dramatic effect. This is usually a feeling, thought, or piece of
+    additional background information.
+  </dd>
+  <dd>
+    In writing, a section of content that is related to the current topic, but
+    doesn't fit directly into the main flow of content so is presented nearby
+    (often in a box off to the side.)
+  </dd>
+</dl>
+```
+
+### Tanımlar kümesini işaretleme alıştırması
+
+Görev:
+Üç terimi ve dört açıklamayı işaretleyin. Üçüncü terimin iki açıklaması olduğunu unutmayın.
+
+Çözüm:
+
+```html
+<dl>
+  <dt>Love</dt>
+  <dd>The glue that binds the world together.</dd>
+  <dt>Eggs</dt>
+  <dd>The glue that binds the cake together.</dd>
+  <dt>Coffee</dt>
+  <dd>The drink that gets the world running in the morning.</dd>
+  <dd>A light brown color.</dd>
+</dl>
+```
 
 ---
 
-# Becerilerinizi test edin: HTML metin temelleri
+## Özet
 
-## Test: HTML tests index
+Listeler konusunu bitirdik. Bir sonraki bölümde, HTML metin temelleri konusunda öğrendiklerinizi pekiştirmek için hazırlanmış sınavı (**Test: HTML text basics**) ele alacağız.
 
-# Becerilerinizi test edin: HTML metin temelleri
+---
+# 6. Test: HTML metin temelleri
 
-## İngilizce (ABD)
+**HTML** > **Test your skills: HTML text basics** | English (US)
 
-Önceki
+Bu beceri testinin amacı, metne yapı ve anlam kazandırmak için HTML'de metni nasıl işaretleyeceğinizi anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
 
-Genel bakış: HTML ile içeriği yapılandırma
+> [!NOTE]
+> Yardıma ihtiyaç duyarsanız MDN topluluk kanallarından veya ilgili konu rehberlerinden yararlanabilirsiniz.
 
-Sonraki
-
-Bu beceri testinin amacı, HTML'de metni yapı ve anlam verecek şekilde nasıl işaretleyeceğinizi anlayıp anlamadığınızı ölçmenize yardımcı olmaktır.
-
-Not: Yardım almak için Test your skills kullanım kılavuzunu okuyun. Ayrıca iletişim kanallarımızdan biri aracılığıyla bize ulaşabilirsiniz.
+---
 
 ## Metin temelleri 1
 
-Bu görevde, sağlanan HTML'yi anlamsal başlık ve paragraf öğelerini kullanarak işaretlemenizi istiyoruz.
+Bu görevde, sağlanan HTML metnini anlamsal başlık ve paragraf elementlerini kullanarak işaretlemenizi istiyoruz.
 
-Görevin başlangıç noktası şu şekildedir:
-
-Temel HTML Hayvanları Bu, sayfamızdaki ilk paragraftır. Hayvanlarımızı tanıtır. Lama Lamamız, liste öğelerinin büyük bir hayranıdır. Bir web sayfasında onlardan bir parça görürse, sanki şekerlermiş gibi onları yer ve bunu yaparken dudaklarını yalar. Anakonda Kurnaz anakonda sayfa boyunca süzülmeyi, avının üzerine sinsice yaklaşmak için bağlantılar aracılığıyla hızla ilerlemeyi sever.
-
-İşte bu başlangıç noktasının temel kodu:
+### Başlangıç Kodu:
 
 ```html
-Temel HTML Hayvanları
+Basic HTML Animals
 
-Bu, sayfamızdaki ilk paragraftır. Hayvanlarımızı tanıtır.
+This is the first paragraph in our page. It introduces our animals.
 
-Lama
+The Llama
 
-Llamamız, liste öğelerinin büyük bir hayranıdır. Bir web sayfasında onlardan bir parça görürse,
+Our Llama is a big fan of list items. When she spies a patch of them on a web page, she will eat them like sweets, licking her lips as she goes.
 
-onları sanki şekerlermiş gibi yer ve bunu yaparken dudaklarını yalar.
+The Anaconda
 
-Anakonda
-
-Kurnaz anakonda sayfa boyunca süzülmeyi, bağlantılar aracılığıyla hızla ilerlemeyi
-
-ve avının üzerine sinsice yaklaşmayı sever.
+The crafty anaconda likes to slither around the page, traveling rapidly by way of anchors to sneak up on his prey.
 ```
 
-Güncellenmiş içerik şöyle görünmelidir:
+### Görev Talimatı:
+1. En üstteki metni `<h1>` ana başlığı yapın.
+2. Açıklama metinlerini `<p>` paragraflarına sarın.
+3. Hayvan adlarını (`The Llama`, `The Anaconda`) `<h2>` alt başlıklarına sarın.
 
-Temel HTML Hayvanları
-
-Bu, sayfamızdaki ilk paragraftır. Hayvanlarımızı tanıtır.
-
-Lama
-
-Llamamız, liste öğelerinin büyük bir hayranıdır. Bir web sayfasında onlardan bir parça görünce,
-
-onları sanki şekerlermiş gibi yer ve bunu yaparken dudaklarını yalar.
-
-Anakonda
-
-Kurnaz anakonda sayfa boyunca süzülmeyi, bağlantılar aracılığıyla hızla ilerlemeyi
-
-ve avının üzerine sinsice yaklaşmayı sever.
-
-Çözümü göstermek için buraya tıklayın
-
-## Metin temelleri 2
-
-Bu görevde, ilk işaretlenmemiş listeyi sırasız bir listeye ve ikincisini sıralı bir listeye dönüştürmenizi istiyoruz.
-
-Görevin başlangıç noktası şu şekildedir:
-
-Listelere bakarken
-
-Aşağıdaki favori sebzeler listemi sırasız bir listeye dönüştürün.
-
-Salatalık Brokoli Kuşkonmaz Biber
-
-Aşağıdaki yönergeleri sıralı bir listeye dönüştürün.
-
-Kapıyı önce çalın Uyarıldığınızda sihirli sözü söyleyin En az 5 saniye bekleyin Kolu çevirin ve itin
-
-İşte bu başlangıç noktasının temel kodu:
+### Çözüm:
 
 ```html
-<h1>Listelere bakarken</h1>
+<h1>Basic HTML Animals</h1>
 
-<p>Aşağıdaki favori sebzeler listemi sırasız bir listeye dönüştürün.</p>
+<p>This is the first paragraph in our page. It introduces our animals.</p>
 
-Salatalık
-
-Brokoli
-
-Kuşkonmaz
-
-Biber
-
-<p>Aşağıdaki yönergeleri sıralı bir listeye dönüştürün.</p>
-
-Kapıyı önce çalın
-
-Uyarıldığınızda sihirli sözü söyleyin
-
-En az 5 saniye bekleyin
-
-Kolu çevirin ve itin
-```
-
-Güncellenmiş içerik şöyle görünmelidir:
-
-Listelere bakarken
-
-Aşağıdaki favori sebzeler listemi sırasız bir listeye dönüştürün.
-
-Salatalık
-Brokoli
-Kuşkonmaz
-Biber
-
-Aşağıdaki yönergeleri sıralı bir listeye dönüştürün.
-
-1. Kapıyı önce çalın
-2. Uyarıldığınızda sihirli sözü söyleyin
-3. En az 5 saniye bekleyin
-4. Kolu çevirin ve itin
-
-Çözümü göstermek için buraya tıklayın
-
-## Metin temelleri 3
-
-Bu görevde, verilen hayvanları ve tanımlarını bir açıklama listesine dönüştürmenizi istiyoruz.
-
-Görevin başlangıç noktası şu şekildedir:
-
-```html
-# Şimdiye ait olmayan HTML Hayvanları
-
-Lama Uzun, yünlü dört ayaklı, sivri kulaklı. Bazen binilebilir, ama huysuzdur ve çok tükürür. Liste öğelerinin büyük hayranı.
-
-Anakonda Bağlantılar aracılığıyla hızla ilerleyerek avının üzerine sinsice yaklaşan çok büyük bir boğucu yılan.
-
-Su aygırı Onun tanımı dipsizdir.
-```
-
-İşte bu başlangıç noktasının temel kodu:
-
-```html
-<h1>İleri düzey HTML hayvanları</h1>
-
-Lama
-
-Uzun, yünlü dört ayaklı, sivri kulaklı. Bazen binilebilir, ama huysuzdur ve çok tükürür. Liste öğelerinin büyük hayranı.
-
-Anakonda
-
-Bağlantılar aracılığıyla hızla ilerleyerek avının üzerine sinsice yaklaşan çok büyük bir boğucu yılan.
-
-Su aygırı
-
-Onun tanımı dipsizdir.
-```
-
-Güncellenmiş içerik şöyle görünmelidir:
-
-İleri düzey HTML hayvanları
-
-Lama
-
-Uzun, yünlü dört ayaklı, sivri kulaklı. Bazen binilebilir, ama huysuzdur ve çok tükürür. Liste öğelerinin büyük hayranı.
-
-Anakonda
-
-Bağlantılar aracılığıyla hızla ilerleyerek avının üzerine sinsice yaklaşan çok büyük bir boğucu yılan.
-
-Su aygırı
-
-Onun tanımı dipsizdir.
-
-Çözümü göstermek için buraya tıklayın
-
-## Metin temelleri 4
-
-Bu görevde size bir paragraf verilir ve amacınız, birkaç uygun kelimeyi güçlü önemle ve birkaçını vurguyla işaretlemek için bazı satır içi öğeler kullanmaktır.
-
-Görevin başlangıç noktası şu şekildedir:
-
-```html
-<h1>Vurgu ve önem</h1>
+<h2>The Llama</h2>
 
 <p>
+  Our Llama is a big fan of list items. When she spies a patch of them on a web
+  page, she will eat them like sweets, licking her lips as she goes.
+</p>
 
-Benim için önemli iki şey var — müzik ve arkadaşlar. Bir gün arkadaşlarımın birbirleriyle ve müziğimle ilgilenmesini sağlayabilirim!
+<h2>The Anaconda</h2>
 
+<p>
+  The crafty anaconda likes to slither around the page, traveling rapidly by way
+  of anchors to sneak up on his prey.
 </p>
 ```
-
-Güncellenmiş içerik yaklaşık olarak şöyle görünmelidir:
-
-Vurgu ve önem
-
-Benim için önemli iki şey var — müzik ve arkadaşlar. Bir gün arkadaşlarımın birbirleriyle ve müziğimle ilgilenmesini sağlayabilirim!
-
-Çözümü göstermek için buraya tıklayın
-
-Önceki
-
-Genel bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Daha iyi bir internet için planınız.
 
 ---
 
-# Gelişmiş metin özellikleri
+## Metin temelleri 2
 
-## HTML
+Bu görevde, ilk işaretlenmemiş listeyi sırasız bir listeye (`<ul>`), ikinci listeyi ise sıralı bir listeye (`<ol>`) dönüştürmenizi istiyoruz.
 
-# Gelişmiş metin özellikleri
+### Başlangıç Kodu:
 
-## İngilizce (ABD)
+```html
+<h1>Looking at lists</h1>
 
-Gelişmiş metin özellikleri
+<p>Turn the following list of my favorite vegetables into an unordered list.</p>
 
-Önceki
+Cucumber
+Broccoli
+Asparagus
+Pepper
 
-Genel bakış: HTML ile içeriği yapılandırma
+<p>Turn the following directions into an ordered list.</p>
 
-Sonraki
+First knock on the door
+When prompted, say the magic word
+Wait for at least 5 seconds
+Turn the handle and push
+```
 
-HTML'de, Vurgu ve önem makalesinde ele almaya fırsat bulamadığımız metin semantiğini tanımlamak için başka birçok öğe vardır. Bu makalede anlatılan öğeler daha az bilinir, ancak yine de bilinmesi yararlıdır (ve bu da hiçbir şekilde tam bir liste değildir). Burada alıntıların, bilgisayar kodunun ve diğer ilgili metinlerin, alt ve üst simgelerin, iletişim bilgilerinin ve daha fazlasının nasıl işaretleneceğini öğreneceksiniz.
+### Çözüm:
 
-### Ön koşullar:
+```html
+<h1>Looking at lists</h1>
 
-Basic HTML Syntax bölümünde ele alındığı gibi temel HTML bilgisi. Başlıklar, paragraflar ve listeler gibi metin düzeyi semantiği.
+<p>Turn the following list of my favorite vegetables into an unordered list.</p>
 
-### Öğrenme çıktıları:
+<ul>
+  <li>Cucumber</li>
+  <li>Broccoli</li>
+  <li>Asparagus</li>
+  <li>Pepper</li>
+</ul>
 
-Alıntılar.
+<p>Turn the following directions into an ordered list.</p>
 
-Kısaltmalar ve akronimler.
+<ol>
+  <li>First knock on the door</li>
+  <li>When prompted, say the magic word</li>
+  <li>Wait for at least 5 seconds</li>
+  <li>Turn the handle and push</li>
+</ol>
+```
 
-Adresler.
+---
 
-Saatler ve tarihler.
+## Metin temelleri 3
 
-Üst simge ve alt simge.
+Bu görevde, sağlanan hayvanları ve tanımlarını bir açıklama listesine (`<dl>`) dönüştürmenizi istiyoruz.
+
+### Başlangıç Kodu:
+
+```html
+<h1>Advanced HTML Animals</h1>
+
+Llama
+Tall, woolly quadruped, pointy ears. Sometimes rideable, but grumpy and spits a lot. Big fan of list items.
+Anaconda
+A very large constrictor snake; travels rapidly by way of anchors to sneak up on his prey.
+Hippopotamus
+His description is bottomless.
+```
+
+### Çözüm:
+
+```html
+<h1>Advanced HTML Animals</h1>
+
+<dl>
+  <dt>Llama</dt>
+  <dd>
+    Tall, woolly quadruped, pointy ears. Sometimes rideable, but grumpy and
+    spits a lot. Big fan of list items.
+  </dd>
+  <dt>Anaconda</dt>
+  <dd>
+    A very large constrictor snake; travels rapidly by way of anchors to sneak
+    up on his prey.
+  </dd>
+  <dt>Hippopotamus</dt>
+  <dd>His description is bottomless.</dd>
+</dl>
+```
+
+---
+
+## Metin temelleri 4
+
+Bu görevde size bir paragraf verilmiştir; amacınız uygun sözcüklerden birkaçını güçlü önemle (`<strong>`), birkaçını ise vurguyla (`<em>`) işaretlemek için satır içi (inline) elementleri kullanmaktır.
+
+### Başlangıç Kodu:
+
+```html
+<h1>Emphasis and importance</h1>
+
+<p>
+  There are two things I care about — music and friends. Someday I might be able
+  to get my friends interested in each other, and my music!
+</p>
+```
+
+### Çözüm:
+
+```html
+<h1>Emphasis and importance</h1>
+
+<p>
+  There are <strong>two</strong> things I care about —
+  <strong>music</strong> and <strong>friends</strong>. Someday I
+  <em>might</em> be able to get my friends interested in each other,
+  <em>and</em> my music!
+</p>
+```
+
+---
+
+# 7. İleri düzey metin özellikleri
+
+**HTML** > **Advanced text features** | English (US)
+
+HTML'de, Emphasis and importance makalesinde değinmediğimiz metin semantiğini tanımlayan başka birçok element bulunmaktadır. Bu makalede açıklanan elementler daha az bilinir, ancak yine de bilinmeleri oldukça faydalıdır. Burada alıntıları, bilgisayar kodunu ve diğer ilgili metinleri, alt simge ve üst simgeleri, iletişim bilgilerini ve daha fazlasını işaretlemeyi öğreneceksiniz.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. Başlıklar, paragraflar ve listeler gibi metin düzeyi anlambilim. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Alıntılar (Quotations).<br>• Kısaltmalar ve akronimler (Abbreviations and acronyms).<br>• Adresler ve iletişim bilgileri (Addresses).<br>• Saatler ve tarihler (Times and dates).<br>• Üst simge ve alt simge (Superscript and subscript). |
+
+---
 
 ## Alıntılar
 
-HTML, alıntıları işaretlemek için kullanılabilen özellikler içerir; hangi öğeyi kullanacağınız, blok düzeyinde mi yoksa satır içi bir alıntı mı işaretlediğinize bağlıdır.
+HTML, alıntıları işaretlemek için kullanışlı özellikler barındırır; hangi elementi kullanacağınız, bir blok alıntısı mı yoksa satır içi bir alıntı mı işaretlediğinize bağlıdır.
 
-### Blok alıntılar
+### Blok alıntıları
 
-Bir blok düzeyindeki içerik bölümü (ister bir paragraf, ister birden fazla paragraf, ister bir liste vb.) başka bir yerden alıntılanmışsa, bunu belirtmek için onu bir `<blockquote>` öğesinin içine sarmalısınız ve alıntı kaynağını gösteren bir URL'yi `cite` özniteliği içinde eklemelisiniz. Örneğin, aşağıdaki işaretleme MDN `<blockquote>` öğesi sayfasından alınmıştır:
-
-```html
-<p>
-
-<strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (veya
-
-<em>HTML Block Quotation Element</em>) çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
-
-</p>
-```
-
-Bunu bir blok alıntıya dönüştürmek için yalnızca şunu yaparız:
+Blok düzeyindeki bir içerik bölümü (bir paragraf, birden çok paragraf, bir liste vb.) başka bir kaynaktan alıntılanmışsa, bunu belirtmek için içeriği bir `<blockquote>` elementi içine sarmalı ve alıntının kaynağını gösteren bir URL'yi `cite` niteliği içine dahil etmelisiniz:
 
 ```html
-<p>İşte bir blockquote:</p>
-
+<p>Here is a blockquote:</p>
 <blockquote
-
-cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote">
-
-<p>
-
-<strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (veya
-
-<em>HTML Block Quotation Element</em>) çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
-
-</p>
-
+  cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote">
+  <p>
+    The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+    <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+    an extended quotation.
+  </p>
 </blockquote>
 ```
 
-Tarayıcının varsayılan stili bunu, alıntı olduğuna dair bir gösterge olarak girintili bir paragraf şeklinde görüntüler; alıntının üzerindeki paragraf da bunu göstermek içindir.
-
-HTML <blockquote> Element (veya HTML Block Quotation Element), çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
-
-İşte bir blockquote:
-
-HTML <blockquote> Element (veya HTML Block Quotation Element), çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
+Tarayıcı varsayılan stili, bunun bir alıntı olduğunu belirtmek amacıyla bu içeriği girintili bir paragraf olarak işleyecektir.
 
 ### Satır içi alıntılar
 
-Satır içi alıntılar tam olarak aynı şekilde çalışır, ancak bunun için `<q>` öğesini kullanırız. Örneğin, aşağıdaki işaretleme MDN `<q>` sayfasından bir alıntı içerir:
+Satır içi alıntılar, `<q>` elementini kullanmaları dışında tamamen aynı şekilde çalışır:
 
 ```html
 <p>
-
-Alıntı öğesi — <code>&lt;q&gt;</code> —
-
-<q
-
-cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q">
-
-paragraf sonları gerektirmeyen kısa alıntılar için tasarlanmıştır.
-
-</q>
-
+  The quote element — <code>&lt;q&gt;</code> — is
+  <q
+    cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q">
+    intended for short quotations that don't require paragraph breaks.
+  </q>
 </p>
 ```
 
-Tarayıcının varsayılan stili bunu, alıntıyı belirtmek için tırnak içine alınmış normal metin olarak gösterir; şöyle:
+Tarayıcı varsayılan stili, alıntıyı belirtmek için metni normal tırnak işaretleri içine alarak işler:
+"intended for short quotations that don't require paragraph breaks."
 
-```text
-Alıntı öğesi — <q> — “ paragraf sonları gerektirmeyen kısa alıntılar için tasarlanmıştır. ”
-```
+### Kaynak gösterme: `<cite>`
 
-### Atıflar
+`cite` niteliğinin içeriği faydalı gibi görünse de, ne yazık ki tarayıcılar ve ekran okuyucular bu nitelikle pek bir şey yapmaz. JavaScript veya CSS kullanarak kendi çözümünüzü yazmadığınız sürece, tarayıcının `cite` içeriğini doğrudan görüntülemesini sağlamanın bir yolu yoktur. Alıntının kaynağını sayfada görünür kılmak istiyorsanız, bunu bir bağlantı veya başka bir uygun yolla doğrudan metin içinde sunmanız gerekir.
 
-`cite` özniteliğinin içeriği kullanışlı görünür, ancak ne yazık ki tarayıcılar, ekran okuyucular vb. bununla pek bir şey yapmaz. `cite` içeriğini tarayıcıya göstertmenin, JavaScript veya CSS ile kendi çözümünüzü yazmadan bir yolu yoktur. Alıntının kaynağını sayfada görünür kılmak istiyorsanız, bunu metin içinde bir bağlantı ya da başka uygun bir yolla sağlamanız gerekir.
-
-Ayrıca bir `<cite>` öğesi vardır; ancak bu, alıntılanan kaynağın başlığını, örneğin kitabın adını içermek için kullanılır. Bununla birlikte, `<cite>` içindeki metni bir şekilde alıntı kaynağına bağlamanıza engel yoktur:
+Bir de alıntılanan kaynağın başlığını (örneğin kitabın adını) barındırması amaçlanan `<cite>` elementi mevcuttur. `<cite>` içindeki metni alıntı kaynağına bağlamak son derece yaygındır:
 
 ```html
 <p>
-
-Şuna göre:
-
-<a href="/en-US/docs/Web/HTML/Reference/Elements/blockquote">
-
-<cite>MDN blockquote sayfası</cite></a>:
-
+  According to the
+  <a href="/en-US/docs/Web/HTML/Reference/Elements/blockquote">
+    <cite>MDN blockquote page</cite></a>:
 </p>
 
 <blockquote
-
-cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote">
-
-<p>
-
-<strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (veya
-
-<em>HTML Block Quotation Element</em>) çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
-
-</p>
-
+  cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote">
+  <p>
+    The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+    <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+    an extended quotation.
+  </p>
 </blockquote>
 
 <p>
-
-Alıntı öğesi — <code>&lt;q&gt;</code> —
-
-<q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q">
-
-paragraf sonları gerektirmeyen kısa alıntılar için tasarlanmıştır.
-
-</q>
-
-— <a href="/en-US/docs/Web/HTML/Reference/Elements/q"><cite>MDN q sayfası</cite></a>.
-
+  The quote element — <code>&lt;q&gt;</code> — is
+  <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q">
+    intended for short quotations that don't require paragraph breaks.
+  </q>
+  — <a href="/en-US/docs/Web/HTML/Reference/Elements/q"><cite>MDN q page</cite></a>.
 </p>
 ```
 
-Atıflar varsayılan olarak italik yazı tipiyle biçimlendirilir.
+Kaynak gösterimleri (citations) varsayılan olarak italik yazı tipiyle stillendirilir.
 
-Şuna göre:
+### Bunu kim söyledi? Alıntı alıştırması
 
-HTML <blockquote> Element (veya HTML Block Quotation Element), çevrelenmiş metnin genişletilmiş bir alıntı olduğunu belirtir.
+Görev:
+1. Ortadaki paragrafı bir `cite` niteliği içeren bir `<blockquote>` haline getirin.
+2. Üçüncü paragraftaki "The Need To Eliminate Negative Self Talk" ifadesini satır içi bir alıntıya (`<q>`) dönüştürün ve bir `cite` niteliği ekleyin.
+3. Her kaynağın başlığını `<cite>` etiketleri içine sarın ve her birini ilgili kaynağa giden bir bağlantıya dönüştürün.
 
-Alıntı öğesi — <q> — “ paragraf sonları gerektirmeyen kısa alıntılar için tasarlanmıştır. ” — MDN q sayfası.
-
-## Kim söyledi? Blockquote pratiği
-
-Bir başka görev zamanı! Bu örnekte sizden şunları istiyoruz:
-
-1. Aşağıdaki kod bloğunda örneği düzenlemek için MDN Playground'da "Play" düğmesine tıklayın.
-2. Ortadaki paragrafı bir blockquote'a dönüştürün ve bir `cite` özniteliği ekleyin.
-3. Üçüncü paragraftaki "The Need To Eliminate Negative Self Talk" ifadesini satır içi bir alıntıya dönüştürün ve bir `cite` özniteliği ekleyin.
-4. Her kaynağın başlığını `<cite>` etiketleri içine sarın ve her birini o kaynağa giden bir bağlantıya dönüştürün.
-
-Bilmeniz gereken alıntı kaynakları şunlardır:
-
-`http://www.brainyquote.com/quotes/authors/c/confucius.html` — Confucius alıntısı için
-
-`http://example.com/affirmationsforpositivethinking` — "The Need To Eliminate Negative Self Talk" için.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Gerçekten takılırsanız, çözümü kod bloğunun altında görebilirsiniz.
-
-```html
-<p>Merhaba ve motivasyon sayfama hoş geldiniz. Confucius'un alıntılar sitesi şöyle diyor:</p>
-
-<p>Yavaş gitmeniz önemli değil, yeter ki durmayın.</p>
-
-<p>
-
-Pozitif düşünce kavramını da çok seviyorum ve The Need To Eliminate
-
-Negative Self Talk (Affirmations for Positive Thinking'de belirtildiği gibi.)
-
-</p>
-```
-
-Merhaba ve motivasyon sayfama hoş geldiniz. Confucius'un alıntılar sitesi şöyle diyor:
-
-Yavaş gitmeniz önemli değil, yeter ki durmayın.
-
-Pozitif düşünce kavramını da çok seviyorum ve The Need To Eliminate Negative Self Talk (Affirmations for Positive Thinking'de belirtildiği gibi.)
-
-Çözümü göstermek için buraya tıklayın
-
-## Kısaltmalar
-
-Web'de bakarken karşınıza çıkacak bir diğer oldukça yaygın öğe `<abbr>`'dır — bu, bir kısaltma ya da akronimi sarmalamak için kullanılır. Bunlardan herhangi birini dahil ederken, ilk kullanımda düz metin olarak terimin tam açılımını sağlayın ve kısaltmayı işaretlemek için `<abbr>` kullanın. Bu, içerik hakkında tüm kullanıcılara ne anlama geldiğini bildirirken kullanıcı aracılarının içeriği nasıl duyurup/göstereceğine dair bir ipucu sağlar.
-
-Açılımın kısaltmayla birlikte verilmesi pek anlamlı değilse ve kısaltma ya da akronim oldukça kısa bir terimse, `title` özniteliğinin değeri olarak tam açılımı verin:
-
-### Kısaltma örneği
-
-Bir örneğe bakalım.
+Çözüm:
 
 ```html
 <p>
+  Hello and welcome to my motivation page. As
+  <a href="http://www.brainyquote.com/quotes/authors/c/confucius.html"
+    ><cite>Confucius' quotes site</cite></a
+  >
+  says:
+</p>
 
-HTML kullanıyoruz, Hypertext Markup Language, web
+<blockquote cite="http://www.brainyquote.com/quotes/authors/c/confucius.html">
+  <p>It does not matter how slowly you go as long as you do not stop.</p>
+</blockquote>
 
-dokümanlarımızı yapılandırmak için.
+<p>
+  I also love the concept of positive thinking, and
+  <q cite="http://example.com/affirmationsforpositivethinking"
+    >The Need To Eliminate Negative Self Talk</q
+  >
+  (as mentioned in
+  <a href="http://example.com/affirmationsforpositivethinking"
+    ><cite>Affirmations for Positive Thinking</cite></a
+  >.)
+</p>
+```
 
+---
+
+## Kısaltmalar: `<abbr>`
+
+Web'de gezinirken karşılaşacağınız bir diğer oldukça yaygın element `<abbr>` elementidir — bu element bir kısaltmayı veya akronimi sarmak için kullanılır. İlk kullanımda terimin tam açılımını düz metin olarak sunmalı ve kısaltmayı işaretlemek için `<abbr>` kullanmalısınız.
+
+Açılımı kısaltmanın yanına eklemek anlamlı değilse ve kısaltma oldukça yaygın bir terimse, terimin tam açılımını `title` niteliğinin değeri olarak sağlayabilirsiniz:
+
+```html
+<p>
+  We use <abbr>HTML</abbr>, Hypertext Markup Language, to structure our web
+  documents.
 </p>
 
 <p>
-
-Bence <abbr title="Reverend">Rev.</abbr> Green işi mutfakta testereyle yaptı.
-
+  I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with
+  the chainsaw.
 </p>
 ```
 
-Bunlar şu şekilde görüntülenir:
+> **Note:** HTML'in önceki sürümlerinde `<acronym>` elementi de destekleniyordu, ancak hem kısaltmaları hem de akronimleri temsil etmek üzere `<abbr>` lehine HTML şartnamesinden çıkarılmıştır. `<acronym>` kesinlikle kullanılmamalıdır.
 
-HTML kullanıyoruz, Hypertext Markup Language, web dokümanlarımızı yapılandırmak için.
-
-Bence Rev. Green işi mutfakta testereyle yaptı.
-
-Not: html'in önceki sürümlerinde `<acronym>` öğesi için de destek vardı, ancak bu öğe, hem kısaltmaları hem de akronimleri temsil etmek için `<abbr>` kullanımını tercih ederek HTML spesifikasyonundan kaldırıldı. `<acronym>` kullanılmamalıdır.
-
-## Bir kısaltmayı işaretleyelim
-
-Bu öğrenme görevi için bir kısaltmayı işaretlemenizi istiyoruz.
-
-1. Aşağıdaki kod bloğunda örneği düzenlemek için MDN Playground'da "Play" düğmesine tıklayın.
-2. Dahil edilen kısaltmaları uygun HTML ile işaretleyin. İsterseniz bunu kendi seçtiğiniz bir örnekle değiştirebilir ve onu işaretlemeyi de deneyebilirsiniz.
-
-Hata yaparsanız, MDN Playground'daki Reset düğmesini kullanarak çalışmanızı temizleyebilirsiniz. Gerçekten takılırsanız, çözümü kod bloğunun altında görebilirsiniz.
+### Kısaltma İşaretleme Alıştırması:
 
 ```html
-<p>NASA kesinlikle heyecan verici işler yapıyor.</p>
+<p>
+  <abbr>NASA</abbr> (the National Aeronautics and Space Administration) sure
+  does some exciting work.
+</p>
 
-<p>Yeni kullanıcı arayüzü tasarımı LGTM!</p>
+<p>The new user interface design <abbr title="Looks good to me">LGTM</abbr>!</p>
 ```
 
-NASA kesinlikle heyecan verici işler yapıyor.
+---
 
-Yeni kullanıcı arayüzü tasarımı LGTM!
+## İletişim bilgilerini işaretleme: `<address>`
 
-Çözümü göstermek için buraya tıklayın
-
-## İletişim bilgilerini işaretleme
-
-HTML, iletişim bilgilerini işaretlemek için bir öğe sağlar — `<address>`. Bu, örneğin iletişim bilgilerinizi sarmalar:
+HTML, iletişim bilgilerini işaretlemek için `<address>` elementine sahiptir:
 
 ```html
 <address>Chris Mills, Manchester, The Grim North, UK</address>
 ```
 
-Daha karmaşık işaretleme ve diğer iletişim bilgileri biçimlerini de içerebilir; örneğin:
+Daha karmaşık işaretlemeler ve telefon/e-posta gibi diğer iletişim biçimlerini de içerebilir:
 
 ```html
 <address>
+  <p>
+    Chris Mills<br />
+    Manchester<br />
+    The Grim North<br />
+    UK
+  </p>
 
-<p>
-
-Chris Mills<br />
-
-Manchester<br />
-
-The Grim North<br />
-
-UK
-
-</p>
-
-<ul>
-
-<li>Tel: 01234 567 890</li>
-
-<li>Email: me@grim-north.co.uk</li>
-
-</ul>
-
+  <ul>
+    <li>Tel: 01234 567 890</li>
+    <li>Email: me@grim-north.co.uk</li>
+  </ul>
 </address>
 ```
 
-Not: Bağlantılı sayfa iletişim bilgilerini içeriyorsa, aşağıdaki gibi bir şey de uygun olur:
+> **Note:** `<address>` elementi yalnızca en yakın `<article>` veya `<body>` elementinin barındırdığı belgenin iletişim bilgilerini sağlamak için kullanılmalıdır. Tüm sitenin iletişim bilgilerini eklemek için bir sitenin altbilgisinde (footer) veya yazarın iletişim bilgileri için bir makalenin içinde kullanılması doğrudur; ancak o sayfanın içeriğiyle ilgisi olmayan rastgele posta adresleri listesini işaretlemek için **kullanılmamalıdır**.
+
+---
+
+## Üst simge ve alt simge: `<sup>` ve `<sub>`
+
+Tarihler, kimyasal formüller ve matematiksel denklemler gibi öğeleri işaretlerken üst simge ve alt simge kullanmanız gerekir. `<sup>` ve `<sub>` elementleri bu görevi yerine getirir:
 
 ```html
-<address>
-
-Page written by <a href="../authors/chris-mills/">Chris Mills</a>.
-
-</address>
-```
-
-Not: `<address>` öğesi yalnızca en yakın `<article>` ya da `<body>` öğesinin içerdiği belge için iletişim bilgileri sağlamak amacıyla kullanılmalıdır. Bir sitenin tüm sitesi için iletişim bilgilerini eklemek üzere sitenin alt bilgisinde ya da bir makale içinde yazarın iletişim bilgileri için kullanmak doğrudur, ancak o sayfanın içeriğiyle ilgisiz adres listesini işaretlemek için doğru değildir.
-
-## Üst simge ve alt simge
-
-Tarihler, kimyasal formüller ve matematiksel denklemler gibi öğeleri doğru anlamlarıyla işaretlemek için zaman zaman üst simge ve alt simge kullanmanız gerekir. `<sup>` ve `<sub>` öğeleri bu işi yapar. Örneğin:
-
-```html
-<p>Doğum günüm 25<sup>th</sup> Mayıs 2001'dir.</p>
-
+<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
 <p>
-
-Kafeinin kimyasal formülü
-
-C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>'dir.
-
+  Caffeine's chemical formula is
+  C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
 </p>
-
-<p>Eğer x<sup>2</sup> 9 ise, x 3 ya da -3 olmalıdır.</p>
+<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
 ```
 
-Bu kodun çıktısı şöyle görünür:
+Tarayıcı çıktısı:
+* My birthday is on the 25<sup>th</sup> of May 2001.
+* Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+* If x<sup>2</sup> is 9, x must equal 3 or -3.
 
-Doğum günüm 25th Mayıs 2001'dir.
-
-Kafeinin kimyasal formülü C8H10N4O2'dir.
-
-Eğer x2 9 ise, x 3 ya da -3 olmalıdır.
+---
 
 ## Bilgisayar kodunu temsil etme
 
-HTML kullanarak bilgisayar kodunu işaretlemek için kullanılabilecek bir dizi öğe vardır:
+HTML kullanarak bilgisayar kodunu işaretlemek için kullanılabilecek bir dizi element mevcuttur:
 
-`<code>`: Genel bilgisayar kodu parçalarını işaretlemek için.
+* `<code>`: Genel bilgisayar kodu parçalarını işaretlemek için kullanılır.
+* `<pre>`: Boşlukları ve girintileri korumak için kullanılır (genellikle kod blokları için). Metninizi `<pre></pre>` etiketleriyle sararsanız, boşluklarınız metin düzenleyicinizde gördüğünüz şekliyle birebir ekrana yansıtılır.
+* `<var>`: Değişken adlarını özel olarak işaretlemek için kullanılır.
+* `<kbd>`: Bilgisayara girilen klavye (ve diğer türdeki) girdileri işaretlemek için kullanılır.
+* `<samp>`: Bir bilgisayar programının çıktısını işaretlemek için kullanılır.
 
-`<pre>`: Boşlukları korumak için (genellikle kod blokları) — metninizin içine girinti veya fazla boşluk koyarsanız, tarayıcılar bunu yok sayar ve oluşturulan sayfada görmezsiniz. Ancak metni `<pre>` etiketlerine sararsanız, boşluklar metin düzenleyicinizde gördüğünüzle aynı şekilde gösterilir.
-
-`<var>`: Değişken adlarını özellikle işaretlemek için.
-
-`<kbd>`: Bilgisayara girilen klavye (ve diğer türden) girdileri işaretlemek için.
-
-`<samp>`: Bir bilgisayar programının çıktısını işaretlemek için.
-
-Bu öğelerin nasıl kullanıldığını gösteren örneklere bakalım:
+Örnek kullanım:
 
 ```html
 <pre><code>const para = document.querySelector('p');
 
 para.onclick = function() {
-
-alert('Owww, stop poking me!');
-
+  alert('Owww, stop poking me!');
 }</code></pre>
 
 <p>
-
-`<font>` ve `<center>` gibi sunumsal öğeleri kullanmamalısınız.
-
+  You shouldn't use presentational elements like <code>&lt;font&gt;</code> and
+  <code>&lt;center&gt;</code>.
 </p>
 
 <p>
-
-Yukarıdaki JavaScript örneğinde, `<var>para</var>` bir paragraf öğesini temsil eder.
-
+  In the above JavaScript example, <var>para</var> represents a paragraph
+  element.
 </p>
 
-<p>Metnin tamamını `<kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>` ile seçin.</p>
+<p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
 
 <pre>$ <kbd>ping mozilla.org</kbd>
-
 <samp>PING mozilla.org (63.245.215.20): 56 data bytes
-
 64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
 ```
 
-Yukarıdaki kod şöyle görünür:
+---
 
-```text
-const para = document.querySelector('p');
+## Saatleri ve tarihleri işaretleme: `<time>`
 
-para.onclick = function() {
-  alert('Owww, stop poking me!');
-}
-
-`<font>` ve `<center>` gibi sunumsal öğeleri kullanmamalısınız.
-
-Yukarıdaki JavaScript örneğinde, para bir paragraf öğesini temsil eder.
-
-Metnin tamamını Ctrl/Cmd + A ile seçin.
-
-$ ping mozilla.org
-PING mozilla.org (63.245.215.20): 56 data bytes
-64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms
-```
-
-## Saatleri ve tarihleri işaretleme
-
-HTML ayrıca, saatleri ve tarihleri makine tarafından okunabilir bir biçimde işaretlemek için `<time>` öğesini sağlar. Örneğin:
+HTML, saatleri ve tarihleri makine tarafından okunabilir bir formatta işaretlemek için `<time>` elementini sağlar:
 
 ```html
-<time datetime="2016-01-20">20 Ocak 2016</time>
+<time datetime="2016-01-20">20 January 2016</time>
 ```
 
-Bu neden yararlıdır? Çünkü insanların tarihleri yazmasının birçok farklı yolu vardır. Yukarıdaki tarih şu şekillerde yazılabilir:
+İnsanlar tarihleri 20 January 2016, 20/01/16, 2016 年 1 月 20 日 gibi onlarca farklı şekilde yazabilir. Bilgisayarlar bu farklı biçimleri kolayca ayrıştıramaz. `<time>` elementi, `datetime` niteliği aracılığıyla net, standart ve makine tarafından okunabilir bir tarih/saat bağlamanıza olanak tanır.
 
-20 Ocak 2016
-
-20 Ocak 2016
-
-Jan 20 2016
-
-20/01/16
-
-01/20/16
-
-Gelecek ayın 20'si
-
-20e Janvier 2016
-
-2016 年 1 ⽉ 20 ⽇
-
-Ve benzeri.
-
-Ancak bu farklı biçimler bilgisayarlar tarafından kolayca tanınamaz — bir sayfadaki tüm etkinliklerin tarihlerini otomatik olarak alıp bir takvime eklemek isteseydiniz ne olurdu? `<time>` öğesi, bu amaç için belirsiz olmayan, makine tarafından okunabilir bir tarih/saat eklemenize olanak tanır.
-
-Yukarıdaki temel örnek yalnızca basit, makine tarafından okunabilir bir tarih sağlar; ancak mümkün olan başka seçenekler de vardır, örneğin:
+Farklı biçim seçenekleri:
 
 ```html
 <!-- Standart basit tarih -->
-
-<time datetime="2016-01-20">20 Ocak 2016</time>
-
+<time datetime="2016-01-20">20 January 2016</time>
 <!-- Yalnızca yıl ve ay -->
-
-<time datetime="2016-01">Ocak 2016</time>
-
+<time datetime="2016-01">January 2016</time>
 <!-- Yalnızca ay ve gün -->
-
-<time datetime="01-20">20 Ocak</time>
-
+<time datetime="01-20">20 January</time>
 <!-- Yalnızca saat ve dakika -->
-
 <time datetime="19:30">19:30</time>
-
-<!-- Saniye ve milisaniye de verebilirsiniz! -->
-
+<!-- Saniye ve milisaniye -->
 <time datetime="19:30:01.856">19:30:01.856</time>
-
 <!-- Tarih ve saat -->
-
-<time datetime="2016-01-20T19:30">20 Ocak 2016, akşam 7.30</time>
-
-<!-- Saat dilimi farkıyla tarih ve saat -->
-
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+<!-- Saat dilimi farkı (timezone offset) ile tarih ve saat -->
 <time datetime="2016-01-20T19:30+01:00">
-
-20 Ocak 2016 akşam 7.30, Fransa'da akşam 8.30'dur
-
+  7.30pm, 20 January 2016 is 8.30pm in France
 </time>
-
-<!-- Belirli bir hafta numarasını belirtme -->
-
-<time datetime="2016-W04">2016'nın dördüncü haftası</time>
+<!-- Belirli bir hafta numarası -->
+<time datetime="2016-W04">The fourth week of 2016</time>
 ```
+
+---
 
 ## Özet
 
-Bu, daha az yaygın HTML metin semantiklerini incelememizin sonunu işaret ediyor. Bu kurs boyunca gördükleriniz, HTML metin öğelerinin eksiksiz bir listesi değildir — temel unsurları ve sahada daha sık göreceğiniz daha yaygın olanlardan bazılarını ele almaya çalıştık.
-
-Sırada, daha az yaygın HTML metin özelliklerini ne kadar iyi anladığınızı ve aklınızda tuttuğunuzu kontrol etmek için kullanabileceğiniz bazı testler var.
-
-Önceki
-
-Genel bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Daha iyi bir internet için planınız.
+Daha az yaygın HTML metin anlambilimi incelememizin sonuna geldik. Sırada bu özellikleri pekiştirecek test makalesi (**Test: Advanced HTML text**) bulunmaktadır.
 
 ---
 
-# Türkçe çeviri
+# 8. Test: İleri düzey HTML metinleri
 
-Test: HTML tests index
-Test: Advanced HTML text
-Yeteneklerinizi test edin: Gelişmiş HTML metni
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-The aim of this skill test is to help you assess whether you understand how to use lesser-known HTML elements to mark
-up advanced semantic features.
-Advanced text 1
-In this task, we want you to add some semantics to the provided HTML.
-To complete this task:
-1. Turn the second paragraf into a block-level quote, and semantically indicate that the quote is taken from
-Accessibility.
-2. Semantically mark up "HTML" and "CSS" as acronyms, providing expansions as tooltips.
-3. Use subscript and superscript to provide correct semantics for the chemical formulae and dates, and make them
-display correctly.
-4. Semantically associate machine-readable dates with the dates in the text.
-The starting point of the task looks like this:
-Advanced text semantics
-Let's start with a quote:
-HTML, Hypertext Markup Language is by default accessible, if used correctly.
-CSS can also be used to make web sayfasıs more, or less, accessible.
-Chemical Formulae: H2O (Water), C2H6O (Ethanol).
-Dates: December 25th 2019 (Christmas Day), November 2nd 2019 (Día de los
-Muertos).
-Here's the underlying code for this starting point:
-HTML
-İngilizce (ABD)
-Note: To get help, read our Test your skills usage guide. You can also reach out to us using one of our
-communication channels.
-15.10.2026 20:23
-Yeteneklerinizi test edin: Gelişmiş HTML metni - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Advanced_HTML_text
-1/2
+**HTML** > **Test your skills: Advanced HTML text** | English (US)
 
+Bu beceri testinin amacı, gelişmiş anlamsal özellikleri işaretlemek için daha az bilinen HTML elementlerini nasıl kullanacağınızı anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
+
+---
+
+## İleri düzey metin 1
+
+Bu görevde, sağlanan HTML koduna anlamsal zenginlik katmanız gerekmektedir:
+
+1. İkinci paragrafı blok düzeyinde bir alıntıya (`<blockquote>`) dönüştürün ve anlamsal olarak alıntının kaynağını belirtin.
+2. "HTML" ve "CSS" ifadelerini ipucu (tooltip) içeren kısaltmalar (`<abbr>`) olarak işaretleyin.
+3. Kimyasal formüller ve tarihler için alt simge (`<sub>`) ve üst simge (`<sup>`) kullanarak doğru anlamsal gösterimi sağlayın.
+4. Metindeki tarihlerle makine tarafından okunabilir tarihleri anlamsal olarak ilişkilendirin (`<time>`).
+
+### Başlangıç Kodu:
+
+```html
 <h1>Advanced text semantics</h1>
-<p>Let's start with a quote:</p>
-<p>
-HTML, Hypertext Markup Language is by default accessible, if used correctly.
-</p>
-<p>CSS can also be used to make web sayfasıs more, or less, accessible.</p>
-<p>Chemical Formulae: H2O (Water), C2H6O (Ethanol).</p>
-<p>
-Dates: December 25th 2019 (Christmas Day), November 2nd 2019 (Día de los
-Muertos).
-</p>
-The updated content should look like this:
-Advanced text semantics
-Let's start with a quote:
-HTML, Hypertext Markup Language is by default accessible, if used
-correctly.
-CSS, Cascading Style Sheets, can also be used to make web sayfasıs more, or less,
-accessible.
-Chemical Formulae: H2O (Water), C2H6O (Ethanol).
-th
-d
-Click here to show the solution
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-15.10.2026 20:23
-Yeteneklerinizi test edin: Gelişmiş HTML metni - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Advanced_HTML_text
-2/2
 
+<p>Let's start with a quote:</p>
+
+<p>
+  HTML, Hypertext Markup Language is by default accessible, if used correctly.
+</p>
+
+<p>CSS can also be used to make web pages more, or less, accessible.</p>
+
+<p>Chemical Formulae: H2O (Water), C2H6O (Ethanol).</p>
+
+<p>
+  Dates: December 25th 2019 (Christmas Day), November 2nd 2019 (Día de los
+  Muertos).
+</p>
+```
+
+### Çözüm:
+
+```html
+<h1>Advanced text semantics</h1>
+
+<p>Let's start with a quote:</p>
+
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">
+  <p>
+    <abbr title="HyperText Markup Language">HTML</abbr>, Hypertext Markup
+    Language is by default accessible, if used correctly.
+  </p>
+</blockquote>
+
+<p>
+  <abbr title="Cascading Style Sheets">CSS</abbr>, Cascading Style Sheets, can
+  also be used to make web pages more, or less, accessible.
+</p>
+
+<p>
+  Chemical Formulae: H<sub>2</sub>O (Water), C<sub>2</sub>H<sub>6</sub>O
+  (Ethanol).
+</p>
+
+<p>
+  Dates:
+  <time datetime="2019-12-25">December 25<sup>th</sup> 2019</time>
+  (Christmas Day),
+  <time datetime="2019-11-02">November 2<sup>nd</sup> 2019</time> (Día de los
+  Muertos).
+</p>
+```
 
 ---
 
-# Türkçe çeviri
+# 9. Uygulama Görevi: Mektup işaretleme
 
-HTML
-Challenge: Letter markup
-Meydan okuma: Bir mektubu işaretleme
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-We all learn to write a letter sooner or later; it is also a useful example to test our text formatting skills. In this challenge,
-we give you a letter to mark up as a test for your HTML text formatting skills and knowledge of the HTML <head>
-contents.
-Starting point
-To begin, click the Play button in the code sample panel below to open the provided body text in the MDN Playground.
-You'll follow the instructions in the sections that follow to mark up the text appropriately.
-HTML
+**HTML** > **Challenge: Marking up a letter** | English (US)
+
+Hepimiz er ya da geç bir mektup yazmayı öğreniriz; bu, metin biçimlendirme becerilerimizi test etmek için de son derece yararlı bir örnektir. Bu meydan okumada, HTML metin biçimlendirme becerileriniz ve HTML `<head>` içeriği bilginiz için bir test olarak işaretlemeniz gereken bir mektup veriyoruz.
+
+---
+
+## Başlangıç noktası
+
+İşaretlenmemiş ham metin:
+
+```text
 Dr. Eleanor Gaye
 Awesome Science faculty
 University of Awesome
@@ -1792,39 +1719,45 @@ Bobtown, CA 99999,
 USA
 Tel: 123-456-7890
 Email: no_reply@example.com
+
 20 January 2016
+
 Miss Eileen Dover
 4321 Cliff Top Edge
 Dover, CT9 XXX
 UK
+
 Re: Eileen Dover university application
+
 Dear Eileen,
+
 Thank you for your recent application to join us at the University of
 Awesome's science faculty to study as part of your
 PhD (Doctor of Philosophy) next year. I will answer your
 questions one by one, in the following sections.
-Starting dates
-We are happy to accommodate you starting your study with us at any time,
-İngilizce (ABD)
-15.10.2026 20:23
-Meydan okuma: Bir mektubu işaretleme - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter
-1/5
 
+Starting dates
+
+We are happy to accommodate you starting your study with us at any time,
 however it would suit us better if you could start at the beginning of a
 semester; the start dates for each one are as follows:
+
 First semester: 9 September 2016
 Second semester: 15 January 2017
 Third semester: 2 May 2017
+
 Please let me know if this is ok, and if so which start date you would
 prefer.
+
 Subjects of study
+
 At the Awesome Science Faculty, we have a pretty open-minded research
 facility — as long as the subjects fall somewhere in the realm of science
 and technology. You seem like an intelligent, dedicated researcher, and
 just the kind of person we'd like to have on our team. Saying that, of the
 ideas you submitted we were most intrigued by are as follows, in order of
 priority:
+
 Turning H2O into wine, and the health benefits of Resveratrol
 (C14H12O3).
 Measuring the effect on performance of funk bass players at temperatures
@@ -1832,6099 +1765,3425 @@ exceeding 30°C (86°F), when the audience size exponentially increases
 (effect of 3 × 103 increasing to 3 × 104).
 HTML, Hypertext Markup Language, and CSS,
 Cascading Style Sheets, constructs for representing musical scores.
+
 So please can you provide more information on each of these subjects,
 including how long you'd expect the research to take, required staff and
 other resources, and anything else you think we'd need to know? Thanks.
+
 Exotic dance moves
+
 Yes, you are right! As part of my post-doctorate work, I
 did study exotic tribal dances. To answer your question, my
 favorite dances are as follows, with definitions:
-Polynesian chicken dance
-A little known but very influential dance dating back as far as
-300 BCE, a whole village would
-dance around in a circle like chickens, to encourage their livestock to
-be "fruitful".
-Icelandic brownian shuffle
-Before the Icelanders developed fire as a means of getting warm, they
-used to practice this dance, which involved huddling close together in a
-circle on the floor, and shuffling their bodies around in imperceptibly
-tiny, very rapid movements. One of my fellow students used to say that
-he thought this dance inspired modern styles such as Twerking.
-Arctic robot dance
-15.10.2026 20:23
-Meydan okuma: Bir mektubu işaretleme - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter
-2/5
 
-An interesting example of historic misinformation, English explorers in
-the 1960s believed to have discovered a new dance style characterized by
-"robotic", stilted movements, being practiced by inhabitants of Northern
-Alaska and Canada. Later on however it was discovered that they were
-just moving like this because they were really cold.
+Polynesian chicken dance
+    A little known but very influential dance dating back as far as
+    300 BCE, a whole village would
+    dance around in a circle like chickens, to encourage their livestock to
+    be "fruitful".
+Icelandic brownian shuffle
+    Before the Icelanders developed fire as a means of getting warm, they
+    used to practice this dance, which involved huddling close together in a
+    circle on the floor, and shuffling their bodies around in imperceptibly
+    tiny, very rapid movements. One of my fellow students used to say that
+    he thought this dance inspired modern styles such as Twerking.
+Arctic robot dance
+    An interesting example of historic misinformation, English explorers in
+    the 1960s believed to have discovered a new dance style characterized by
+    "robotic", stilted movements, being practiced by inhabitants of Northern
+    Alaska and Canada. Later on however it was discovered that they were
+    just moving like this because they were really cold.
+
 Yours sincerely,
+
 Dr Eleanor Gaye
+
 University of Awesome motto: Be awesome to each other. --
 The memoirs of Bill S Preston, Esq.
-Dr. Eleanor Gaye Awesome Science faculty University of Awesome Bobtown, CA 99999, USA Tel:
-123-456-7890 Email: no_reply@example.com 20 January 2016 Miss Eileen Dover 4321 Cliff Top
-Edge Dover, CT9 XXX UK Re: Eileen Dover university application Dear Eileen, Thank you for your
-recent application to join us at the University of Awesome's science faculty to study as part of your
-PhD (Doctor of Philosophy) next year. I will answer your questions one by one, in the following
-sections. Starting dates We are happy to accommodate you starting your study with us at any time,
-however it would suit us better if you could start at the beginning of a semester; the start dates for
-each one are as follows: First semester: 9 September 2016 Second semester: 15 January 2017 Third
-semester: 2 May 2017 Please let me know if this is ok, and if so which start date you would prefer.
-Subjects of study At the Awesome Science Faculty, we have a pretty open-minded research facility —
-as long as the subjects fall somewhere in the realm of science and technology. You seem like an
-Project brief
-For this project, your task is to mark up a letter that needs to be hosted on a university intranet. The letter is a response
-from a research fellow to a prospective PhD student concerning their application to the university.
-Block/structural semantics
-Add an appropriate HTML structure including doctype, and <html> , <head>  and <body>  elements.
-In general, the letter should be marked up as an organization of başlıks and paragrafs, except for the
-addresses mentioned in the next bullet. There is one top level başlık (the "Re:" line) and three second level
-başlıks.
-Put the two addresses inside <address>  elements. Each line of the address should sit on a new line, but not be
-in a new paragraf.
-Use an appropriate list type to mark up the semester start dates, study subjects, and exotic dances.
-Inline semantics
-The names of the sender and receiver (and Tel and Email) should be marked up with strong importance.
-The four dates in the document should be wrapped in appropriate elements containing machine-readable dates.
-The first address and first date in the letter should have a class  attribute value of sender-column  set on them.
-The CSS you'll add later will cause these to be right aligned, as it should be in the case in a classic letter layout.
-Mark up the following five acronyms/abbreviations in the main text of the letter — "PhD," "HTML," "CSS," "BCE,"
-and "Esq." — to provide expansions of each one.
-15.10.2026 20:23
-Meydan okuma: Bir mektubu işaretleme - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter
-3/5
-
-The six sub/superscripts should be marked up appropriately — in the chemical formulae, and the numbers 103
-and 104 (they should be 10 to the power of 3 and 4, respectively).
-Mark up at least two other appropriate words in the text with strong importance/emphasis.
-Mark up the university motto quote and citation with appropriate elements.
-The head of the document
-The character set of the document should be set as utf-8  using the appropriate <meta>  tag.
-The author of the letter should be specified in an appropriate <meta>  tag.
-You should set the language of the document as en-US .
-Include the following text inside a document title element: "Awesome science application correspondence".
-The following CSS should be included inside an appropriate element inside the head:
-CSS
-body {
-font: 1.2em / 1.5 system-ui;
-}
-.sender-column {
-text-align: right;
-}
-h1 {
-font-size: 1.5em;
-}
-h2 {
-font-size: 1.3em;
-}
-Hints and tips
-Use the 
- to validate your HTML. Award yourself bonus points if it validates.
-You don't need to know any CSS to do this assignment. You just need to put the provided CSS inside an HTML
-element.
-Example
-The following live example shows what the letter should look like after being marked up. If you are getting stuck on how
-to achieve some of this, see the solution below the live example.
-W3C HTML validator
-15.10.2026 20:23
-Meydan okuma: Bir mektubu işaretleme - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter
-4/5
-
-Dr. Eleanor Gaye
-Awesome Science faculty
-University of Awesome
-Bobtown, CA 99999,
-USA
-Tel: 123-456-7890
-Email: no_reply@example.com
-20 January 2016
-Miss Eileen Dover
-4321 Cliff Top Edge
-Dover, CT9 XXX
-UK
-Re: Eileen Dover university application
-Dear Eileen,
-Click here to show the solution
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-15.10.2026 20:23
-Meydan okuma: Bir mektubu işaretleme - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Marking_up_a_letter
-5/5
-
+```
 
 ---
 
-# Türkçe çeviri
+## Proje özeti ve yönergeler
 
-HTML
-Belgeleri yapılandırma
-Belgeleri yapılandırma
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-In addition to defining individual parts of your page (such as "a paragraf" or "an image"), HTML also boasts a number
-of block level elements used to define areas of your website such as "the header", "the navigation menu", or "the main
-content column". This article looks into how to plan a basic website structure, and write the HTML to represent this
-structure.
-Önkoşullar:
-Basic HTML familiarity, as covered in Basic HTML Syntax. Text-level semantics such as
-başlıks and paragrafs and lists.
-Learning
-outcomes:
-The common HTML semantic structural elements, for example <main> , <section> ,
-<article> , <header> , <nav> , and <footer> , and how to use them correctly.
-The need to use semantic elements in appropriate places, rather than just using <div>
-elements wherever a block-level container is required, and the benefits of this (such as
-improved accessibility).
-Basic sections of a document
-Webpages can and will look pretty different from one another, but they all tend to share similar standard components,
-unless the page is displaying a fullscreen video or game, is part of some kind of art project, or is just badly structured:
-header:
-Usually a big strip across the top with a big başlık, logo, and perhaps a tagline. This usually stays the same from
-one page of a website to another.
-navigation bar:
-Links to the site's main sections; usually represented by menu buttons, links, or tabs. Like the header, this content
-usually remains consistent from one webpage to another — having inconsistent navigation on your website will just
-lead to confused, frustrated users. Many web designers consider the navigation bar to be part of the header rather
-than an individual component, but that's not a requirement; in fact, some also argue that having the two separate is
-better for accessibility, as ekran okuyucus can read the two features better if they are separate.
-main content:
-A big area in the center that contains most of the unique content of a given webpage, for example, the video you want
-to watch, or the main story you're reading, or the map you want to view, or the news headlines, etc. This is the one
-part of the website that definitely will vary from page to page!
-sidebar:
-Some peripheral info, links, quotes, ads, etc. Usually, this is contextual to what is contained in the main content (for
-example on a news article page, the sidebar might contain the author's bio, or links to related articles) but there are
-İngilizce (ABD)
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-1/11
+Bir üniversite intranetinde barındırılması gereken bir mektubu işaretlemeniz gerekmektedir. Mektup, bir araştırmacının üniversiteye başvuran aday bir doktora öğrencisine verdiği yanıttır.
 
-also cases where you'll find some recurring elements like a secondary navigation system.
-footer:
-A strip across the bottom of the page that generally contains fine print, copyright notices, or contact info. It's a place
-to put common information (like the header) but usually, that information is not critical or secondary to the website
-itself. The footer is also sometimes used for SEO purposes, by providing links for quick access to popular content.
-A "typical website" could be structured something like this:
-HTML for structuring content
-The example shown above isn't pretty, but it is perfectly fine for illustrating a typical website layout example. Some
-websites have more columns, some are a lot more complex, but you get the idea. With the right CSS, you could use
-pretty much any elements to wrap around the different sections and get it looking how you wanted, but as discussed
-before, we need to respect semantics and use the right element for the right job.
-This is because visuals don't tell the whole story. We use color and font size to draw sighted users' attention to the most
-useful parts of the content, like the navigation menu and related links, but what about visually impaired people for
-example, who might not find concepts like "pink" and "large font" very useful?
-Note: The image above illustrates the main sections of a document, which you can define with HTML. However,
-the appearance of the page shown here — including the layout, colors, and fonts — is achieved by applying
-CSS to the HTML.
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-2/11
+### Blok / yapısal anlambilim:
+* Doctype ile `<html>`, `<head>` ve `<body>` elementlerini içeren uygun bir HTML yapısı ekleyin.
+* Genel olarak mektup başlıklar ve paragraflar olarak yapılandırılmalıdır. Bir adet en üst düzey başlık (`Re:` satırı) ve üç adet ikinci düzey başlık (`<h2>`) bulunmalıdır.
+* İki adresi `<address>` elementleri içine yerleştirin. Adresin her satırı yeni bir satırda (`<br />`) olmalı, ancak yeni bir paragrafta olmamalıdır.
+* Dönem başlangıç tarihleri (`<ul>`), çalışma konuları (`<ol>`) ve egzotik danslar (`<dl>`) için uygun liste türlerini kullanın.
 
-In your HTML code, you can mark up sections of content based on their functionality — you can use elements that
-represent the sections of content described above unambiguously, and assistive technologies like ekran okuyucus can
-recognize those elements and help with tasks like "find the main navigation", or "find the main content." As we
-mentioned earlier in the course, there are a number of consequences of not using the right element structure and
-semantics for the right job.
-To implement such semantic mark up, HTML provides dedicated tags that you can use to represent such sections, for
-example:
-header: <header> .
-navigation bar: <nav> .
-main content: <main> , with various content subsections represented by <article> , <section> , and <div>
-elements.
-sidebar: <aside> ; often placed inside <main> .
-footer: <footer> .
-Exploring the code for our example
-The example seen above is represented by the following code (you can also 
-,
-and 
-). We'd like you to look at the listing below to see what parts make up each section of the
-visual output.
-HTML
+### Satır içi anlambilim:
+* Gönderen ve alıcının adları (ve *Tel*, *Email* etiketleri) `<strong>` ile işaretlenmelidir.
+* Belgedeki dört tarih makine tarafından okunabilir tarihler barındıran `<time>` elementlerine sarılmalıdır.
+* İlk adres ve ilk tarih `class="sender-column"` niteliğine sahip olmalıdır (sağa yaslanmaları için).
+* Ana metindeki beş kısaltmayı/akronimi işaretleyin: "PhD", "HTML", "CSS", "BCE" ve "Esq.".
+* Alt ve üst simgeleri (`<sub>` ve `<sup>`) kimyasal formüllerde ($H_2O$, $C_{14}H_{12}O_3$) ve $10^3$, $10^4$ sayılarında uygun şekilde işaretleyin.
+* Üniversite sloganı alıntısını `<q>` ve kaynak gösterimini `<cite>` ile işaretleyin.
+
+### Belgenin head bölümü:
+* Karakter kümesi `<meta charset="utf-8" />` olmalıdır.
+* Yazar `<meta name="author" content="Dr. Eleanor Gaye" />` olarak belirtilmelidir.
+* Belgenin dili `<html lang="en-US">` olarak ayarlanmalıdır.
+* Belge başlığı `<title>Awesome science application correspondence</title>` olmalıdır.
+* Verilen CSS head içine bir `<style>` elementi içine eklenmelidir.
+
+---
+
+## Eksiksiz çözüm
+
+```html
 <!doctype html>
 <html lang="en-US">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
-<title>My page title</title>
-<link
-href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
-rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<!-- The main header used across all the pages of our website -->
-<header>
-<h1>Header</h1>
-</header>
-Note:
- are colorblind; or, to put it another way, approximately 1 in
-every 12 men and 1 in every 200 women. Blind and visually impaired people represent roughly 4-5% of the
-world population (in 2015 there were 
-, while the total
-population was 
-).
-Roughly 8% of men and 0.5% of women
-940 million people with some degree of vision loss
-around 7.5 billion
-find the code in our GitHub repository
-view the example live
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-3/11
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Eleanor Gaye" />
+    <title>Awesome science application correspondence</title>
+    <style>
+      body {
+        font: 1.2em / 1.5 system-ui;
+      }
 
-<nav>
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Our team</a></li>
-<li><a href="#">Projects</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-<!-- A Search form: another common non-linear
-way to navigate through a site. -->
-<form>
-<input type="search" name="q" placeholder="Search query" />
-<input type="submit" value="Go!" />
-</form>
-</nav>
-<!-- Our page's main content -->
-<main>
-<!-- An article -->
-<article>
-<h2>Article başlık</h2>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam
-lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam
-viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent
-et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
-congue enim, ut porta lorem lacinia consectetur.
-</p>
-<section>
-<h3>Subsection</h3>
-<p>
-Donec ut librero sed accu vehicula ultricies a non tortor. Lorem
-ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut
-gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id
-dolor.
-</p>
-<p>
-Pelientesque auctor nisi id magna consequat sagittis. Curabitur
-dapibus, enim sit amet elit pharetra tincidunt feugiat nist
-imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed
-odio eros.
-</p>
-</section>
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-4/11
+      .sender-column {
+        text-align: right;
+      }
 
-<section>
-<h3>Another subsection</h3>
-<p>
-Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum
-soclis natoque penatibus et manis dis parturient montes, nascetur
-ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at
-sem facilisis semper ac in est.
-</p>
-<p>
-Vivamus fermentum semper porta. Nunc diam velit, adipscing ut
-tristique vitae sagittis vel odio. Maecenas convallis ullamcorper
-ultricied. Curabitur ornare, ligula semper consectetur sagittis,
-nisi diam iaculis velit, is fringille sem nunc vet mi.
-</p>
-</section>
-</article>
-<!-- the aside content can also be nested within the main content -->
-<aside>
-<h2>Related</h2>
-<ul>
-<li><a href="#">Oh I do like to be beside the seaside</a></li>
-<li><a href="#">Oh I do like to be beside the sea</a></li>
-<li><a href="#">Although in the North of England</a></li>
-<li><a href="#">It never stops raining</a></li>
-<li><a href="#">Oh well…</a></li>
-</ul>
-</aside>
-</main>
-<!-- The footer that is used across all the pages of our website -->
-<footer>
-<p>©Copyright 2050 by nobody. All rights reversed.</p>
-</footer>
-</body>
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <address class="sender-column">
+      <strong>Dr. Eleanor Gaye</strong><br />
+      Awesome Science faculty<br />
+      University of Awesome<br />
+      Bobtown, CA 99999,<br />
+      USA<br />
+      <strong>Tel</strong>: 123-456-7890<br />
+      <strong>Email</strong>: no_reply@example.com
+    </address>
+
+    <p class="sender-column">
+      <time datetime="2016-01-20">20 January 2016</time>
+    </p>
+
+    <address>
+      <strong>Miss Eileen Dover</strong><br />
+      4321 Cliff Top Edge<br />
+      Dover, CT9 XXX<br />
+      UK
+    </address>
+
+    <h1>Re: Eileen Dover university application</h1>
+
+    <p>Dear Eileen,</p>
+
+    <p>
+      Thank you for your recent application to join us at the University of
+      Awesome's science faculty to study as part of your
+      <abbr>PhD</abbr> (Doctor of Philosophy) next year. I will answer your
+      questions one by one, in the following sections.
+    </p>
+
+    <h2>Starting dates</h2>
+
+    <p>
+      We are happy to accommodate you starting your study with us at any time,
+      however it would suit us better if you could start at the beginning of a
+      semester; the start dates for each one are as follows:
+    </p>
+
+    <ul>
+      <li>
+        First semester: <time datetime="2016-09-09">9 September 2016</time>
+      </li>
+      <li>
+        Second semester: <time datetime="2017-01-15">15 January 2017</time>
+      </li>
+      <li>Third semester: <time datetime="2017-05-02">2 May 2017</time></li>
+    </ul>
+
+    <p>
+      Please let me know if this is ok, and if so which start date you would
+      prefer.
+    </p>
+
+    <h2>Subjects of study</h2>
+
+    <p>
+      At the Awesome Science Faculty, we have a pretty open-minded research
+      facility — as long as the subjects fall somewhere in the realm of science
+      and technology. You seem like an intelligent, dedicated researcher, and
+      just the kind of person we'd like to have on our team. Saying that, of the
+      ideas you submitted we were most intrigued by are as follows, in order of
+      priority:
+    </p>
+
+    <ol>
+      <li>
+        Turning H<sub>2</sub>O into wine, and the health benefits of Resveratrol
+        (C<sub>14</sub>H<sub>12</sub>O<sub>3</sub>).
+      </li>
+      <li>
+        Measuring the effect on performance of funk bass players at temperatures
+        exceeding 30°C (86°F), when the audience size exponentially increases
+        (effect of 3 × 10<sup>3</sup> increasing to 3 × 10<sup>4</sup>).
+      </li>
+      <li>
+        <abbr>HTML</abbr>, Hypertext Markup Language, and <abbr>CSS</abbr>,
+        Cascading Style Sheets, constructs for representing musical scores.
+      </li>
+    </ol>
+
+    <p>
+      So please can you provide more information on each of these subjects,
+      including how long you'd expect the research to take, required staff and
+      other resources, and anything else you think we'd need to know? Thanks.
+    </p>
+
+    <h2>Exotic dance moves</h2>
+
+    <p>
+      Yes, you are right! As part of my post-doctorate work, I
+      <em>did</em> study exotic tribal dances. To answer your question, my
+      favorite dances are as follows, with definitions:
+    </p>
+
+    <dl>
+      <dt>Polynesian chicken dance</dt>
+      <dd>
+        A little known but <em>very</em> influential dance dating back as far as
+        300 <abbr title="Before Common Era">BCE</abbr>, a whole village would
+        dance around in a circle like chickens, to encourage their livestock to
+        be "fruitful".
+      </dd>
+      <dt>Icelandic brownian shuffle</dt>
+      <dd>
+        Before the Icelanders developed fire as a means of getting warm, they
+        used to practice this dance, which involved huddling close together in a
+        circle on the floor, and shuffling their bodies around in imperceptibly
+        tiny, very rapid movements. One of my fellow students used to say that
+        he thought this dance inspired modern styles such as Twerking.
+      </dd>
+      <dt>Arctic robot dance</dt>
+      <dd>
+        An interesting example of historic misinformation, English explorers in
+        the 1960s believed to have discovered a new dance style characterized by
+        "robotic", stilted movements, being practiced by inhabitants of Northern
+        Alaska and Canada. Later on however it was discovered that they were
+        just moving like this because they were really cold.
+      </dd>
+    </dl>
+
+    <p>Yours sincerely,</p>
+
+    <p>Dr Eleanor Gaye</p>
+
+    <p>
+      University of Awesome motto: <q>Be awesome to each other.</q> --
+      <cite
+        >The memoirs of Bill S Preston, <abbr title="Esquire">Esq.</abbr></cite
+      >
+    </p>
+  </body>
 </html>
-Take some time to look over the code and understand it — the comments inside the code should also help you to
-understand it. We aren't asking you to do much else in this article, because the key to understanding document layout is
-writing a sound HTML structure, and then laying it out with CSS. We'll wait for this until you start to study CSS layout as
-part of the CSS topic.
-HTML layout elements in more detail
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-5/11
+```
 
-It's good to understand the overall meaning of all the HTML sectioning elements in detail — this is something you'll work
-on gradually as you start to get more experience with web development. You can find a lot of detail by reading our HTML
-element reference. For now, these are the main definitions that you should try to understand:
-<main>  is for content unique to this page. Use <main>  only once per page, and put it directly inside <body> .
-Ideally this shouldn't be nested within other elements.
-<article>  encloses a block of related content that makes sense on its own without the rest of the page (for
-example, a single blog post).
-<section>  is similar to <article> , but it is more for grouping together a single part of the page that constitutes
-one single piece of functionality (like a mini map, or a set of article headlines and summaries), or a theme. It's
-considered best practice to begin each section with a başlık; also note that you can break <article> s up into
-different <section> s, or <section> s up into different <article> s, depending on the context.
-<aside>  contains content that is not directly related to the main content but can provide additional information
-indirectly related to it (glossary entries, author biography, related links, etc.).
-<header>  represents a group of introductory content. If it is a child of <body>  it defines the global header of a
-webpage, but if it's a child of an <article>  or <section>  it defines a specific header for that section (try not to
-confuse this with titles and başlıks).
-<nav>  contains the main navigation functionality for the page. Secondary links, etc., would not go in the
-navigation.
-<footer>  represents a group of end content for a page.
-Each of the aforementioned elements can be clicked on to read the corresponding article in the "HTML element
-reference" section, providing more detail about each one.
-Non-semantic wrappers
-Sometimes you'll come across a situation where you can't find an ideal semantic element to group some items together
-or wrap some content. Sometimes you might want to just group a set of elements together to affect them all as a single
-entity with some CSS or JavaScript. For cases like these, HTML provides the <div>  and <span>  elements. You should
-use these preferably with a suitable class  attribute, to provide some kind of label for them so they can be easily
-targeted.
-<span>  is an inline non-semantic element, which you should only use if you can't think of a better semantic text element
-to wrap your content, or don't want to add any specific meaning. For example:
-HTML
-<p>
-The King walked drunkenly back to his room at 01:00, the beer doing nothing to
-aid him as he staggered through the door.
-<span class="editor-note">
-[Editor's note: At this point in the play, the lights should be down low].
-</span>
-</p>
-In this case, the editor's note is supposed to merely provide extra direction for the director of the play; it is not supposed
-to have extra semantic meaning. For sighted users, CSS would perhaps be used to distance the note slightly from the
-main text.
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-6/11
+---
+# 10. Belgeleri yapılandırma
 
-<div>  is a block level non-semantic element, which you should only use if you can't think of a better semantic block
-element to use, or don't want to add any specific meaning. For example, imagine a shopping cart widget that you could
-choose to pull up at any point during your time on an e-commerce site:
-HTML
-<div class="shopping-cart">
-<h2>Shopping cart</h2>
-<ul>
-<li>
-<p>
-<a href=""><strong>Silver earrings</strong></a>: $99.95.
-</p>
-<img src="../products/3333-0985/thumb.png" alt="Silver earrings" />
-</li>
-<li>…</li>
-</ul>
-<p>Total cost: $237.89</p>
-</div>
-This isn't really an <aside> , as it doesn't necessarily relate to the main content of the page (you want it viewable from
-anywhere). It doesn't even particularly warrant using a <section> , as it isn't part of the main content of the page. So a
-<div>  is fine in this case. We've included a başlık as a signpost to aid ekran okuyucu users in finding it.
-Line breaks and horizontal rules
-Two elements that you'll use occasionally and will want to know about are <br>  and <hr> .
-<br>: the line break element
-<br>  creates a line break in a paragraf; it is the only way to force a rigid structure in a situation where you want a
-series of fixed short lines, such as in a postal address or a poem. For example:
-HTML
-<p>
-There once was a man named O'Dell<br />
-Warning: Divs are so convenient to use that it's easy to use them too much. As they carry no semantic value,
-they just clutter your HTML code. Take care to use them only when there is no better semantic solution and try
-to reduce their usage to the minimum otherwise you'll have a hard time updating and maintaining your
-documents.
-Note: Scrimba's 
-MDN learning partner interactive tutorial provides a useful recap of semantic
-markup and why you should use it, plus a challenge that tests your ability to improve an HTML codebase with
-semantic elements.
-Semantic HTML
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-7/11
+**HTML** > **Structuring documents** | English (US)
 
-Who loved to write HTML<br />
-But his structure was bad, his semantics were sad<br />
-and his markup didn't read very well.
-</p>
-Without the <br>  elements, the paragraf would just be rendered in one long line (as we said earlier in the course,
-HTML ignores most whitespace); with <br>  elements in the code, the markup renders like this:
-There once was a man named O'Dell
-Who loved to write HTML
-But his structure was bad, his semantics were sad
-and his markup didn't read very well.
-<hr>: the thematic break element
-<hr>  elements create a horizontal rule in the document that denotes a thematic change in the text (such as a change in
-topic or scene). Visually it just looks like a horizontal line. As an example:
-HTML
-<p>
-Ron was backed into a corner by the marauding netherbeasts. Scared, but
-determined to protect his friends, he raised his wand and prepared to do
-battle, hoping that his distress call had made it through.
-</p>
-<hr />
-<p>
-Meanwhile, Harry was sitting at home, staring at his royalty statement and
-pondering when the next spin off series would come out, when an enchanted
-distress letter flew through his window and landed in his lap. He read it
-hazily and sighed; "better get back to work then", he mused.
-</p>
-Would render like this:
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-8/11
+HTML, sayfanızın tek tek parçalarını tanımlamanın yanı sıra (örneğin "bir paragraf" veya "bir görsel"), web sitenizin alanlarını (örneğin "header", "navigasyon menüsü", "ana içerik sütunu") tanımlamak için kullanılan bir dizi blok düzeyinde elemente de sahiptir. Bu makale, temel bir web sitesi yapısının nasıl planlanacağını ve bu yapıyı temsil eden HTML'in nasıl yazılacağını inceler.
 
-Ron was backed into a corner by the marauding netherbeasts. Scared, but determined to protect his
-friends, he raised his wand and prepared to do battle, hoping that his distress call had made it through.
-Meanwhile, Harry was sitting at home, staring at his royalty statement and pondering when the next
-spin off series would come out, when an enchanted distress letter flew through his window and
-landed in his lap. He read it hazily and sighed; "better get back to work then", he mused.
-Structuring a basic website
-The next stage after planning out the structure of a single webpage is to plan out the structure of a whole multi-page
-website, including how they should be arranged and link to one another for the best possible user experience. This is
-called Information architecture.
-In a large, complex website, a lot of planning can go into this process, but for a basic website with a few pages, it can be
-a quick and fun exercise.
-The process might look like this:
-1. You'll have a few elements common to most (if not all) pages — such as the navigation menu, and the footer
-content. If your site is for a business, for example, it's a good idea to have your contact information available in
-the footer on each page. Note down what you want to have common to every page. For example:
-Header:
-Title and logo
-Site language chooser
-Navigation menu
-Footer:
-Copyright notice
-Link to terms and conditions, contact details, and accessibility policy
-2. Sonraki, draw a rough sketch of what you might want the structure of each page to look like (it might look like our
-simple website above). Note what each block is going to be.
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-9/11
-
-Header
-Footer
-Main
-content
-1 or 2
-sidebars,
-depending on
-page
-3. Now, brainstorm all the other (not common to every page) content you want to have on your website. For
-example:
-Flights
-Accommodation
-Transport
-Things to do
-Special offers
-Popular holiday packages, for example winter sun, skiing
-Search results
-Reviews
-Visa/entry requirements
-Currency
-Languages and culture
-Buy holidays
-4. Sonraki, try to sort all these content items into groups, to give you an idea of what parts might live together on
-different pages. This is very similar to a technique called Card sorting.
-Search
-Flights
-Accommodation
-Transport
-Things to do
-Special offers
-Popular holidays
-Winter sun
-Skiing
-Search results
-Reviews
-Country-specific info
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-10/11
-
-Visa/entry requirements
-Currency
-Languages and culture
-Buy holidays
-5. Now try to sketch a rough sitemap — have a box for each page on your site, and draw lines to show the typical
-workflow between pages. The homepage will probably be in the top or at the center, and link to most if not all of
-the others. Most of the pages in a small site should be available from the main navigation, although there are
-exceptions. You might also want to include notes about how things might be presented.
-Homepage
-Link to more special offers, country-
-specific pages, shopping cart
-Search menu
-Show specials on front page
-Search
-results
-Country
-info
-Special
-offers
-Holiday
-purchase flow
-Shopping cart, enter address, pay, etc.
-Try carrying out the above exercise for a website of your own creation. What would you like to make a site about? As a
-stretch goal, use the HTML knowledge you've gained so far to create a few of the pages on the site. You could use our
- as a starting point.
-Summary
-At this point, you should have a better idea about how to structure a web sayfası/site. In the next article of this module,
-we'll look at how to create hyperlinks, one of the fundamental features of the web.
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-basic HTML template
-15.10.2026 20:23
-Belgeleri yapılandırma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-11/11
-
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. Başlıklar, paragraflar ve listeler gibi metin düzeyi anlambilim. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Yaygın HTML anlamsal yapısal elementleri (`<main>`, `<section>`, `<article>`, `<header>`, `<nav>` ve `<footer>`) ve bunların doğru kullanımı.<br>• Yalnızca `<div>` kullanmak yerine uygun yerlerde anlamsal elementleri kullanma gerekliliği ve bunun sağladığı faydalar (gelişmiş erişilebilirlik vb.). |
 
 ---
 
-# Türkçe çeviri
+## Bir belgenin temel bölümleri
 
-HTML
-Bağlantılar oluşturma
-Bağlantılar oluşturma
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Links (also known as hyperlinks) are really important — they are what makes the Web a web. This article shows the
-syntax required to make a link, and discusses link best practices.
-Önkoşullar:
-Basic HTML familiarity, as covered in Basic HTML Syntax. Text-level semantics such as
-başlıks and paragrafs and lists.
-Learning
-outcomes:
-Understand why links are the fundamental feature of the web. There is no web without
-links.
-The href  attribute.
-Absolute and relative paths, and when to use them.
-Path syntax in detail — slashes, single dot, and double dot.
-Link states and why they are important — :hover , :focus , :visited , and
-:active .
-Inline and block-level links.
-Understanding the benefits of writing good link text, such as better accessibility for
-ekran okuyucu users, and potential positive SEO effects.
-What is a hyperlink?
-Hyperlinks are features of an HTML document that, when clicked or otherwise activated, cause the tarayıcı to navigate
-to other documents or resources, sometimes specific parts of documents. Hyperlinks are one of the most exciting
-innovations the Web has to offer. They've been a feature of the Web since the beginning, and are what makes the Web a
-web. Each resource on the web has an address, known as a URL (Uniform Resource Locator), which hyperlinks point to.
-For example, the BBC homepage contains many links that point not only to multiple news stories, but also different areas
-of the site (navigation functionality), login/registration pages (user tools), and more.
-İngilizce (ABD)
-Note: A URL can point to HTML files, text files, images, text documents, video and audio files, or anything else
-that lives on the Web. If the web tarayıcı doesn't know how to display or handle the file, it will ask you if you
-want to open the file (in which case the duty of opening or handling the file is passed to a suitable native app on
-the device) or download the file (in which case you can try to deal with it later on).
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-1/15
+Web sayfaları birbirinden oldukça farklı görünebilir, ancak tam ekran bir video/oyun göstermedikleri veya kötü yapılandırılmadıkları sürece genellikle benzer standart bileşenleri paylaşırlar:
 
-Anatomy of a link
-A basic link is created by wrapping the text or other content inside an <a>  element and using the href  attribute, also
-known as a Hypertext Reference, or target, that contains the web address.
-HTML
+* **header (üstbilgi):** Genellikle büyük bir başlık, logo ve belki de bir slogan içeren, sayfanın en üstündeki geniş bir şerittir. Bu alan genellikle web sitesinin bir sayfasından diğerine aynı kalır.
+* **navigation bar (gezinti çubuğu):** Sitenin ana bölümlerine bağlantılar içerir; genellikle menü butonları, linkler veya sekmelerle temsil edilir. Header gibi bu içerik de tutarlı kalmalıdır. Gezinti çubuğunu header'dan ayrı tutmak ekran okuyucuların iki özelliği daha iyi ayrıştırmasını sağlayarak erişilebilirliği artırır.
+* **main content (ana içerik):** Sayfanın merkezindeki benzersiz içeriğin çoğunu barındıran büyük alandır (izlemek istediğiniz video, okuduğunuz ana hikaye, harita veya haber manşetleri). Sitede sayfadan sayfaya kesinlikle değişen tek bölümdür!
+* **sidebar (kenar çubuğu):** Bazı ikincil bilgiler, bağlantılar, alıntılar veya reklamlar içerir. Genellikle ana içerikle bağlamsaldır (örneğin bir makale sayfasında yazarın biyografisi veya ilgili makalelere bağlantılar).
+* **footer (altbilgi):** Sayfanın en altındaki şerittir; genellikle telif hakkı bildirimleri, yasal uyarılar veya iletişim bilgilerini içerir.
+
+---
+
+## İçeriği yapılandırmak için HTML
+
+İçeriğimizi görsel olarak CSS ile istediğimiz gibi yerleştirebiliriz, ancak daha önce tartışıldığı gibi semantiğe saygı göstermeli ve **doğru iş için doğru elementi** kullanmalıyız. Görseller her şeyi anlatmaz; renk körlüğü veya görme engeli olan kullanıcılar için ekran okuyucular "ana navigasyonu bul" veya "ana içeriği bul" gibi işlemleri bu anlamsal etiketler sayesinde gerçekleştirir.
+
+HTML şu anlamsal etiketleri sunar:
+
+* **header:** `<header>`
+* **navigation bar:** `<nav>`
+* **main content:** `<main>`, alt bölümler için `<article>`, `<section>` ve `<div>`
+* **sidebar:** `<aside>` (genellikle `<main>` içinde veya yanında yer alır)
+* **footer:** `<footer>`
+
+### Örnek Sayfa Kodu:
+
+```html
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My page title</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Tüm sayfalarda kullanılan ana üstbilgi -->
+    <header>
+      <h1>Header</h1>
+    </header>
+
+    <!-- Gezinti menüsü -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <!-- Arama formu -->
+      <form>
+        <input type="search" name="q" placeholder="Search query" />
+        <input type="submit" value="Go!" />
+      </form>
+    </nav>
+
+    <!-- Sayfanın ana içeriği -->
+    <main>
+      <!-- Bir makale -->
+      <article>
+        <h2>Article heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+
+        <section>
+          <h3>Subsection</h3>
+          <p>Donec ut libero sed arcu vehicula ultricies a non tortor...</p>
+        </section>
+
+        <section>
+          <h3>Another subsection</h3>
+          <p>Vivamus fermentum semper porta. Nunc diam velit...</p>
+        </section>
+      </article>
+
+      <!-- Kenar çubuğu içeriği -->
+      <aside>
+        <h2>Related</h2>
+        <ul>
+          <li><a href="#">Related link 1</a></li>
+          <li><a href="#">Related link 2</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- Tüm sayfalarda kullanılan altbilgi -->
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+```
+
+---
+
+## HTML düzen elementlerinin ayrıntılı tanımları
+
+* `<main>`: *Bu sayfaya özgü* içerik içindir. Sayfa başına yalnızca **bir kez** kullanılmalı ve doğrudan `<body>` içine yerleştirilmelidir. Başka elementlerin içine yerleştirilmemelidir.
+* `<article>`: Sayfanın geri kalanı olmadan da tek başına anlam ifade eden bağımsız bir içerik bloğunu sarar (örneğin tek bir blog yazısı veya haber makalesi).
+* `<section>`: `<article>` elementine benzer, ancak sayfanın tek bir işlevsellik veya tema oluşturan belirli bir bölümünü gruplandırmak içindir (örneğin bir mini harita veya makale özetleri listesi). Her bölüme bir başlıkla başlamak en iyi uygulamadır.
+* `<aside>`: Doğrudan ana içerikle ilgili olmayan ancak dolaylı olarak ek bilgi sağlayabilen içerikleri barındırır (sözlük maddeleri, yazar biyografisi, ilgili bağlantılar vb.).
+* `<header>`: Bir grup tanıtıcı içeriği temsil eder. `<body>` elemanının çocuğuysa genel sayfa başlığını, bir `<article>` veya `<section>` elemanının çocuğuysa o bölüme özel başlığı tanımlar.
+* `<nav>`: Sayfanın ana gezinti işlevini barındırır. İkincil bağlantılar navigasyon içine konulmamalıdır.
+* `<footer>`: Bir sayfa veya bölüm için kapanış/son içerik grubunu temsil eder.
+
+### Anlamsal olmayan kapsayıcılar: `<div>` ve `<span>`
+
+Bazen bazı öğeleri gruplandırmak için ideal bir anlamsal element bulamazsınız; yalnızca CSS veya JavaScript ile hedeflemek için bir araya getirmek istersiniz. Bu durumlar için HTML `<div>` ve `<span>` elementlerini sağlar:
+
+* `<span>`: Satır içi (inline) anlamsal olmayan elementtir. Anlamsal bir metin etiketi bulamadığınızda veya ekstra bir anlam eklemek istemediğinizde kullanılır:
+  ```html
+  <p>The King walked drunkenly... <span class="editor-note">[Editor's note: lights down].</span></p>
+  ```
+* `<div>`: Blok düzeyinde anlamsal olmayan elementtir. Uygun bir anlamsal blok elementi olmadığında kullanılır:
+  ```html
+  <div class="shopping-cart">
+    <h2>Shopping cart</h2>
+    <ul>
+      <li>...</li>
+    </ul>
+  </div>
+  ```
+
+> [!WARNING]
+> Div etiketlerini aşırı kullanmak ("div çorbası / div soup") kolaydır. Anlamsal değer taşımadıkları için kodunuzu gereksiz yere karmaşıklaştırırlar. Yalnızca daha iyi bir anlamsal çözüm olmadığında ve minimum düzeyde kullanın.
+
+### Satır sonları ve yatay çizgiler: `<br>` ve `<hr>`
+
+* `<br>`: Paragraf içinde satır sonu oluşturur. Şiir veya posta adresi gibi sabit kısa satırlar dizisi istediğiniz katı yapılar için kullanılır.
+* `<hr>`: Belgede tematik bir değişimi (sahne veya konu değişikliği) simgeleyen yatay bir çizgi oluşturur.
+
+---
+
+## Özet
+
+Bu noktada bir web sayfasını ve sitesini nasıl yapılandıracağınızı kavradınız. Sıradaki makalede web'in temel taşlarından olan köprüleri (**Creating links**) inceleyeceğiz.
+
+---
+
+# 11. Bağlantı oluşturma
+
+**HTML** > **Creating links** | English (US)
+
+Bağlantılar (köprüler / hyperlinks) web'i *Web* yapan temel özelliktir. Bu makale bir bağlantı oluşturmak için gereken sözdizimini gösterir ve bağlantı için en iyi uygulamaları tartışır.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. Başlıklar, paragraflar ve listeler. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Bağlantıların web için neden temel özellik olduğunu kavrama.<br>• `href` niteliği.<br>• Mutlak (absolute) ve göreceli (relative) yollar ve ne zaman kullanılacakları.<br>• Yol sözdizimi: eğik çizgiler (`/`), tek nokta (`.`), çift nokta (`..`).<br>• Bağlantı durumları (`:hover`, `:focus`, `:visited`, `:active`).<br>• Blok düzeyinde bağlantılar ve görsel bağlantıları.<br>• Erişilebilirlik ve SEO için iyi bağlantı metni yazmanın faydaları. |
+
+---
+
+## Bir bağlantının anatomisi
+
+Temel bir bağlantı, metin veya diğer içeriğin bir `<a>` (anchor) elementi içine sarılması ve web adresini barındıran `href` (Hypertext Reference) niteliğinin kullanılmasıyla oluşturulur:
+
+```html
 <p>
-I'm creating a link to
-<a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>.
+  I'm creating a link to
+  <a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>.
 </p>
-This gives us the following result:
-I'm creating a link to 
-.
-Block level links
-As mentioned before, almost any content can be made into a link, even block-level elements. If you want to make a
-başlık element a link then wrap it in an anchor ( <a> ) element as shown in the following code snippet:
-the Mozilla homepage
-Note: Scrimba's 
-MDN learning partner scrim provides an interactive demonstration of how to create
-links using HTML, plus a challenge to get you creating your own links.
-Anchor tags
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-2/15
+```
 
-HTML
+Çıktı: I'm creating a link to [the Mozilla homepage](https://www.mozilla.org/en-US/).
+
+### Blok düzeyinde bağlantılar
+
+Hemen hemen her içerik bir bağlantıya dönüştürülebilir; hatta blok düzeyindeki elementler bile:
+
+```html
 <a href="https://developer.mozilla.org/en-US/">
-<h1>MDN Web Docs</h1>
+  <h1>MDN Web Docs</h1>
 </a>
 <p>
-Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.
+  Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.
 </p>
-This turns the başlık into a link:
-MDN Web Docs
-Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.
-Image links
-To turn an image into a link, wrap the <img>  element with an <a>  element. The example below uses a relative path to
-reference a locally stored SVG image file.
-HTML
+```
+
+### Görsel bağlantıları
+
+Bir görseli bağlantıya dönüştürmek için `<img>` elementini bir `<a>` elementiyle sarın:
+
+```html
 <a href="https://developer.mozilla.org/en-US/">
-<img src="mdn_logo.svg" alt="MDN Web Docs" />
+  <img src="mdn_logo.svg" alt="MDN Web Docs" />
 </a>
-This makes the MDN logo a link:
-Adding supporting information with the title attribute
-Note: You'll find out more about using images on the Web in a future article.
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-3/15
+```
 
-You may also want to add a title  attribute to your links. The title contains additional information about the link, such as
-which kind of information the page contains, or things to be aware of on the website.
-HTML
+### `title` niteliği ile ek bilgi sağlama
+
+Bağlantılarınıza bir `title` niteliği ekleyebilirsiniz. Bu nitelik, bağlantı üzerine fare ile gelindiğinde ipucu (tooltip) olarak görünür:
+
+```html
 <p>
-I'm creating a link to
-<a
-href="https://www.mozilla.org/en-US/"
-title="The best place to find more information about Mozilla's mission and how to
-contribute">
-the Mozilla homepage</a
->.
+  I'm creating a link to
+  <a
+    href="https://www.mozilla.org/en-US/"
+    title="The best place to find more information about Mozilla's mission and how to contribute">
+    the Mozilla homepage</a
+  >.
 </p>
-This gives us the following result and hovering over the link displays the title as a tooltip:
-I'm creating a link to the Mozilla homepage.
-Creating your own example links
-OK, now it's your turn!
-1. Click "Play" in the code block below to edit the example in the MDN Playground, or make a copy of our 
- and copy the below code into there.
-2. Link the "Red squirrel" and "Eastern gray squirrel" text to Wikipedia pages that describe the relevant species.
-Give each link a title  attribute equal to the species' scientific name.
-3. Link the "Wikipedia Squirrel page" text to the main Wikipedia page for squirrels.
-If you make a mistake, you can clear your work using the Reset button in the MDN Playground. If you get really stuck,
-you can view the solution below the code block.
-HTML
-Note: A link title is only revealed on mouse hover, which means that people relying on keyboard controls or
-touchscreens to navigate web sayfasıs will have difficulty accessing title information. If a title's information is
-truly important to the usability of the page, then you should present it in a manner that will be accessible to all
-users, for example by putting it in the regular text.
-getting
-started template
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-4/15
+```
 
+> [!NOTE]
+> Link başlığı yalnızca fareyle üzerine gelindiğinde görünür; dokunmatik ekran veya klavye kullanıcıları bu bilgiye erişmekte zorlanabilir. Bu nedenle gerçekten kritik bilgileri doğrudan normal metin içinde sunmalısınız.
+
+### Bağlantı Oluşturma Alıştırması:
+
+```html
 <h1>Squirrels</h1>
+
 <p>
-Squirrels are commonly thought of as tree-dwelling mammals, but the squirrel
-family extends far beyond that to include ground-dwelling rodents such as
-chipmunks and prairie dogs, and flying squirrels.
+  Two of the most common and best-known squirrel species are the:
 </p>
-<p>Two of the most common and best-known squirrel species are the:</p>
+
 <ul>
-<li>Red squirrel</li>
-<li>Eastern gray squirrel</li>
+  <li>
+    <a
+      href="https://en.wikipedia.org/wiki/Red_squirrel"
+      title="Sciurus vulgaris">
+      Red squirrel
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://en.wikipedia.org/wiki/Eastern_gray_squirrel"
+      title="Sciurus carolinensis">
+      Eastern gray squirrel
+    </a>
+  </li>
 </ul>
+
 <p>
-For a good starting point on squirrel information, see the Wikipedia Squirrel
-page.
+  For a good starting point on squirrel information, see the
+  <a href="https://en.wikipedia.org/wiki/Squirrel">Wikipedia Squirrel page</a>.
 </p>
-Squirrels
-Squirrels are commonly thought of as tree-dwelling mammals, but the squirrel family extends far
-beyond that to include ground-dwelling rodents such as chipmunks and prairie dogs, and flying
-squirrels.
-Two of the most common and best-known squirrel species are the:
-Red squirrel
-Eastern gray squirrel
-For a good starting point on squirrel information, see the Wikipedia Squirrel page.
-Click here to show the solution
-A quick primer on URLs and paths
-Link targets are URLs. A URL, or Uniform Resource Locator, is a string of text that defines where something is located on
-the Web. For example, Mozilla's English homepage is located at https://www.mozilla.org/en-US/ .
-A web server receives requests for URLs and responds with the appropriate resource. Most resources are stored as files
-on the server's file system, so the URLs for these resources often resemble file paths.
-Note: File paths and URLs are not the same thing, but for now, we'll talk about them like they are to facilitate
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-5/15
-
-Let's look at an example server directory structure:
-The root of this directory structure is called creating-hyperlinks . When working locally with a website, you'll have
-one directory that contains the entire site. Inside the root, we have an index.html  file and a contacts.html . In a real
-website, index.html  would be our home page or landing page (a web sayfası that serves as the entry point for a website
-or a particular section of a website).
-There are also two directories inside our root — pdfs  and projects . These each have a single file inside them — a
-PDF ( project-brief.pdf ) and an index.html  file, respectively. Note that you can have multiple index.html  files in
-one project, as long as they're in different filesystem locations. The second index.html  would perhaps be the main
-landing page for project-related information.
-Let's look at some examples of links between some different files in this directory structure to demonstrate different path
-types.
-Same directory
-If you want to include a hyperlink inside the top level index.html  pointing to contacts.html , you can specify the path
-as just the filename that you want to link to, because it's in the same directory as the current file. The URL you would use
-is contacts.html :
-HTML
-<p>
-Want to contact a specific staff member? Find details on our
-understanding. We'll discuss more about the differences in the how do URLs translate into file paths? section.
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-6/15
-
-<a href="contacts.html">contacts page</a>.
-</p>
-You can also start a path to a file inside the same directory using a single dot followed by a slash: ./ . The following
-example is equivalent to the previous one, but some people like to include the ./  anyway because they feel it provides
-more clarity:
-HTML
-<p>
-Want to contact a specific staff member? Find details on our
-<a href="./contacts.html">contacts page</a>.
-</p>
-Moving down into subdirectories
-If you want to include a hyperlink inside the top level index.html  pointing to projects/index.html , you need to go
-down into the projects  directory before indicating the file you want to link to. This is done by specifying the directory's
-name, then a forward slash, then the name of the file. The URL you can use is projects/index.html :
-HTML
-<p>Visit my <a href="projects/index.html">project homepage</a>.</p>
-Moving back up into parent directories
-If you want to include a hyperlink inside projects/index.html  pointing to pdfs/project-brief.pdf , you have to go
-up a directory level, then back down into the pdfs  directory. To go up a directory, you use two dots — ..  — so the URL
-is ../pdfs/project-brief.pdf :
-HTML
-<p>A link to my <a href="../pdfs/project-brief.pdf">project brief</a>.</p>
-Linking relative to the root directory
-Note: There are some instances in which including ./  in your path will make a difference, for example when
-specifying paths for JavaScript module imports, but you don't need to worry about this for static HTML and CSS
-links.
-Note: You can combine multiple instances of these features into complex paths, if needed, for example:
-../../../complex/path/to/my/file.html .
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-7/15
-
-The above URLs work, but bear in mind that if you move either the linking file or the linked file to a different location, you
-will break the link.
-If you want to create a link to a specific location that won't break if you move the linking file, you can do so by putting a
-single slash at the start of the path — this indicates that the path starts in the root directory of the site. For example, the
-previous link inside projects/index.html  could be rewritten as:
-HTML
-<p>A link to my <a href="/pdfs/project-brief.pdf">project brief</a>.</p>
-Now the path will always start from the root directory ( creating-hyperlinks ), travel to the pdfs  directory, and find
-the project-brief.pdf  file. This will still work if you move the linking file to a different location, for example
-a/b/c/d/e/index.html .
-If you move the linked project-brief.pdf  file to a different location, you will still break the link.
-Two terms you'll come across on the web are absolute path and relative path.
-Absolute path: Points to a location defined by its absolute location in your site (or elsewhere on the web). For
-example, you can create an absolute link that always points to the same location relative to the site root directory
-using the single slash at the start of the path, as we saw earlier: /pdfs/project-brief.pdf .
-Relative path: Points to a location that is relative to the file you are linking from. In our earlier example, we used
-projects/index.html  to create a relative link between the current file and a file called index.html  that is
-inside a projects  subdirectory. If you were to move the current file to a different location, the path would still be
-relative to that file, but it would point to a different absolute location.
-These terms are not always used consistently. For example, /pdfs/project-brief.pdf  is absolute with respect to the
-current file's location, but relative to the domain name. A URL that includes the full domain name, such as
-https://example.com/pdfs/project-brief.pdf , is absolute with respect to the entire web.
-Linking with full URLs
-You can specify a full URL as your path, which will always point to the same location on the web, no matter where it's
-used. For example:
-HTML
-<a href="https://www.example.com/projects/">projects</a>
-This link will always link to https://www.example.com/projects/ , even if your site is moved to a different domain.
-Internal and external links
-When a link points to a resource on your site, it is referred to as an internal link. When a link points to a resource on a
-different site, it is called an external link.
-When specifying an external link, you always have to include the full URL as the path, for example:
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-8/15
-
-HTML
-<a href="https://www.some-other-site.com">projects</a>
-You can't reference a location on a different site with a path like /pdfs/project-brief.pdf  or projects/index.html ,
-as they are both relative to a location on your own site, and the tarayıcı needs the website's domain name to be able to
-find it.
-When specifying an internal link, you can use a relative or absolute path, or a full URL. In our example, these links are
-equivalent:
-HTML
-<a href="https://www.example.com/projects/">projects</a>
-<a href="projects">projects</a>
-We recommend the latter without the full domain name, because of portability. As we said earlier, if you specify
-https://www.example.com/projects/ , it will always link to https://www.example.com/projects/ . If you then
-move your website to a different domain, for example another-example.com , your full URL links will all need to be
-changed. If you specify paths such as /projects , they will still work, as they are still relative to the directory structure.
-Document fragments
-It's possible to link to a specific part of an HTML document, known as a document fragment, rather than just to the top
-of the document. Elements with an id  attribute in the document automatically create a document fragment that can be
-linked to.
-The most typical use case is linking to a specific başlık, which looks like this:
-HTML
-<h2 id="mailing_address">Mailing address</h2>
-To link to that specific id , you include it at the end of the path, preceded by a hash/pound symbol ( # ), for example:
-HTML
-<p>
-Want to write us a letter? Use our
-<a href="contacts.html#mailing_address">mailing address</a>.
-</p>
-You can even use the document fragment reference on its own to link to another part of the current document:
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-9/15
-
-HTML
-<p>
-The <a href="#mailing_address">company mailing address</a> can be found at the
-bottom of this page.
-</p>
-How do URLs translate into file paths?
-All the link targets we've seen so far are URLs, which get processed by a web server to find the relevant resource. No
-web content can directly see the server's file system.
-The server example we've looked at so far creates a static website. The server just takes the pathname part of the URL
-and directly looks for the corresponding file in its file system.
-If we start a web server (see How do you set up a local testing server?) using our sample site directory as the root, and
-the website domain name is set to example.com , our pdfs/project-brief.pdf  file would be available at
-https://www.example.com/pdfs/project-brief.pdf .
-All links are resolved relative to the current document's URL, so:
-For all pages on the https://example.com  domain, a link to /pdfs/project-brief.pdf  always creates a link
-to https://www.example.com/pdfs/project-brief.pdf , whose pathname is /pdfs/project-brief.pdf .
-The server looks for the pdfs  directory in the root directory, then looks for the project-brief.pdf  file inside
-that directory.
-A link to projects/index.html  would create a link to https://www.example.com/projects/index.html , but
-only when included in a file inside the root directory, such as the top-level index.html  file, or contacts.html .
-If you included it, for example, inside an HTML file at pdfs/index.html , it would link to
-https://www.example.com/pdfs/projects/index.html , whose path name is /pdfs/projects/index.html ,
-which doesn't exist, so you'd end up with a broken link.
-The default index.html page
-When referencing an index.html  file, you generally don't need to include the index.html  in the URL/path, because
-web servers look for a default landing page called index.html  when a filename isn't specified.
-Looking again at our projects/index.html  path example, we could just write the path as projects , and this would
-create a link to https://www.example.com/projects/index.html . When navigating to the page, we could write the
-URL as https://www.example.com/projects/  and it would still get us to the right place.
-Note: Many servers generate content for a URL on-the-fly rather than retrieving it from a static file. If you use a
-web framework, your source code directory may also be very different from what gets deployed to the server.
-When working with your own website, you need to understand your build tools and server setup to know how
-URLs get mapped to your source files.
-Note: The trailing slash ( / ) at the end of the URL is important. With it, a relative link to contacts.html  inside
-projects/index.html  would resolve to https://www.example.com/projects/contacts.html  (which is in
-the same directory). Without it, the URL would be treated as a file, and the relative link would resolve to
-https://www.example.com/contacts.html  (which is one directory up).
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-10/15
-
-Link best practices
-There are some best practices to follow when writing links. Let's look at these now.
-Use clear link wording
-It's easy to throw links up on your page. That's not enough. We need to make our links accessible to all readers,
-regardless of their current context and which tools they prefer. For example:
-Screen reader users like jumping around from link to link on the page, and reading links out of context.
-Search engines use link text to index target files, so it is a good idea to include keywords in your link text to
-effectively describe what is being linked to.
-Visual readers skim over the page rather than reading every word, and their eyes will be drawn to page features
-that stand out, like links. They will find descriptive link text useful.
-Let's look at a specific example:
-Good link text: 
-HTML
-<p><a href="https://www.firefox.com/en-US/">Download Firefox</a></p>
-Bad link text: 
- to download Firefox
-HTML
-<p>
-<a href="https://www.firefox.com/en-US/">Click here</a> to download Firefox
-</p>
-Other tips:
-Don't repeat the URL as part of the link text — URLs look ugly, and sound even uglier when a ekran okuyucu reads
-them out letter by letter.
-Don't say "link" or "links to" in the link text — it's just noise. Screen readers tell people there's a link. Visual users
-will also know there's a link, because links are generally styled in a different color and underlined (this convention
-generally shouldn't be broken, as users are used to it).
-Keep your link text as short as possible — this is helpful because ekran okuyucus need to interpret the entire link
-text.
-Minimize instances where multiple copies of the same text are linked to different places. This can cause problems
-for ekran okuyucu users, if there's a list of links out of context that are labeled "click here", "click here", "click
-here".
- — some
-automatically redirect to the URL with a trailing slash, while some serve the same index.html  without
-redirecting. The latter behavior can break relative links.
-Different web servers handle a URL like https://www.example.com/projects  differently
-Download Firefox
-Click here
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-11/15
-
-Linking to non-HTML resources — leave clear signposts
-When linking to a resource that will not be opened in the current page as a "normal navigation", you should add clear
-wording to the link text about what is going to happen. For example, if you're downloading or streaming a resource, or if
-the link is going to open a popup or perform some other potentially unexpected effect, this should be stated in the text.
-This is important for users on low bandwidth connections, who might want to avoid downloading assets of multiple
-megabytes. It also helps to set up expectations for ekran okuyucu users, who may not be aware of what's happening
-otherwise.
-Let's look at some examples, to see what kind of text can be used here:
-HTML
-<p>
-<a href="/large-report.pdf" download>
-Download the sales report (PDF, 10MB)
-</a>
-</p>
-<p>
-<a href="https://www.example.com/video-stream/" target="_blank">
-Watch the video (stream opens in separate tab, HD quality)
-</a>
-</p>
-Use the download attribute when linking to a download
-When you are linking to a resource that's to be downloaded rather than opened in the tarayıcı, you can use the
-download  attribute to provide a default save filename. Here's an example with a download link to the latest Windows
-version of Firefox:
-HTML
-<a
-href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
-download="firefox-latest-64bit-installer.exe">
-Download Latest Firefox for Windows (64-bit) (English, US)
-</a>
-When to open links in a new tab
-Links by default open in the same tab as the page they are on, which allows the user to navigate back to the previous
-page using the tarayıcı's back button. However, many sites (including MDN) choose to open certain links, especially
-external links, in a new tab. This is done by setting the target  attribute to "_blank" .
-HTML
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-12/15
-
-Firefox is developed by the
-<a href="https://www.mozilla.org/en-US/" target="_blank">Mozilla Foundation</a>.
-Whether or not to open links in a new tab should be a conscious decision, based on user experience design
-considerations. Here are some things to think about:
-Opening links in a new tab presents the two documents simultaneously, which is useful for a "parallel" navigation
-experience. On the other hand, links that open in the same tab are more like a continuation of the current page.
-Opening links in a new tab can be disorienting for users who are accustomed to using the back button.
-Even when links are opened in the same tab by default, users can still choose to open them in a new tab, using
-keyboard shortcuts or context menu options. On the other hand, links that open in a new tab are hard to open in
-the same tab.
-Screen reader users may be confused by links that open in a new tab, as they may not realize that the new tab
-has opened, and they may lose context about their location on the page.
-A common approach is to open external links in new tabs and internal links in the same tab. Some designers prefer to
-open all links in the same tab. If you do open links in new tabs, then it is recommended that you provide cues for these
-links, such as an icon next to the link text.
-Creating a navigation menu
-For this exercise, we'd like you to link some pages together with a navigation menu to create a multipage website. This is
-one common way in which a website is created — the same page structure is used on every page, including the same
-navigation menu, so when links are clicked it gives the impression that you are staying in the same place, and different
-content is being brought up.
-You'll need to make local copies of the following four pages, all in the same directory. For a complete file list, see the
- directory:
-You should:
-1. Add an unordered list in the indicated place on one page that includes the names of the pages to link to. A
-navigation menu is usually just a list of links, so this is semantically OK.
-2. Change each page name into a link to that page.
-3. Copy the navigation menu across to each page.
-4. On each page, remove just the link to that same page — it's confusing and unnecessary for a page to include a
-link to itself. And, the lack of a link acts a good visual reminder of which page you are currently on.
-The finished example should look similar to the following page:
-navigation-menu-start
-index.html
-projects.html
-pictures.html
-social.html
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-13/15
-
-Email links
-It's possible to create links or buttons that, when clicked, open a new outgoing email message rather than linking to a
-resource or page. This is done using the <a>  element and the mailto:  URL scheme.
-In its most basic and commonly used form, a mailto:  link indicates the email address of the intended recipient. For
-example:
-HTML
-<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
-This results in a link that looks like this: Send email to nowhere.
-In fact, the email address is optional. If you omit it and your href  is "mailto:", a new outgoing email window will be
-opened by the user's email client with no destination address. This is often useful as "Share" links that users can click to
-send an email to an address of their choosing.
-Specifying details
-In addition to the email address, you can provide other information. In fact, any standard mail header fields can be
-added to the mailto  URL you provide. The most commonly used of these are "subject", "cc", and "body" (which is not a
-Note: If you get stuck, or aren't sure if you have got it right, you can check the 
-directory to see the correct answer.
-navigation-menu-marked-up
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-14/15
-
-true header field, but allows you to specify a short content message for the new email). Each field and its value is
-specified as a query term.
-Here's an example that includes a cc, bcc, subject and body:
-HTML
-<a
-href="mailto:nowhere@mozilla.org?
-cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&bod
-y=The%20body%20of%20the%20email">
-Send mail with cc, bcc, subject and body
-</a>
-Here are a few other sample mailto  URLs:
-mailto:
-mailto:nowhere@mozilla.org
-mailto:nowhere@mozilla.org,nobody@mozilla.org
-mailto:nowhere@mozilla.org?cc=nobody@mozilla.org
-mailto:nowhere@mozilla.org?cc=nobody@mozilla.org&subject=This%20is%20the%20subject
-Summary
-That's it for links, for now anyway! You'll return to links later on in the course when you start to look at styling them. Sonraki
-up, we'll give you some tests that you can use to check how well you've understood and retained the information we've
-provided on links.
-Önceki
-Genel Bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-Note: The values of each field must be URL-encoded with non-printing characters (invisible characters like
-tabs, carriage returns, and page breaks) and spaces percent-escaped. Also, note the use of the question mark
-( ? ) to separate the main URL from the field values, and ampersands (&) to separate each field in the mailto:
-URL. This is standard URL query notation. Read The GET method to understand what URL query notation is
-more commonly used for.
-15.10.2026 20:23
-Bağlantılar oluşturma - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
-15/15
-
+```
 
 ---
 
-# Bilgini sınayın: Bağlantılar
+## URL'ler ve yollara hızlı giriş
 
-Bilgini sınayın: Bağlantılar - Web geliştirmeyi öğren | MDN
+Bağlantı hedefleri URL'lerdir (Uniform Resource Locator). URL'ler dosya yollarına benzer şekilde çalışır.
 
-Test: HTML testleri dizini
+Bir proje dizini yapısını ele alalım:
+* Kök dizin: `creating-hyperlinks/`
+  * `index.html`
+  * `contacts.html`
+  * `pdfs/` -> `project-brief.pdf`
+  * `projects/` -> `index.html`
 
-Test: Bağlantılar
+### 1. Aynı dizin
+Aynı dizindeki bir dosyaya bağlanmak için doğrudan dosya adını veya `./` ön ekini kullanabilirsiniz:
+```html
+<a href="contacts.html">contacts page</a>
+<!-- Veya -->
+<a href="./contacts.html">contacts page</a>
+```
 
-English (US)
+### 2. Alt dizinlere inme
+Bir alt klasörün içindeki dosyaya bağlanmak için klasör adı, eğik çizgi ve dosya adı yazılır:
+```html
+<a href="projects/index.html">project homepage</a>
+```
 
-Bilgini sınayın: Bağlantılar
+### 3. Üst dizinlere çıkma
+Bir üst dizine çıkmak için iki nokta (`..`) kullanılır:
+`projects/index.html` içinden `pdfs/project-brief.pdf` dosyasına gitmek için:
+```html
+<a href="../pdfs/project-brief.pdf">project brief</a>
+```
 
-Önceki
+### 4. Kök dizine göre bağlama
+Başında tek bir eğik çizgi (`/`) bulunan yollar doğrudan sitenin kök dizininden başlar:
+```html
+<a href="/pdfs/project-brief.pdf">project brief</a>
+```
 
-Genel Bakış: HTML ile içeriği yapılandırma
+### 5. Belge içi bölümlere bağlanma: `#`
+Bir sayfadaki belirli bir başlığa veya bölüme (örneğin `<h2 id="mailing_address">`) bağlanmak için `#` işareti ve elemanın `id` değeri kullanılır:
+```html
+<!-- Başka bir sayfadaki bölüme bağlanma: -->
+<a href="contacts.html#mailing_address">mailing address</a>
 
-Sonraki
+<!-- Aynı sayfa içinde bir bölüme kayma: -->
+<a href="#mailing_address">company mailing address</a>
+```
 
-Bu beceri testinin amacı, HTML içinde bağlantıları nasıl uyguladığınızı değerlendirmenize yardımcı olmaktır.
+---
 
-Not: Yardım almak için, Bilgini sınayın kullanım kılavuzumuzu okuyun. Ayrıca iletişim kanallarımızdan biriyle bize ulaşabilirsiniz.
+## Bağlantı en iyi uygulamaları
 
-Not: Bu görevlerdeki başlangıç kodundaki bazı bağlantılarda  target="_blank"  niteliği ayarlanmıştır; böylece onlara tıkladığınızda, aynı sekme yerine yeni bir sekmede bağlı sayfayı açmayı denerler. Bu kesinlikle en iyi uygulama değildir; ancak bunu burada, sayfaların MDN Playground çıktısındaki <iframe> içinde açılmaması ve bu süreçte örnek kodunuzun silinmemesi için yaptık!
+### 1. Açık ve açıklayıcı bağlantı metni kullanın
+* **KÖTÜ:** Firefox'u indirmek için [buraya tıklayın](https://www.firefox.com).
+* **İYİ:** [Firefox'u indirin](https://www.firefox.com).
+* URL'yi metin olarak doğrudan yazmaktan kaçının (ekran okuyucular harf harf okur).
+* Metinde "bağlantı" veya "link" kelimelerini kullanmayın; kullanıcı zaten onun link olduğunu bilir.
 
-Bağlantılar 1
+### 2. HTML dışı kaynaklara bağlantı verirken açık işaretler bırakın
+Büyük bir PDF veya harici medya dosyasına bağlantı verirken dosya türünü ve boyutunu belirtin:
+```html
+<a href="/large-report.pdf" download>Download the sales report (PDF, 10MB)</a>
+```
 
-Bu görevde, Balinalar bilgi sayfamızdaki bağlantıları doldurmanıza yardımcı olmanızı istiyoruz.
+### 3. İndirme için `download` niteliğini kullanın
+```html
+<a href="installer.exe" download="firefox-installer.exe">Download Installer</a>
+```
 
-Görevi tamamlamak için bağlantıları aşağıdaki gibi güncelleyin:
+### 4. Bağlantıları yeni sekmede açma (`target="_blank"`)
+Yeni sekmede açılan bağlantılar kullanıcıların geri butonunu kullanmasını zorlaştırabilir ve ekran okuyucu kullanıcılarının kafasını karıştırabilir. Genellikle harici bağlantılar için tercih edilir, ancak kullanıldığında bir simge veya uyarı ile belirtilmesi önerilir.
 
-1. İlk bağlantı, geçerli sayfa ile aynı dizinde bulunan whales.html adlı bir sayfaya bağlanmalıdır.
+---
 
-2. Üzerine gelindiğinde, sayfanın Mavi Balinalar ve İspermeçet Balinaları hakkında bilgi içerdiğini söyleyen bir araç ipucu ekleyin.
+## E-posta bağlantıları: `mailto:`
 
-3. İkinci bağlantı, kullanıcının varsayılan posta uygulamasında bir e-posta açacak bir bağlantıya dönüştürülmelidir; alıcı whales@example.com olarak ayarlanmalıdır.
+Tıklandığında kullanıcının e-posta istemcisini açan bağlantılar `mailto:` şemasıyla oluşturulur:
 
-4. Bonus puan, e-postanın konu satırının otomatik olarak Question about Whales olarak doldurulmasını da ayarlarsanız verilir.
+```html
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+```
 
-Görevin başlangıç noktası şöyle görünür:
+Konu, CC ve gövde parametreleri eklenebilir:
 
-Balinalar Hakkında Bilgi
+```html
+<a href="mailto:nowhere@mozilla.org?cc=info@example.com&subject=Bilgi%20Talebi&body=Merhaba%2C">
+  E-posta gönder
+</a>
+```
 
-Koruma faaliyetlerimiz ve hangi Balinaları incelediğimiz hakkında daha fazla bilgi için Balinalar sayfamıza bakın.
+---
 
-Ekibimize daha fazla soru sormak isterseniz, bize e-posta göndermekten çekinmeyin.
+## Özet
 
-Bu başlangıç noktası için alttaki kod şöyledir:
+Bağlantılar konusunu tamamladık. Sırada bu konudaki bilginizi ölçeceğiniz sınav (**Test: Links**) yer almaktadır.
 
-HTML
+---
 
-<h1>Balinalar Hakkında Bilgi</h1>
+# 12. Test: Bağlantılar
+
+**HTML** > **Test your skills: Links** | English (US)
+
+Bu beceri testinin amacı, HTML'de bağlantıların nasıl uygulanacağını anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
+
+---
+
+## Bağlantılar 1
+
+Balinalar bilgi sayfasındaki bağlantıları tamamlayın:
+1. İlk bağlantı aynı dizindeki `whales.html` sayfasına gitmeli ve fareyle üzerine gelindiğinde mavi balinalar ve ispermeçet balinaları hakkında bilgi içerdiğini belirten bir tooltip başlığına sahip olmalıdır.
+2. İkinci bağlantı `whales@example.com` adresine giden bir e-posta bağlantısı olmalı ve konu satırı otomatik olarak "Question about Whales" olarak doldurulmalıdır.
+
+### Çözüm:
+
+```html
+<h1>Information on Whales</h1>
 
 <p>
-
-Koruma faaliyetlerimiz ve hangi Balinaları incelediğimiz hakkında daha fazla bilgi için
-
-<a target="_blank">Balinalar sayfamıza</a> bakın.
-
+  For more information on our conservation activities and which Whales we study,
+  see our <a target="_blank" href="whales.html" title="Includes information on Blue Whales and Sperm Whales">
+  Whales page</a>.
 </p>
 
 <p>
-
-Ekibimize daha fazla soru sormak isterseniz, bize
-
-<a target="_blank">e-posta göndermekten</a> çekinmeyin.
-
+  If you want to ask our team more questions, feel free to
+  <a target="_blank" href="mailto:whales@example.com?subject=Question%20about%20Whales">
+  email us</a>.
 </p>
+```
 
-Görevin güncellenmiş içeriği şöyle görünmelidir:
+---
 
-Balinalar Hakkında Bilgi
+## Bağlantılar 2
 
-Koruma faaliyetlerimiz ve hangi Balinaları incelediğimiz hakkında daha fazla bilgi için Balinalar sayfamıza bakın.
+Dört bağlantıyı uygun konumlara bağlayın:
+1. Geçerli dizin içindeki `blue` klasöründe bulunan `blue-whale.jpg` görseline bağlantı.
+2. Geçerli dizinin bir üst düzeyinde bulunan `narwhal` klasöründeki `narwhal.jpg` görseline bağlantı.
+3. UK Google Görsel Arama sayfasına (`https://www.google.co.uk/imghp`) bağlantı.
+4. Sayfanın en altındaki `id="bottom"` olan paragrafa bağlantı.
 
-Ekibimize daha fazla soru sormak isterseniz, bize e-posta göndermekten çekinmeyin.
+### Çözüm:
 
-Çözümü göstermek için buraya tıklayın
-
-Bağlantılar 2
-
-Bu görevde, dört bağlantıyı uygun yerlere götürecek şekilde doldurmanızı istiyoruz.
-
-Görevi tamamlamak için bağlantıları aşağıdaki gibi güncelleyin:
-
-1. İlk bağlantı, geçerli dizin içinde blue adlı bir dizinde bulunan blue-whale.jpg adlı bir görüntüye bağlanmalıdır.
-
-2. İkinci bağlantı, geçerli dizinin bir üst dizin seviyesinde bulunan narwhal adlı bir dizinde yer alan narwhal.jpg adlı bir görüntüye bağlanmalıdır.
-
-3. Üçüncü bağlantı, Birleşik Krallık Google Görsel Arama'ya bağlanmalıdır. Temel URL https://www.google.co.uk olup görsel arama imghp adlı bir alt dizinde yer alır.
-
-4. Dördüncü bağlantı, geçerli sayfanın en altındaki paragrafa bağlanmalıdır. Bu paragrafin kimliği bottom’dur.
-
-Görevin başlangıç noktası şöyle görünür:
-
-List path tests
-
-Mavi balina görüntüsüne beni bağla
-
-Narval görüntüsüne beni bağla
-
-Google görsel aramasına beni bağla
-
-Sayfanın altındaki paragrafa beni bağla
-
-Bu başlangıç noktası için alttaki kod şöyledir:
-
-HTML
-
+```html
 <h1>List path tests</h1>
 
 <ul>
-
-<li><a target="_blank">Mavi balina görüntüsüne beni bağla</a></li>
-
-<li><a target="_blank">Narval görüntüsüne beni bağla</a></li>
-
-<li><a target="_blank">Google görsel aramasına beni bağla</a></li>
-
-<li><a>Sayfanın altındaki paragrafa beni bağla</a></li>
-
+  <li><a target="_blank" href="blue/blue-whale.jpg">
+    Link me to the blue whale image
+  </a></li>
+  <li><a target="_blank" href="../narwhal/narwhal.jpg">
+    Link me to the narwhal image
+  </a></li>
+  <li><a target="_blank" href="https://www.google.co.uk/imghp">
+    Link me to Google image search
+  </a></li>
+  <li><a href="#bottom">
+    Link me to the paragraph at the bottom of the page
+  </a></li>
 </ul>
 
 <div></div>
 
-<p id="bottom">Sayfanın alt kısmı!</p>
-
-Görevin güncellenmiş içeriği şöyle görünmelidir:
-
-List path tests
-
-Mavi balina görüntüsüne beni bağla
-
-Narval görüntüsüne beni bağla
-
-Google görsel aramasına beni bağla
-
-Sayfanın altındaki paragrafa beni bağla
-
-Çözümü göstermek için buraya tıklayın
-
-Bağlantılar 3
-
-Aşağıdaki bağlantılar, Narwhals hakkında bilgi sayfasına, bir destek e-posta adresine ve 4 MB boyutunda bir PDF bilgi dosyasına götürür.
-
-Görevi tamamlamak için:
-
-1. Mevcut, kötü yazılmış bağlantı metinlerini alın ve iyi bağlantı metni olacak şekilde yeniden yazın.
-
-2. Uyarı gerektiren bağlantılara gerekli uyarıyı ekleyin.
-
-Görevin başlangıç noktası şöyle görünür:
-
-Biz Narwhals ile çok çalışıyoruz. Bu çalışma hakkında daha fazla bilgi edinmek için buraya tıklayın.
-
-Daha fazla sorunuz varsa destek ekibimize e-posta gönderebilirsiniz — bunu yapmak için buraya tıklayın.
-
-Ayrıca bilgi dosyamızı indirmek için buraya tıklayabilirsiniz; bu dosya, SSS dahil çok daha fazla bilgi içerir.
-
-Bu başlangıç noktası için alttaki kod şöyledir:
-
-HTML
-
-<p>
-
-Biz Narwhals ile çok çalışıyoruz. Bu çalışma hakkında daha fazla bilgi edinmek için
-
-<a href="narwhals.html" target="_blank">buraya tıklayın</a>.
-
-</p>
-
-<p>
-
-Daha fazla sorunuz varsa destek ekibimize e-posta gönderebilirsiniz —
-
-<a href="mailto:whales@example.com">buraya tıklayın</a> bunu yapmak için.
-
-</p>
-
-<p>
-
-Ayrıca bilgi dosyamızı indirmek için <a href="factfile.pdf" target="_blank">buraya tıklayabilirsiniz</a>; bu dosya, SSS dahil çok daha fazla bilgi içerir.
-
-</p>
-
-Bu görev için bitirilmiş içerik sağlamadık; aksi halde çözümü ele vermiş olurduk.
-
-Çözümü göstermek için buraya tıklayın
-
-Önceki
-
-Genel Bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Kendiniz için daha iyi bir internet taslağı.
-
+<p id="bottom">The bottom of the page!</p>
+```
 
 ---
 
-# İçerik sayfasını yapılandırma meydan okuması
+## Bağlantılar 3
 
-İçerik sayfasını yapılandırma meydan okuması - Web geliştirmeyi öğren | MDN
+Kötü yazılmış bağlantı metinlerini ("buraya tıklayın" gibi) düzeltin ve dosya indirme bağlantısına dosya türü ve boyut uyarısı ekleyin.
 
-HTML
+### Çözüm:
 
-Bird watching site meydan okuması
+```html
+<p>
+  We do lots of work with Narwhals. <a href="narwhals.html" target="_blank">Find out more about this work</a>.
+</p>
 
-English (US)
+<p>
+  You can <a href="mailto:whales@example.com">email our support team</a> if you have any more questions.
+</p>
 
-İçerik sayfasını yapılandırma meydan okuması
+<p>
+  You can also <a href="factfile.pdf" target="_blank">download
+  our factfile</a> (PDF, 4MB), which contains lots more information, including an FAQ.
+</p>
+```
 
-Önceki
+---
 
-Genel Bakış: HTML ile içeriği yapılandırma
+# 13. Uygulama Görevi: Kuş gözlem sitesi
 
-Sonraki
+**HTML** > **Challenge: Structuring a page of content** | English (US)
 
-CSS kullanılarak düzenlenmek üzere bir sayfayı yapılandırmak, ustalaşılması gereken çok önemli bir beceridir. Bu meydan okumada, bir sayfanın sonunda nasıl görünebileceğini düşünme ve bunun üzerine bir düzen oluşturmak için uygun yapısal semantik seçme yeteneğiniz sınanacaktır.
+Bir içerik sayfasını CSS kullanarak düzenlemeye hazır şekilde yapılandırmak çok önemli bir beceridir. Bu meydan okumada, bir kuş gözlemciliği web sitesinin ana sayfa içeriğini alacak ve üzerine bir sayfa düzeni uygulanabilmesi için yapısal elementler ekleyeceksiniz.
 
-Başlangıç noktası
+---
 
-Bu meydan okumayı çözmek için, bilgisayarınızın sabit diskinde uygun bir klasörün içinde ya da CodePen veya JSFiddle gibi bir çevrimiçi düzenleyici kullanarak basit bir web sitesi projesi oluşturmanız beklenmektedir. İhtiyacınız olan kodun çoğu zaten sağlanmıştır.
+## Proje özeti ve yönergeler
 
-1. Bilgisayarınızda uygun bir konumda structuring-html-challenge adlı yeni bir klasör oluşturun (veya çevrimiçi bir düzenleyici açıp yeni bir proje oluşturmak için gerekli adımları izleyin).
+### 1. İçerik Eklemleri:
+* `<h1>` elementi içine güvercin logosunu içeren bir `<img>` elementi ekleyin ve boş bir `alt=""` verin.
+* "Home", "Get started", "Photos", "Gear" ve "Forum" metinlerini sırasız bir liste (`<ul>`) halinde navigasyon menüsüne dönüştürün ve `#` adresine bağlayın.
+* Dört favori kuş görselinin küçük resimlerini (thumbnails) ekleyin; her birine uygun alternatif metin verin ve tam boyutlu görsellere bağlantı kurun.
 
-2. Aşağıdaki HTML listesini klasörünüzün içinde index.html adlı bir dosyaya kaydedin (veya çevrimiçi düzenleyicinizin HTML bölmesine yapıştırın).
+### 2. Yapısal Gereksinimler:
+* En üst düzey başlığı ve navigasyon menüsünü saran bir `<header>`.
+* Navigasyon menüsünü saran bir `<nav>`.
+* İki sütun içeren bir `<main>`: karşılama metnini barındıran bir `<article>` ve görsel küçük resimlerini barındıran bir `<aside>`.
+* Telif hakkı ve teşekkür bilgilerini barındıran bir `<footer>`.
 
-HTML
+---
 
+## Eksiksiz çözüm
+
+```html
 <!doctype html>
-
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Birdwatching</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700"
+      rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<head>
+  <body>
+    <header>
+      <h1>
+        Birdwatching
+        <img
+          src="https://mdn.github.io/shared-assets/images/examples/learn/birds/dove.png"
+          alt="" />
+      </h1>
 
-<meta charset="utf-8" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Get started</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Gear</a></li>
+          <li><a href="#">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<title>Birdwatching</title>
+    <main>
+      <article>
+        <h2>Welcome</h2>
 
-<link
+        <p>
+          Welcome to our fake birdwatching site. If this were a real site, it
+          would be the ideal place to come to learn more about birdwatching,
+          whether you are a beginner looking to learn how to get into birding,
+          or an expert wanting to share ideas, tips, and photos with other
+          like-minded people.
+        </p>
 
-href="https://fonts.googleapis.com/css?
+        <p>
+          So don't waste time! Get what you need, then turn off that computer
+          and get out into the great outdoors!
+        </p>
+      </article>
 
-family=Roboto+Condensed:300%7CCinzel+Decorative:700"
+      <aside>
+        <h2>Favorite photos</h2>
 
-rel="stylesheet" />
+        <a
+          href="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-1.jpg">
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-1_th.jpg"
+            alt="Small black bird, black claws, long black slender beak" />
+        </a>
+        <a
+          href="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-2.jpg">
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-2_th.jpg"
+            alt="Top half of a pretty bird with bright blue plumage on neck, light colored beak, blue headdress" />
+        </a>
+        <a
+          href="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-3.jpg">
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-3_th.jpg"
+            alt="Top half of a large bird with white plumage, very long curved narrow light colored break" />
+        </a>
+        <a
+          href="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-4.jpg">
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/birds/favorite-bird-4_th.jpg"
+            alt="Large bird, mostly white plumage with black plumage on back and rear, long straight white beak" />
+        </a>
+      </aside>
+    </main>
 
-</head>
+    <footer>
+      <p>
+        This fake website example is CC0 — any part of this code may be reused
+        in any way you wish. Original example written by Chris Mills, 2016.
+      </p>
 
-<body>
-
-<h1>Birdwatching</h1>
-
-Home Get started Photos Gear Forum
-
-<h2>Welcome</h2>
-
-<p>
-
-Welcome to our fake birdwatching site. If this were a real site, it
-
-olacaktı:
-
-
-would be the ideal place to come to learn more about birdwatching,
-
-whether you are a beginner looking to learn how to get into birding, or
-
-an expert wanting to share ideas, tips, and photos with other
-
-like-minded people.
-
-</p>
-
-<p>
-
-So don't waste time! Get what you need, then turn off that computer and
-
-get out into the great outdoors!
-
-</p>
-
-<h2>Favorite photos</h2>
-
-<!-- Link images here. -->
-
-<p>
-
-This fake website example is CC0 — any part of this code may be reused
-
-in any way you wish. Original example written by Chris Mills, 2016.
-
-</p>
-
-<p>
-
-<a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a>
-
-by Lorc.
-
-</p>
-
-</body>
-
+      <p>
+        <a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a>
+        by Lorc.
+      </p>
+    </footer>
+  </body>
 </html>
+```
 
-3. Aşağıdaki CSS listesini klasörünüzün içinde style.css adlı bir dosyaya kaydedin (veya çevrimiçi düzenleyicinizin CSS bölmesine yapıştırın).
+---
+# 14. Görseller
 
-CSS
+**HTML** > **HTML images** | English (US)
 
-/* || General setup */
+Başlangıçta web yalnızca metinden ibaretti ve oldukça sıkıcıydı. Neyse ki web sayfalarının içine görselleri (ve diğer daha ilginç içerik türlerini) gömme yeteneği çok geçmeden eklendi. Bu makalede, temelleri, `<figure>` kullanarak altyazılarla açıklama eklemeyi ve CSS arka plan görselleriyle ilişkisini içeren `<img>` elementini derinlemesine inceleyeceğiz.
 
-body {
-
-margin: 0;
-
-}
-
-html {
-
-font-size: 10px;
-
-background-color: darkgrey;
-
-}
-
-body {
-
-width: 70%;
-
-min-width: 800px;
-
-margin: 0 auto;
-
-}
-
-/* || typography */
-
-h1,
-
-h2 {
-
-font-family: "Cinzel Decorative", cursive;
-
-color: #2a2a2a;
-
-}
-
-p,
-
-li {
-
-font-family: "Roboto Condensed", sans-serif;
-
-color: #2a2a2a;
-
-}
-
-h1 {
-
-font-size: 4rem;
-
-text-align: center;
-
-text-shadow: 2px 2px 10px black;
-
-}
-
-h2 {
-
-font-size: 3rem;
-
-text-align: center;
-
-}
-
-p,
-
-li {
-
-font-size: 1.6rem;
-
-line-height: 1.5;
-
-}
-
-/* || header layout */
-
-header {
-
-margin-bottom: 10px;
-
-}
-
-main,
-
-header,
-
-nav,
-
-article,
-
-aside,
-
-footer,
-
-section {
-
-background-color: #00ff0080;
-
-padding: 1%;
-
-}
-
-h1 {
-
-text-transform: uppercase;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-gap: 20px;
-
-}
-
-header img {
-
-height: 60px;
-
-}
-
-nav ul {
-
-padding: 0;
-
-list-style-type: none;
-
-display: flex;
-
-}
-
-nav li {
-
-text-align: center;
-
-flex: 1;
-
-}
-
-nav a {
-
-font-size: 2rem;
-
-text-transform: uppercase;
-
-text-decoration: none;
-
-color: black;
-
-}
-
-nav a:hover,
-
-nav a:focus {
-
-color: red;
-
-}
-
-/* || main layout */
-
-main {
-
-display: flex;
-
-gap: 10px;
-
-}
-
-article {
-
-flex: 4;
-
-}
-
-aside {
-
-flex: 1;
-
-}
-
-aside a {
-
-display: block;
-
-float: left;
-
-width: 50%;
-
-}
-
-aside img {
-
-max-width: 100%;
-
-}
-
-footer {
-
-margin-top: 10px;
-
-}
-
-Daha sonra, sayfanızda aşağıdaki URL’leri kullanmanız gerekecek.
-
-dove.png :
-
-Site logosu
-
-favorite-bird-1.jpg :
-
-İlk kenar çubuğu görselinin tam boy sürümü
-
-favorite-bird-1_th.jpg :
-
-İlk kenar çubuğu görselinin küçük resmi
-
-favorite-bird-2.jpg :
-
-İkinci kenar çubuğu görselinin tam boy sürümü
-
-favorite-bird-2_th.jpg :
-
-İkinci kenar çubuğu görselinin küçük resmi
-
-favorite-bird-3.jpg :
-
-Üçüncü kenar çubuğu görselinin tam boy sürümü
-
-favorite-bird-3_th.jpg :
-
-Üçüncü kenar çubuğu görselinin küçük resmi
-
-favorite-bird-4.jpg :
-
-Dördüncü kenar çubuğu görselinin tam boy sürümü
-
-favorite-bird-4_th.jpg :
-
-Dördüncü kenar çubuğu görselinin küçük resmi
-
-Proje özeti
-
-Bu proje için göreviniz, bir kuş gözlem sitesi ana sayfasının içeriğini alıp ona yapısal öğeler eklemek, böylece üzerine bir sayfa düzeni uygulanabilmesini sağlamaktır. Ayrıca içeriğe birkaç ekleme de yapmanız gerekir.
-
-İçerik eklemeleri
-
-1. <h1> öğesinin içinde, sayfadaki dove logosunu içeren bir <img> öğesi ekleyin. Ona boş alternatif metin ("") verin.
-
-2. "Home", "Get started", "Photos", "Gear" ve "Forum" metin öğeleri bir gezinme menüsüne dönüştürülmelidir.
-
-1. Bunları sırasız bir liste olarak işaretleyin.
-
-2. Her liste öğesinin içinde metni # değerine (sahte bağlantı oluşturan) işaret eden bir <a> öğesi içine sarın.
-
-3. <!-- Link images here. --> yorumunu kaldırın. Yerine, "favorite birds" için dört küçük resim görüntüsü kümesi koyun. Her birinde resmi tanımlamak için uygun alternatif metin bulunmalı ve tam boy eşdeğerine bağlanan bir <a> öğesi içine sarılmalıdır.
-
-Yapısal gereksinimler
-
-Site yapısı şu öğelerden oluşmalıdır:
-
-1. Üst düzey sayfa başlığını ve gezinme menüsü listesini saran bir başlık bölümü.
-
-2. Gezinme menüsü listesi için ek bir sarmalayıcı.
-
-3. Bir ana içerik alanı; bir ana makale karşılama metnini içermeli, bir de küçük görselleri içeren bir kenar çubuğu (aside) bulunmalıdır.
-
-4. Telif hakkı bilgilerini ve atıfları içeren bir alt bilgi bölümü.
-
-Başka bir deyişle, şunlar için uygun bir sarmalayıcı eklemeniz gerekir:
-
-Başlık bölümü
-
-Gezi̇nme menüsü
-
-Ana içerik
-
-Karşılama makalesi
-
-Görsel kenar çubuğu
-
-Alt bilgi
-
-Sayfayı stillendirme
-
-Gerekirse, başlangıç HTML’inde sağlanan mevcut öğenin hemen altına başka bir <link> öğesi ekleyerek sağlanan CSS’yi sayfaya uygulayın (bazı çevrimiçi kod düzenleyiciler CSS’yi otomatik olarak uygular).
-
-İpuçları ve öneriler
-
-HTML’nizde istenmeyen hataları yakalamak için W3C HTML doğrulayıcısını kullanın; böylece bunları düzeltebilirsiniz.
-
-Bu meydan okumayı yapmak için herhangi bir CSS bilmeniz gerekmiyor; yalnızca verilen CSS’yi HTML’nize uygulamanız gerekiyor.
-
-Takılıp sayfada hangi öğeleri nereye yerleştireceğinizi hayal edemiyorsanız, sayfa düzeninin basit bir blok diyagramını çizin ve hangi öğelerin her bloğu sarması gerektiğini yazın. Bu çok faydalıdır.
-
-Örnek
-
-Aşağıdaki ekran görüntüsü, ana sayfanın işaretlendikten sonra nasıl görünebileceğine dair bir örnektir. Bunun bir kısmını nasıl başaracağınız konusunda takılırsanız, aşağıdaki canlı örneğe bakın.
-
-Çözümü göstermek için buraya tıklayın
-
-| Önceki | Genel Bakış: HTML ile içeriği yapılandırma | Sonraki |
-| -------- | --------------------------------------- | ---- |
-
-Kendiniz için daha iyi bir internet taslağı.
-
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. Başlıklar, paragraflar ve listeler. |
+| **Learning outcomes (Öğrenim çıktıları):** | • "Replaced element" (değiştirilen element) teriminin anlamı.<br>• Temel `<img>` etiketi sözdizimi.<br>• Bir kaynağı işaret etmek için `src` kullanımı.<br>• Görsel yüklendiğinde kullanıcı arayüzündeki sarsıntıları (layout shift) önlemek için `width` ve `height` kullanımı.<br>• Web için medya varlıklarını optimize etme (küçük dosya boyutları sağlama).<br>• Medya lisans türlerini anlama (telif hakkı, serbest lisanslar, kamu malı/CC0). |
 
 ---
 
-# HTML görüntüleri
-
-HTML görüntüleri - Web geliştirmeyi öğren | MDN
-
-HTML
-
-Görüntüler
-
-English (US)
-
-HTML görüntüleri
-
-Önceki
-
-Genel Bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Başlangıçta web yalnızca metinden ibaretti ve gerçekten oldukça sıkıcıydı. Neyse ki, kısa süre sonra web sayfalarının içine görüntüleri (ve diğer daha ilgi çekici içerik türlerini) gömme yeteneği eklendi. Bu makalede, <img> öğesinin nasıl kullanılacağını ayrıntılı olarak inceleyeceğiz; temel bilgileri, <figure> ile altyazı eklemeyi ve CSS arka plan görüntüleriyle ilişkisini ele alacağız.
-
-Önkoşullar:
-
-Basic HTML Syntax’ta ele alındığı gibi temel HTML bilgisi. Başlıklar, paragraflar ve listeler gibi metin düzeyi semantiği.
-
-Yeniden kullanılan öğe (replaced element) terimi — ne anlama gelir?
-
-Temel <img> etiket sözdizimi
-
-Bir kaynağı işaret etmek için src kullanımı.
-
-Öğrenme kazanımları:
-
-width ve height kullanımı; örneğin, bir görüntü yüklenip gösterildikten sonra arayüzde istenmeyen sarsıntılı güncellemeleri önlemek için.
-
-Web için medya varlıklarını optimize etme — dosya boyutlarını küçük tutun.
-
-Medya varlığı lisanslamasını anlama — farklı lisans türleri, bunlara nasıl uyulacağı ve projelerde kullanılacak uygun lisanslı medya dosyalarının nasıl aranacağı.
-
-Bir görüntüyü web sayfasına nasıl koyarız?
-
-Bir web sayfasına bir görüntü koymak için <img> öğesini kullanırız. Bu, yararlı olabilmesi için iki niteliğe ihtiyaç duyan boş bir öğedir (yani, çocuk içeriği olamaz ve bir bitiş etiketi olamaz): src ve alt. src niteliği, sayfaya gömmek istediğiniz görüntüyü işaret eden bir URL içerir. <a> öğeleri için href niteliğinde olduğu gibi, src niteliği de göreli bir URL veya mutlak bir URL olabilir. src niteliği olmadan, bir img öğesinin yükleyecek bir görüntüsü yoktur.
-
-alt niteliği aşağıda açıklanmaktadır.
-
-Not: Devam etmeden önce göreli ve mutlak URL’ler hakkındaki bilginizi tazelemek için URLs and paths üzerine kısa giriş bölümünü okumalısınız.
-
-Örneğin, görüntünüzün adı dinosaur.jpg ise ve HTML sayfanızla aynı dizinde yer alıyorsa, resmi şöyle gömebilirdiniz:
-
-HTML
-
-<img src="dinosaur.jpg" alt="Dinosaur" />
-
-Eğer görüntü, HTML sayfasıyla aynı dizinin içinde bulunan images alt dizinindeyse, bunu şöyle gömerdiniz:
-
-HTML
-
-<img src="images/dinosaur.jpg" alt="Dinosaur" />
-
-Ve benzeri.
-
-Not: Arama motorları ayrıca görüntü dosyası adlarını okur ve bunları SEO’ya katkı olarak sayar. Bu nedenle, görüntünüze açıklayıcı bir dosya adı vermelisiniz; dinosaur.jpg, img835.png’den daha iyidir.
-
-Ayrıca görüntüyü mutlak URL’siyle de gömebilirsiniz; örneğin:
-
-HTML
-
-<img src="https://www.sourcecodester.com/sites/default/files/images/rems/cdg1.jpg" alt="Dinosaur" />
-
-Ancak mutlak URL’lerle bağlantı vermek önerilmez. Kullanmak istediğiniz görüntüleri kendi sitenizde barındırmalısınız; basit kurulumlarda bu, web sitenizin görüntülerini HTML ile aynı sunucuda tutmak anlamına gelir. Ayrıca, farklı bir etki alanına taşındığınızda yeni etki alanını içerecek şekilde tüm URL’lerinizi güncellemeniz gerekmez; bakım açısından göreli URL’ler mutlak URL’lerden daha verimlidir. Daha gelişmiş kurulumlarda, görüntülerinizi sunmak için bir CDN (Content Delivery Network) kullanabilirsiniz.
-
-Eğer görüntüleri siz oluşturmadıysanız, onların yayımlandığı lisansın koşullarına göre bunları kullanma izniniz olduğundan emin olmalısınız (daha fazla bilgi için aşağıdaki Medya varlıkları ve lisanslama bölümüne bakın).
-
-Uyarı: src niteliğini, izinsiz olarak başkasının web sitesinde barındırılan bir görüntüye asla yönlendirmeyin. Buna "hotlinking" denir. Başka biri, biri sayfanızı ziyaret ettiğinde görüntünün bant genişliği maliyetini ödeyeceği için etik dışı kabul edilir. Ayrıca, görüntü kaldırıldığında veya utanç verici bir şeyle değiştirildiğinde sizin hiçbir kontrolünüz olmaz.
-
-Yukarıdaki kod parçacığı, mutlak veya göreli URL ile, bize aşağıdaki sonucu verir:
-
-Not: <img> ve <video> gibi öğelere bazen yeniden kullanılan öğeler denir. Bunun nedeni, öğenin içeriğinin ve boyutunun, öğenin kendi içeriği tarafından değil, harici bir kaynak (bir görüntü veya video dosyası gibi) tarafından tanımlanmasıdır. Bunlar hakkında daha fazlasını replaced elements sayfasında okuyabilirsiniz.
-
-Alternatif metin
-
-Bakacağımız bir sonraki nitelik alt’tır. Değeri, görüntünün görülemediği/gösterilemediği ya da yavaş bir internet bağlantısı nedeniyle oluşturulmasının uzun sürdüğü durumlarda kullanılmak üzere, görüntünün metinsel bir açıklaması olmalıdır. Örneğin, yukarıdaki kodumuz şöyle değiştirilebilir:
-
-HTML
-
-<img
-src="images/dinosaur.jpg"
-alt="The head and torso of a dinosaur skeleton;
-it has a large head with long sharp teeth" />
-
-alt metnini test etmenin en kolay yolu, dosya adınızı bilerek yanlış yazmaktır. Örneğin görüntü adımız dinosooooor.jpg olsaydı, tarayıcı görüntüyü göstermez ve bunun yerine alt metnini gösterirdi:
-
-Peki, alt metnini neden veya ne zaman görürsünüz? Bu, birkaç nedenle işe yarayabilir:
-
-Kullanıcı görme engellidir ve web’i kendisine okumak için bir ekran okuyucu kullanıyordur. Hatta görüntüyü tanımlamak için alt metninin bulunması çoğu kullanıcı için faydalıdır.
-
-Yukarıda açıklandığı gibi, dosya veya yol adının yazımı yanlış olabilir.
-
-Tarayıcı görüntü türünü desteklemeyebilir. Hâlâ Lynx gibi yalnızca metin tabanlı tarayıcılar kullanan bazı kişiler vardır; bunlar görüntülerin alt metnini gösterir.
-
-Arama motorlarının kullanabileceği metin sağlamak isteyebilirsiniz; örneğin arama motorları alt metnini arama sorgularıyla eşleştirebilir.
-
-Kullanıcılar veri aktarım hacmini ve dikkat dağıtıcı unsurları azaltmak için görüntüleri kapatmış olabilir. Bu durum, özellikle mobil telefonlarda ve bant genişliğinin sınırlı ya da pahalı olduğu ülkelerde yaygındır.
-
-alt niteliğinizin içine tam olarak ne yazmalısınız? Bu, görüntünün ilk etapta orada olma nedenine bağlıdır; başka bir deyişle, görüntünüz görünmezse neyi kaybedeceğinize bağlıdır:
-
-Dekorasyon. Dekoratif görüntüler için CSS arka plan görüntüleri kullanmalısınız; ancak HTML kullanmak zorundaysanız, boş bir alt="" ekleyin. Görüntü içeriğin bir parçası değilse, ekran okuyucunun bunu okumak için zaman harcamaması gerekir.
-
-İçerik. Görüntünüz önemli bilgi sağlıyorsa, aynı bilgiyi kısa bir alt metninde verin — hatta daha iyisi, herkesin görebileceği ana metinde verin. Gereksiz alt metni yazmayın. Bir görsel kullanıcı için ana içerikte tüm paragraflar iki kez yazılsaydı ne kadar can sıkıcı olurdu? Görüntü ana metin tarafından yeterince açıklanıyorsa, alt="" kullanabilirsiniz.
-
-Bağlantı. Bir görüntüyü <a> etiketlerinin içine koyup bir görüntüyü bağlantıya dönüştürürseniz, yine de erişilebilir bağlantı metni sağlamalısınız. Bu durumlarda, bunu ya aynı <a> öğesinin içine, ya da görüntünün alt niteliği içine yazabilirsiniz — hangisi sizin durumunuzda daha iyi çalışıyorsa.
-
-Metin. Metninizi görüntülerin içine koymamalısınız. Örneğin ana başlığınız bir gölge istiyorsa, bunu bir görüntüye metin koymak yerine CSS ile yapın. Bununla birlikte, bunu gerçekten önleyemiyorsanız, metni alt niteliği içinde sağlamalısınız.
-
-Özünde, amaç, görüntüler görülemediğinde bile kullanılabilir bir deneyim sunmaktır. Bu, tüm kullanıcıların içeriğin hiçbirini kaçırmamasını sağlar. Tarayıcınızda görüntüleri kapatmayı deneyin ve görünümün nasıl olduğunu görün. Görüntü görülemediğinde alt metninin ne kadar yararlı olduğunu kısa sürede anlayacaksınız.
-
-Not: Görüntüler için çeşitli durumlarda alt niteliğini nasıl kullanacağınızı öğrenmek için Metin Alternatifleri kılavuzumuza ve bir alt Karar Ağacı’na bakın.
-
-Not:
-
-HTML etiketleri
-
-MDN öğrenme ortağı Scrimba, görüntüler ve mini meydan okumalar hakkında bilgi veren etkileşimli bir derstir.
-
-Genişlik ve yükseklik
-
-Görüntünüzün genişliğini ve yüksekliğini belirtmek için width ve height niteliklerini kullanabilirsiniz. Bunlar birim içermeyen tam sayılar olarak verilir ve görüntünün piksel cinsinden genişliğini ve yüksekliğini temsil eder.
-
-Görüntünüzün genişliğini ve yüksekliğini çeşitli yollarla öğrenebilirsiniz. Örneğin Mac’te, görüntü dosyasının görüntüleme bilgilerini almak için Cmd + I kullanabilirsiniz. Örneğimize dönerek, bunu yapabiliriz:
-
-HTML
-
-<img
-src="images/dinosaur.jpg"
-alt="The head and torso of a dinosaur skeleton;
-it has a large head with long sharp teeth"
-
+## Web sayfasına nasıl görsel ekleriz?
+
+Bir web sayfasına görsel yerleştirmek için `<img>` elementini kullanırız. Bu bir **void element**'tir (yani alt içeriğe sahip olamaz ve kapanış etiketi bulunmaz) ve işlevsel olabilmesi için iki temel niteliğe ihtiyaç duyar: `src` ve `alt`.
+
+* `src`: Sayfaya gömmek istediğiniz görseli işaret eden bir URL barındırır. Göreceli veya mutlak bir URL olabilir. `src` niteliği olmadan `img` elementi hiçbir görsel yükleyemez.
+
+Örnekler:
+* Görsel HTML sayfasıyla aynı dizindeyse:
+  ```html
+  <img src="dinosaur.jpg" alt="Dinosaur" />
+  ```
+* Görsel bir `images` alt klasöründeyse:
+  ```html
+  <img src="images/dinosaur.jpg" alt="Dinosaur" />
+  ```
+
+> [!WARNING]
+> İzin almadan *asla* `src` niteliğini başka birinin web sitesinde barındırılan bir görsele doğrudan yönlendirmeyin. Buna **hotlinking** denir. Başkasına bant genişliği maliyeti yüklediği için etik dışı kabul edilir; ayrıca görselin kaldırılması ya da yerine uygunsuz bir görsel konması üzerinde hiçbir kontrolünüz kalmaz.
+
+> [!NOTE]
+> `<img>` ve `<video>` gibi elementlere bazen **replaced elements (değiştirilen elementler)** denir. Bunun nedeni, elementin içeriğinin ve boyutunun elementin kendisi tarafından değil, harici bir kaynak (görsel veya video dosyası) tarafından belirlenmesidir.
 
 ---
 
-# Bilgini sınayın: HTML görüntüleri
+## Alternatif metin: `alt`
 
-Bilgini sınayın: HTML görüntüleri - Web geliştirmeyi öğren | MDN
+İnceleyeceğimiz bir sonraki nitelik `alt` niteliğidir. Değeri, görselin görülemediği/görüntülenemediği veya yavaş bir internet bağlantısı nedeniyle yüklenmesinin uzun sürdüğü durumlarda kullanılmak üzere görselin metinsel bir açıklaması olmalıdır:
 
-Test: HTML testleri dizini
-
-Test: Görüntüler
-
-English (US)
-
-Bilgini sınayın: HTML görüntüleri
-
-Önceki
-
-Genel Bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Bu beceri testinin amacı, görüntüleri anlayıp HTML içinde nasıl gömdüğünüzü değerlendirmenize yardımcı olmaktır.
-
-Not: Yardım almak için, Bilgini sınayın kullanım kılavuzumuzu okuyun. Ayrıca iletişim kanallarımızdan biriyle bize ulaşabilirsiniz.
-
-Görüntüler 1
-
-Bu görevde, sayfaya bazı Yaban Mersinleri görüntüsü yerleştirmenizi istiyoruz.
-
-Görevi tamamlamak için:
-
-1. Görüntüyü sayfaya gömmek için uygun bir niteliğe görüntünün yolunu ekleyin. Görüntünün adı blueberries.jpg’dir ve şu yolda bulunur: https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/blueberries.jpg?raw=true .
-
-2. Görüntüyü göremeyen kişiler için resmi açıklamak üzere uygun bir niteliğe biraz alternatif metin ekleyin.
-
-3. <img> öğesine 400 genişlik değeri ve uygun bir yükseklik değeri verin; böylece doğru en-boy oranında görüntülenir ve yüklendiğinde yeniden oluşturma (re-render) yapmaz. Görüntünün doğal boyutu 615 x 419 pikseldir.
-
-Görevin başlangıç noktası şöyle görünür:
-
-Temel görüntü gömme
-
-Üstte bazı yaban mersinlerinin resmini görmelisiniz.
-
-Bu başlangıç noktası için alttaki kod şöyledir:
-
-HTML
-
-<h1>Temel görüntü gömme</h1>
-
-<img />
-
-<p>Üstte bazı yaban mersinlerinin resmini görmelisiniz.</p>
-
-Görevin güncellenmiş içeriği şöyle görünmelidir:
-
-Temel görüntü gömme
-
-Üstte bazı yaban mersinlerinin resmini görmelisiniz.
-
-Çözümü göstermek için buraya tıklayın
-
-Görüntüler 2
-
-Bu görevde, zaten tam özellikli bir görüntünüz var; ancak üzerine gelindiğinde görünen bir araç ipucu eklemenizi istiyoruz. Araç ipucuna uygun bazı bilgiler koymalısınız.
-
-Görevin başlangıç noktası şöyle görünür:
-
-Temel görüntü başlığı
-
-Bu başlangıç noktası için alttaki kod şöyledir:
-
-HTML
-
-<h1>Temel görüntü başlığı</h1>
-
+```html
 <img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton;
+          it has a large head with long sharp teeth" />
+```
 
-src="https://flatheadbeacon.com/wp-content/uploads/2024/10/20231020_LARCH_ELK_MTN_0056-copy.jpg"
+### Alt metin neden gereklidir?
+* Görme engelli kullanıcılar web'i kendilerine seslendiren **ekran okuyucular** kullanır.
+* Dosya adı veya yol adı yanlış yazılmış olabilir.
+* Tarayıcı görsel türünü desteklemiyor olabilir (veya Lynx gibi salt metin tarayıcılar kullanılmaktadır).
+* Arama motorları arama sorgularını eşleştirmek için alt metinleri dizine ekler.
+* Kullanıcılar veri tasarrufu sağlamak için görselleri kapatmış olabilir.
 
-alt="Several tall evergreen trees called larches" />
-
-Bu görev için bitirilmiş içerik sağlamadık; çünkü başlangıç noktasıyla aynı görünür.
-
-Çözümü göstermek için buraya tıklayın
-
-Görüntüler 3
-
-Bu görevde, hem tam özellikli bir görüntü hem de bazı açıklama metinleri verilmiştir. Burada yapmanız gereken, görüntüyü açıklama ile ilişkilendirecek öğeler eklemektir.
-
-Görevin başlangıç noktası şöyle görünür:
-
-Görüntü ve açıklama
-
- 2019 Firefox logosu
-
-Bu başlangıç noktası için alttaki kod şöyledir:
-
-HTML
-
-<h1>Görüntü ve açıklama</h1>
-
-<img
-
-src="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/firefox.png?raw=true"
-
-alt="An abstract flaming fox wrapping around a blue sphere"
-
-width="446"
-
-height="460" />
-
-2019 Firefox logosu
-
-Görevin güncellenmiş içeriği şöyle görünmelidir:
-
-Görüntü ve açıklama
-
-2019 Firefox logosu
-
-Çözümü göstermek için buraya tıklayın
-
-Önceki
-
-Genel Bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Kendiniz için daha iyi bir internet taslağı.
-
+### `alt` niteliğine ne yazılmalıdır?
+* **Dekorasyon:** Görsel yalnızca dekoratif amaçlıysa, boş bir `alt=""` ekleyin. Ekran okuyucu boş alt metinli görselleri atlayarak zaman kaybetmez.
+* **İçerik:** Görsel önemli bir bilgi sunuyorsa, aynı bilgiyi *kısa* bir `alt` metninde sağlayın. Ana metinde zaten tam olarak anlatılan bir görsel için gereksiz yere uzun alt metinler yazmayın (`alt=""` kullanabilirsiniz).
+* **Bağlantı:** Bir görseli `<a>` içine koyarak linke dönüştürürseniz, erişilebilir bağlantı metnini mutlaka sağlamalısınız (bağlantı metni olarak veya `alt` içinde).
+* **Metin:** Metinleri görsellerin içine gömmekten kaçının. Başlığın gölgeye ihtiyacı varsa bunu CSS ile yapın.
 
 ---
 
-HTML
-Video ve audio
-HTML video ve audio
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-Now that we are comfortable with adding simple images to a webpage, the next step is to start adding video and audio
-players to your HTML documents! In this article we'll look at doing just that with the <video>  and <audio>  elements;
-we'll then finish off by looking at how to add captions/subtitles to your videos.
-Önkoşullar:
-Basic HTML familiarity, as covered in Basic HTML Syntax. Text-level semantics such as
-headings and paragraphs and lists.
-Learning
-outcomes:
-Basic <video>  and <audio>  tag syntax
-Video ve audio-specific attributes such as controls and muted.
-Using <source>  elements to provide different video or audio sources.
-The basics of using text tracks such as captions and subtitles.
-Video ve audio on the web
-The first influx of online videos and audio were made possible by proprietary plugin-based technologies like 
- and
-. Both of these had security and accessibility issues, and are now obsolete, in favor of native HTML
-solutions <video>  and <audio>  elements and the availability of JavaScript APIs for controlling them. We'll not be
-looking at JavaScript here — just the basic foundations that can be achieved with HTML.
-We won't be teaching you how to produce audio and video files — that requires a completely different skill set. We have
-provided you with 
- for your own experimentation, in case you are
-unable to get hold of your own.
-<video> öğesi
-The <video>  element allows you to embed a video very easily. A really simple example looks like this:
-HTML
-English (US)
-Flash
-Silverlight
-sample audio and video files and example code
-Note: Before you begin here, you should also know that there are quite a few OVPs (online video providers) like
-, 
-, and 
-, and online audio providers like 
-. Such companies offer
-a convenient, easy way to host and consume videos, so you don't have to worry about the enormous bandwidth
-consumption. OVPs even usually offer ready-made code for embedding video/audio in your webpages; if you
-use that route, you can avoid some of the difficulties we discuss in this article. We'll be discussing this kind of
-service a bit more in the next article.
-YouTube
-Dailymotion
-Vimeo
-Soundcloud
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-1/11
+## Genişlik ve yükseklik
 
+Görselin genişliğini ve yüksekliğini belirtmek için `width` ve `height` niteliklerini kullanabilirsiniz. Bunlar birim olmadan piksel cinsinden tam sayı olarak verilir:
+
+```html
+<img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton"
+  width="400"
+  height="341" />
+```
+
+Bunu yapmanın çok önemli bir nedeni vardır: HTML belgesi ve görseller ayrı kaynaklardır. Tarayıcı HTML'i alır almaz ekranda göstermeye başlar. Görselin boyutları belirtilmemişse, görsel yüklendiğinde aniden yer kaplar ve altındaki metinleri aşağıya kaydırır (Layout Shift). Bu durum kullanıcıyı rahatsız eder ve tarayıcıyı sayfayı yeniden işlemeye (re-render) zorlayarak performansı düşürür. Boyutlar önceden verilirse tarayıcı gereken boşluğu en baştan ayırır.
+
+> [!WARNING]
+> Görselleri HTML nitelikleriyle *yeniden boyutlandırmayın*. Görseli olduğundan çok büyük ayarlarsanız bulanıklaşır ve gereksiz bant genişliği harcar. Görseli web sayfasına koymadan önce bir görsel düzenleyicide uygun boyuta getirin veya CSS kullanın.
+
+---
+
+## Görsel başlıkları
+
+Bağlantılarda olduğu gibi görsellere de `title` niteliği ekleyebilirsiniz:
+
+```html
+<img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton"
+  width="400"
+  height="341"
+  title="A T-Rex on display in the Manchester University Museum" />
+```
+
+Ancak ekran okuyucu desteğinin öngörülemez olması ve klavye kullanıcıları tarafından erişilememesi nedeniyle `title` kullanımı önerilmez. Destekleyici bilgileri doğrudan makale metninde sunmak daha iyidir.
+
+---
+
+## Medya varlıkları ve lisanslama
+
+* **All rights reserved (Tüm hakları saklıdır):** Telif hakkı sahibinin münhasır hakları vardır. Yazılı izin almalı veya lisans ücreti ödemelisiniz.
+* **Permissive licenses (İzin verici lisanslar):** MIT, BSD veya Creative Commons (CC). Belirli koşullara (atıfta bulunma, değişiklikleri belirtme, aynı lisansla paylaşma / copyleft vb.) uymak kaydıyla ücretsiz kullanılabilir.
+* **Public domain / CC0 (Kamu Malı):** Hiçbir telif hakkı geçerli değildir; izin almadan veya koşulsuz olarak kullanılabilir.
+
+---
+
+## Görsellere `<figure>` ve `<figcaption>` ile açıklama ekleme
+
+Görselleri altyazılarla ilişkilendirmek için anlamsal `<figure>` ve `<figcaption>` elementleri kullanılır:
+
+```html
+<figure>
+  <img
+    src="images/dinosaur.jpg"
+    alt="The head and torso of a dinosaur skeleton"
+    width="400"
+    height="341" />
+  <figcaption>
+    A T-Rex on display in the Manchester University Museum.
+  </figcaption>
+</figure>
+```
+
+`<figcaption>` elementi tarayıcılara ve yardımcı teknolojilere bu altyazının `<figure>` içindeki içeriği açıkladığını net bir şekilde bildirir.
+
+---
+
+## CSS arka plan görselleri
+
+Görseller CSS ile de gömülebilir (`background-image: url(...)`). CSS arka plan görselleri **yalnızca dekorasyon** içindir; hiçbir anlamsal değer taşımazlar ve ekran okuyucular tarafından görülemezler. İçeriğin parçası olan ve anlam taşıyan görseller için mutlaka HTML `<img>` elementi kullanılmalıdır.
+
+---
+
+# 15. Test: Görseller
+
+**HTML** > **Test your skills: HTML images** | English (US)
+
+Bu beceri testinin amacı, resimleri ve bunların HTML'e nasıl gömüleceğini anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
+
+---
+
+## Görseller 1
+
+Yaban mersini görselini sayfaya gömün:
+* `src`: `https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/blueberries.jpg?raw=true`
+* `alt`: Açıklayıcı alternatif metin.
+* `width="400"` ve orijinal en-boy oranını (615x419) koruyacak şekilde hesaplanan `height="273"`.
+
+### Çözüm:
+
+```html
+<h1>Basic image embed</h1>
+
+<img src="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/blueberries.jpg?raw=true"
+     alt="blueberries" width="400" height="273" />
+
+<p>You should see a picture of some blueberries above.</p>
+```
+
+---
+
+## Görseller 2
+
+Görsele fareyle üzerine gelindiğinde görünen bir `title` ipucu başlığı ekleyin.
+
+### Çözüm:
+
+```html
+<h1>Basic image title</h1>
+
+<img
+  src="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/larch.jpg?raw=true"
+  alt="Several tall evergreen trees called larches"
+  title="And now, Number 1, The Larch" />
+```
+
+---
+
+## Görseller 3
+
+Görseli ve altyazıyı anlamsal olarak birbirine bağlayan `<figure>` ve `<figcaption>` elementlerini ekleyin.
+
+### Çözüm:
+
+```html
+<h1>Image and caption</h1>
+
+<figure>
+  <img
+    src="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/firefox.png?raw=true"
+    alt="An abstract flaming fox wrapping around a blue sphere"
+    width="446"
+    height="460" />
+  <figcaption>The 2019 Firefox logo</figcaption>
+</figure>
+```
+
+---
+
+# 16. Video ve ses
+
+**HTML** > **HTML video and audio** | English (US)
+
+HTML5 ile birlikte Flash ve Silverlight gibi eklenti tabanlı eski teknolojiler terk edilmiş, yerel `<video>` ve `<audio>` elementleri standart hale gelmiştir. Bu makale video ve ses oynatıcılarını ve altyazı/metin parçalarını (`<track>`) incelemektedir.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Basic HTML Syntax bölümünde ele alındığı gibi temel HTML aşinalığı. Başlıklar, paragraflar ve listeler. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Temel `<video>` ve `<audio>` sözdizimi.<br>• `controls`, `autoplay`, `loop`, `muted` gibi medyaya özgü nitelikler.<br>• Farklı medya kaynakları sağlamak için `<source>` elementlerinin kullanımı.<br>• Altyazılar (captions/subtitles) için WebVTT ve `<track>` kullanımı. |
+
+---
+
+## `<video>` elementi
+
+Temel bir video oynatıcı:
+
+```html
 <video src="rabbit320.webm" controls>
-<p>
-Your browser doesn't support HTML video. Here is a
-<a href="rabbit320.webm">link to the video</a> instead.
-</p>
+  <p>
+    Your browser doesn't support HTML video. Here is a
+    <a href="rabbit320.webm">link to the video</a> instead.
+  </p>
 </video>
-The features to note are:
-src
-In the same way as for the <img>  element, the src  (source) attribute contains a path to the video you want to
-embed. It works in exactly the same way.
-controls
-Users must be able to control video and audio playback (it's especially critical for people who have 
-.) You
-must either use the controls  attribute to include the browser's own control interface, or build your interface using
-the appropriate JavaScript API. At a minimum, the interface must include a way to start and stop the media, and to
-adjust the volume.
-The paragraph inside the <video>  tags
-This is called fallback content — this will be displayed if the browser accessing the page doesn't support the
-<video>  element, allowing us to provide a fallback for older browsers. This can be anything you like; in this case,
-we've provided a direct link to the video file, so the user can at least access it some way regardless of what browser
-they are using.
-The embedded video will look something like this:
-epilepsy
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-2/11
+```
 
-You can 
- here (see also the 
-.)
-Using multiple source formats to improve
-compatibility
-There's a problem with the above example. It is possible that the video might not play for you, because different
-browsers support different video (and audio) formats. Fortunately, there are things you can do to help prevent this from
-being an issue.
-Bir medya dosyasının içeriği
-First, let's go through the terminology quickly. Formats like OGG, WAV, MP4 and WebM are called container formats.
-They define a structure in which the audio and/or video tracks that make up the media are stored, along with metadata
-describing the media, what codecs are used to encode its channels, and so forth.
-A WebM file containing a movie which has a main video track and one alternate angle track, plus audio for both English
-and Spanish, in addition to audio for an English commentary track can be conceptualized as shown in the diagram below.
-Also included are text tracks containing closed captions for the feature film, Spanish subtitles for the film, and English
-captions for the commentary.
-try the example live
-source code
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-3/11
+* `src`: Gömülecek videonun yolunu belirtir.
+* `controls`: Kullanıcının oynatma/durdurma ve ses kontrolü yapabilmesi için tarayıcının yerleşik kontrollerini gösterir (erişilebilirlik ve epilepsi hastaları için hayati önem taşır).
+* `<p>` içeriği: Tarayıcı `<video>` elementini desteklemiyorsa görüntülenecek **yedek içeriktir (fallback content)**.
 
-The audio and video tracks within the container hold data in the appropriate format for the codec used to encode that
-media. Different formats are used for audio tracks versus video tracks. Each audio track is encoded using an audio
-codec, while video tracks are encoded using (as you probably have guessed) a video codec. As we talked about before,
-different browsers support different video and audio formats, and different container formats (like OGG, MP4, and WebM,
-which in turn can contain different types of video and audio).
-For example:
-A WebM container typically packages Vorbis or Opus audio with VP8/VP9 video. This is supported in all modern
-browsers, though older versions may not work.
-An MP4 container often packages AAC or MP3 audio with H.264 video. This is also supported in all modern
-browsers.
-The Ogg container tends to use Vorbis audio and Theora video. This is best supported in Firefox and Chrome, but
-has basically been superseded by the better quality WebM format.
-There are some special cases. For example, for some types of audio, a codec's data is often stored without a container,
-or with a simplified container. One such instance is the FLAC codec, which is stored most commonly in FLAC files, which
-are just raw FLAC tracks.
-Another example is the ever-popular "MP3 file". An "MP3 file" is an audio file encoded using MPEG-1 Audio Layer III
-compression. While it can include metadata, it is not encapsulated within a separate MPEG or MPEG-2 container. Its
-widespread support in the <audio>  and <video>  elements is largely a testament to its enduring popularity.
-An audio player will tend to play an audio track directly, e.g., an MP3 or Ogg file. These don't need containers.
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-4/11
+---
 
-Tarayıcılarda medya dosyası desteği
-The codecs described in the previous section exist to compress video and audio into manageable files, since raw audio
-and video are both exceedingly large. Each web browser supports an assortment of codecs, like Vorbis or H.264, which
-are used to convert the compressed audio and video into binary data and back. Each codec offers its own advantages
-and drawbacks, and each container may also offer its own positive and negative features affecting your decisions about
-which to use.
-Things become slightly more complicated because not only does each browser support a different set of container file
-formats, they also each support a different selection of codecs. In order to maximize the likelihood that your website or
-app will work on a user's browser, you may need to provide each media file you use in multiple formats. If your site and
-the user's browser don't share a media format in common, your media won't play.
-Due to the intricacies of ensuring your app's media is viewable across every combination of browsers, platforms, and
-devices you wish to reach, choosing the best combination of codecs and container can be a complicated task. See
-Choosing the right container for help selecting the container file format best suited for your needs; similarly, see
-Choosing a video codec and Choosing an audio codec for help selecting the first media codecs to use for your content
-and your target audience.
-One additional thing to keep in mind: mobile browsers may support additional formats not supported by their desktop
-equivalents, just like they may not support all the same formats the desktop version does. On top of that, both desktop
-and mobile browsers may be designed to offload handling of media playback (either for all media or only for specific
-types it can't handle internally). This means media support is partly dependent on what software the user has installed.
-So how do we do this? Take a look at the following 
- (
-, also):
-HTML
+## Uyumluluğu artırmak için çoklu kaynak formatları kullanma
+
+Farklı tarayıcılar farklı video ve ses formatlarını/kodeklerini destekler.
+* **Konteyner formatları:** MP4, WebM, OGG.
+* **Kodekler:** H.264, VP8/VP9, AV1 (video için); AAC, MP3, Opus, Vorbis (ses için).
+
+Birden çok format sunmak için `src` niteliği yerine `<source>` elementleri kullanılır:
+
+```html
 <video controls>
-<source src="rabbit320.mp4" type="video/mp4" />
-<source src="rabbit320.webm" type="video/webm" />
-<p>
-Your browser doesn't support this video. Here is a
-<a href="rabbit320.mp4">link to the video</a> instead.
-</p>
+  <source src="rabbit320.mp4" type="video/mp4" />
+  <source src="rabbit320.webm" type="video/webm" />
+  <p>
+    Your browser doesn't support this video. Here is a
+    <a href="rabbit320.mp4">link to the video</a> instead.
+  </p>
 </video>
-Here we've taken the src  attribute out of the actual <video>  tag, and instead included separate <source>  elements
-that point to their own sources. In this case the browser will go through the <source>  elements and play the first one
-Note: Several popular formats, such as MP3 and MP4/H.264, are excellent but are encumbered by patents; that
-is, there are patents covering some or all of the technology that they're based upon. In the United States,
-patents covered MP3 until 2017, and H.264 is encumbered by patents through at least 2027.
-Because of those patents, browsers that wish to implement support for those codecs must pay typically
-enormous license fees. In addition, some people prefer to avoid restricted software and prefer to use only open
-formats. Due to these legal and preferential reasons, web developers find themselves having to support multiple
-formats to provide a video experience to their entire audience.
-updated example
-try it live here
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-5/11
+```
 
-that it has the codec to support. Including WebM and MP4 sources should be enough to play your video on most
-platforms and browsers these days.
-Each <source>  element also has a type  attribute. This is optional, but it is advised that you include it. The type
-attribute contains the MIME type of the file specified by the <source> , and browsers can use the type  to immediately
-skip videos they don't understand. If type  isn't included, browsers will load and try to play each file until they find one
-that works, which obviously takes time and is an unnecessary use of resources.
-Refer to our guide to media types and formats for help selecting the best containers and codecs for your needs, as well
-as to look up the right MIME types to specify for each.
-Diğer <video> özellikleri
-There are a number of other features you can include when displaying an HTML video. Take a look at our next example:
-HTML
+`type` niteliği dosyanın MIME türünü belirtir; bu sayede tarayıcı desteklemediği formatı indirmeye çalışmadan hemen atlar.
+
+---
+
+## Diğer `<video>` özellikleri
+
+```html
 <video
-controls
-width="400"
-height="400"
-autoplay
-loop
-muted
-preload="auto"
-poster="poster.png">
-<source src="rabbit320.mp4" type="video/mp4" />
-<source src="rabbit320.webm" type="video/webm" />
-<p>
-Your browser doesn't support this video. Here is a
-<a href="rabbit320.mp4">link to the video</a> instead.
-</p>
+  controls
+  width="400"
+  height="400"
+  autoplay
+  loop
+  muted
+  preload="auto"
+  poster="poster.png">
+  <source src="rabbit320.mp4" type="video/mp4" />
+  <source src="rabbit320.webm" type="video/webm" />
+  <p>Your browser doesn't support this video.</p>
 </video>
-The resulting UI looks something like this:
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-6/11
+```
 
-Features include:
-width  and height
-You can control the video size either with these attributes or with CSS. In both cases, videos maintain their native
-width-height ratio — known as the aspect ratio. If the aspect ratio is not maintained by the sizes you set, the video
-will grow to fill the space horizontally, and the unfilled space will just be given a solid background color by default.
-autoplay
-Makes the audio or video start playing right away, while the rest of the page is loading. You are advised not to use
-autoplaying video (or audio) on your sites, because users can find it really annoying.
-loop
-Makes the video (or audio) start playing again whenever it finishes. This can also be annoying, so only use if really
-necessary.
-muted
-Causes the media to play with the sound turned off by default.
-poster
-The URL of an image which will be displayed before the video is played. It is intended to be used for a splash screen
-or advertising screen.
-preload
-Used for buffering large files; it can take one of three values:
-"none"  does not buffer the file
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-7/11
+* `width` ve `height`: Oynatıcı boyutlarını belirler.
+* `autoplay`: Sayfa yüklenir yüklenmez oynatmayı başlatır (kullanıcıyı rahatsız edebileceği için genellikle önerilmez; birçok tarayıcı yalnızca `muted` ile birlikte izin verir).
+* `loop`: Video bittiğinde başa sarıp tekrar oynatır.
+* `muted`: Sesi varsayılan olarak kapalı başlatır.
+* `poster`: Video oynatılmadan önce gösterilecek kapak görselidir.
+* `preload`: Büyük dosyaların önbelleğe alınmasını yönetir (`"none"`, `"auto"`, `"metadata"`).
 
-"auto"  buffers the media file
-"metadata"  buffers only the metadata for the file
-You can find the above example available to 
- (also 
-.) Note that we haven't
-included the autoplay  attribute in the live version — if the video starts to play as soon as the page loads, you don't get
-to see the poster!
-<audio> öğesi
-The <audio>  element works just like the <video>  element, with a few small differences as outlined below. A typical
-example might look like so:
-HTML
+---
+
+## `<audio>` elementi
+
+`<audio>` elementi görsel bir bileşeni olmadığı için `width`, `height` ve `poster` niteliklerini desteklememesi dışında `<video>` ile tamamen aynı mantıkla çalışır:
+
+```html
 <audio controls>
-<source src="viper.mp3" type="audio/mp3" />
-<source src="viper.ogg" type="audio/ogg" />
-<p>
-Your browser doesn't support this audio file. Here is a
-<a href="viper.mp3">link to the audio</a> instead.
-</p>
+  <source src="viper.mp3" type="audio/mp3" />
+  <source src="viper.ogg" type="audio/ogg" />
+  <p>
+    Your browser doesn't support HTML audio. Here is a
+    <a href="viper.mp3">link to the audio</a> instead.
+  </p>
 </audio>
-This produces something like the following in a browser:
-play live on GitHub
-see the source code
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-8/11
+```
 
-This takes up less space than a video player, as there is no visual component — you just need to display controls to play
-the audio. Other differences from HTML video are as follows:
-The <audio>  element doesn't support the width / height  attributes — again, there is no visual component, so
-there is nothing to assign a width or height to.
-It also doesn't support the poster  attribute — again, no visual component.
-Other than this, <audio>  supports all the same features as <video>  — review the above sections for more information
-about them.
-Video metin izlerini görüntüleme
-Now we'll discuss a slightly more advanced concept that is really useful to know about. Many people can't or don't want
-to hear the audio/video content they find on the Web, at least at certain times. For example:
-Many people have auditory impairments (such as being hard of hearing or deaf) so can't hear the audio clearly if
-at all.
-Others may not be able to hear the audio because they are in noisy environments (like a crowded bar when a
-sports game is being shown).
-Similarly, in environments where having the audio playing would be a distraction or disruption (such as in a library
-or when a partner is trying to sleep), having captions can be very useful.
-People who don't speak the language of the video might want a text transcript or even translation to help them
-understand the media content.
-Wouldn't it be nice to be able to provide these people with a transcript of the words being spoken in the audio/video?
-Well, thanks to HTML video, you can. To do so we use the WebVTT file format and the <track>  element.
-WebVTT is a format for writing text files containing multiple strings of text along with metadata such as the time in the
-video at which each text string should be displayed, and even limited styling/positioning information. These text strings
-are called cues, and there are several kinds of cues which are used for different purposes. The most common cues are:
-subtitles
-Translations of foreign material, for people who don't understand the words spoken in the audio.
-captions
-Synchronized transcriptions of dialog or descriptions of significant sounds, to let people who can't hear the audio
-understand what is going on.
-timed descriptions
-Text which should be spoken by the media player in order to describe important visuals to blind or otherwise visually
-impaired users.
-A typical WebVTT file will look something like this:
-WEBVTT
-Note: You can 
- on GitHub (also see the 
-.)
-run the audio demo live
-audio player source code
-Note: "Transcribe" means "to write down spoken words as text." The resulting text is a "transcript."
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-9/11
+---
 
-1
-00:00:22.230 --> 00:00:24.606
-This is the first subtitle.
-2
-00:00:30.739 --> 00:00:34.074
-This is the second.
-…
-To get this displayed along with the HTML media playback, you need to:
-1. Save it as a .vtt  file somewhere the server can serve (see below), such as in the same directory as the HTML
-file.
-2. Link to the .vtt  file with the <track>  element. <track>  should be placed within <audio>  or <video> , but
-after all <source>  elements. Use the kind  attribute to specify whether the cues are subtitles , captions , or
-descriptions . Further, use srclang  to tell the browser what language you have written the subtitles in. Finally,
-add label  to help readers identify the language they are searching for.
-Here's an example:
-HTML
+## Video metin parçalarını ve altyazıları görüntüleme
+
+İşitme engelli kullanıcılar, gürültülü ortamlarda bulunanlar veya videonun dilini bilmeyenler için altyazı sağlamak amacıyla **WebVTT** (`.vtt`) formatı ve `<track>` elementi kullanılır:
+
+```html
 <video controls>
-<source src="example.mp4" type="video/mp4" />
-<source src="example.webm" type="video/webm" />
-<track kind="subtitles" src="subtitles_es.vtt" srclang="es" label="Spanish" />
+  <source src="example.mp4" type="video/mp4" />
+  <source src="example.webm" type="video/webm" />
+  <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English" default />
+  <track kind="subtitles" src="subtitles_tr.vtt" srclang="tr" label="Türkçe" />
 </video>
-In order to try this you need to host the files on a local HTTP server. In the output in browser, you'll see a video that has
-subtitles displayed. For a full-fledged application and its source code, see Adding captions and subtitles to HTML video.
-This example uses JavaScript to allow users to choose between different subtitles. Note that to turn the subtitles on, you
-need to press the "CC" button and select an option — English, Deutsch, or Español.
-Kendi audio ve videonuzu yerleştirme
-For this task, why not go out into the world and record some of your own video and audio? If you have a phone, use that
-to record audio and video, transfer it to your computer, and try it out. You may have to do some conversion to end up
-with a WebM and MP4 in the case of video, and an MP3 and Ogg in the case of audio, but there are enough programs
-and tools out there to allow you to do this without too much trouble, such as 
- (online) and 
-(desktop application). We'd like you to have a go!
-Note: Text tracks also help you with SEO, since search engines especially thrive on text. Text tracks even allow
-search engines to link directly to a spot partway through the video.
-CloudConvert
-Audacity
-Note: If you are unable to source any video or audio, then you can feel free to use our 
- to carry out this exercise.
-sample audio and video
-files
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-10/11
+```
 
-We would like you to:
-1. Save your audio and video files in a new directory on your computer.
-2. Create a new HTML file in the same directory, called index.html , based on our 
-.
-3. Add <audio>  and <video>  elements to the page; make them display the default browser controls.
-4. Give both of them <source>  elements so that browsers will find the audio format they support best and load it.
-These should include type  attributes.
-5. Give both of them a fallback <p>  element inside the tags that provides a direct link to the media for non-
-supporting browsers.
-6. Give the <video>  element a poster that will be displayed before the video starts to be played. Have fun creating
-your own poster graphic.
-Click here to show the solution
-Summary
-And that's a wrap — we hope you had fun playing with video and audio in web pages! Sonraki up, we'll give you some tests
-that you can use to check how well you've understood and retained the information we've provided on HTML video and
-audio.
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-getting started template
-15.10.2026 20:24
-HTML video ve audio - Web geliştirmeyi öğrenin | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio
-11/11
-
+* `kind`: `subtitles` (altyazı), `captions` (işitme engelliler için ses efektleri içeren açıklamalı altyazı) veya `descriptions` (sesli betimleme).
+* `srclang`: Altyazının dil kodu.
+* `label`: Kullanıcıya gösterilecek dil adı.
+* `default`: Varsayılan olarak etkinleştirilecek parça.
 
 ---
 
-Test: HTML tests index
-Test: Audio and video
-Test your skills: Audio and video
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-The aim of this skill test is to help you assess whether you understand how to embed video and audio content in HTML.
-Audio and video 1
-In this task, we want you to embed an audio file onto the page.
-To complete this task:
-1. Add the path to the audio file to an appropriate attribute to embed it on the page. The audio is called audio.mp3 ,
-and it is available at the path https://github.com/mdn/learning-
-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/audio-video/audio.mp3 .
-2. Add an attribute to make browsers display some default controls.
-The starting point of the task looks like this:
-Basic audio embed
-Here's the underlying code for this starting point:
-HTML
+# 17. Test: Ses ve video
+
+**HTML** > **Test your skills: Audio and video** | English (US)
+
+Bu beceri testinin amacı, HTML'de video ve ses içeriğini nasıl gömeceğinizi anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
+
+---
+
+## Ses ve video 1
+
+Verilen adresteki ses dosyasını varsayılan tarayıcı kontrolleriyle sayfaya gömün.
+
+### Çözüm:
+
+```html
 <h1>Basic audio embed</h1>
-<audio></audio>
-The updated content should look like this:
-English (US)
-Note: To get help, read our Test your skills usage guide. You can also reach out to us using one of our
-communication channels.
-15.10.2026 20:24
-Test your skills: Audio and video - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video
-1/4
 
-Basic audio embed
-Click here to show the solution
-Audio and video 2
-In this task, we want you to mark up a slightly more complex video player, with multiple sources, subtitles, and other
-features besides.
-To complete this task:
-1. Add an attribute to make browsers display some default controls.
-2. Add multiple sources, containing the paths to the video files. The files are called video.mp4  and video.webm ,
-and are available at the following paths:
-1. https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-
-embedding/tasks/audio-video/video.mp4
-2. https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-
-embedding/tasks/audio-video/video.webm
-3. Let the browser know in advance what video formats the sources point to, so it can make an informed choice of
-which one to download ahead of time.
-4. Give the <video>  a width and height equal to its intrinsic size (320 by 240 pixels).
-5. Make the video muted by default.
-6. Display the text tracks contained in the subtitles_en.vtt  file when the video is playing. You must explicitly set
-the type as subtitles, and the subtitle language to English. Also set the default  attribute so that the track is
-displayed by default.
-7. Make sure the readers can identify the subtitle language when they use the default controls.
-The starting point of the task looks like this:
-Note: A copy of the subtitles file is located in the same directory as this page to avoid crossorigin
-problems: if you are completing the task live on MDN via the MDN Playground, the path you need is just
-subtitles_en.vtt . If you decide to recreate the example on your local file system, you can find a copy
-at the path https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-
-embedding/tasks/audio-video/subtitles_en.vtt .
-15.10.2026 20:24
-Test your skills: Audio and video - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video
-2/4
-
-Video embed
-Here's the underlying code for this starting point:
-HTML
-<h1>Video embed</h1>
-<video></video>
-The updated content should look like this:
-Video embed
-0:00 / 0:07
-Click here to show the solution
-15.10.2026 20:24
-Test your skills: Audio and video - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video
-3/4
-
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-15.10.2026 20:24
-Test your skills: Audio and video - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Audio_and_video
-4/4
-
+<audio
+  controls
+  src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/audio-video/audio.mp3"></audio>
+```
 
 ---
 
-HTML
-Challenge: Splash page
-Challenge: Creepy-crawly splash page
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-In this challenge, we'll test your knowledge of some of the techniques discussed in the last couple of lessons, getting
-you to add some images and a video to a splash page all about bugs and other creepy crawlies.
-Starting point
-To solve this challenge we are expecting you to create a simple website project, either inside a folder on your computer's
-hard drive, or using an online editor such as 
- or 
-. Much of the code you need is already provided.
-1. Create a new folder in an appropriate location on your computer called splash-page-challenge  (or open an
-online editor and take the required steps to create a new project).
-2. Save the following HTML listing inside a file inside your folder called index.html  (or paste it into your online
-editor's HTML pane).
-HTML
+## Ses ve video 2
+
+Çoklu kaynaklara, altyazıya ve ek özelliklere sahip bir video oynatıcı oluşturun:
+1. Varsayılan kontroller (`controls`).
+2. MP4 ve WebM kaynakları (`<source>` etiketleri ve `type` nitelikleri ile).
+3. Orijinal boyutlar (`width="320"` `height="240"`).
+4. Varsayılan olarak sessiz (`muted`).
+5. İngilizce altyazı (`<track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English" default />`).
+
+### Çözüm:
+
+```html
+<h1>Video embed</h1>
+
+<video controls width="320" height="240" muted>
+  <source
+    src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/audio-video/video.mp4"
+    type="video/mp4" />
+  <source
+    src="https://github.com/mdn/learning-area/raw/refs/heads/main/html/multimedia-and-embedding/tasks/audio-video/video.webm"
+    type="video/webm" />
+  <track
+    kind="subtitles"
+    src="subtitles_en.vtt"
+    srclang="en"
+    label="English"
+    default />
+</video>
+```
+
+---
+
+# 18. Uygulama Görevi: Tanıtım sayfası
+
+**HTML** > **Challenge: Creepy-crawly splash page** | English (US)
+
+Bu meydan okumada, böcekler ve diğer sürüngen canlılar hakkındaki bir açılış sayfasına (splash page) görseller ve video ekleyerek medya gömme becerilerinizi test edeceksiniz.
+
+---
+
+## Proje özeti ve yönergeler
+
+### 1. Üstbilgiye video ekleme:
+`<h1>` başlığının hemen altına header videosunu gömen bir `<video>` elementi ekleyin:
+* Sayfa yüklenir yüklenmez otomatik oynatılmalı (`autoplay`).
+* Otomatik oynatmanın çalışması için sessiz olmalı (`muted`).
+* Sonsuz döngüde oynatılmalı (`loop`).
+* İçerik önceden yüklenmeli (`preload="auto"`).
+* Hiçbir kontrol gösterilmemelidir (yani `controls` niteliği **eklenmemelidir**).
+
+### 2. Bölüm görsellerini ekleme:
+Her böcek bölümündeki `<h2>` etiketinin altına uygun görseli ekleyin:
+* Her görsel ekran okuyucular için uygun bir `alt` metnine sahip olmalı ve `width="250"` ile `height="180"` boyutlarıyla sınırlandırılmalıdır.
+* Her görseli ve altyazısını semantik olarak bağlamak için `<figure>` ve `<figcaption>` kullanılmalıdır. Altyazı, `alt` metnini aynen tekrarlamamalıdır.
+
+### 3. Gezinti menüsüne ve başlıklara emojiler ekleme:
+Her navigasyon listesi öğesinin başına ve karşılık gelen `<h2>` başlığının başına ilgili böcek emojilerini ekleyin:
+* 🪲 Beetles
+* 🪳 True bugs
+* 🦋 Butterflies and moths
+* 🦟 Flies and mosquitos
+* 🐝 Bees, wasps, and ants
+* 🕷️ Spiders
+
+---
+
+## Eksiksiz çözüm
+
+```html
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>Creepy crawlies!</title>
-<link href="style.css" rel="stylesheet" />
-</head>
-<body>
-<header>
-<nav>
-<ul>
-<li><a href="#beetles">Beetles</a></li>
-<li><a href="#true_bugs">True bugs</a></li>
-<li><a href="#butterflies_moths">Butterflies and moths</a></li>
-<li><a href="#flies_mosquitos">Flies and mosquitos</a></li>
-<li><a href="#bees_wasps_ants">Bees, wasps, and ants</a></li>
-<li><a href="#spiders">Spiders</a></li>
-</ul>
-</nav>
-<section>
-<h1>Creepy-crawlies splash page!</h1>
-<p>
-English (US)
-CodePen
-JSFiddle
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-1/11
+  <head>
+    <meta charset="utf-8" />
+    <title>Creepy crawlies!</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#beetles">🪲 Beetles</a></li>
+          <li><a href="#true_bugs">🪳 True bugs</a></li>
+          <li><a href="#butterflies_moths">🦋 Butterflies and moths</a></li>
+          <li><a href="#flies_mosquitos">🦟 Flies and mosquitos</a></li>
+          <li><a href="#bees_wasps_ants">🐝 Bees, wasps, and ants</a></li>
+          <li><a href="#spiders">🕷️ Spiders</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h1>Creepy-crawlies splash page!</h1>
 
-In casual language, people use "bugs" to mean all sorts of small
-creepy-crawlies: insects, spiders, etc. However, "Bugs" (true bugs)
-are actually just one order of insects (Hemiptera). This page
-provides a summary of the main classes or groups of
-creepy-crawlies.
-</p>
-</section>
-</header>
-<main>
-<section id="beetles">
-<h2>Beetles (Coleoptera)</h2>
-<p>
-Beetles make up the largest order of insects, with more than
-350,000 known species. They are recognized by their hardened
-forewings (elytra) that cover and protect the delicate hindwings
-and abdomen. This feature gives them a tough, armored look and
-helps them survive in many environments, from forests to deserts.
-Beetles can vary greatly in size, color, and habits, ranging from
-tiny grain beetles to massive stag beetles with impressive jaws.
-</p>
-<p>
-Many beetles play important ecological roles. Some, like ladybugs,
-are beneficial predators that feed on crop pests such as aphids.
-Others, such as dung beetles, recycle nutrients by breaking down
-animal waste. However, certain species like the Colorado potato
-beetle or Japanese beetle are major agricultural pests. Their
-diversity and adaptability make beetles one of the most successful
-groups of insects on Earth.
-</p>
-<p class="copyright">
-Image by URSchmidt - Own work, CC BY-SA 4.0,
-<a href="https://commons.wikimedia.org/w/index.php?curid=70137401"
->https://commons.wikimedia.org/w/index.php?curid=70137401</a
->.
-</p>
-</section>
-<section id="true_bugs">
-<h2>True Bugs (Hemiptera)</h2>
-<p>
-True bugs include a wide range of insects such as stink bugs,
-cicadas, aphids, and water striders. Unlike beetles, their
-forewings are partly hardened and partly membranous, and they
-possess distinctive piercing-sucking mouthparts. These mouthparts
-are adapted for feeding on plant sap, blood, or other insects. Many
-true bugs have scent glands that produce strong odors as a defense
-mechanism, which is why some are called "stink bugs."
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-2/11
+        <video
+          src="https://mdn.github.io/shared-assets/videos/learn/bug_video_640.mp4"
+          autoplay
+          loop
+          muted
+          preload="auto"></video>
 
-</p>
-<p>
-True bugs are found worldwide and occupy a variety of habitats,
-including plants, soil, and water. While some species are harmless
-or even beneficial predators, others are destructive agricultural
-pests that weaken plants by draining their sap. Certain bugs, like
-bed bugs and kissing bugs, can also affect humans directly by
-biting or transmitting diseases.
-</p>
-<p class="copyright">
-Image created by user B. Schoenmakers at Waarneming.nl, a source of
-nature observations in the Netherlands. - This image is uploaded as
-image number 29046158 at Waarneming.nl, a source of nature
-observations in the Netherlands.This tag does not indicate the
-copyright status of the attached work. A normal copyright tag is
-still required. See Commons:Licensing for more information. This
-site now requires authentication, however, the same image and
-copyright information is also available via
-<a href="https://world.observation.org/foto/view/29046158"
->https://world.observation.org/foto/view/29046158</a
->
-since it uses the same data, CC BY 3.0,
-<a href="https://commons.wikimedia.org/w/index.php?curid=92410673"
->https://commons.wikimedia.org/w/index.php?curid=92410673</a
->.
-</p>
-</section>
-<section id="butterflies_moths">
-<h2>Butterflies & Moths (Lepidoptera)</h2>
-<p>
-Butterflies and moths are some of the most recognizable insects
-thanks to their large, often colorful wings covered in tiny scales.
-These scales give their wings shimmering, patterned appearances and
-are one of the defining traits of this group. Butterflies are
-usually active by day, while moths are mostly nocturnal, though
-there are exceptions. Both undergo complete metamorphosis, with a
-dramatic transformation from caterpillar to winged adult.
-</p>
-<p>
-As caterpillars, they primarily feed on leaves, sometimes causing
-damage to crops and plants. As adults, butterflies and many moths
-are important pollinators, transferring pollen as they sip nectar
-from flowers. They are also ecologically vital as food sources for
-birds, bats, and other animals. Their beauty and ecological
-importance make them a favorite group for nature enthusiasts and
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-3/11
+        <p>
+          In casual language, people use "bugs" to mean all sorts of small
+          creepy-crawlies: insects, spiders, etc. However, "Bugs" (true bugs)
+          are actually just one order of insects (Hemiptera). This page provides
+          a summary of the main classes or groups of creepy-crawlies.
+        </p>
+      </section>
+    </header>
+    <main>
+      <section id="beetles">
+        <h2>🪲 Beetles (Coleoptera)</h2>
 
-scientists alike.
-</p>
-<p class="copyright">
-Image by Didier Descouens - Own work, CC BY-SA 4.0,
-<a href="https://commons.wikimedia.org/w/index.php?curid=19303857"
->https://commons.wikimedia.org/w/index.php?curid=19303857</a
->.
-</p>
-</section>
-<section id="flies_mosquitos">
-<h2>Flies & Mosquitoes (Diptera)</h2>
-<p>
-Flies and mosquitoes belong to the order Diptera, meaning "two
-wings." Unlike most other insects, they have only one functional
-pair of wings; the hind pair has evolved into tiny balancing organs
-called halteres. This adaptation gives them incredible agility in
-flight. Their mouthparts vary widely: some species have sponging
-mouthparts (like houseflies), while others have piercing-sucking
-ones (like mosquitoes).
-</p>
-<p>
-These insects are among the most ecologically and medically
-significant. Many flies are decomposers, helping break down waste
-and recycle nutrients. Mosquitoes, however, are infamous as disease
-vectors, spreading malaria, dengue, and other illnesses. Despite
-their negative reputation, flies and mosquitoes are essential in
-ecosystems, serving as pollinators and as a major food source for
-many animals.
-</p>
-<p class="copyright">
-Image created by user Dick Belgers at Waarneming.nl, a source of
-nature observations in the Netherlands. - This image is uploaded as
-image number 5105758 at Waarneming.nl, a source of nature
-observations in the Netherlands.This tag does not indicate the
-copyright status of the attached work. A normal copyright tag is
-still required. See Commons:Licensing for more information. CC BY
-3.0,
-<a href="https://commons.wikimedia.org/w/index.php?curid=27659589"
->https://commons.wikimedia.org/w/index.php?curid=27659589</a
->.
-</p>
-</section>
-<section id="bees_wasps_ants">
-<h2>Bees, Wasps, Ants (Hymenoptera)</h2>
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-4/11
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/beetle.png"
+            alt="A black six-legged beetle with a shield-shaped body and long antennae"
+            width="250"
+            height="180" />
+          <figcaption>A shiny, black beetle.</figcaption>
+        </figure>
 
-<p>
-Bees, wasps, and ants are a diverse group known for their complex
-behaviors and social structures. Many species live in colonies with
-distinct roles for workers, queens, and males. Bees are especially
-famous for pollination, producing honey, and communicating with
-each other through dances. Wasps are often predators or
-parasitoids, while ants are skilled builders and cooperative
-foragers.
-</p>
-<p>
-This group has a huge ecological impact. Bees and wasps contribute
-to pollination, supporting food crops and wild plants. Some wasps
-help control pest populations by preying on or parasitizing other
-insects. Ants are critical soil engineers, aerating the ground and
-recycling nutrients. While stings and aggressive behaviors make
-some species feared, they are vital players in natural and
-agricultural systems.
-</p>
-<p class="copyright">
-Image by Trounce - Own work, CC BY-SA 2.5,
-<a href="https://commons.wikimedia.org/w/index.php?curid=1997709"
->https://commons.wikimedia.org/w/index.php?curid=1997709</a
->.
-</p>
-</section>
-<section id="spiders">
-<h2>Spiders (Araneae)</h2>
-<p>
-Spiders are arachnids, not insects, and are easily distinguished by
-their eight legs and lack of antennae. Almost all spiders are
-predators, using venom and silk to capture prey. Many build
-intricate webs to trap insects, while others are active hunters
-that chase or ambush their food. Their silk is an incredibly strong
-and versatile material, used for webs, egg sacs, or safety lines.
-</p>
-<p>
-Spiders are found in nearly every habitat on Earth, from deserts to
-caves to homes. While some people fear them, very few species pose
-a danger to humans. In fact, spiders are highly beneficial because
-they help control insect populations, including pests. They play a
-crucial role in balancing ecosystems, making them one of the most
-important non-insect "bugs" people commonly encounter.
-</p>
-<p class="copyright">
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-5/11
+        <p>
+          Beetles make up the largest order of insects, with more than 350,000
+          known species. They are recognized by their hardened forewings
+          (elytra) that cover and protect the delicate hindwings and abdomen.
+          This feature gives them a tough, armored look and helps them survive
+          in many environments, from forests to deserts. Beetles can vary
+          greatly in size, color, and habits, ranging from tiny grain beetles to
+          massive stag beetles with impressive jaws.
+        </p>
+        <p>
+          Many beetles play important ecological roles. Some, like ladybugs, are
+          beneficial predators that feed on crop pests such as aphids. Others,
+          such as dung beetles, recycle nutrients by breaking down animal waste.
+          However, certain species like the Colorado potato beetle or Japanese
+          beetle are major agricultural pests. Their diversity and adaptability
+          make beetles one of the most successful groups of insects on Earth.
+        </p>
 
-Image by AJC ajcann.wordpress.com from UK, CC BY-SA 2.0
-<a href="https://creativecommons.org/licenses/by-sa/2.0"
->https://creativecommons.org/licenses/by-sa/2.0</a
->, via Wikimedia Commons.
-</p>
-</section>
-</main>
-</body>
+        <p class="copyright">
+          Image by URSchmidt - Own work, CC BY-SA 4.0,
+          <a href="https://commons.wikimedia.org/w/index.php?curid=70137401"
+            >https://commons.wikimedia.org/w/index.php?curid=70137401</a
+          >.
+        </p>
+      </section>
+      <section id="true_bugs">
+        <h2>🪳 True Bugs (Hemiptera)</h2>
+
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/true_bug.jpg"
+            alt="A green, six-legged beetle with fairly long antennae and stripy markings"
+            width="250"
+            height="180" />
+          <figcaption>A green stripey bug.</figcaption>
+        </figure>
+
+        <p>
+          True bugs include a wide range of insects such as stink bugs, cicadas,
+          aphids, and water striders. Unlike beetles, their forewings are partly
+          hardened and partly membranous, and they possess distinctive
+          piercing-sucking mouthparts. These mouthparts are adapted for feeding
+          on plant sap, blood, or other insects. Many true bugs have scent
+          glands that produce strong odors as a defense mechanism, which is why
+          some are called "stink bugs."
+        </p>
+
+        <p>
+          True bugs are found worldwide and occupy a variety of habitats,
+          including plants, soil, and water. While some species are harmless or
+          even beneficial predators, others are destructive agricultural pests
+          that weaken plants by draining their sap. Certain bugs, like bed bugs
+          and kissing bugs, can also affect humans directly by biting or
+          transmitting diseases.
+        </p>
+
+        <p class="copyright">
+          Image created by user B. Schoenmakers at Waarneming.nl, a source of
+          nature observations in the Netherlands. - This image is uploaded as
+          image number 29046158 at Waarneming.nl, a source of nature
+          observations in the Netherlands.This tag does not indicate the
+          copyright status of the attached work. A normal copyright tag is
+          still required. See Commons:Licensing for more information. This
+          site now requires authentication, however, the same image and
+          copyright information is also available via
+          <a href="https://world.observation.org/foto/view/29046158"
+            >https://world.observation.org/foto/view/29046158</a
+          >
+          since it uses the same data, CC BY 3.0,
+          <a href="https://commons.wikimedia.org/w/index.php?curid=92410673"
+            >https://commons.wikimedia.org/w/index.php?curid=92410673</a
+          >.
+        </p>
+      </section>
+      <section id="butterflies_moths">
+        <h2>🦋 Butterflies & Moths (Lepidoptera)</h2>
+
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/butterfly.jpg"
+            alt="A colorful butterfly resting on a flower"
+            width="250"
+            height="180" />
+          <figcaption>A shimmering patterned butterfly.</figcaption>
+        </figure>
+
+        <p>
+          Butterflies and moths are some of the most recognizable insects
+          thanks to their large, often colorful wings covered in tiny scales.
+          These scales give their wings shimmering, patterned appearances and
+          are one of the defining traits of this group. Butterflies are
+          usually active by day, while moths are mostly nocturnal, though
+          there are exceptions. Both undergo complete metamorphosis, with a
+          dramatic transformation from caterpillar to winged adult.
+        </p>
+
+        <p>
+          As caterpillars, they primarily feed on leaves, sometimes causing
+          damage to crops and plants. As adults, butterflies and many moths
+          are important pollinators, transferring pollen as they sip nectar
+          from flowers. They are also ecologically vital as food sources for
+          birds, bats, and other animals. Their beauty and ecological
+          importance make them a favorite group for nature enthusiasts and
+          scientists alike.
+        </p>
+
+        <p class="copyright">
+          Image by Didier Descouens - Own work, CC BY-SA 4.0,
+          <a href="https://commons.wikimedia.org/w/index.php?curid=19303857"
+            >https://commons.wikimedia.org/w/index.php?curid=19303857</a
+          >.
+        </p>
+      </section>
+      <section id="flies_mosquitos">
+        <h2>🦟 Flies & Mosquitoes (Diptera)</h2>
+
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/fly.jpg"
+            alt="A fly perched on a green leaf with clear wings"
+            width="250"
+            height="180" />
+          <figcaption>An agile flying insect.</figcaption>
+        </figure>
+
+        <p>
+          Flies and mosquitoes belong to the order Diptera, meaning "two
+          wings." Unlike most other insects, they have only one functional
+          pair of wings; the hind pair has evolved into tiny balancing organs
+          called halteres. This adaptation gives them incredible agility in
+          flight. Their mouthparts vary widely: some species have sponging
+          mouthparts (like houseflies), while others have piercing-sucking
+          ones (like mosquitoes).
+        </p>
+
+        <p>
+          These insects are among the most ecologically and medically
+          significant. Many flies are decomposers, helping break down waste
+          and recycle nutrients. Mosquitoes, however, are infamous as disease
+          vectors, spreading malaria, dengue, and other illnesses. Despite
+          their negative reputation, flies and mosquitoes are essential in
+          ecosystems, serving as pollinators and as a major food source for
+          many animals.
+        </p>
+
+        <p class="copyright">
+          Image created by user Dick Belgers at Waarneming.nl, a source of
+          nature observations in the Netherlands. - This image is uploaded as
+          image number 5105758 at Waarneming.nl, a source of nature
+          observations in the Netherlands.This tag does not indicate the
+          copyright status of the attached work. A normal copyright tag is
+          still required. See Commons:Licensing for more information. CC BY
+          3.0,
+          <a href="https://commons.wikimedia.org/w/index.php?curid=27659589"
+            >https://commons.wikimedia.org/w/index.php?curid=27659589</a
+          >.
+        </p>
+      </section>
+      <section id="bees_wasps_ants">
+        <h2>🐝 Bees, Wasps, Ants (Hymenoptera)</h2>
+
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/bee.jpg"
+            alt="A honeybee gathering pollen on a bright yellow flower"
+            width="250"
+            height="180" />
+          <figcaption>A hardworking pollinator.</figcaption>
+        </figure>
+
+        <p>
+          Bees, wasps, and ants are a diverse group known for their complex
+          behaviors and social structures. Many species live in colonies with
+          distinct roles for workers, queens, and males. Bees are especially
+          famous for pollination, producing honey, and communicating with
+          each other through dances. Wasps are often predators or
+          parasitoids, while ants are skilled builders and cooperative
+          foragers.
+        </p>
+
+        <p>
+          This group has a huge ecological impact. Bees and wasps contribute
+          to pollination, supporting food crops and wild plants. Some wasps
+          help control pest populations by preying on or parasitizing other
+          insects. Ants are critical soil engineers, aerating the ground and
+          recycling nutrients. While stings and aggressive behaviors make
+          some species feared, they are vital players in natural and
+          agricultural systems.
+        </p>
+
+        <p class="copyright">
+          Image by Trounce - Own work, CC BY-SA 2.5,
+          <a href="https://commons.wikimedia.org/w/index.php?curid=1997709"
+            >https://commons.wikimedia.org/w/index.php?curid=1997709</a
+          >.
+        </p>
+      </section>
+      <section id="spiders">
+        <h2>🕷️ Spiders (Araneae)</h2>
+
+        <figure>
+          <img
+            src="https://mdn.github.io/shared-assets/images/examples/learn/crawlies/spider.jpg"
+            alt="An eight-legged spider waiting in the center of its web"
+            width="250"
+            height="180" />
+          <figcaption>An eight-legged predator.</figcaption>
+        </figure>
+
+        <p>
+          Spiders are arachnids, not insects, and are easily distinguished by
+          their eight legs and lack of antennae. Almost all spiders are
+          predators, using venom and silk to capture prey. Many build
+          intricate webs to trap insects, while others are active hunters
+          that chase or ambush their food. Their silk is an incredibly strong
+          and versatile material, used for webs, egg sacs, or safety lines.
+        </p>
+
+        <p>
+          Spiders are found in nearly every habitat on Earth, from deserts to
+          caves to homes. While some people fear them, very few species pose
+          a danger to humans. In fact, spiders are highly beneficial because
+          they help control insect populations, including pests. They play a
+          crucial role in balancing ecosystems, making them one of the most
+          important non-insect "bugs" people commonly encounter.
+        </p>
+
+        <p class="copyright">
+          Image by AJC ajcann.wordpress.com from UK, CC BY-SA 2.0
+          <a href="https://creativecommons.org/licenses/by-sa/2.0"
+            >https://creativecommons.org/licenses/by-sa/2.0</a
+          >, via Wikimedia Commons.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
-3. Save the following CSS listing inside a file inside your folder called style.css  (or paste it into your online
-editor's CSS pane).
-CSS
-/* type */
-body {
-font: 1.2em / 1.5 system-ui;
-margin: 0 auto;
-width: 90%;
-min-width: 800px;
-max-width: 1200px;
-}
-h1 {
-text-align: center;
-}
-.copyright {
-font-size: 0.8em;
-}
-/* nav menu */
-ul {
-padding: 0;
-list-style-type: none;
-text-align: center;
-display: flex;
-flex-flow: row wrap;
-justify-content: center;
-align-items: center;
-}
-li {
-flex: auto;
-}
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-6/11
-
-nav a {
-font-size: 1.2em;
-padding: 0 20px;
-}
-/* General link styles */
-a {
-text-decoration: none;
-color: red;
-}
-a:hover,
-a:focus {
-text-decoration: underline;
-}
-/* header section layout */
-header section {
-display: grid;
-grid-template-areas:
-"heading heading"
-"text video"
-"text video";
-grid-template-columns: 1fr 2fr;
-gap: 20px;
-}
-h1 {
-grid-area: heading;
-}
-header p {
-grid-area: text;
-margin: 0;
-}
-video {
-grid-area: video;
-width: 100%;
-border: 1px solid black;
-}
-/* image floats */
-figure {
-float: right;
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-7/11
-
-margin-left: 20px;
-padding: 20px;
-background: orange;
-border: 1px solid black;
-}
-figcaption {
-font-size: 0.6em;
-}
-Later on, you will need to include the following URLs in your page.
-bee.jpg : 
-.
-beetle.png : 
-.
-butterfly.jpg : 
-.
-fly.jpg : 
-.
-spider.jpg : 
-.
-true_bug.jpg : 
-.
-bug_video_640.mp4 : 
-.
-Project brief
-In this assessment we are presenting you with a mostly-finished splash page about different creepy-crawlies.
-Unfortunately, no images or video have been added yet — this is your job! You need to add some media to make the
-page look more interesting. The following subsections detail what you need to do.
-Adding a video to the header
-Just below the <h1> , add a <video>  element that embeds our header video into the page. We'd like it to do the
-following:
-Autoplay the video on load (for this to work in at least some browsers, you'll also need to specify that the video
-should be muted).
-Loop endlessly rather than playing once.
-Preload the video content.
-Not show any controls.
-Adding section images
-In the expanded information sections on each type of bug, below each <h2> , we'd like you to add an image element
-that embeds the appropriate image for each section. Give each image some appropriate alternative text for the benefit of
-screen reader users (and in case the image doesn't load), and constrain each image to dimensions of 250 x 180.
-In addition, we'd like you to include a caption for each image; think about what container element is needed to
-semantically associate the two together. Don't just make the caption repeat the alternative text; it should work alongside
-the alternative text and the image.
-Add bug emojis or icons to the nav menu and <h2>s
-For a bit of fun, we'd like you to add icons to the start of each nav list item, and the same icon to the start of each
-corresponding <h2> . You could do this using embedded images, but it's easier to just find appropriate emojis and add
-Image for the "Bees, Wasps, Ants (Hymenoptera)" section
-Image for the "Beetles (Coleoptera)" section
-Image for the "Butterflies & Moths (Lepidoptera)" section
-Image for the "Flies & Mosquitoes (Diptera)" section
-Image for the "Spiders (Araneae)" section
-Image for the "True Bugs (Hemiptera)" section
-header video
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-8/11
-
-them to the HTML text itself.
-Hints and tips
-You can use the 
- to catch mistakes in your HTML.
-You don't need to know any CSS to do this assessment; you just need to edit the provided HTML file. The CSS
-part is already done for you.
-Example
-The following screenshot shows what the splash page should look like. If you are getting stuck on how to achieve some
-of this, see the solution below the live example.
-W3C HTML validator
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-9/11
-
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-10/11
-
-Click here to show the solution
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-15.10.2026 20:24
-Challenge: Creepy-crawly splash page - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Splash_page
-11/11
-
+```
 
 ---
 
-HTML
-Table basics
-HTML table basics
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-This article gets you started with HTML tables, covering the basics such as rows, cells, headings, making cells span
-multiple columns and rows, and styling all cells in a column as a single item.
-Önkoşullar:
-Basic HTML familiarity, as covered in Basic HTML Syntax.
-Öğrenme çıktıları:
-What tables are for — structuring tabular data.
-What tables are not for — layout, or anything else.
-Basic table syntax — <table> , <tr> , and <td> .
-Defining table headers with <th> .
-Spanning multiple columns and rows with colspan  and rowspan .
-Grouping columns with <colgroup>  and <col> .
-What is a table?
-A table is a structured set of data made up of rows and columns (tabular data). A table allows you to quickly and easily
-look up values that indicate a connection between different types of data, for example, a person and their age, a day of
-the week, or the timetable for a local swimming pool.
-English (US)
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-1/15
+---
 
-Tables are very commonly used in human society and have been for a long time, as evidenced by this US Census
-document from 1800:
-It is therefore no wonder that the creators of HTML provided a way to structure and present tabular data on the web.
-How does a table work?
-Tables are rigid. Information is interpreted by making visual associations between row and column headers. Look at the
-table below, for example, and find a Jovian gas giant with 62 moons. You can find the answer by associating the relevant
-row and column headers.
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-2/15
+# 19. Tablo temelleri
 
-Data about the planets of our solar system (Source: Nasa's Planetary Fact Sheet -
-Name
-Mass
-(1024kg)
-Diameter
-(km)
-Density
-(kg/m3)
-Gravity
-(m/s2)
-Length
-of day
-(hours)
-Distance
-from
-Sun
-(106km)
-Mean
-temperatu
-(°C)
-Terrestrial
-planets
-Mercury 0.330
-4,879
-5427
-3.7
-4222.6
-57.9
-167
-Venus
-4.87
-12,104
-5243
-8.9
-2802.0
-108.2
-464
-Earth
-5.97
-12,756
-5514
-9.8
-24.0
-149.6
-15
-Mars
-0.642
-6,792
-3933
-3.7
-24.7
-227.9
--65
-Jovian
-planets
-Gas
-giants
-Jupiter
-1898
-142,984
-1326
-23.1
-9.9
-778.6
--110
-Saturn
-568
-120,536
-687
-9.0
-10.7
-1433.5
--140
-Ice
-giants
-Uranus
-86.8
-51,118
-1271
-8.7
-17.2
-2872.5
--195
-Neptune 102
-49,528
-1638
-11.0
-16.1
-4495.1
--200
-Dwarf planets
-Pluto
-0.0146
-2,370
-2095
-0.7
-153.3
-5906.4
--225
-When implemented correctly, accessibility tools such as screen readers handle tables well, so a successful HTML table
-should enhance the experience of sighted and visually impaired users alike.
-Table styling
-You can also have a 
- on GitHub! One thing you'll notice is that the table is more
-readable there — the table earlier on this page has minimal styling, whereas the GitHub version has more significant CSS
-applied.
-Be under no illusion; for tables to be effective on the web, you need to provide some styling information with CSS, as
-well as good, solid structure with HTML. In this lesson, we focus on the HTML part; you'll learn about styling tables later,
-in our Styling tables lesson.
-We won't focus on CSS in this module, but we have provided a minimal CSS stylesheet that will make your tables more
-readable than the default you get without any styling. You can find the 
-, and you can also find an 
- that applies the stylesheet — these together will give you a good starting point for experimenting with HTML
-tables.
-When should you avoid HTML tables?
-HTML tables are only for tabular data (information that's easy to work with in rows and columns) — this is what they are
-designed for. Unfortunately, people used to use HTML tables to lay out web pages; for example, one row to contain a
-look at the live planets data example
-stylesheet here
-HTML
-template
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-3/15
+**HTML** > **Table basics** (HTML table basics) | English (US)
 
-page header, another row to contain each content column, one row to contain the footer, etc. This technique was used in
-the past because CSS support across browsers used to be a lot more limited. Modern browsers have solid CSS support,
-so table-based layouts are no longer needed. Table layouts are now extremely rare, but you might still see them in some
-corners of the web.
-In short, using tables for layout rather than CSS layout techniques is a bad idea. The main reasons are as follows:
-1. Layout tables reduce accessibility for visually impaired users: screen readers, used by blind people, interpret
-the tags that exist in an HTML page and read out the contents to the user. Because tables are not designed for
-layout and result in more complex markup, the resulting screen reader output will be confusing.
-2. Tables produce tag soup: As mentioned above, table layouts generally involve more complex markup structures
-than proper layout techniques, resulting in the code being harder to write, maintain, and debug.
-3. Tables are not automatically responsive: When you use proper layout containers (such as <header> ,
-<section> , <article> , or <div> ), their width defaults to 100% of their parent element. Tables are sized to
-their content by default, so they need extra work to display effectively across a variety of devices.
-Creating your first table
-We've talked table theory enough, so let's dive into a practical example. Here, you'll build a simple table.
-1. First of all, make a copy of 
- and 
- in a new directory on your local
-machine. The HTML template already contains a <link>  element to apply the CSS, so you don't need to worry
-about that.
-2. Every table is enclosed by <table></table>  tags. Add these inside the body of your HTML.
-3. The smallest container inside a table is a table cell, which is created with a <td>  element ("td" stands for "table
-data"). Add the following inside your table tags:
-HTML
-<td>Hi, I'm your first cell.</td>
-4. If we want a row of four cells, we need to copy these tags three times. Update the contents of your table to look
-like this:
-HTML
-<td>Hi, I'm your first cell.</td>
-<td>I'm your second cell.</td>
-<td>I'm your third cell.</td>
-<td>I'm your fourth cell.</td>
-The cells are not placed underneath each other; rather, they are automatically aligned on the same row. Each <td>
-element creates a single cell, and together they make up the first row. Every cell we add makes the row grow longer.
-To start placing subsequent cells on a second row, we need to use the <tr>  element ('tr' stands for 'table row'). Let's
-investigate this now.
-blank-template.html
-minimal-table.css
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-4/15
+Bu makale, satırlar (rows), hücreler (cells), başlıklar (headings), hücrelerin birden fazla sütun ve satıra yayılması (spanning multiple columns and rows) ve bir sütundaki tüm hücrelerin tek bir öğeymiş gibi stillendirilmesi gibi temel konuları ele alarak HTML tablolarına giriş yapmanızı sağlar.
 
-1. Place the four cells you've already created inside <tr>  tags, like so:
-HTML
-<tr>
-<td>Hi, I'm your first cell.</td>
-<td>I'm your second cell.</td>
-<td>I'm your third cell.</td>
-<td>I'm your fourth cell.</td>
-</tr>
-2. Now you've made one row, have a go at making one or two more — each row needs to be wrapped in an
-additional <tr>  element, with each cell contained in a <td> .
-Click here to show the solution
-Adding headers with <th> elements
-Now let's turn our attention to table headers — special cells that go at the start of a row or column and define the type of
-data that row or column contains (for example, see the "Person" and "Age" cells in the first example shown in this
-article). To see why they are useful, have a look at the following table example. First the source code:
-HTML
-<table>
-<tr>
-<td>&nbsp;</td>
-<td>Knocky</td>
-<td>Flor</td>
-<td>Ella</td>
-<td>Juan</td>
-</tr>
-<tr>
-<td>Breed</td>
-<td>Jack Russell</td>
-<td>Poodle</td>
-<td>Streetdog</td>
-<td>Cocker Spaniel</td>
-</tr>
-<tr>
-<td>Age</td>
-<td>16</td>
-<td>9</td>
-<td>10</td>
-<td>5</td>
-</tr>
-<tr>
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-5/15
-
-<td>Owner</td>
-<td>Mother-in-law</td>
-<td>Me</td>
-<td>Me</td>
-<td>Sister-in-law</td>
-</tr>
-<tr>
-<td>Eating Habits</td>
-<td>Eats everyone's leftovers</td>
-<td>Nibbles at food</td>
-<td>Hearty eater</td>
-<td>Will eat till he explodes</td>
-</tr>
-</table>
-Now the actual rendered table:
- 
-Knocky
-Flor
-Ella
-Juan
-Breed
-Jack Russell
-Poodle
-Streetdog
-Cocker Spaniel
-Age
-16
-9
-10
-5
-Owner
-Mother-in-law
-Me
-Me
-Sister-in-law
-Eating
-Habits
-Eats everyone's
-leftovers
-Nibbles at
-food
-Hearty
-eater
-Will eat till he
-explodes
-The problem here is that, while you can make out what's going on, it is not as easy to cross-reference data as it could
-be. If the column and row headings stood out, it would be easier.
-Adding headers to the dogs table
-Let's improve the dogs table example by adding some headers.
-1. First, make another copy of our 
- and 
- files in a new directory on your
-local machine.
-2. Add the following code inside the <body>  of your HTML:
-HTML
-<h1>Dogs Table</h1>
-<table>
-<tr>
-<td>&nbsp;</td>
-<td>Knocky</td>
-blank-template.html
-minimal-table.css
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-6/15
-
-<td>Flor</td>
-<td>Ella</td>
-<td>Juan</td>
-</tr>
-<tr>
-<td>Breed</td>
-<td>Jack Russell</td>
-<td>Poodle</td>
-<td>Streetdog</td>
-<td>Cocker Spaniel</td>
-</tr>
-<tr>
-<td>Age</td>
-<td>16</td>
-<td>9</td>
-<td>10</td>
-<td>5</td>
-</tr>
-<tr>
-<td>Owner</td>
-<td>Mother-in-law</td>
-<td>Me</td>
-<td>Me</td>
-<td>Sister-in-law</td>
-</tr>
-<tr>
-<td>Eating Habits</td>
-<td>Eats everyone's leftovers</td>
-<td>Nibbles at food</td>
-<td>Hearty eater</td>
-<td>Will eat till he explodes</td>
-</tr>
-</table>
-3. To recognize the table headers as headers, both visually and semantically, you can use the <th>  element ("th"
-stands for "table header"). This works the same as a <td> , except that it denotes a header, not a normal cell. Go
-into your HTML, and change all the <td>  elements surrounding the table headers into <th>  elements.
-4. Save your HTML and load it in a browser, and you should see that the headers now look like headers.
-Click here to show the solution
-Why are headers useful?
-We have already partially answered this question — it is easier to find the data you are looking for when the headers
-clearly stand out, and the design just generally looks better.
-Note: Table headings come with some default styling — they are bold and centered even if you don't add your
-own styling to the table, to help them stand out.
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-7/15
-
-Table headers have another benefit — along with the scope  attribute (which we'll learn about in the next article), they
-make tables more accessible by associating each header with all the data in the same row or column. Screen readers
-can then read out a whole row or column of data at once, which is pretty useful.
-Allowing cells to span multiple rows and columns
-Sometimes we want cells to span multiple rows or columns. Take the following simple example, which shows the names
-of common animals. In some cases, we want to show the names of the males and females next to the animal name.
-Sometimes we don't, and in such cases we just want the animal name to span the whole table.
-The initial markup looks like this:
-HTML
-<table>
-<tr>
-<th>Animals</th>
-</tr>
-<tr>
-<th>Hippopotamus</th>
-</tr>
-<tr>
-<th>Horse</th>
-<td>Mare</td>
-</tr>
-<tr>
-<td>Stallion</td>
-</tr>
-<tr>
-<th>Crocodile</th>
-</tr>
-<tr>
-<th>Chicken</th>
-<td>Hen</td>
-</tr>
-<tr>
-<td>Rooster</td>
-</tr>
-</table>
-But the output doesn't give us quite what we want:
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-8/15
-
-Animals
-Hippopotamus
-Horse
-Mare
-Stallion
-Crocodile
-Chicken
-Hen
-Rooster
-Fixing the layout with rowspan and colspan
-We need a way to get "Animals", "Hippopotamus", and "Crocodile" to span across two columns, and "Horse" and
-"Chicken" to span over two rows. Fortunately, HTML tables provide the colspan  and rowspan  attributes to achieve
-this. Both accept a unitless number value equal to the number of rows or columns to span. For example, colspan="2"
-makes a cell span two columns.
-Let's use colspan  and rowspan  to improve this table.
-1. Make another local copy of our 
- and 
- files in a new directory on your
-local machine.
-2. Add the following into your HTML <body> :
-HTML
-<table>
-<tr>
-<th>Animals</th>
-</tr>
-<tr>
-<th>Hippopotamus</th>
-</tr>
-<tr>
-<th>Horse</th>
-<td>Mare</td>
-</tr>
-<tr>
-<td>Stallion</td>
-</tr>
-<tr>
-blank-template.html
-minimal-table.css
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-9/15
-
-<th>Crocodile</th>
-</tr>
-<tr>
-<th>Chicken</th>
-<td>Hen</td>
-</tr>
-<tr>
-<td>Rooster</td>
-</tr>
-</table>
-3. Sonraki, use colspan  to make "Animals", "Hippopotamus", and "Crocodile" span across two columns.
-4. Finally, use rowspan  to make "Horse" and "Chicken" span across two rows.
-5. Save and open your code in a browser to see the improvement.
-Click here to show the solution
-Grouping columns with <colgroup> and
-<col>
-There is a way to target entire table columns as a single entity, for example, when applying styles to a table (which you'll
-learn about later in Styling tables). As you get more experience with creating HTML tables, you'll find that applying a
-background color, for example, to every cell in a single column is harder than you might think. The <colgroup>  and
-<col>  elements provide a solution to this problem.
-The <colgroup>  element is included as a child of the table, just after the opening <table>  element. Inside the
-<colgroup>  element, you can include one or more <col>  elements, which represent groups of columns. The <col>
-element can include a span  attribute that indicates the number of columns in that group. It can also include global
-attributes such as style  (to target the group with inline styles) or class  (to target the group with CSS or JavaScript
-using a class name). The <col>  elements represent the table columns from the start of the columns, for example from
-the left-hand side of a table written in a left-to-right language such as English.
-Let's have a look at an example to show what we mean. The following table shows a school timetable:
-HTML
-<h1>School language timetable</h1>
-<table>
-<colgroup>
-<col span="2" />
-<col class="column-background" />
-<col class="column-fixed-width" />
-<col class="column-background" />
-<col class="column-background-border" />
-<col span="2" class="column-fixed-width" />
-</colgroup>
-<tr>
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-10/15
-
-<td>&nbsp;</td>
-<th>Mon</th>
-<th>Tues</th>
-<th>Wed</th>
-<th>Thurs</th>
-<th>Fri</th>
-<th>Sat</th>
-<th>Sun</th>
-</tr>
-<tr>
-<th>1st period</th>
-<td>English</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>German</td>
-<td>Dutch</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<th>2nd period</th>
-<td>English</td>
-<td>English</td>
-<td>&nbsp;</td>
-<td>German</td>
-<td>Dutch</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<th>3rd period</th>
-<td>&nbsp;</td>
-<td>German</td>
-<td>&nbsp;</td>
-<td>German</td>
-<td>Dutch</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<th>4th period</th>
-<td>&nbsp;</td>
-<td>English</td>
-<td>&nbsp;</td>
-<td>English</td>
-<td>Dutch</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-11/15
-
-</tr>
-</table>
-This table has eight columns. Let's look at the <colgroup>  and <col>  structure more closely to show how it affects
-them:
-HTML
-<colgroup>
-<col span="2" />
-<col class="column-background" />
-<col class="column-fixed-width" />
-<col class="column-background" />
-<col class="column-background-border" />
-<col span="2" class="column-fixed-width" />
-</colgroup>
-Looking at the <col>  elements:
-The first one has span="2"  set on it, so it represents the first and second columns from the left of the table. We
-are not targeting these columns with any styles; it allows us to target subsequent columns.
-The second and fourth ones don't have a span  attribute set, so they will represent a single column — the third
-and fifth columns in these cases. They have a class  of column-background  applied.
-The third one doesn't have a span  attribute set and has a class  of column-fixed-width  applied. It represents
-the fourth column.
-The fifth one doesn't have a span  attribute set, and has a class  of column-background-border  applied. It
-represents the sixth column.
-The sixth one has span="2"  set on it, and has a class  of column-fixed-width  applied. It represents the
-seventh and eighth columns.
-We have hidden most of the CSS for this example, but we are showing you the rules that apply styles to the <col>
-elements with the column-background , column-fixed-width , and column-background-border  classes set on them:
-CSS
-.column-background {
-background-color: #97db9a;
-}
-.column-fixed-width {
-width: 40px;
-}
-.column-background-border {
-background-color: #dcc48e;
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-12/15
-
-border: 4px solid #c1437a;
-}
-The <col>  elements with a column-background  class have a solid background color set on them.
-The <col>  elements with a column-fixed-width  class have a narrow fixed width set on them.
-The <col>  element with a column-background-border  class has a solid background color and a thick border
-set on it.
-You don't need to worry about how the CSS works for now; you'll learn about it in detail later on in our CSS styling
-basics module.
-Let's look at how the above code renders:
-School language timetable
- 
-Mon
-Tues
-Wed
-Thurs
-Fri
-Sat
-Sun
-1st
-period
-English
- 
- 
-German
-Dutch
- 
- 
-2nd
-period
-English
-English
- 
-German
-Dutch
- 
- 
-3rd
-period
- 
-German
- 
-German
-Dutch
- 
- 
-4th
-period
- 
-English
- 
-English
-Dutch
- 
- 
-Notice how the different columns receive the styles specified in the classes.
-Do <col> styles clash with other table styles?
-The answer is "yes". Styles set on tables are painted in the order of styles set on <table> , then <col> , then <tr> ,
-then <th>  and <td> . This means that styles set on table rows, headings, and cells will overwrite column styles.
-Try this out by adding column styles to the template example you worked on earlier in the article. If you add the
-following to the HTML above the first <tr>  tag:
-Note: Even though <colgroup>  and <col>  mainly facilitate styling, they are an HTML feature, so we've
-covered them here rather than in our CSS modules. They are a limited feature — as shown on the <colgroup>
-reference page, only a limited subset of styles can be applied to a <col>  element. Most other styles that were
-historically available have been deprecated (removed, or flagged for removal).
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-13/15
-
-HTML
-<colgroup>
-<col span="2" style="border: 2px solid black; background-color: red" />
-</colgroup>
-You'll see that the first two columns of the table get a 2px
-black  border, but they don't get a red  background color.
-This is because the table headings and rows have the following styles set on them inside minimal-table.css , which
-override the column styles:
-CSS
-th {
-background-color: rgb(235 235 235);
-}
-tr:nth-child(even) td {
-background-color: rgb(250 250 250);
-}
-tr:nth-child(odd) td {
-background-color: rgb(220 220 220);
-}
-Remove these background-color  styles to see the red  background color.
-Interactive recap of table concepts
-The following embedded content from ScrimbaMDN learning partner provides an interactive lesson summarizing most of
-the techniques covered in this article. Check it out for a recap of the key points and some extra practice.
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-14/15
-
-Clicking will load content from scrimba.com
-Summary
-That wraps up the basics of HTML tables. In the next article, we'll look at some further features that can be used to
-make HTML tables more accessible to visually impaired people.
-Önceki
-Genel bakış: HTML ile içeriği yapılandırma
-Sonraki
-Your blueprint for a better internet.
-HTML TABLES
-15.10.2026 20:24
-HTML table basics - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-15/15
-
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | [Basic HTML syntax](#1-basic-html-syntax) bölümünde ele alındığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Tablolar ne içindir? — Tablosal verileri (tabular data) yapılandırmak.<br>• Tablolar ne için değildir? — Sayfa düzeni (layout) veya *başka herhangi bir şey* için değildir.<br>• Temel tablo sözdizimi — `<table>`, `<tr>` ve `<td>`.<br>• `<th>` ile tablo başlıklarını tanımlama.<br>• `colspan` ve `rowspan` ile birden çok sütun ve satıra yayılma.<br>• `<colgroup>` ve `<col>` ile sütunları gruplama. |
 
 ---
 
-HTML
-Table accessibility
-HTML table accessibility
-Previous
-Overview: Structuring content with HTML
-Next
-In the previous article, we looked at one of the most important features for making HTML tables accessible to visually
-impaired users — the <th>  element. In this article, we continue down this path, looking at more HTML table
-accessibility features such as captions/summaries, grouping your rows into table head, body and footer sections, and
-scoping columns and rows.
-Prerequisites:
-The basics of HTML (see Basic HTML Syntax).
-Learning
-outcomes:
-An understanding of the accessibility issues associated with tables.
-Adding captions to tables.
-Better table structuring with head, body, and footer.
-Creating further association between headers and cells with the scope , id , and
-headers  attributes.
-Recap: Tables for visually impaired users
-Let's recap briefly on how we use data tables. A table can be a handy tool, for giving us quick access to data and
-allowing us to look up different values. For example, it takes only a short glance at the table below to find out how many
-rings were sold in Ghent during August 2016. To understand its information, we make visual associations between the
-data in this table and its column and/or row headers.
-Items Sold August 2016
-Clothes
-Accessories
-Trousers
-Skirts
-Dresses
-Bracelets
-Rings
-Belgium
-Antwerp
-56
-22
-43
-72
-23
-Ghent
-46
-18
-50
-61
-15
-Brussels
-51
-27
-38
-69
-28
-The Netherlands
-Amsterdam
-89
-34
-69
-85
-38
-Utrecht
-80
-12
-43
-36
-19
-But what if you cannot make those visual associations? How then can you read a table like the above? Visually impaired
-people often use a screen reader that reads out information on web pages to them. This is no problem when you're
-English (US)
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-1/10
+## Tablo nedir?
 
+Tablo; satırlar ve sütunlardan oluşan yapılandırılmış bir veri kümesidir (**tablosal veri / tabular data**). Bir tablo, farklı veri türleri arasındaki bağlantıyı gösteren değerleri hızlı ve kolay bir şekilde aramanıza olanak tanır; örneğin bir kişi ile yaşı, haftanın bir günü veya yerel bir yüzme havuzunun saat tarifesi.
 
-reading plain text but interpreting a table can be quite a challenge for a blind person. Nevertheless, with the proper
-markup we can replace visual associations by programmatic ones.
-Using column and row headers
-Screen readers will identify all headers and use them to make programmatic associations between those headers and
-the cells they relate to. The combination of column and row headers will identify and interpret the data in each cell so
-that screen reader users can interpret the table similarly to how a sighted user does.
-We already covered headers in our previous article — see Adding headers with <th> elements.
-Adding a caption to your table with <caption>
-You can give your table a caption by putting it inside a <caption>  element and nesting that inside the <table>
-element. You should put it just below the opening <table>  tag.
-HTML
+Tablolar insan toplumunda çok yaygın olarak kullanılır ve uzun süredir hayatımızdadır; 1800 yılına ait bu ABD Nüfus Sayımı (US Census) belgesinin de kanıtladığı gibi:
+
+Tabloların bu kadar yaygın kullanılmasının nedeni **kolay anlaşılır** olmalarıdır. Bilgiyi satır ve sütun başlıkları arasındaki görsel çağrışımlar kurarak okuruz. Örneğin aşağıdaki tabloya bakıldığında, Ghent'te Ağustos 2016'da kaç yüzük (rings) satıldığını bulmak yalnızca birkaç saniye sürer:
+
+| Clothes (Giysiler) | Clothes (Giysiler) | Accessories (Aksesuarlar) | Accessories (Aksesuarlar) |
+| :--- | :--- | :--- | :--- |
+| **Trousers** | **Skirts** | **Dresses** | **Bracelets** | **Rings** |
+| 120 | 42 | 87 | 12 | 24 |
+
+### Bir tablo nasıl çalışır?
+
+Bir tablonun temel amacı tablosal verileri sunmaktır. Peki tablosal veri nedir? Tablosal veri, satırlar ve sütunlardan oluşan bir ızgara (grid) içinde temsil edilen veridir. Bu veride satırlar bir kaydı (record), sütunlar ise o kayda ait belirli bir özelliği (attribute) temsil eder.
+
+### Tablo stillendirme
+
+Tablolara stil uygulamak (arka plan renkleri, kenarlıklar, yazı tipleri, hizalamalar) CSS kullanılarak yapılır. Varsayılan olarak HTML tabloları oldukça sade ve kenarlıksız görünebilir. CSS ile tabloları görsel olarak çekici, net ve kolay okunur hale getirebilirsiniz.
+
+### HTML tablolarından ne zaman kaçınmalısınız?
+
+HTML tabloları **yalnızca tablosal veriler için kullanılmalıdır**. Geçmişte web tasarımcıları web sayfalarının genel düzenini (örneğin üstbilgi, kenar çubuğu, ana içerik alanı) oluşturmak için tabloları kullanırlardı. Bu **kötü bir uygulamadır** ve kesinlikle kaçınılmalıdır çünkü:
+
+1. **Erişilebilirlik sorunları yaratır:** Ekran okuyucu kullanan görme engelli kullanıcılar için sayfa düzeni tabloları kafa karıştırıcıdır; ekran okuyucu satır ve sütunları okumaya çalışır ve içerik akışı bozulur.
+2. **Kod karmaşası (Tag soup):** Sayfa düzeni için tablolar kullanmak son derece karmaşık, iç içe geçmiş `<table>`, `<tr>`, `<td>` etiket yığınlarına yol açar.
+3. **Duyarlılık (Responsiveness) eksikliği:** Tablolar esnek değildir; mobil cihaz ekranlarına uyum sağlamakta zorlanırlar. Modern web geliştirmede sayfa düzenleri için **CSS Flexbox** ve **CSS Grid** kullanılmalıdır.
+
+---
+
+## İlk tablonuzu oluşturma
+
+Teoriden sonra pratik bir örneğe geçelim. Burada basit bir tablo inşa edeceksiniz.
+
+1. Her tablo **`<table></table>`** etiketleri ile çevrelenir.
+2. Bir tablonun içindeki en küçük kapsayıcı bir tablo hücresidir ve bu hücre **`<td>`** elementi ("td" = "table data") ile oluşturulur.
+3. Hücrelerin doğrudan `<table>` içine yerleştirilmesi geçerli değildir. Hücreler satırlar halinde düzenlenmelidir. Bir tablo satırı **`<tr>`** elementi ("tr" = "table row") ile oluşturulur.
+
+Örnek bir satır ve hücre yapısı:
+
+```html
 <table>
-<caption>
-Dinosaurs in the Jurassic period
-</caption>
-<!-- … -->
+  <tr>
+    <td>Hi, I'm your first cell.</td>
+    <td>I'm your second cell.</td>
+    <td>I'm your third cell.</td>
+    <td>I'm your fourth cell.</td>
+  </tr>
 </table>
-As you can infer from the brief example above, the caption is meant to contain a description of the table contents. This is
-useful for all readers wishing to get a quick idea of whether the table is useful to them as they scan the page, but
-particularly for blind users. Rather than have a screen reader read out the contents of many cells just to find out what the
-table is about, the user can rely on a caption and then decide whether or not to read the table in greater detail.
-A caption is placed directly beneath the <table>  tag.
-Table caption practice
-At this point we'll get you to try out adding a caption to an HTML table, using the school timetable you met in the
-previous article.
-1. Copy the first HTML block in the Grouping columns with <colgroup>  and <col>  into an HTML file on your
-computer, or an online editor such as 
- or 
-.
-2. Add a suitable caption to the table.
-3. Save your code and see what it looks like.
-Note: There are around 253 Million people living with Visual Impairment according to 
-.
-WHO data in 2017
-Note: The summary  attribute can also be used on the <table>  element to provide a description — this is also
-read out by screen readers. We'd recommend using the <caption>  element instead, however, as summary  is
-deprecated and can't be read by sighted users (it doesn't appear on the page).
-CodePen
-JSBin
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-2/10
+```
 
+Birden fazla satır oluşturmak için yeni `<tr>` blokları eklersiniz:
 
-Click here to show the solution
-Adding structure with <thead>, <tbody>, and
-<tfoot>
-As your tables get a bit more complex in structure, it is useful to give them more structural definition. One clear way to
-do this is by using <thead> , <tbody> , and <tfoot> , which allow you to mark up a header, body, and footer section for
-the table.
-These elements don't necessarily make the table any more accessible to screen reader users. They don't result in any
-visual enhancement on their own, however they are very useful for applying styling and layout enhancements via CSS,
-which can improve accessibility. To give you some interesting examples, in the case of a long table you could make the
-table header and footer repeat on every printed page, and you could make the table body display on a single page and
-have the contents available by scrolling up and down.
-To use them, they should be included in the following order:
-The <thead>  element must wrap the part of the table that is the header — this is usually the first row containing
-the column headings, but this is not necessarily always the case. If you are using <col> / <colgroup>  elements,
-the table header should come just below those.
-The <tbody>  element needs to wrap the main part of the table content that isn't the table header or footer, and
-should come after the <thead> .
-The <tfoot>  element needs to wrap the part of the table that is the footer — this might be a final row with items
-in the previous rows summed, for example. The <tfoot>  should come after the <tbody> .
-Adding structure to a spending record table
-Let's get you to put these new elements into action.
-1. First of all, create a new HTML file called spending-record.html  and put the following HTML inside the
-<body> :
-HTML
-<h1>My spending record</h1>
+```html
 <table>
-<caption>
-How I chose to spend my money
-</caption>
-<tr>
-<th>Purchase</th>
-Note: <tbody>  is always implicitly included in every table if you don't specify it in your code. To check this,
-open up one of your previous examples that doesn't include <tbody>  and look at the HTML code in your
-browser developer tools — you will see that the browser has added this tag for you. You might wonder why you
-ought to bother including it at all — you should, because it gives you more control over your table structure and
-styling.
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-3/10
-
-
-<th>Location</th>
-<th>Date</th>
-<th>Evaluation</th>
-<th>Cost (€)</th>
-</tr>
-<tr>
-<td>Haircut</td>
-<td>Hairdresser</td>
-<td>12/09</td>
-<td>Great idea</td>
-<td>30</td>
-</tr>
-<tr>
-<td>Lasagna</td>
-<td>Restaurant</td>
-<td>12/09</td>
-<td>Regrets</td>
-<td>18</td>
-</tr>
-<tr>
-<td>Shoes</td>
-<td>Shoe shop</td>
-<td>13/09</td>
-<td>Big regrets</td>
-<td>65</td>
-</tr>
-<tr>
-<td>Toothpaste</td>
-<td>Supermarket</td>
-<td>13/09</td>
-<td>Good</td>
-<td>5</td>
-</tr>
-<tr>
-<td>SUM</td>
-<td>118</td>
-</tr>
+  <tr>
+    <td>Hi, I'm your first cell.</td>
+    <td>I'm your second cell.</td>
+    <td>I'm your third cell.</td>
+    <td>I'm your fourth cell.</td>
+  </tr>
+  <tr>
+    <td>Second row, first cell.</td>
+    <td>Second row, second cell.</td>
+    <td>Second row, third cell.</td>
+    <td>Second row, fourth cell.</td>
+  </tr>
 </table>
-2. Next, create a CSS file called minimal-table.css  in the same directory as your HTML file and fill it with the
-following content:
-CSS
-html {
-font-family: sans-serif;
-}
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-4/10
+```
 
+---
 
-table {
-border-collapse: collapse;
-border: 2px solid rgb(200 200 200);
-letter-spacing: 1px;
-font-size: 0.8rem;
-}
-td,
-th {
-border: 1px solid rgb(190 190 190);
-padding: 10px 20px;
-}
-th {
-background-color: rgb(235 235 235);
-}
-td {
-text-align: center;
-}
-tr:nth-child(even) td {
-background-color: rgb(250 250 250);
-}
-tr:nth-child(odd) td {
-background-color: rgb(245 245 245);
-}
-caption {
-padding: 10px;
-}
-3. Add a <link>  element into your HTML <head>  to apply the CSS to the HTML (see Applying CSS and JavaScript
-to HTML for help with this).
-4. Try putting the obvious headers row inside a <thead>  element, the "SUM" row inside a <tfoot>  element, and
-the rest of the content inside a <tbody>  element.
-5. Next, add a colspan  attribute to make the "SUM" cell span across the first four columns, so the actual number
-appears at the bottom of the "Cost" column.
-6. Let's add some simple extra styling to the table, to give you an idea of how useful these elements are for applying
-CSS. Add the following to your CSS file:
-CSS
-tbody {
-font-size: 95%;
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-5/10
+## <th> elementleri ile başlık ekleme
 
+Tablo başlıkları (`<th>` — "table header"), bir satırın veya sütunun başında yer alan ve o satır ya da sütunun ne tür veri içerdiğini tanımlayan özel hücrelerdir.
 
-font-style: italic;
-}
-tfoot {
-font-weight: bold;
-}
-7. Save and refresh, and have a look at the result. If the <tbody>  and <tfoot>  elements weren't in place, you'd
-have to write much more complicated selectors/rules to apply the same styling.
-The finished example should look like this:
-Click here to show the solution
-The scope attribute
-The scope  attribute can be added to the <th>  element to tell screen readers exactly what cells the header is a header
-for — is it a header for the row it is in, or the column, for example? Looking back to our spending record example from
-earlier on, you could unambiguously define the column headers as column headers like this:
-HTML
+Başlık hücrelerini tanımlamak için `<td>` yerine **`<th>`** kullanılır:
+
+```html
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <th>Knocky</th>
+    <th>Flor</th>
+    <th>Ella</th>
+    <th>Juan</th>
+  </tr>
+  <tr>
+    <th>Breed</th>
+    <td>Jack Russell</td>
+    <td>Poodle</td>
+    <td>Streetdog</td>
+    <td>Cocker Spaniel</td>
+  </tr>
+  <tr>
+    <th>Age</th>
+    <td>16</td>
+    <td>9</td>
+    <td>10</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <th>Owner</th>
+    <td>Jessica</td>
+    <td>Effie</td>
+    <td>Michael</td>
+    <td>Albert</td>
+  </tr>
+  <tr>
+    <th>Eating Habits</th>
+    <td>Eats everyone's leftovers</td>
+    <td>Nibbles at food</td>
+    <td>Hearty eater</td>
+    <td>Will eat bite-sized scraps</td>
+  </tr>
+</table>
+```
+
+### Başlıklar neden faydalıdır?
+
+- **Görsel ayrım:** Tarayıcılar varsayılan olarak `<th>` elementlerini kalın (bold) ve ortalanmış olarak görüntüler, bu da veriler ile başlıkların görsel olarak kolayca ayırt edilmesini sağlar.
+- **Erişilebilirlik (Accessibility):** Ekran okuyucular başlıkları tanır ve her bir veri hücresini okurken ilişkili olduğu başlığı seslendirir. Bu, görme engelli bir kullanıcının tablodaki bir sayının veya metnin ne anlama geldiğini kavramasını mümkün kılar.
+
+---
+
+## Hücrelerin birden fazla satır ve sütuna yayılmasına izin verme
+
+Bazen bir hücrenin birden fazla sütuna veya birden fazla satıra yayılmasını isteriz. Bunun için iki özel nitelik kullanılır:
+
+- **`colspan` (Column span):** Bir hücrenin kaç sütun genişliğinde olacağını belirtir.
+- **`rowspan` (Row span):** Bir hücrenin kaç satır yüksekliğinde olacağını belirtir.
+
+### `colspan` örneği
+
+Aşağıdaki örnekte `Animals` başlığı iki sütun boyunca uzanır:
+
+```html
+<table>
+  <tr>
+    <th colspan="2">Animals</th>
+  </tr>
+  <tr>
+    <th colspan="2">Hippopotamus</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Horse</th>
+    <td>Mare</td>
+  </tr>
+  <tr>
+    <td>Stallion</td>
+  </tr>
+  <tr>
+    <th colspan="2">Crocodile</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Chicken</th>
+    <td>Rooster</td>
+  </tr>
+  <tr>
+    <td>Hen</td>
+  </tr>
+</table>
+```
+
+> [!NOTE]
+> Bir hücre `colspan="2"` aldığında, o satırdaki bir sonraki hücrenin kaplayacağı alanı devralır; bu nedenle o satırdan bir hücre çıkarmanız gerekir. Benzer şekilde `rowspan="2"` alan bir hücre altındaki satırın alanını kaplar, bu yüzden alttaki satırda bir hücre eksik tanımlanmalıdır.
+
+---
+
+## `<colgroup>` ve `<col>` ile sütunları gruplama
+
+HTML'de tablonun tüm bir sütununu tek bir birim olarak hedeflemek ve stillendirmek için **`<colgroup>`** ve **`<col>`** elementleri kullanılır.
+
+Normal şartlarda HTML hücreleri satır bazlı tanımlandığından (`<tr>`), belirli bir sütundaki tüm hücrelere örneğin arka plan rengi vermek zahmetlidir. `<colgroup>` ve `<col>` bu sorunu çözer.
+
+`<colgroup>` elementi açılış `<table>` etiketinin hemen ardına yerleştirilir:
+
+```html
+<table>
+  <colgroup>
+    <col />
+    <col style="background-color: #0f0" />
+    <col style="background-color: #f00" />
+  </colgroup>
+  <tr>
+    <th>Data 1</th>
+    <th>Data 2</th>
+    <th>Data 3</th>
+  </tr>
+  <tr>
+    <td>Cal 1</td>
+    <td>Cal 2</td>
+    <td>Cal 3</td>
+  </tr>
+</table>
+```
+
+`span` niteliği ile bir `<col>` elementinin birden fazla sütuna uygulanmasını sağlayabilirsiniz:
+
+```html
+<colgroup>
+  <col style="background-color: #97DB9A" />
+  <col span="2" />
+  <col style="background-color: #DCC48E" />
+  <col style="border: 2px solid #C1437A" />
+</colgroup>
+```
+
+---
+
+## Tablo kavramlarının etkileşimli özeti
+
+Tablolar; yapılandırılmış verileri net bir ızgara düzeninde sunarak insan zihninin satır ve sütun kesişimlerini zahmetsizce ilişkilendirmesini sağlar. Temel yapı taşları `<table>`, `<tr>`, `<th>` ve `<td>` etiketleridir; karmaşık veri düzenleri için `colspan`, `rowspan` ve sütun stillendirmesi için `<colgroup>` / `<col>` kullanılır.
+
+## Özet
+
+Bu makalede HTML tablolarının temellerini tamamladık. Satırlar, hücreler, başlıklar, hücre yayılmaları (`colspan`/`rowspan`) ve sütun gruplama tekniklerini öğrendiniz. Bir sonraki makalede, tabloları görme engelli kullanıcılar ve ekran okuyucular için nasıl daha erişilebilir hale getireceğimizi inceleyeceğiz.
+
+---
+
+# 20. Tablo erişilebilirliği
+
+**HTML** > **Table accessibility** (HTML table accessibility) | English (US)
+
+Bu makalede, HTML tablolarını ekran okuyucu kullananlar da dahil olmak üzere tüm kullanıcılar için tamamen erişilebilir hale getirmeye yönelik gelişmiş yapısal elementler (`<caption>`, `<thead>`, `<tbody>`, `<tfoot>`) ile `scope`, `id` ve `headers` nitelikleri ele alınmaktadır.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | [Table basics](#19-table-basics) bölümünde ele alındığı gibi HTML tablolarının temelleri. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Görme engelli kullanıcıların tablolarda nasıl gezindiğini anlama.<br>• `<caption>` ile tabloya başlık/açıklama ekleme.<br>• `<thead>`, `<tbody>` ve `<tfoot>` ile tablo bölümlerini yapılandırma.<br>• `<th>` üzerinde `scope` niteliğini doğru kullanma.<br>• Karmaşık tablolarda `id` ve `headers` nitelikleri ile açık ilişkilendirmeler kurma. |
+
+---
+
+## Özet: Görme engelli kullanıcılar için tablolar
+
+Gören kullanıcılar bir tabloya baktıklarında satır ve sütun başlıkları ile veri hücreleri arasındaki ilişkiyi anında görsel olarak kavrarlar. Ancak ekran okuyucu (screen reader) kullanan bir kullanıcı tablonun tamamını aynı anda göremez; hücreleri teker teker, sırayla dinler.
+
+Erişilebilirlik özellikleri eklenmemiş bir tabloda, ekran okuyucu kullanıcıya yalnızca "120", "42", "24" gibi sayılar okur. Kullanıcı bu sayıların hangi ürüne, hangi aya veya hangi şehre ait olduğunu bilemez.
+
+İşte bu yüzden tablo başlıklarını doğru etiketlemek ve veri hücreleri ile olan ilişkilerini netleştirmek hayati önem taşır.
+
+---
+
+## <caption> ile tablonuza başlık ekleme
+
+Tablonuza bir başlık veya açıklayıcı bir etiket vermek için **`<caption>`** elementi kullanılır. Bu element, açılış `<table>` etiketinin hemen altına yerleştirilmelidir:
+
+```html
+<table>
+  <caption>
+    Dinosaurs in the Jurassic period
+  </caption>
+  <tr>
+    <th>Name</th>
+    <th>Diet</th>
+    <th>Period</th>
+  </tr>
+  <tr>
+    <td>Brachiosaurus</td>
+    <td>Herbivore</td>
+    <td>Late Jurassic</td>
+  </tr>
+</table>
+```
+
+`<caption>` elementi bir tablonun ne hakkında olduğunu özetler. Ekran okuyucu kullanıcıları sayfadaki bir tabloya ulaştıklarında ilk olarak başlığı duyarlar ve tablonun içeriğini okumaya devam edip etmeyeceklerine bu sayede karar verebilirler.
+
+---
+
+## <thead>, <tbody> ve <tfoot> ile yapı kazandırma
+
+Tablolar büyüdükçe ve karmaşıklaştıkça, onları mantıksal bölümlere ayırmak hem kod düzeni hem de CSS/yazdırma stilleri açısından büyük avantaj sağlar:
+
+- **`<thead>` (Table Head):** Tablonun başlık satırını veya satırlarını sarmalar (genellikle sütun başlıklarını içeren ilk satır). Varsa `<colgroup>`/`<col>` elementlerinin hemen ardından gelmelidir.
+- **`<tbody>` (Table Body):** Tablonun ana veri içeriğini sarmalar. `<thead>` elementinden sonra gelir.
+- **`<tfoot>` (Table Foot):** Tablonun alt bilgi/özet satırını sarmalar (örneğin toplam değerler, genel toplamlar). `<tbody>` elementinden sonra gelir.
+
+### Harcama tablosu örneği
+
+```html
+<table>
+  <caption>How I spent my money this month</caption>
+  <thead>
+    <tr>
+      <th>Purchase</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Evaluation</th>
+      <th>Cost (€)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Haircut</td>
+      <td>Hairdresser</td>
+      <td>12/09</td>
+      <td>Great idea</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Lasagna</td>
+      <td>Restaurant</td>
+      <td>12/09</td>
+      <td>Regrets</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>Shoes</td>
+      <td>Shoeshop</td>
+      <td>13/09</td>
+      <td>Big regrets</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Pancake mix</td>
+      <td>Supermarket</td>
+      <td>16/09</td>
+      <td>Great idea</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">SUM</th>
+      <td>116</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+> [!NOTE]
+> `<thead>`, `<tbody>` ve `<tfoot>` elementleri doğrudan tarayıcıda görsel bir değişiklik yapmaz; ancak CSS ile başlık ve altbilgileri sabitlemek (sticky headers) veya yazdırma çıktısında her sayfada tablo başlığının yinelenmesini sağlamak için standarttır.
+
+---
+
+## `scope` niteliği
+
+**`scope`** niteliği `<th>` elementine eklenerek, o başlığın hangi hücrelerin başlığı olduğunu ekran okuyuculara açıkça bildirir. Olası değerleri şunlardır:
+
+- **`col`:** Başlığın bulunduğu sütundaki tüm hücreler için geçerli olduğunu belirtir.
+- **`row`:** Başlığın bulunduğu satırdaki tüm hücreler için geçerli olduğunu belirtir.
+- **`colgroup`:** Bir sütun grubundaki tüm sütunlar için başlık olduğunu belirtir (birden fazla sütuna yayılan başlıklar için).
+- **`rowgroup`:** Bir satır grubundaki tüm satırlar için başlık olduğunu belirtir (birden fazla satıra yayılan başlıklar için).
+
+Örnek kullanım:
+
+```html
 <thead>
-<tr>
-<th scope="col">Purchase</th>
-<th scope="col">Location</th>
-<th scope="col">Date</th>
-Note: We don't expect you to fully understand the CSS right now. You'll learn more about this when you
-go through our CSS modules (starting with CSS Styling basics, which includes an article specifically on
-styling tables).
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-6/10
-
-
-<th scope="col">Evaluation</th>
-<th scope="col">Cost (€)</th>
-</tr>
-</thead>
-And each row could have a header defined like this (if we added row headers as well as column headers):
-HTML
-<tr>
-<th scope="row">Haircut</th>
-<td>Hairdresser</td>
-<td>12/09</td>
-<td>Great idea</td>
-<td>30</td>
-</tr>
-Screen readers will recognize markup structured like this, and allow their users to read out the entire column or row at
-once, for example.
-scope  has two more possible values — colgroup  and rowgroup . These are used for headings that sit over the top of
-multiple columns or rows. If you look back at the "Items Sold August 2016" table at the start of this section of the article,
-you'll see that the "Clothes" cell sits above the "Trousers", "Skirts", and "Dresses" cells. All of these cells should be
-marked up as headers ( <th> ), but "Clothes" is a heading that sits over the top and defines the other three subheadings.
-"Clothes" therefore should get an attribute of scope="colgroup" , whereas the others would get an attribute of
-scope="col" :
-HTML
-<thead>
-<tr>
-<th colspan="3" scope="colgroup">Clothes</th>
-</tr>
-<tr>
-<th scope="col">Trousers</th>
-<th scope="col">Skirts</th>
-<th scope="col">Dresses</th>
-</tr>
-</thead>
-The same applies to headers for multiple grouped rows. Take another look at the "Items Sold August 2016" table, this
-time focusing on the rows with the "Amsterdam" and "Utrecht" headers ( <th> ). You'll notice that the "The Netherlands"
-header, also marked up as a <th>  element, spans both rows, being the heading for the other two subheadings.
-Therefore, scope="rowgroup"  should be specified on this header cell to help screen readers create the correct
-associations:
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-7/10
-
-
-HTML
-<tr>
-<th rowspan="2" scope="rowgroup">The Netherlands</th>
-<th scope="row">Amsterdam</th>
-<td>89</td>
-<td>34</td>
-<td>69</td>
-</tr>
-<tr>
-<th scope="row">Utrecht</th>
-<td>80</td>
-<td>12</td>
-<td>43</td>
-</tr>
-The id and headers attributes
-An alternative to using the scope  attribute is to use id  and headers  attributes to create associations between data
-cells and header cells.
-A <th>  element can provide a heading for either a data cell ( <td> ) or, in more complex tables, for another header cell
-( <th> ). This allows you to create layered or grouped headers, where one header describes several others.
-The headers  attribute is used to link a cell, <td>  or <th> , to one or more header cells. It takes a space-separated list
-of strings; the order of strings does not matter. Each string must match the unique id  of a <th>  element that the cell is
-associated with.
-This method gives your HTML table a more explicit definition of the position of each cell, based on the headers for the
-column and the row it belongs to, kind of like a spreadsheet. For this to work well, your table should include both column
-and row headers.
-Let's look at a portion of the "Items Sold August 2016" example to see how to use the id  and headers  attributes:
-1. Add a unique id  to each <th>  element in the table.
-2. For the header cells: Add a headers  attribute to each <th>  element that acts as a subheading, that is, a header
-cell with another header above it. The value is the id  of the high-level heading. In our example, that's
-"clothes"  for the column headers and "belgium"  for the row header.
-3. For the data cells: Add a headers  attribute to each <td>  element, and add the id s of the associated <th>
-element(s) as a space-separated list. You can proceed as you would in a spreadsheet: Find the data cell, then
-locate the row and column headers that describe it. The order of the specified id s doesn't matter, but keeping it
-consistent helps to keep it organized and improves readability of the code.
-HTML
-<thead>
-<tr>
-<th></th>
-<th></th>
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-8/10
-
-
-<th id="clothes" colspan="3">Clothes</th>
-</tr>
-<tr>
-<th></th>
-<th></th>
-<th id="trousers" headers="clothes">Trousers</th>
-<th id="skirts" headers="clothes">Skirts</th>
-<th id="dresses" headers="clothes">Dresses</th>
-</tr>
+  <tr>
+    <th scope="col">Purchase</th>
+    <th scope="col">Location</th>
+    <th scope="col">Date</th>
+    <th scope="col">Evaluation</th>
+    <th scope="col">Cost (€)</th>
+  </tr>
 </thead>
 <tbody>
-<tr>
-<th id="belgium" rowspan="2">Belgium</th>
-<th id="antwerp" headers="belgium">Antwerp</th>
-<td headers="belgium antwerp clothes trousers">56</td>
-<td headers="belgium antwerp clothes skirts">22</td>
-<td headers="belgium antwerp clothes dresses">43</td>
-</tr>
-<tr>
-<th id="ghent" headers="belgium">Ghent</th>
-<td headers="belgium ghent clothes trousers">41</td>
-<td headers="belgium ghent clothes skirts">17</td>
-<td headers="belgium ghent clothes dresses">35</td>
-</tr>
+  <tr>
+    <th scope="row">Haircut</th>
+    <td>Hairdresser</td>
+    <td>12/09</td>
+    <td>Great idea</td>
+    <td>30</td>
+  </tr>
 </tbody>
-In this example:
-The <th>  for "Belgium"  uses rowspan="2"  to span both "Antwerp"  and "Ghent" .
-The city header cells ( "Antwerp"  and "Ghent" ) use the headers  attribute to reference "belgium"  to show
-they belong to the Belgium group.
-Each <td>  includes a headers  attribute for country ( belgium ), city ( antwerp  or ghent ), group ( clothes ),
-and the specific clothing item ( trousers , skirts , or dresses ).
-Playing with scope and headers
-For this final exercise, we will get you to try using scope and headers on the sample table we introduced above.
-1. First make local copies of 
- and 
-, in a new directory.
-2. Try adding in the appropriate scope  attributes to make this table more accessible.
-3. Making another copy of the starter files in another local directory
-4. This time make the table more accessible by creating precise and explicit associations using id  and headers
-attributes.
-Click here to show the solution
-Note: This method creates very precise associations between headers and data cells but it uses a lot more
-markup and does not leave any room for errors. The scope  approach is usually sufficient for most tables.
-items-sold.html
-minimal-table.css
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-9/10
+```
 
-
-Summary
-There are a few other things you could learn about tables in HTML, but this is all you need to know for now. Next, you
-can test yourself with our HTML tables challenge. Have fun!
-Previous
-Overview: Structuring content with HTML
-Next
-Your blueprint for a better internet.
-15.10.2026 20:24
-HTML table accessibility - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
-10/10
-
+Bu sayede ekran okuyucu `Hairdresser` hücresine geldiğinde şunu seslendirebilir: *"Location, Haircut, Hairdresser"*. Kullanıcı verinin hangi başlık altında olduğunu hiçbir şüpheye yer bırakmadan anlar.
 
 ---
 
-HTML
-Challenge: Planet data table
-Challenge: Structuring a planet data
-table
-Previous
-Overview: Structuring content with HTML
-Next
-In this challenge, we provide data on the planets in our solar system. Your job is to structure it into an accessible HTML
-table.
-Starting point
-1. Create a new folder in an appropriate location on your computer called planet-data-table  (or open an online
-editor and take the required steps to create a new project).
-2. Save the following HTML listing inside a file inside your folder called index.html  (or paste it into your online
-editor's HTML pane).
-HTML
+## `id` ve `headers` nitelikleri
+
+Çok karmaşık veya çok katmanlı tablolarda `scope` niteliği yetersiz kalabilir. Bu gibi durumlarda **`id`** ve **`headers`** nitelikleri kullanılarak veri hücreleri ile başlık hücreleri arasında doğrudan, birebir bağlantılar kurulur:
+
+1. Her `<th>` elementine benzersiz bir `id` atanır.
+2. Her `<td>` elementine bir `headers` niteliği verilir ve bu niteliğe, o hücreyle ilişkili tüm `<th>` elementlerinin `id` değerleri boşluklarla ayrılarak yazılır.
+
+Örnek:
+
+```html
+<table>
+  <caption>Items Sold August 2016</caption>
+  <thead>
+    <tr>
+      <td colspan="2" rowspan="2"></td>
+      <th id="clothes" colspan="3">Clothes</th>
+      <th id="accessories" colspan="2">Accessories</th>
+    </tr>
+    <tr>
+      <th id="trousers" headers="clothes">Trousers</th>
+      <th id="skirts" headers="clothes">Skirts</th>
+      <th id="dresses" headers="clothes">Dresses</th>
+      <th id="bracelets" headers="accessories">Bracelets</th>
+      <th id="rings" headers="accessories">Rings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="belgium" rowspan="3">Belgium</th>
+      <th id="antwerp" headers="belgium">Antwerp</th>
+      <td headers="clothes trousers belgium antwerp">56</td>
+      <td headers="clothes skirts belgium antwerp">22</td>
+      <td headers="clothes dresses belgium antwerp">43</td>
+      <td headers="accessories bracelets belgium antwerp">72</td>
+      <td headers="accessories rings belgium antwerp">23</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+---
+
+## Özet
+
+Bu makalede HTML tablolarını erişilebilir kılmanın yollarını öğrendiniz:
+- `<caption>` ile tabloya açıklayıcı başlık sağlamak,
+- `<thead>`, `<tbody>` ve `<tfoot>` ile yapısal bölümler oluşturmak,
+- `scope` niteliğiyle sütun ve satır başlıklarını netleştirmek,
+- Karmaşık tablolarda `id` ve `headers` nitelikleriyle veri ve başlık ilişkisini tam olarak tanımlamak.
+
+---
+
+# 21. Uygulama Görevi: Gezegen veri tablosu
+
+**HTML** > **Challenge: Planet data table** (Challenge: Structuring a planet data table) | English (US)
+
+Bu meydan okumada, güneş sistemimizdeki gezegenlere ilişkin ham veriler sunulmaktadır. Göreviniz, bu verileri erişilebilir, anlamsal açıdan zengin ve tam yapılandırılmış bir HTML tablosu haline getirmektir.
+
+---
+
+## Başlangıç noktası
+
+1. Bilgisayarınızda `planet-data-table` adında yeni bir klasör oluşturun.
+2. Klasörünüzün içinde `index.html` adlı bir dosya oluşturun ve aşağıdaki HTML iskeletini kaydedin:
+
+```html
 <!doctype html>
 <html lang="en-US">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
-<title>Planet data table</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<h1>Planet data table</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Planet data table</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Planet data table</h1>
+  </body>
 </html>
-3. Save the following CSS listing inside a file inside your folder called style.css  (or paste it into your online
-editor's CSS pane).
-CSS
-html {
-font-family: sans-serif;
-}
-English (US)
-15.10.2026 20:24
-Challenge: Structuring a planet data table - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table
-1/5
+```
 
+3. Klasörünüzün içinde `style.css` adlı bir dosya oluşturun ve aşağıdaki CSS kodlarını içine yapıştırın:
+
+```css
+html {
+  font-family: sans-serif;
+}
 
 table {
-border-collapse: collapse;
-border: 2px solid rgb(200 200 200);
-letter-spacing: 1px;
-font-size: 0.8rem;
+  border-collapse: collapse;
+  border: 2px solid rgb(200 200 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
 }
+
 td,
 th {
-border: 1px solid rgb(190 190 190);
-padding: 10px 20px;
+  border: 1px solid rgb(190 190 190);
+  padding: 10px 20px;
 }
-th {
-background-color: rgb(235 235 235);
-}
-td {
-text-align: center;
-}
-tr:nth-child(even) td {
-background-color: rgb(250 250 250);
-}
-tr:nth-child(odd) td {
-background-color: rgb(245 245 245);
-}
-caption {
-padding: 10px;
-}
-.column-border {
-border: 2px solid black;
-}
-4. Keep the following data handy; you'll need to turn this into an HTML data table inside your HTML.
-Rows
-Terrestrial planets
-Mercury 0.330 4,879 5427 3.7 4222.6 57.9 167 0 Closest to the Sun
-Venus 4.87 12,104 5243 8.9 2802.0 108.2 464 0
-Earth 5.97 12,756 5514 9.8 24.0 149.6 15 1 Our world
-Mars 0.642 6,792 3933 3.7 24.7 227.9 -65 2 The red planet
-15.10.2026 20:24
-Challenge: Structuring a planet data table - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table
-2/5
 
+th {
+  background-color: rgb(235 235 235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250 250 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245 245 245);
+}
+
+caption {
+  padding: 10px;
+}
+```
+
+4. Tabloya dönüştürmeniz gereken ham veri aşağıda verilmiştir:
+
+```text
+Data about the planets in our solar system (Planetary facts taken from NASA's Planetary Fact Sheet - Metric).
+
+Name, Mass (10^24kg), Diameter (km), Density (kg/m^3), Gravity (m/s^2), Length of day (hours), Distance from Sun (10^6km), Mean temp (°C), Number of moons, Notes
+
+Terrestrial planets
+Mercury, 0.330, 4879, 5427, 3.7, 4222.6, 57.9, 167, 0, Closest to the Sun
+Venus, 4.87, 12104, 5243, 8.9, 2802.0, 108.2, 464, 0, 
+Earth, 5.97, 12756, 5514, 9.8, 24.0, 149.6, 15, 1, Our world
+Mars, 0.642, 6792, 3933, 3.7, 24.7, 227.9, -65, 2, The red planet
 
 Jovian planets
 Gas giants
-Jupiter 1898 142,984 1326 23.1 9.9 778.6 -110 67 The largest planet
-Saturn 568 120,536 687 9.0 10.7 1433.5 -140 62
+Jupiter, 1898, 142984, 1326, 23.1, 9.9, 778.6, -110, 67, The largest planet
+Saturn, 568, 120536, 687, 9.0, 10.7, 1433.5, -140, 62, 
+
 Ice giants
-Uranus 86.8 51,118 1271 8.7 17.2 2872.5 -195 27
-Neptune 102 49,528 1638 11.0 16.1 4495.1 -200 14
-Dwarf planets*
-Pluto 0.0146 2,370 2095 0.7 153.3 5906.4 -225 5 Declassified as a planet in 2006, but
-this <a href="http://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-
-system/16578959/">remains controversial</a>.
-Columns
-Name
-Mass (10<sup>24</sup>kg)
-Diameter (km)
-Density (kg/m<sup>3</sup>)
-Gravity (m/s<sup>2</sup>)
-Length of day (hours)
-Distance from Sun (10<sup>6</sup>km)
-Mean temperature (°C)
-Number of moons
-Notes
-Caption
-Data about the planets of our solar system (Planetary facts taken from <a
-href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet -
-Metric</a>).
-Project brief
-You are working at a school; currently, your students are studying the planets of our solar system, and you want to
-provide them with an easy-to-follow set of data to look up facts and figures about the planets. An HTML data table would
-be ideal — you need to take the raw data you have available and turn it into a table, following the steps below.
-All the data you need is contained in the data listing provided above. If you have trouble visualizing the data, take a look
-at the live example below, or try drawing a diagram.
-1. Start the table off by giving it an outer container, a table header, and a table body. You don't need a table footer
-for this example.
-2. Add the provided caption to your table.
-15.10.2026 20:24
-Challenge: Structuring a planet data table - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table
-3/5
+Uranus, 86.8, 51118, 1271, 8.7, 17.2, 2872.5, -195, 27, 
+Neptune, 102, 49528, 1638, 11.0, 16.1, 4495.1, -200, 14, 
 
-
-3. Add a row to the table header containing all the column headers.
-4. Create all the content rows inside the table body, remembering to make all the row headings into headings
-semantically.
-5. Ensure all the content is placed into the right cells — in the raw data, each row of planet data is shown next to its
-associated planet.
-6. Add attributes to make the row and column headers unambiguously associated with the rows, columns, or row
-groups that they act as headings for.
-7. Add a black border just around the column that contains all the planet name row headers. Do this using a suitable
-<colgroup> / <col>  structure and the .column-border  class style provided in the CSS.
-Hints and tips
-The first cell of the header row needs to be blank, and span two columns.
-The group row headings (e.g., Jovian planets) that sit to the left of the planet name row headings (e.g., Saturn)
-are a little tricky to sort out — you need to make sure each one spans the correct number of rows and columns.
-One way of associating headers with their rows/columns is a lot easier than the other way.
-Example
-The table should look like the following after being marked up correctly. If you get stuck, check out the solution below
-the live example.
-15.10.2026 20:24
-Challenge: Structuring a planet data table - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table
-4/5
-
-
-Click here to show the solution
-Previous
-Overview: Structuring content with HTML
-Next
-Your blueprint for a better internet.
-15.10.2026 20:24
-Challenge: Structuring a planet data table - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table
-5/5
-
+Dwarf planets
+Pluto, 0.0146, 2370, 2095, 0.7, 153.3, 5906.4, -225, 5, Declassified as a planet in 2006, but this <a href="https://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578957/">remains controversial</a>.
+```
 
 ---
 
-HTML
-Forms and buttons
-Forms and buttons in HTML
-Previous
-Overview: Structuring content with HTML
-Next
-HTML forms and buttons are powerful tools for interacting with a website's users. Most commonly, they provide users
-with controls to manipulate a user interface (UI) or input data when required.
-In this article, we provide an introduction to the basics of forms and buttons. There is a lot more to know — a lot of input
-types and form features are not mentioned — but this article will give you a solid foundation for most cases. You can
-learn the advanced or specialized uses on a need-to-know basis as part of the constant learning you'll do throughout
-your career.
-Prerequisites:
-Basic HTML familiarity, as covered in Basic HTML Syntax. Text-level semantics such as
-headings and paragraphs and lists. Structural HTML.
-Learning
-outcomes:
-An appreciation that forms and buttons are the main tools for users to interact with a
-website, along with links.
-Different button types.
-Common <input>  types.
-Common attributes such as name  and value .
-The <form>  element, and the basics of form submission.
-Making forms accessible with labels and correct semantics.
-Other control types: <textarea> , <select> , and <option> .
-Client-side validation basics.
-Interacting with users
-So far in the course, you have seen a couple of ways in which users can interact with the web:
-Links can be used to navigate to different sections of content, either on the same page or a different page.
-<video>  and <audio>  elements generally feature controls such as play/pause, fast forward, rewind, etc., which
-allow users to consume media content as they wish.
-However, these features tend to facilitate one-way interactions, with users passively consuming content. This is fine, but
-the web is a two-way experience. Website users set preferences for how they want to experience content and services.
-They order taxis and request call backs. They provide feedback and make complaints. They buy products and get them
-delivered to their homes.
-To provide this two-way experience, you need to use buttons and forms.
-Buttons are usually created using HTML <button>  elements (they are also sometimes created using <input>  elements
-with their type  attributes set to a value like button  or submit ). These push buttons are general-purpose — you can
-wire them up to trigger any functionality you want, limited only by your imagination and coding skills.
-English (US)
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-1/14
+## Proje özeti ve yönergeler
 
+Bir okulda çalıştığınızı ve öğrencilerinizin güneş sistemindeki gezegenleri incelediğini hayal edin. Öğrencilerinize gerçekleri ve rakamları kolayca arayabilecekleri net bir kaynak sunmak istiyorsunuz. Bir HTML tablosu bunun için idealdir:
 
-Forms are created using elements such as <form> , <label> , <input> , and <select> . Form elements can be used to
-create more complex controls than simple buttons allow — for example, a drop-down menu containing multiple options
-that allow you to choose between different themes for a user interface element.
-However, crucially, they can also be used to create forms for users to fill in when they need to submit information to a
-website server. Think about e-commerce sites — when you want to search for a product to buy, you use a form to enter
-search terms. When you want to pay for some items and finalize delivery, you use a form to enter your postal address,
-and another form to enter your credit card details.
-We'll be concentrating mainly on this — more traditional — use of form elements in this article. Note that buttons are also
-commonly used inside forms to submit the entered data to the server.
-With this important theory out of the way, let's move on to explore the code and see how buttons and forms are
-implemented.
-Buttons
-As hinted at above, buttons have a couple of main uses on the web. First of all, they are used to trigger functionality,
-which is useful when creating UI controls. The simplest button is implemented using the following code:
-HTML
+1. Tablonuzu bir dış `<table>`, bir tablo başlığı `<thead>` ve bir tablo gövdesi `<tbody>` ile başlatın. Bu örnekte tablo altbilgisine (`<tfoot>`) gerek yoktur.
+2. Sağlanan tablo açıklamasını (`<caption>`) ekleyin: `Data about the planets in our solar system (Planetary facts taken from NASA's Planetary Fact Sheet - Metric).`
+3. `<thead>` içine tüm sütun başlıklarını içeren bir satır ekleyin.
+4. İlk başlık hücresi boş olmalı ve 2 sütuna yayılmalıdır (`colspan="2"`).
+5. Tüm gezegen verisi satırlarını `<tbody>` içine oluşturun. Gezegen adlarını ve grup adlarını semantik olarak `<th>` başlık hücreleri yapmayı unutmayın.
+6. Gezegen grupları için satır başlıklarını (`Terrestrial planets`, `Jovian planets`, `Gas giants`, `Ice giants`, `Dwarf planets`) doğru sayıda satır ve sütuna yayılacak şekilde (`rowspan` ve `colspan`) yapılandırın:
+   - `Terrestrial planets`: 4 satıra yayılır (`rowspan="4"`), 1 sütun kaplar.
+   - `Jovian planets`: 4 satıra yayılır (`rowspan="4"`).
+   - `Gas giants`: 2 satıra yayılır (`rowspan="2"`).
+   - `Ice giants`: 2 satıra yayılır (`rowspan="2"`).
+   - `Dwarf planets`: 1 satır kaplar, yanındaki gezegen adı sütunuyla birleşmek üzere `colspan="2"` alabilir.
+7. Tüm `<th>` elementlerine uygun `scope` niteliklerini (`col`, `row`, `colgroup`, `rowgroup`) ekleyin.
+
+---
+
+## İpuçları ve püf noktaları
+
+- Başlık satırının ilk hücresi boştur ve iki sütuna yayılır: `<td colspan="2">&nbsp;</td>` veya `<th colspan="2">&nbsp;</th>`.
+- Gezegen grupları solda yer aldığı için her grup hücresinin kapsadığı gezegen sayısına göre `rowspan` değerini dikkatlice sayın.
+- Başlıkları ilişkilendirmede `scope` niteliği bu tablo için en pratik ve temiz yöntemdir.
+
+---
+
+## Çözüm ve tam kod
+
+<details>
+<summary>Çözümü görmek için buraya tıklayın</summary>
+
+Tamamlanmış `index.html` dosyanız şu şekilde görünmelidir:
+
+```html
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Planet data table</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Planet data table</h1>
+
+    <table>
+      <caption>
+        Data about the planets in our solar system (Planetary facts taken from
+        <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA's Planetary Fact Sheet - Metric</a>).
+      </caption>
+      <colgroup>
+        <col span="2" />
+        <col style="border: 2px solid black" />
+      </colgroup>
+      <thead>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+          <th scope="col">Name</th>
+          <th scope="col">Mass (10<sup>24</sup>kg)</th>
+          <th scope="col">Diameter (km)</th>
+          <th scope="col">Density (kg/m<sup>3</sup>)</th>
+          <th scope="col">Gravity (m/s<sup>2</sup>)</th>
+          <th scope="col">Length of day (hours)</th>
+          <th scope="col">Distance from Sun (10<sup>6</sup>km)</th>
+          <th scope="col">Mean temp (°C)</th>
+          <th scope="col">Number of moons</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="4" colspan="2" scope="rowgroup">Terrestrial planets</th>
+          <th scope="row">Mercury</th>
+          <td>0.330</td>
+          <td>4879</td>
+          <td>5427</td>
+          <td>3.7</td>
+          <td>4222.6</td>
+          <td>57.9</td>
+          <td>167</td>
+          <td>0</td>
+          <td>Closest to the Sun</td>
+        </tr>
+        <tr>
+          <th scope="row">Venus</th>
+          <td>4.87</td>
+          <td>12104</td>
+          <td>5243</td>
+          <td>8.9</td>
+          <td>2802.0</td>
+          <td>108.2</td>
+          <td>464</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Earth</th>
+          <td>5.97</td>
+          <td>12756</td>
+          <td>5514</td>
+          <td>9.8</td>
+          <td>24.0</td>
+          <td>149.6</td>
+          <td>15</td>
+          <td>1</td>
+          <td>Our world</td>
+        </tr>
+        <tr>
+          <th scope="row">Mars</th>
+          <td>0.642</td>
+          <td>6792</td>
+          <td>3933</td>
+          <td>3.7</td>
+          <td>24.7</td>
+          <td>227.9</td>
+          <td>-65</td>
+          <td>2</td>
+          <td>The red planet</td>
+        </tr>
+        <tr>
+          <th rowspan="4" scope="rowgroup">Jovian planets</th>
+          <th rowspan="2" scope="rowgroup">Gas giants</th>
+          <th scope="row">Jupiter</th>
+          <td>1898</td>
+          <td>142984</td>
+          <td>1326</td>
+          <td>23.1</td>
+          <td>9.9</td>
+          <td>778.6</td>
+          <td>-110</td>
+          <td>67</td>
+          <td>The largest planet</td>
+        </tr>
+        <tr>
+          <th scope="row">Saturn</th>
+          <td>568</td>
+          <td>120536</td>
+          <td>687</td>
+          <td>9.0</td>
+          <td>10.7</td>
+          <td>1433.5</td>
+          <td>-140</td>
+          <td>62</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">Ice giants</th>
+          <th scope="row">Uranus</th>
+          <td>86.8</td>
+          <td>51118</td>
+          <td>1271</td>
+          <td>8.7</td>
+          <td>17.2</td>
+          <td>2872.5</td>
+          <td>-195</td>
+          <td>27</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Neptune</th>
+          <td>102</td>
+          <td>49528</td>
+          <td>1638</td>
+          <td>11.0</td>
+          <td>16.1</td>
+          <td>4495.1</td>
+          <td>-200</td>
+          <td>14</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" scope="row">Dwarf planets</th>
+          <th scope="row">Pluto</th>
+          <td>0.0146</td>
+          <td>2370</td>
+          <td>2095</td>
+          <td>0.7</td>
+          <td>153.3</td>
+          <td>5906.4</td>
+          <td>-225</td>
+          <td>5</td>
+          <td>Declassified as a planet in 2006, but this <a href="https://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578957/">remains controversial</a>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+```
+
+</details>
+
+---
+
+# 22. Formlar ve butonlar
+
+**HTML** > **Forms and buttons** (Forms and buttons in HTML) | English (US)
+
+HTML formları, web sitelerinin kullanıcılarla etkileşim kurmasının ve veri toplamasının temel yoludur. Bu makalede; form kontrolleri (`<input>`, `<textarea>`, `<select>`, `<button>`), bu kontrolleri etiketleme (`<label>`), form verilerini yapılandırma ve gönderme mekanizmaları ile temel istemci tarafı form doğrulaması (form validation) ayrıntılı olarak ele alınmaktadır.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | [Basic HTML syntax](#1-basic-html-syntax) bölümünde açıklandığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Formların ne olduğunu ve ne amaçla kullanıldığını anlama.<br>• Temel form elementleri: `<form>`, `<input>`, `<label>`, `<button>`.<br>• `<input>` elementinin yaygın türleri (`text`, `email`, `password`, `radio`, `checkbox` vb.).<br>• Diğer kontrol tipleri: çok satırlı metin alanları (`<textarea>`) ve açılır menüler (`<select>`, `<option>`).<br>• `<fieldset>` ve `<legend>` ile form kontrollerini gruplandırma.<br>• `required`, `minlength`, `maxlength` gibi niteliklerle temel form doğrulaması. |
+
+---
+
+## Kullanıcılarla etkileşim
+
+Şimdiye kadar kursta kullanıcıların web ile etkileşim kurmasının birkaç yolunu gördünüz:
+- **Bağlantılar (Links):** Aynı sayfada veya farklı sayfalarda farklı içerik bölümlerine gitmek için kullanılır.
+- **`<video>` ve `<audio>`:** Medyayı oynatmak, duraklatmak ve ses düzeyini ayarlamak için tarayıcının yerleşik kontrollerini sunar.
+
+Bununla birlikte, kullanıcıların sayfayla daha doğrudan etkileşime girmesi gereken pek çok senaryo vardır:
+- Bir arama motorunda arama yapmak,
+- Bir web sitesine giriş yapmak (login) veya kayıt olmak (register),
+- Bir anketi doldurmak veya geri bildirim göndermek,
+- Bir ürün satın almak veya kişiselleştirmek.
+
+Bu tür zengin etkileşimlerin tümü **HTML Formları (HTML Forms)** ve **Düğmeler (Buttons)** aracılığıyla gerçekleştirilir.
+
+---
+
+## Butonlar (Düğmeler)
+
+Web üzerinde düğmelerin iki ana kullanım alanı vardır. İlk olarak, bir kullanıcı arayüzü kontrolü oluştururken belirli bir işlevi (genellikle JavaScript ile) tetiklemek için kullanılırlar. En basit düğme şu kodla oluşturulur:
+
+```html
 <button>Press me</button>
-This is rendered as follows:
-Press me
-The text appearing in-between the <button></button>  tags is rendered inside the button, and it is given some basic
-styling by the browser so it will look and behave like a button by default. So far, so good. However, there is an issue here
-— our lonesome button won't do anything useful on its own. To make it do something useful, you'll need to put it inside a
-form (which we'll cover later on), or add some JavaScript.
-For example, if you applied the following JavaScript to the above button:
-JS
-const btn = document.querySelector("button");
-btn.addEventListener("click", () => {
-btn.textContent = "YOU CLICKED ME!! ❤️";
-setTimeout(() => {
-btn.textContent = "Press me";
-}, 1000);
-});
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-2/14
+```
 
-
-It would give you the following output — try clicking it:
-Press me
-You are not expected to understand how the JavaScript works for now. You'll learn more about it later on in the course.
-In the next section, you'll see a demonstration of the second main use of buttons — submitting forms.
-The anatomy of a form
-A basic form contains three things:
-A <form>  element, which wraps all of the other form content. Any form controls inside the <form></form>  tags
-are part of the same form, and their data is included when the form is submitted.
-One or more pairs each consisting of a <label>  element and a form control element (usually an <input>
-element, but there are other types as well, for example <select> ):
-The form control element allows the user to choose or enter some data, which will be sent to the server
-when the form is submitted.
-The <label>  element provides an identifying label associated with the form control describing the data
-that should be entered into it.
-A <button>  element, used to submit the form.
-Let's look at a basic example that includes the above three items. This form could be used to ask for a user's name and
-email, to sign them up for a newsletter (don't worry — it isn't connected to any server, so currently won't do anything).
-HTML
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>First form</title>
-</head>
-<body>
-<form action="./submit_page" method="get">
-<h2>Subscribe to our newsletter</h2>
-<p>
-<label for="name">Name (required):</label>
-<input type="text" name="name" id="name" required />
-</p>
-<p>
-<label for="email">Email (required):</label>
-<input type="email" name="email" id="email" required />
-</p>
-<p>
-<button>Sign me up!</button>
-</p>
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-3/14
-
-
-</form>
-</body>
-</html>
-This is rendered as follows:
-Subscribe to our newsletter
-Name (required): 
-Email (required): 
-Sign me up!
-If you click "Sign me up!" right away, you'll see a validation error because you didn't enter any data. If you fill out the
-fields with a name and email address, and then click "Sign me up!", nothing happens—this is because we prevent the
-form from submitting, which would navigate you away from this page.
-Before moving on, copy the previous HTML code listing into a new HTML file using your code editor and open it in a new
-browser tab.
-The <form> element
-As we said earlier, the <form>  element acts as the outer wrapper for the form, grouping all the form controls inside it.
-When the <button>  is pressed, all the data represented by the form controls will be submitted to the server. The
-<form>  element can take many attributes, but the two most important ones, which we've included in our example, are
-as follows:
-action : Contains a path to the page that we want to send the submitted form data to, to be processed. Later on,
-after you submit the form, you'll see /submit_page  included in the URL. You'll also get a 404  error response
-because the page doesn't actually exist, but that's fine for now.
-method : Specifies the data transmission method you want to use for sending the form data to the server. Don't
-worry about this too much for now; the get  value causes the data to be sent as parameters attached to the end
-of the URL.
-Checking out the submitted data
-1. Go to the example in the separate tab, try entering a name of "Bob" and an email address of "bob@bob.com".
-2. Press the <button> .
-The action  and method  attributes cause the form data to be submitted in a URL along the following lines:
-/some/url/submit_page?name=Bob&email=bob%40bob.com
-Structuring forms
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-4/14
-
-
-You can include any HTML elements you like inside a <form>  element to structure the form elements themselves and
-provide containers to target with CSS for styling, etc.
-In our example, we've included a heading element ( <h2> ) to describe the purpose of the form.
-We've also put each input/label pair and the submit button inside a separate <p> , so that each will appear on a separate
-line. These elements are all inline by default, meaning that if we didn't do this, they would all sit on the same line.
-This is a common pattern for form structuring. Some people use <p>  elements to separate out their form elements,
-some use <div> , <section> , or even <li>  elements. It doesn't matter a great deal, as long as the elements used
-make semantic sense. For example, it makes sense to divide form element groups up into separate paragraphs or
-sections of content, or even items in a list. It would make less sense to represent them as blockquotes, asides, or
-addresses.
-There is a specialized element for grouping form elements together called <fieldset> . This is useful in certain
-circumstances, such as in complex forms and when grouping multiple checkboxes and radio buttons. We'll look at a
-couple of <fieldset>  examples later on.
-<input> elements
-The <input>  elements represent the different data items entered into the form. Let's study one of the examples from
-our basic form:
-HTML
-<input type="text" name="name" id="name" required />
-The attributes are as follows:
-type : Specifies the type of form control to create. There are many different types of form controls, from simple
-text fields of different types to radio buttons, checkboxes, and more. Type text  renders a basic text field that
-can accept any value.
-name : Specifies a name for the data item. When the form is submitted, the data is sent in name/value pairs. In
-each case, the name is equal to this name  attribute value, and the value is equal to the text entered in the text
-field.
-id : Specifies an ID that can be used to identify the element. In this case, it is used to associate the form control
-with its <label> .
-required : Specifies that a value has to be entered into the form element before the form can be submitted. This
-should only be set on inputs that you require, not on optional fields.
-You should be aware that some input types usually don't get their values from text entered into a field. For example,
-<input type="color">  renders a color picker widget that you choose a color from, whereas <input type="radio">
-renders a radio button control that can be selected, or not.
-In the case of radio buttons, you generally need to provide the value that would be submitted if it is selected inside a
-specific value  attribute. Note that you can specify a value  attribute on input types like text  and color  — the effect
-is that the value is pre-filled into the form field when it is first rendered.
-required and value attributes in action
-1. Again, go to the example you loaded in a separate tab, and try submitting the form with no value entered in either
-field. You'll see an error message pop up next to the "Name" field saying something like "Please fill in this field"
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-5/14
-
-
-(it will vary across different browsers). This is the required  attribute — and the browser's default client-side
-form validation — in action.
-2. Now try submitting the form with a valid name entered in the first field, but a value that is not a valid email
-address in the second field (something like "aaaa" will do). This time you'll see an error message pop up next to
-the "Email" field saying something like "Please enter an email address".
-3. Try editing the form to include value="Bob"  on the first input. When you reload the code, you'll see that the first
-field has a value of "Bob" entered into it by default.
-Specialized text field inputs
-The second exercise above raises an interesting point. The second input field specifically expects an email address and
-validates entered values as such. If you look at the form code again, you'll see why — the second <input>  has a type
-of email .
-There are several specialized text field input types designed to handle specific types of data such as <input
-type="number"> , <input type="password"> , <input type="tel"> , <input type="url"> , and so on.
-Follow some of the links above to find out what these input types are used for. Have a look around our <input>
-reference and see if you can find any more specialized text field input types.
-<label> elements
-As we said above, <label>  elements provide identifying labels associated with form controls that describe the data that
-should be entered into them. You can put whatever text content you like in <label>  elements, but they should
-accurately describe what data the associated form control expects. The association is created by giving the form control
-an id  attribute, then giving the <label>  element a for  attribute with the same value as the control's id .
-For example:
-HTML
-<label for="name">Name (required):</label>
-<input type="text" name="name" id="name" required />
-<label>  elements are important for several reasons, most notably that:
-When visually impaired users use a screen reader to help them read and interact with web page content, the
-screen reader will read out the associated label text when each control is encountered. This makes it easier for
-the users to understand what content should be entered into each control.
-They enable you to focus the form elements by clicking on their label text as well as the controls. This is
-especially useful for mobile phone users, where it can be difficult to accurately select a form element with your
-finger on a touch screen. Making the hit area larger is useful in such circumstances.
-Explicit and implicit form labels
-The form label style you saw above is called an explicit form label — the association between control and label is
-explicitly made via the id  and for  attributes. You can also implement an implicit form label by nesting the control
-inside the label, like this:
-HTML
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-6/14
-
-
-<label>
-Name (required):
-<input type="text" name="name" required />
-</label>
-The nesting makes an implicit association between control and label, and you no longer need the id  and for
-attributes.
-Either approach is OK, but we'd recommend using the explicit labeling approach. This is because the explicit association
-is usually easier to identify and understand, especially as your HTML code gets more complex. In addition, screen
-readers (and other assistive technologies) don't always handle implicit labels correctly.
-You can read more about form labeling best practices in 
-, csstricks.com (2021).
-The <button> element
-When a <button>  element is included inside a <form>  element, its default behavior is that it will submit the form,
-provided there is no invalid data present, causing submission to be blocked by client-side form validation. You've already
-seen this behavior when playing with our basic form example above.
-Other button behaviors can be specified via the <button>  element's type  attribute:
-<button type="submit">  explicitly declares that a button should behave like a submit button. You don't ever
-really need to declare this, unless for some reason you are including other buttons inside your <form> , and you
-want to make it clear which one the submit button is. This will be very rare.
-<button type="reset">  creates a reset button — this immediately deletes all data out of the form, resetting it to
-its initial state. Don't use reset buttons — they used to be popular in the early days of the web, but they are
-usually more annoying than they are helpful. Most people have experienced filling out a long form only to click
-the reset button by accident instead of the submit button, meaning they have to start again.
-<button type="button">  creates a button with the same behavior as buttons specified outside of <form>
-elements. As we saw earlier, they do absolutely nothing by default, and JavaScript is needed to give them
-functionality.
-Although you can create these button types by using an <input>  element with the same type  values – such as <input
-type="submit"> , <input type="reset"> , and <input type="button">  – they have many disadvantages compared
-to their <button>  counterparts. So you should use <button>  instead.
-An aside on accessibility
-We've already talked about the importance of form labels for accessibility, but we also wanted to include some
-commentary on the general importance of using the correct semantic elements to create forms (for example, use a
-<button>  to submit your form, and not a <div>  programmed to behave like a <button> .) It is perfectly possible to
-use a combination of CSS and JavaScript to make pretty much any HTML element look and behave like a form element.
-Developers usually do this for design reasons — some form controls are hard to style.
-However, when you do this, you are making life harder for yourself and your users. The browser provides several
-<button>  and form control features by default, with no JavaScript or other extra code required, to make forms more
-HTML Inputs and Labels: A Love Story
-Note: ScrimbaMDN learning partner has a free lesson — 
- — which provides a useful
-interactive recap of the form basics we covered previously in this article.
-The very basics of forms
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-7/14
-
-
-usable for all users.
-For example:
-Semantic elements are understood by assistive technology such as screen readers, which communicate their
-meaning to users who cannot see them.
-Form controls and buttons are keyboard-accessible by default. In the previous example, try moving forward and
-backward between the form elements using Tab  and Shift  + Tab  (called "tabbing").
-Notice also how tabbing between the form elements causes the focused element to be highlighted using a blue
-outline (called the focus outline). This is an important feature for keyboard users to know where they currently
-are in the form.
-If you don't use the correct semantic elements to implement your forms, your form elements will not behave as users
-expect and will seem broken. You'll have to re-implement all of this functionality yourself, which all adds up.
-Other control types
-There are many other control types you can use to collect data in a form. Let's look at a slightly more complex example,
-and then we'll explore and explain it.
-HTML
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>Second form</title>
-</head>
-<body>
-<form action="./payment_page" method="get">
-<h2>Register for the meetup</h2>
-<fieldset>
-<legend>Choose hotel room type:</legend>
-<div>
-<input
-type="radio"
-id="hotelChoice1"
-name="hotel"
-value="economy"
-checked />
-<label for="hotelChoice1">Economy (+$0)</label>
-<input type="radio" id="hotelChoice2" name="hotel" value="superior" />
-<label for="hotelChoice2">Superior (+$50)</label>
-<input
-Note: In this example, we are assuming the user is already registered and signed in, hence not needing to
-collect details such as name and email.
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-8/14
-
-
-type="radio"
-id="hotelChoice3"
-name="hotel"
-value="penthouse"
-disabled />
-<label for="hotelChoice3">Penthouse (+$150)</label>
-</div>
-</fieldset>
-<fieldset>
-<legend>Choose classes to attend:</legend>
-<div>
-<input type="checkbox" id="yoga" name="yoga" />
-<label for="yoga">Yoga (+$10)</label>
-<input type="checkbox" id="coffee" name="coffee" />
-<label for="coffee">Coffee roasting (+$20)</label>
-<input type="checkbox" id="balloon" name="balloon" />
-<label for="balloon">Balloon animal art (+$5)</label>
-</div>
-</fieldset>
-<p>
-<label for="transport">How are you getting here:</label>
-<select name="transport" id="transport">
-<option value="">--Please choose an option--</option>
-<option value="plane">Plane</option>
-<option value="bike">Bike</option>
-<option value="walk">Walk</option>
-<option value="bus">Bus</option>
-<option value="train">Train</option>
-<option value="jetPack">Jet pack</option>
-</select>
-</p>
-<p>
-<label for="comments">Any other comments:</label>
-<textarea id="comments" name="comments" rows="5" cols="33"></textarea>
-</p>
-<p>
-<button>Continue to payment</button>
-</p>
-</form>
-</body>
-</html>
-This is rendered as follows:
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-9/14
-
-
-We'd recommend that you open this example in a separate browser tab as you work through the next few sections, in
-which we look at each control type in turn. To achieve this, copy the code into an HTML file using your code editor, and
-open it in a browser tab.
-Before moving on, play with the different form controls in your local copy and select some values. Try submitting the
-form and see what the data submitted in the URL looks like.
-Radio buttons
-The "Choose hotel room type" buttons are implemented using <input type="radio">  controls. These render as a set
-of push button controls where only one of the set can be selected at any one time — you can't select more than one at
-once. They are named after the buttons found on old-fashioned radios, where you press one button and the previously-
-selected one pops out again.
-Our example code looks like this:
-HTML
-<fieldset>
-<legend>Choose hotel room type:</legend>
-<div>
-<input
-type="radio"
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-10/14
-
-
-id="hotelChoice1"
-name="hotel"
-value="economy"
-checked />
-<label for="hotelChoice1">Economy (+$0)</label>
-<input type="radio" id="hotelChoice2" name="hotel" value="superior" />
-<label for="hotelChoice2">Superior (+$50)</label>
-<input
-type="radio"
-id="hotelChoice3"
-name="hotel"
-value="penthouse"
-disabled />
-<label for="hotelChoice3">Penthouse (+$150)</label>
-</div>
-</fieldset>
-radio  input types mostly work the same as text  input types, but with a few differences:
-The name  attributes for each set of radio buttons have to contain the same value, to associate them together as
-one set. If they contain different values, they will effectively be separate sets, with different values on
-submission.
-You have to include a value  attribute containing the value to submit for each radio button. The submitted value
-will be a name/value pair, but the name will always be the same, for example, hotel=economy  or
-hotel=superior .
-The <label>  for each radio button should describe that particular value choice, rather than the overall value you
-are selecting. The preferred way to describe the overall value choice is to wrap them in a <fieldset> , which
-takes a <legend>  element as a child that contains the description.
-It's also worth noting that we've applied the checked  attribute to the first radio button — this causes it to be selected
-when the page first loads. This means one option will always be selected, and you can't deselect a radio button without
-selecting another one.
-Try removing the checked  attribute from the first radio button, save, then reload, to see the effect it has. Put it back
-before you move on.
-Disabling form controls
-In the radio button example, you'll notice that the third radio button has the disabled  attribute set on it. This causes the
-rendered control to be grayed out and unselectable. This is useful in many situations where an option is normally
-available, just not right now. For example, a product might be out of stock, or as in our example's case, penthouse suites
-are all booked up!
-You can set the disabled  attribute on any form control, including <button>  elements. <fieldset>  elements can also
-accept the disabled  attribute — this causes every form control inside the fieldset to be disabled.
-Note: Besides structuring and labeling forms, fieldsets have other uses, such as disabling an entire set of
-controls as a single unit.
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-11/14
-
-
-Try setting the disabled  attribute on the two <fieldset>  elements, save, then reload, to see the effect it has. Remove
-them again before moving on.
-Checkboxes
-Our "classes to attend" selectors are implemented using <input type="checkbox">  controls. These render as a set of
-on/off state checkboxes. Unlike radio buttons, you can select more than one at once.
-HTML
-<fieldset>
-<legend>Choose classes to attend:</legend>
-<div>
-<input type="checkbox" id="yoga" name="yoga" />
-<label for="yoga">Yoga (+$10)</label>
-<input type="checkbox" id="coffee" name="coffee" />
-<label for="coffee">Coffee roasting (+$20)</label>
-<input type="checkbox" id="balloon" name="balloon" />
-<label for="balloon">Balloon animal art (+$5)</label>
-</div>
-</fieldset>
-As you can see from the code snippets, radio buttons and checkboxes are implemented in a very similar way (they can
-also take checked  attributes to render them pre-selected when the page loads). They also behave in a fairly similar
-fashion, except that radio buttons allow you to choose zero or one items out of many, and checkboxes allow you to
-choose zero or more items out of many.
-The main difference (apart from the type  value!) is that each checkbox has a different name  value, and they generally
-aren't given value  attributes. Behavior-wise, this means they represent different data values, whereas a radio button set
-only represents one. On submission, each value is submitted with a value of on  if the checkbox was checked —
-yoga=on , balloon=on , etc.
-Drop-down menus
-Drop-down menus, for example, the "How are you getting here" selection control in our example, are implemented not
-with an <input>  type, but with the <select>  and <option>  elements:
-HTML
-<label for="transport">How are you getting here:</label>
-<select name="transport" id="transport">
-Note: It is possible to change the value submitted for a checkbox by giving it a value  attribute, for example:
-<input type="checkbox" id="yoga" name="yoga" value="yes" />  would result in yoga=yes  being
-submitted if checked.
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-12/14
-
-
-<option value="">--Please choose an option--</option>
-<option value="plane">Plane</option>
-<option value="bike">Bike</option>
-<option value="walk">Walk</option>
-<option value="bus">Bus</option>
-<option value="train">Train</option>
-<option value="jetPack">Jet pack</option>
-</select>
-The <select>  element wraps all the different value choices. It is where you set the id  attribute that associates the
-control with its label, and the name  attribute that sets the name of the data item to be submitted.
-Each possible value for the data item is represented by an <option>  element, nested inside the <select>  element.
-Each <option>  element can take a value  attribute, which specifies the value to be submitted if that option is chosen
-from the drop-down list. If you don't specify a value , the text inside the <option></option>  tags is used as the value.
-You can also split the options inside a <select>  drop-down menu into multiple subgroups using the <optgroup>
-element. Take a look at this element's reference page to find out how.
-Multi-line text input fields
-Multi-line text input fields are created using <textarea>  elements:
-HTML
-<label for="comments">Any other comments:</label>
-<textarea id="comments" name="comments" rows="5" cols="33"></textarea>
-They behave in the same way as <input type="text">  elements, except that they allow multiple lines of text to be
-entered. The rows  attribute specifies the number of rows tall the text area will be by default, while the cols  attribute
-specifies the number of columns wide the text area will be by default. If they are not specified, the values used are
-cols="20"  and rows="2" .
-Most browsers render text areas with a drag handle in one corner, which can be used to resize it. Try using this to resize
-the text area in our demo.
-Form validation
-Earlier on, we looked at some of the basic client-side form validation provided by the browser. The required  attribute is
-used to specify that a field must be filled out before the form can be submitted; it also checks the correct value type is
-entered for specific value types like email addresses, URLs, numbers, etc. Validation is important for two main reasons:
-Making sure that data is submitted in the correct format so that it doesn't cause errors in your application.
-Making sure data does not cause security problems. Bad people know how to submit data formatted specifically
-so that, on insecure applications, it can execute commands to delete databases or take control of a system.
-Note: If you want to have a specific option selected on page load, you can add a selected  attribute to the
-relevant <option>  element.
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-13/14
-
-
-Form validation is a huge topic that is beyond the scope of this article, so we will leave it here for now. Just bear in mind
-that there are two types of form validation:
-Client-side validation, which happens in the browser, is implemented using a combination of form validation
-attributes (like required ) and JavaScript. Client-side validation is useful for giving users instant hints when they
-have entered the wrong data, but is not so effective at stopping malicious data from getting through. It is too easy
-to turn off JavaScript or alter client-side code so that the validation no longer works.
-Server-side validation, which happens on the server, is implemented using whatever language the server is using.
-Badly-formed messages can be sent to a server by accident or on purpose. Conventional wisdom is to make sure
-that your server doesn't trust anything a client is sending to avoid bugs or security issues caused by malformed
-messages. Server-side validation is great for stopping malicious messages, as it's harder to tamper with the code
-running on the server. Server-side validation is not so good at giving users hints about incorrect data because the
-data has to go to the server to get validated, then the result has to be sent back to the client before the user can
-be notified.
-In short, don't decide between using either client-side or server-side validation - you will need both. You need client-
-side validation to give users feedback on their input and server-side validation to make sure messages are in a format
-your server can safely handle. If you want to start learning more about validation, a good place to start is Client-side
-form validation.
-Summary
-That's all for now. There's a lot more to know about forms, but for now, we've given you enough of an understanding to
-move forward in your studies.
-Next up, we'll give you some tests that you can use to check how well you've understood and retained the information
-we've provided on HTML forms.
-See also
-Web forms — Working with user data
-Previous
-Overview: Structuring content with HTML
-Next
-Your blueprint for a better internet.
-15.10.2026 20:25
-Forms and buttons in HTML - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms
-14/14
-
+Varsayılan olarak bir düğme tıklandığında tıklandığı hissini veren standart bir tarayıcı stiliyle işlenir. Düğmelerin içine metin veya simge yerleştirilebilir. İkinci ve çok kritik bir kullanım alanı ise **form verilerini bir sunucuya göndermek (submit etmek)** tir.
 
 ---
 
-Test: HTML tests index
-Test: Forms and buttons
-Test your skills: Forms and buttons
-Previous
-Overview: Structuring content with HTML
-Next
-The aim of this skill test is to help you assess whether you understand how HTML forms and buttons work.
-Forms and buttons 1
-This task starts you off nice and gently by asking you to create two <input>  elements, for a user's ID and password,
-along with a submit button.
-To complete the task:
-1. Create appropriate inputs for user ID and password.
-2. You should also associate them with their text labels semantically.
-3. Create a submit button inside the remaining list item, with button text of "Log in".
-The starting point of the task looks like this:
-User ID
-Password
-Here's the underlying code for this starting point:
-HTML
-<form>
-<ul>
-<li>User ID</li>
-<li>Password</li>
-<li></li>
-</ul>
+## Bir formun anatomisi
+
+Temel bir form üç temel bileşenden oluşur:
+
+1. **`<form>` elementi:** Diğer tüm form içeriğini saran dış kapsayıcıdır. `<form></form>` etiketleri içindeki herhangi bir form kontrolü aynı formun bir parçasıdır ve form gönderildiğinde verileri dahil edilir.
+2. **`<label>` ve form kontrolü çiftleri:** Kullanıcıdan veri toplamak için kullanılan kontroller (çoğunlukla `<input>`) ve bu kontrollerin ne amaçla veri topladığını açıklayan metin etiketleri (`<label>`).
+3. **Gönderme düğmesi (`<button type="submit">`):** Kullanıcının formu tamamladığında verileri göndermesini sağlayan düğme.
+
+### `<form>` elementi
+
+`<form>` elementi formun nasıl ve nereye gönderileceğini belirleyen iki temel niteliğe sahiptir:
+
+- **`action`:** Form verilerinin gönderileceği sunucu tarafı işleyicinin (URL) adresidir.
+- **`method`:** Verilerin hangi HTTP yöntemiyle gönderileceğini belirtir (genellikle verileri URL'ye ekleyen `GET` veya verileri istek gövdesinde güvenle taşıyan `POST`).
+
+Örnek temel form:
+
+```html
+<form action="https://httpbin.org/post" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="user_name" required />
+
+  <button type="submit">Submit</button>
 </form>
-English (US)
-Note: To get help, read our Test your skills usage guide. You can also reach out to us using one of our
-communication channels.
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-1/9
+```
 
+#### Gönderilen verileri inceleme
 
-The updated form should look like this:
-User ID 
-Password 
-Log in
-Click here to show the solution
-Forms and buttons 2
-The next task requires you to create working sets of checkboxes and radio buttons, from the provided text labels.
-To complete the task:
-1. Turn the first <fieldset> 's contents into a set of radio buttons — you should only be able to select one pony
-character at once.
-2. Make it so that the first radio button is selected upon page load.
-3. Turn the second <fieldset> 's content into a set of checkboxes.
-4. Add a couple more hotdog choices of your own.
-The starting point of the task looks like this:
-Who is your favorite pony?
-Pinkie Pie
-Rainbow Dash
-Twilight Sparkle
-Hotdog preferences
-Vegan
-Onions
-Here's the underlying code for this starting point:
-HTML
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-2/9
+Bir form gönderildiğinde, tarayıcı verileri **anahtar/değer çiftleri (key/value pairs)** olarak paketler:
+- **Anahtar (Key):** Form kontrolünün `name` niteliğidir (örneğin `user_name`).
+- **Değer (Value):** Kullanıcının alana girdiği metindir.
 
+> [!IMPORTANT]
+> Bir form kontrolünün verisinin sunucuya gönderilebilmesi için mutlaka bir **`name`** niteliğine sahip olması gerekir! `name` niteliği olmayan alanların verisi gönderilmez.
 
-<fieldset>
-<legend>Who is your favorite pony?</legend>
-<ul>
-<li>
-<label for="pinkie">Pinkie Pie</label>
-</li>
-<li>
-<label for="rainbow">Rainbow Dash</label>
-</li>
-<li>
-<label for="twilight">Twilight Sparkle</label>
-</li>
-</ul>
-</fieldset>
-<fieldset>
-<legend>Hotdog preferences</legend>
-<ul>
-<li>
-<label for="vegan">Vegan</label>
-</li>
-<li>
-<label for="onions">Onions</label>
-</li>
-</ul>
-</fieldset>
-The updated controls should look like this:
-Who is your favorite pony?
-Pinkie Pie 
-Rainbow Dash 
-Twilight Sparkle 
-Hotdog preferences
-Vegan 
-Onions 
-Mustard 
-Ketchup 
-Click here to show the solution
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-3/9
+#### Formları yapılandırma
 
+Form elementlerini düzenli tutmak için liste elementleri (`<ul>`, `<li>`) veya yapısal `<div>` kutuları kullanmak yaygın bir pratiktir:
 
-Forms and buttons 3
-In this task, you'll explore some more specific input types. We want you to create appropriate inputs for a user to update
-their details:
-1. Email
-2. Website
-3. Phone number
-4. Favorite color
-The starting point of the task looks like this:
-Edit your preferences
-Email
-Website
-Phone number
-Favorite color
-Here's the underlying code for this starting point:
-HTML
-<h2>Edit your preferences</h2>
-<ul>
-<li>
-<label for="email">Email</label>
-</li>
-<li>
-<label for="website">Website</label>
-</li>
-<li>
-<label for="phone">Phone number</label>
-</li>
-<li>
-<label for="fave-color">Favorite color</label>
-</li>
-</ul>
-The updated controls should look like this:
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-4/9
-
-
-Edit your preferences
-Email 
-Website 
-Phone number 
-Favorite color 
-Click here to show the solution
-Forms and buttons 4
-Now it's time to have a go at implementing a drop-down select menu, to allow a user to pick their favorite food from the
-choices provided.
-To complete the task:
-1. Create a basic select box structure.
-2. Associate it semantically with the provided "food" label.
-3. Inside the list, split the choices up into 2 subgroups — "mains" and "snacks".
-The starting point of the task looks like this:
-Pick your favorite food: Salad Curry Pizza Fajitas Biscuits Crisps Fruit Breadsticks
-Here's the underlying code for this starting point:
-HTML
-<ul>
-<li>
-<label for="food">Pick your favorite food:</label>
-Salad Curry Pizza Fajitas Biscuits Crisps Fruit Breadsticks
-</li>
-</ul>
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-5/9
-
-
-The updated controls should look like this:
-Pick your favorite food: Salad
-Click here to show the solution
-Forms and buttons 5
-In this task we want you to structure the provided form features.
-To complete the task:
-1. Separate out the first two and second two form fields into two distinct containers, each with a descriptive legend
-(use "Personal details" for the first two, and "Comment information" for the second two).
-2. Mark up each text label with an appropriate element so that it is semantically associated with its respective form
-field.
-3. Add a suitable set of structural elements around the label/field pairs to separate them out.
-The starting point of the task looks like this:
-Name: 
- Age: 
- Comment:
- Email: 
-Here's the underlying code for this starting point:
-HTML
-Name:
-<input type="text" id="name" name="name" />
-Age:
-<input type="number" id="age" name="age" />
-Comment:
-<input type="text" id="comment" name="comment" />
-Email:
-<input type="email" id="email" name="email" />
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-6/9
-
-
-The updated controls should look like this:
-Personal details
-Name: 
-Age: 
-Comment information
-Comment: 
-Email (include if you want a reply): 
-Click here to show the solution
-Forms and buttons 6
-In this task, we are providing you with a simple support query form, and we want you to add some validation features to
-it. This task requires some knowledge that we don't teach in the "Forms and buttons in HTML" article, so you may need
-to do some research elsewhere.
-To complete the task:
-1. Make all of the input fields mandatory to complete before the form can be submitted.
-2. Change the type of the "Email address" and "Phone number" fields to make the browser apply some more
-specific validation suitable for the data being asked for.
-3. Give the "User name" field a required length of between 5 and 20 characters, the "Phone number" field a
-maximum length of 15 characters, and the "Comment" field a maximum length of 200 characters.
-Try submitting your form — it should refuse to submit until the above constraints are followed, and give suitable error
-messages.
-The starting point of the task looks like this:
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-7/9
-
-
-Enter your support query
-User name: 
-Email address: 
-Phone number: 
-Comment: 
- 
-Submit comment
-Here's the underlying code for this starting point:
-HTML
-<form>
-<h2>Enter your support query</h2>
-<ul>
-<li>
-<label for="uname">User name:</label>
-<input type="text" name="uname" id="uname" />
-</li>
-<li>
-<label for="email">Email address:</label>
-<input type="text" name="email" id="email" />
-</li>
-<li>
-<label for="phone">Phone number:</label>
-<input type="text" name="phone" id="phone" />
-</li>
-<li>
-<label for="comment">Comment:</label>
-<textarea name="comment" id="comment"> </textarea>
-</li>
-<li>
-<button>Submit comment</button>
-</li>
-</ul>
+```html
+<form action="https://httpbin.org/post" method="post">
+  <ul>
+    <li>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user_name" />
+    </li>
+    <li>
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" name="user_email" />
+    </li>
+    <li class="button">
+      <button type="submit">Send your message</button>
+    </li>
+  </ul>
 </form>
-We've not provided finished content for this task, as it looks the same as the starting point.
-Click here to show the solution
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-8/9
+```
 
+### `<input>` elementleri
 
-Previous
-Overview: Structuring content with HTML
-Next
-Your blueprint for a better internet.
-15.10.2026 20:25
-Test your skills: Forms and buttons - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons
-9/9
+`<input>` en çok yönlü form elementidir. Ne tür bir veri toplayacağı **`type`** niteliği ile belirlenir:
+- `type="text"`: Tek satırlı genel metin alanı.
+- `type="password"`: Girilen karakterleri gizleyen (nokta veya yıldız olarak gösteren) şifre alanı.
+- `type="email"`: E-posta adresi biçimini otomatik doğrulayan alan.
+- `type="number"`: Sayısal giriş alanı.
+- `type="tel"`: Telefon numarası alanı.
+- `type="url"`: Web adresi (URL) alanı.
 
+Önemli nitelikler:
+- **`id`:** Giriş alanını `<label>` elementiyle eşleştirmek için kullanılan benzersiz kimlik.
+- **`name`:** Form gönderildiğinde sunucuya gidecek veri anahtarı.
+- **`value`:** Giriş alanının varsayılan veya geçerli değeri.
+- **`required`:** Alanın boş bırakılamayacağını belirten boolean nitelik.
+- **`placeholder`:** Alan boşken içinde görünen soluk ipucu metni.
+
+### `<label>` elementleri
+
+`<label>` elementi, görme engelli kullanıcıların ekran okuyucuları için form kontrollerini seslendirilmesini sağlar ve tıklanabilir alanı genişleterek fare veya dokunmatik ekran kullanıcılarına büyük kolaylık sunar.
+
+İlişkilendirme iki şekilde yapılır:
+
+1. **Açık ilişkilendirme (Explicit association - Tavsiye edilen):** `<label>` elementine `for` niteliği verilir ve bu değer, ilgili `<input>` elementinin `id` değeriyle eşleştirilir:
+   ```html
+   <label for="username">Username:</label>
+   <input type="text" id="username" name="username" />
+   ```
+2. **Örtük ilişkilendirme (Implicit association):** `<input>` doğrudan `<label>` etiketinin içine sarılır:
+   ```html
+   <label>
+     Username:
+     <input type="text" name="username" />
+   </label>
+   ```
 
 ---
 
-HTML
-Challenge: Feedback form
-Challenge: Structuring a feedback form
-Previous
-Overview: Structuring content with HTML
-Next
-In this challenge, we are going to test your ability to create and structure a form, as well as add some other HTML
-features to it.
-Starting point
-To solve this challenge, we are expecting you to create a basic website project, either inside a folder on your computer's
-hard drive, or using an online editor such as 
- or 
-. Much of the code you need is already provided
-on this page.
-1. Create a new folder in an appropriate location on your computer called forms-challenge  (or open an online
-editor and take the required steps to create a new project).
-2. Save the following HTML listing inside a file inside your folder called index.html  (or paste it into your online
-editor's HTML pane).
-HTML
+## Diğer kontrol tipleri
+
+### Radyo düğmeleri
+
+Kullanıcının önceden tanımlanmış bir seçenek kümesinden **yalnızca birini** seçmesini istediğinizde `type="radio"` kullanılır. Aynı gruptaki radyo düğmelerinin birbiriyle yarışması ve tek bir seçime izin vermesi için **aynı `name` niteliğini** paylaşmaları gerekir:
+
+```html
+<fieldset>
+  <legend>Select your favorite pet</legend>
+  <input type="radio" id="cat" name="pet" value="cat" checked />
+  <label for="cat">Cat</label>
+
+  <input type="radio" id="dog" name="pet" value="dog" />
+  <label for="dog">Dog</label>
+
+  <input type="radio" id="hamster" name="pet" value="hamster" />
+  <label for="hamster">Hamster</label>
+</fieldset>
+```
+
+> [!NOTE]
+> `<fieldset>` elementi mantıksal olarak ilişkili bir form kontrolleri grubunu çevreler; `<legend>` elementi ise bu grubun başlığı veya açıklamasıdır.
+> Sayfa yüklendiğinde bir seçeneğin seçili gelmesi için **`checked`** niteliği eklenir.
+
+### Onay kutuları
+
+Kullanıcının **sıfır, bir veya birden fazla** seçeneği bağımsız olarak seçmesine izin vermek istediğinizde `type="checkbox"` kullanılır:
+
+```html
+<fieldset>
+  <legend>Choose your toppings</legend>
+  <input type="checkbox" id="cheese" name="topping" value="cheese" checked />
+  <label for="cheese">Extra cheese</label>
+
+  <input type="checkbox" id="onion" name="topping" value="onion" />
+  <label for="onion">Onion</label>
+
+  <input type="checkbox" id="mushroom" name="topping" value="mushroom" />
+  <label for="mushroom">Mushrooms</label>
+</fieldset>
+```
+
+### Açılır menüler: `<select>` ve `<option>`
+
+Açılır bir seçim menüsü oluşturmak için **`<select>`** ve içine yerleştirilen **`<option>`** etiketleri kullanılır:
+
+```html
+<label for="car-choice">Choose a car:</label>
+<select id="car-choice" name="car">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat" selected>Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+Seçenekleri mantıksal alt başlıklara bölmek için **`<optgroup>`** elementi kullanılır:
+
+```html
+<select id="food" name="food">
+  <optgroup label="Mains">
+    <option value="burger">Burger</option>
+    <option value="pizza">Pizza</option>
+  </optgroup>
+  <optgroup label="Snacks">
+    <option value="chips">Chips</option>
+    <option value="salad">Salad</option>
+  </optgroup>
+</select>
+```
+
+### Çok satırlı metin alanları: `<textarea>`
+
+Kullanıcının yorumlar, mesajlar veya uzun paragraflar yazmasına izin vermek için **`<textarea>`** elementi kullanılır. Bu element bir kapanış etiketine sahiptir (`</textarea>`):
+
+```html
+<label for="feedback">Your comments:</label>
+<textarea id="feedback" name="feedback" rows="5" cols="30">
+Please enter your comments here...
+</textarea>
+```
+
+---
+
+## Form doğrulaması
+
+Tarayıcılar, kullanıcı bir formu göndermeye çalıştığında temel kuralları kontrol eden yerleşik istemci tarafı doğrulama mekanizmalarına sahiptir:
+- **`required`:** Alanın doldurulmasını zorunlu kılar.
+- **`minlength` ve `maxlength`:** Girilebilecek metnin minimum ve maksimum karakter uzunluğunu belirler.
+- **`type="email"`:** Girilen metnin geçerli bir e-posta sözdizimine sahip olup olmadığını denetler.
+- **`type="number"` (min, max):** Sayısal giriş için alt ve üst limitler koyar.
+
+Geçersiz bir durumda tarayıcı formun gönderilmesini engeller ve kullanıcıya uygun bir hata mesajı balonu gösterir.
+
+---
+
+## Özet
+
+Bu makalede HTML formlarının ve düğmelerinin yapısını öğrendiniz:
+- Veri toplamak için `<form>`, `<input>`, `<label>`, `<textarea>`, `<select>` ve `<button>` elementlerinin nasıl kullanıldığını,
+- `<fieldset>` ve `<legend>` ile kontrollerin nasıl mantıksal gruplara ayrıldığını,
+- Temel erişilebilirlik gereksinimlerini ve istemci tarafı doğrulamayı kavradınız.
+
+---
+
+# 23. Test: Formlar ve butonlar
+
+**HTML** > **Test: Forms and buttons** (Test your skills: Forms and buttons) | English (US)
+
+Bu test sayfası, HTML formları ve düğmeleri hakkındaki bilginizi sınamak için 6 farklı pratik görev sunmaktadır.
+
+---
+
+## Görev 1: Giriş alanları ve gönderme butonu
+
+Bu görev sizden kullanıcı kimliği (user ID) ve şifre (password) için iki `<input>` alanı oluşturmanızı ve bunları metin etiketleriyle semantik olarak ilişkilendirmenizi istemektedir.
+
+### Yönergeler:
+1. Kullanıcı kimliği ve şifre için uygun giriş alanları oluşturun.
+2. Bunları sağlanan metin etiketleriyle (`<label>`) semantik olarak eşleştirin.
+3. Kalan liste öğesinin içine metni "Log in" olan bir gönderme düğmesi ekleyin.
+
+```html
+<form>
+  <h2>Log in to your account</h2>
+  <ul>
+    <li>
+      <label for="user-id">User ID:</label>
+      <input type="text" id="user-id" name="user_id" />
+    </li>
+    <li>
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" name="password" />
+    </li>
+    <li>
+      <button type="submit">Log in</button>
+    </li>
+  </ul>
+</form>
+```
+
+---
+
+## Görev 2: Radyo düğmeleri ve onay kutuları
+
+Bu görev çalışan radyo düğmeleri ve onay kutuları oluşturmanızı gerektirir.
+
+### Yönergeler:
+1. İlk `<fieldset>` içeriğini bir radyo düğmesi kümesine dönüştürün; her biri için uygun `value` belirleyin ve aynı `name` niteliğini paylaşmalarını sağlayın.
+2. Sayfa yüklendiğinde ilk radyo düğmesinin seçili olmasını sağlayın (`checked`).
+3. İkinci `<fieldset>` içeriğini onay kutularına dönüştürün.
+4. Kendi sosisli sandviç (hotdog) seçeneklerinizden birkaç tane daha ekleyin.
+
+```html
+<form>
+  <h2>Hot dog order form</h2>
+  <fieldset>
+    <legend>Choose your dog</legend>
+    <ul>
+      <li>
+        <input type="radio" id="beef" name="dog" value="beef" checked />
+        <label for="beef">Beef</label>
+      </li>
+      <li>
+        <input type="radio" id="pork" name="dog" value="pork" />
+        <label for="pork">Pork</label>
+      </li>
+      <li>
+        <input type="radio" id="turkey" name="dog" value="turkey" />
+        <label for="turkey">Turkey</label>
+      </li>
+      <li>
+        <input type="radio" id="veggie" name="dog" value="veggie" />
+        <label for="veggie">Vegan</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Choose your toppings</legend>
+    <ul>
+      <li>
+        <input type="checkbox" id="sauerkraut" name="topping" value="sauerkraut" />
+        <label for="sauerkraut">Sauerkraut</label>
+      </li>
+      <li>
+        <input type="checkbox" id="mustard" name="topping" value="mustard" />
+        <label for="mustard">Yellow mustard</label>
+      </li>
+      <li>
+        <input type="checkbox" id="ketchup" name="topping" value="ketchup" />
+        <label for="ketchup">Ketchup</label>
+      </li>
+      <li>
+        <input type="checkbox" id="onions" name="topping" value="onions" />
+        <label for="onions">Crispy onions</label>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+```
+
+---
+
+## Görev 3: Özel giriş tipleri
+
+Bu görevde özel input türlerini uygulayacaksınız:
+1. Email (`type="email"`)
+2. Website (`type="url"`)
+3. Phone number (`type="tel"`)
+4. Favorite color (`type="color"`)
+
+```html
+<form>
+  <h2>Personal profile</h2>
+  <ul>
+    <li>
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" name="user_email" />
+    </li>
+    <li>
+      <label for="site">Website:</label>
+      <input type="url" id="site" name="user_website" />
+    </li>
+    <li>
+      <label for="tel">Phone number:</label>
+      <input type="tel" id="tel" name="user_phone" />
+    </li>
+    <li>
+      <label for="color">Favorite color:</label>
+      <input type="color" id="color" name="fav_color" />
+    </li>
+  </ul>
+</form>
+```
+
+---
+
+## Görev 4: Açılır seçim menüsü
+
+Bu görevde kullanıcıların yemek seçmesini sağlayacak bir `<select>` menüsü oluşturacaksınız.
+
+### Yönergeler:
+1. Temel bir `<select>` kutusu yapısı kurun.
+2. "food" etiketiyle semantik olarak ilişkilendirin (`for`/`id`).
+3. Menü içindeki seçenekleri "Mains" ve "Snacks" olarak iki alt gruba ayırın (`<optgroup>`).
+
+```html
+<form>
+  <h2>Pick your dinner</h2>
+  <label for="food">Select your food:</label>
+  <select id="food" name="food_choice">
+    <optgroup label="Mains">
+      <option value="curry">Curry</option>
+      <option value="pizza">Pizza</option>
+      <option value="fajitas">Fajitas</option>
+    </optgroup>
+    <optgroup label="Snacks">
+      <option value="chips">Chips</option>
+      <option value="salad">Salad</option>
+      <option value="garlic-bread">Garlic bread</option>
+    </optgroup>
+  </select>
+</form>
+```
+
+---
+
+## Görev 5: Yapısal form gruplaması
+
+Bu görevde sağlanan form kontrollerini yapılandırmanız istenmektedir.
+
+### Yönergeler:
+1. İlk iki ve sonraki iki form alanını iki ayrı `<fieldset>` içine ayırın ve uygun `<legend>` başlıkları verin.
+2. Her metin etiketini semantik olarak `<label>` elementiyle işaretleyin.
+3. Etiket/alan çiftlerinin alt alta düzgün hizalanması için her birini birer liste öğesi (`<li>`) veya yapısal `<div>` içine sarın.
+
+```html
+<form>
+  <h2>Customer feedback</h2>
+  <fieldset>
+    <legend>Your personal details</legend>
+    <div>
+      <label for="cust-name">Name:</label>
+      <input type="text" id="cust-name" name="name" />
+    </div>
+    <div>
+      <label for="cust-email">Email:</label>
+      <input type="email" id="cust-email" name="email" />
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Your comments</legend>
+    <div>
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+    </div>
+  </fieldset>
+</form>
+```
+
+---
+
+## Görev 6: Form doğrulaması
+
+Bu görevde basit bir destek sorgusu formuna istemci tarafı doğrulama kuralları eklemeniz istenmektedir.
+
+### Yönergeler:
+1. Tüm giriş alanlarını form gönderilmeden önce zorunlu kılın (`required`).
+2. "Email address" alanının türünü `email`, "Phone number" alanının türünü `tel` yapın.
+3. "User name" alanına 5 ile 20 karakter arası geçerli bir uzunluk sınırlaması koyun (`minlength="5"` `maxlength="20"`).
+
+```html
+<form>
+  <h2>Support query</h2>
+  <ul>
+    <li>
+      <label for="uname">User name:</label>
+      <input type="text" id="uname" name="user_name" minlength="5" maxlength="20" required />
+    </li>
+    <li>
+      <label for="uemail">Email address:</label>
+      <input type="email" id="uemail" name="user_email" required />
+    </li>
+    <li>
+      <label for="uphone">Phone number:</label>
+      <input type="tel" id="uphone" name="user_phone" required />
+    </li>
+    <li>
+      <label for="ucomment">Comment:</label>
+      <textarea id="ucomment" name="user_comment" required></textarea>
+    </li>
+    <li>
+      <button type="submit">Submit query</button>
+    </li>
+  </ul>
+</form>
+```
+
+---
+
+# 24. Uygulama Görevi: Geri bildirim formu
+
+**HTML** > **Challenge: Feedback form** (Challenge: Structuring a feedback form) | English (US)
+
+Bu meydan okumada, bir otel için kurgulanmış bir geri bildirim formunu (`feedback form`) anlamsal açıdan zengin, doğru yapılandırılmış ve stilize edilmiş bir HTML formuna dönüştürme yeteneğiniz test edilmektedir.
+
+---
+
+## Başlangıç noktası
+
+1. Bilgisayarınızda `forms-challenge` adında yeni bir klasör oluşturun.
+2. Klasörünüzün içinde `index.html` adlı bir dosya oluşturun ve aşağıdaki başlangıç HTML kodunu kaydedin:
+
+```html
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>Forms challenge</title>
-<link href="style.css" rel="stylesheet" />
-<script defer src="index.js"></script>
-</head>
-<body>
-We want your feedback!
-We're very excited that you visited the little house in the woods,
-and we want to hear what you thought of it! Please fill in the below
-sections. You don't need to provide your name or contact details, but
-if you do, we'll enter you into a prize draw where you'll have a chance
-to win prizes.
---
-Facilities
-Was the porridge
-English (US)
-CodePen
-JSFiddle
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-1/7
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms challenge</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    We want your feedback!
 
+    We're very excited that you visited the little house in the woods,
+    and we want to hear what you thought of it! Please fill in the below
+    sections. You don't need to provide your name or contact details, but
+    if you do, we'll enter you into a prize draw where you'll have a chance
+    to win prizes.
 
-Too hot?
-Too cold?
-Just right?
-Were the beds
-Too hard?
-Too soft?
-Just right?
-Describe the chairs (select all you agree with)
-Comfy
-Luxurious
-Hi-tech
-Pretty
-Majestic
---
-About your hosts
-Who's your favorite bear?
-Papa bear
-Mama bear
-Junior
-Dozer
-Which greeting did you prefer?
-Wave
-Friendly greeting
-Growl
-Claw marks in the door
---
-Any other feedback?
-Give us your comments
---
-Your details
-Name
-Email
-Phone
---
-Submit
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-2/7
+    --
 
+    Facilities
 
---
-</body>
+    Was the porridge
+    Too hot?
+    Too cold?
+    Just right?
+
+    Were the beds
+    Too hard?
+    Too soft?
+    Just right?
+
+    Describe the chairs (select all you agree with)
+    Comfy
+    Luxurious
+    Hi-tech
+    Pretty
+    Majestic
+
+    --
+
+    About your hosts
+
+    Who's your favorite bear?
+    Papa bear
+    Mama bear
+    Junior
+    Dozer
+
+    Which greeting did you prefer?
+    Wave
+    Friendly greeting
+    Growl
+    Claw marks in the door
+
+    --
+
+    Any other feedback?
+
+    Give us your comments
+
+    --
+
+    Your details
+
+    Name
+    Email
+    Phone
+
+    --
+
+    Submit
+  </body>
 </html>
-3. Save the following CSS listing inside a file inside your folder called style.css  (or paste it into your online
-editor's CSS pane).
-CSS
+```
+
+3. Klasörünüzün içinde `style.css` adlı bir dosya oluşturun ve aşağıdaki CSS kodunu içine yapıştırın:
+
+```css
 /* Basic font styles */
+
 body {
-background-color: white;
-color: #333333;
-font: 1em / 1.4 system-ui;
-padding: 1em;
-max-width: 800px;
-margin: 0 auto;
+  background-color: white;
+  color: #333333;
+  font: 1em / 1.4 system-ui;
+  padding: 1em;
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 h1 {
-font-size: 2rem;
+  font-size: 2rem;
 }
+
 h2 {
-font-size: 1.6rem;
+  font-size: 1.6rem;
 }
+
 h1,
 h2 {
-margin: 0 0 20px;
-color: purple;
+  margin: 0 0 20px;
+  color: purple;
 }
+
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 p {
-color: gray;
-margin: 0.5em 0;
+  color: gray;
+  margin: 0.5em 0;
 }
+
 /* Form structure */
+
 fieldset {
-border: 0;
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-3/7
-
-
-padding: 0;
+  border: 0;
+  padding: 0;
 }
+
 legend {
-padding-bottom: 10px;
-font-weight: bold;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
+
 fieldset,
 .separator {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-.form-section {
-margin-bottom: 20px;
-padding: 20px;
-}
-img {
-max-width: 100%;
-height: 50px;
-margin: 20px 0;
-}
-/* Individual form items */
-fieldset input {
-margin: 0 10px 0 0;
-}
-label {
-margin-right: 40px;
-}
-textarea {
-margin-top: 10px;
-padding: 5px;
-width: 100%;
-height: 200px;
-}
-.separator {
-display: flex;
-}
-.separator label {
-flex: 2;
-}
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-4/7
 
+.form-section {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: 50px;
+  margin: 20px 0;
+}
+
+/* Individual form items */
+
+fieldset input {
+  margin: 0 10px 0 0;
+}
+
+label {
+  margin-right: 40px;
+}
+
+textarea {
+  margin-top: 10px;
+  padding: 5px;
+  width: 100%;
+  height: 200px;
+}
+
+.separator {
+  display: flex;
+}
+
+.separator label {
+  flex: 2;
+}
 
 .separator input,
 .separator select {
-flex: 3;
-padding: 5px;
+  flex: 3;
+  padding: 5px;
 }
+
 button {
-padding: 10px 20px;
-border-radius: 10px;
-border: 1px solid grey;
-background-color: #dddddd;
-width: 50%;
-margin: 0 auto;
-display: block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: #dddddd;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
 }
+
 button:hover,
 button:focus {
-background-color: #eeeeee;
-cursor: pointer;
+  background-color: #eeeeee;
+  cursor: pointer;
 }
-Project brief
-We'd like you to imagine that you have just been to stay at a hotel called the little house in the woods (well, at least you
-thought it was a hotel). We want you to help us create a fictional feedback form for the hotel. As well as marking up the
-required features and structuring the form, there are a few additional HTML features we want you to implement.
-Implementing form controls
-1. In the "Facilities" section, we want you to turn the first two sets of lines into sets of radio buttons plus a label to
-describe each one and a legend describing the whole group. Add an attribute to make the first radio button in
-each case selected by default.
-2. In the "Facilities" section, turn the third set of lines into a set of checkboxes, with a label to describe each one
-and a legend describing the whole group.
-3. In the "About your hosts" section, turn both sets of lines into a drop-down menu of options, with a label to
-describe each one.
-4. In the "Any other feedback?" section, add a multi-line text entry box and turn the existing line into its descriptive
-label.
-5. In the "Your details" section, add a suitable type of text input to collect each of the three listed values. Turn the
-existing lines into their labels.
-6. Turn "Submit" into a submit button for the form.
-Structuring the form
-1. Wrap the form in a suitable wrapper element to specify the whole thing as a form.
-2. Add repeating structural elements inside the form, to wrap each form section. Give each form section element a
-class  of form-section . To make things easier, each form section is surrounded by two sets of double-
-hyphens ( -- ). You can remove the double-hyphens when you've added your structural elements.
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-5/7
-
-
-3. You'll need to include additional structural elements around some of the control/label pairs to make them sit on
-their own separate lines. Add these now, giving each one a class  of separator .
-4. Add a line break element between the multi-line text entry box and its label to make the two sit on separate lines.
-Additional HTML features
-1. There are several headings in the text that need marking up with suitable elements:
-1. The top level-heading: "We want your feedback!".
-2. Second level headings: "Facilities", "About your hosts", "Any other feedback?", and "Your details".
-2. The opening paragraph below the top-level heading needs to be marked up appropriately.
-3. Also in the opening paragraph, turn the text "little house in the woods" and "prize draw" into links. We don't have
-pages to link to yet, so for now, just set the target URL as #  for a placeholder.
-4. We want you to place a wide, flat image below the opening paragraph as a decoration. The image path is
-https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg , and we'd like you to
-set the alternative text for it to an empty value, given that it is decorative only.
-5. Following on from the previous point, as a stretch goal, research a better way to include the decorative image on
-the page, and have a go at doing so (this involves a different technology to HTML, which we haven't touched on
-in this module).
-Hints and tips
-Use the 
- to catch unintended mistakes in your HTML — so that you can fix them.
-If you are getting stuck and can't envisage what elements to put where, draw out a simple block diagram of the
-page layout, and write on the elements you think should wrap each block. This is extremely helpful.
-Example
-The following live example shows what the form might look like after being marked up. If you are getting stuck on how to
-achieve some of this, see the solution below.
-W3C HTML validator
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-6/7
-
-
-We want your feedback!
-We're very excited that you visited the little house in the woods, and we want to hear
-what you thought of it! Please fill in the below sections. You don't need to provide your
-name or contact details, but if you do, we'll enter you into a prize draw where you'll
-have a chance to win prizes.
-Facilities
-Was the porridge
- Too hot?
- 
- Too cold?
- 
- Just right?
-Were the beds
- Too hard?
- 
- Too soft?
- 
- Just right?
-Click here to show the solution
-Previous
-Overview: Structuring content with HTML
-Next
-Your blueprint for a better internet.
-15.10.2026 20:25
-Challenge: Structuring a feedback form - Learn web development | MDN
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Forms_challenge
-7/7
-
+```
 
 ---
 
-# Debugging HTML
+## Proje yönergeleri
 
-HTML ile hata ayıklama
+Ormandaki küçük evde (little house in the woods) kaldığınızı hayal edin. Bu otel için bir geri bildirim formu oluşturacaksınız.
 
-## HTML
+### 1. Form kontrollerini uygulama
+1. **"Facilities" bölümünde:** İlk iki satır kümesini radyo düğmelerine (`radio`) dönüştürün; her biri için bir `<label>` ve tüm grubu tanımlayan bir `<legend>` ekleyin. Her iki grupta da ilk radyo düğmesini varsayılan olarak seçili (`checked`) yapın.
+2. **"Facilities" bölümünde:** Üçüncü satır kümesini onay kutularına (`checkbox`) dönüştürün; her biri için `<label>` ve grup için `<legend>` ekleyin.
+3. **"About your hosts" bölümünde:** Her iki satır kümesini açılır seçenekler menüsüne (`<select>`) ve her biri için açıklayıcı bir `<label>` etiketine dönüştürün.
+4. **"Any other feedback?" bölümünde:** Çok satırlı bir metin giriş alanı (`<textarea>`) ekleyin ve var olan metni onun açıklayıcı etiketi (`<label>`) yapın.
+5. **"Your details" bölümünde:** Listelenen üç değer için uygun türde giriş alanları (`<input>`) ekleyin (`text`, `email`, `tel`). Var olan metinleri etiketlere (`<label>`) dönüştürün.
+6. "Submit" metnini form için bir gönderme düğmesine (`<button type="submit">`) dönüştürün.
 
-## Debugging HTML
+### 2. Formu yapılandırma
+1. Formun tamamını bir `<form>` elementi ile sarın.
+2. Formun içine, her form bölümünü sarmak için tekrarlayan yapısal elementler ekleyin (örneğin `<section>` veya `<div>`). Her bölüme `class="form-section"` sınıfını verin (başlangıç metnindeki çift tire `--` işaretlerini kaldırın).
+3. Bazı kontrol/etiket çiftlerinin kendi ayrı satırlarında durmasını sağlamak için bunları sarmalayan elementlere `class="separator"` sınıfı ekleyin.
+4. Çok satırlı metin kutusu ile etiketi arasına iki öğenin ayrı satırlara oturması için bir satır sonu etiketi (`<br>`) ekleyin.
 
-## English (US)
+### 3. Ek HTML özellikleri
+1. Başlıkları uygun etiketlerle işaretleyin:
+   - En üst düzey başlık: `<h1>We want your feedback!</h1>`
+   - İkinci düzey başlıklar (`<h2>`): "Facilities", "About your hosts", "Any other feedback?", ve "Your details".
+2. En üst düzey başlığın altındaki açılış paragrafını `<p>` etiketi içine alın.
+3. Açılış paragrafında "little house in the woods" ve "prize draw" metinlerini bağlantılara dönüştürün (`href="#"`).
+4. Açılış paragrafının altına dekoratif bir görsel ekleyin:
+   `https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg`
+   Görsel tamamen dekoratif olduğu için `alt=""` boş bırakılmalıdır.
 
-## HTML'de Hata Ayıklama
+---
 
-Önceki
+## İpuçları ve püf noktaları
 
-Genel bakış: HTML ile içeriği yapılandırma
+- Kodunuzu denetlemek için [W3C HTML validator](https://validator.w3.org/) aracını kullanın.
+- Hangi elemanın nereye geleceğini hayal etmekte zorlanırsanız basit bir blok şeması çizin.
 
-Sonraki
+---
 
-HTML yazmak gayet iyidir; peki ya bir şeyler ters giderse ve koddaki hatanın nerede olduğunu anlayamazsanız? Bu makale, HTML'deki hataları bulup düzeltmenize yardımcı olacak bazı araçları tanıtacaktır.
+## Çözüm ve tam kod
 
-Önkoşullar:
+<details>
+<summary>Çözümü görmek için buraya tıklayın</summary>
 
-Basic HTML Syntax’ta ele alındığı şekliyle temel HTML aşinalığı. Başlıklar, paragraflar ve listeler gibi metin düzeyi anlambilim. Yapısal HTML.
-
-Öğrenme çıktıları:
-
-HTML hata ayıklamasının arkasındaki temel arka plan
-
-HTML kodunuzun daha derinine inmek için tarayıcı DevTools içindeki DOM inspector kullanımını
-
-Yaygın HTML hata türlerini keşfetme.
-
-HTML hatalarını tespit etmek için HTML validator kullanma.
-
-## Hata ayıklama korkutucu değildir
-
-Bir tür kod yazarken her şey yolundadır; ta ki o korkunç ana kadar: bir hata oluşur — yanlış bir şey yapmışsınızdır, bu yüzden kodunuz çalışmaz — ya hiç çalışmaz ya da tam istediğiniz gibi davranmaz. Örneğin, aşağıdaki örnek Rust dilinde yazılmış basit bir programı derlemeye çalışırken bildirilen bir hatayı gösterir.
-
-Buradaki hata mesajı görece anlaşılırdır — "unterminated double quote string". Listeye bakarsanız, println!(Hello, world!); ifadesinin mantıksal olarak bir çift tırnak eksikmiş gibi göründüğünü muhtemelen fark edebilirsiniz. Ancak programlar büyüdükçe hata mesajları hızla daha karmaşık ve yorumlanması daha zor hale gelebilir; hatta Rust hakkında hiçbir şey bilmeyen biri için basit durumlar bile biraz göz korkutucu görünebilir.
-
-Yine de hata ayıklamanın korkutucu olmak zorunda olmadığını unutmayın — herhangi bir kodu yazarken ve hata ayıklarken rahat olmanın anahtarı, hem dile hem de ilgili araçlara aşinalıktır.
-
-## HTML ve hata ayıklama
-
-HTML, Rust kadar karmaşık değildir. HTML, ayrıştırılmadan önce başka bir biçime derlenmez (compiled değil, interpreted’dır). Ayrıca HTML’nin öğe sözdizimi, Rust, JavaScript veya Python gibi "gerçek bir programlama dili"ne kıyasla tartışmasız çok daha anlaşılırdır.
-
-Tarayıcıların HTML ayrıştırma biçimi, çoğu programlama dilinin ayrıştırılmasına göre çok daha hoşgörülüdür; bu hem iyi hem de kötü bir şeydir.
-
-Peki hoşgörülü derken neyi kastediyoruz? Genelde kodda bir şeyi yanlış yaptığınızda karşınıza çıkacak iki ana hata türü vardır:
-
-Syntax errors: Kodunuzdaki, programın çalışmamasına neden olan yazım hatalarıdır; az önce gösterilen Rust hatası gibi. Bunlar, dilin sözdizimine aşina olduğunuz ve hata mesajlarının ne anlama geldiğini bildiğiniz sürece genellikle düzeltmesi kolaydır.
-
-Logic errors: Sözdiziminin aslında doğru olduğu, fakat kodun amaçladığınız şeyi yapmadığı, yani programın yanlış çalıştığı hatalardır. Bunları düzeltmek çoğu zaman syntax errors’tan daha zordur; çünkü hatanın kaynağına işaret eden bir hata mesajı yoktur.
-
-HTML’nin kendisi syntax errors’tan muzdarip değildir; çünkü tarayıcılar onu hoşgörülü şekilde ayrıştırır, yani kaynak kodda sözdizimsel hatalar olsa bile sayfa yine de görüntülenir. Tarayıcıların, yanlış yazılmış HTML markup’ı (çoğu zaman invalid veya badly-formed markup olarak adlandırılır) nasıl yorumlayacağını belirleyen yerleşik kuralları vardır ve bunu otomatik olarak geçerli markup’a dönüştürürler.
-
-Örneğin, aşağıdaki HTML parçası yanlış iç içe geçmiş öğeler içerir:
-
-```html
-<p>I didn't expect to find the <em>next-door neighbor's <strong>cat</em></strong> here!
-</p>
-```
-
-Kapanış `</strong>` etiketi, kapanış `</em>` etiketinden önce gelmeliydi; ancak gelmiyor — ondan sonra geliyor.
-
-Bu HTML’i bir tarayıcıya yükleyip işlenen DOM’a bakarsanız, iç içe yerleştirmenin tarayıcı tarafından düzeltildiğini görürsünüz:
-
-```html
-<p>
-I didn't expect to find the
-<em>next-door neighbor's <strong>cat</strong></em> here!
-</p>
-```
-
-Peki bu neden hem iyi hem kötü? Bu örnekte tarayıcı amaçlanan sonucu üretmiştir; ancak biraz sonra göreceğiniz gibi, durum her zaman böyle olmaz. Her durumda bir şey çalışır halde elde edersiniz, fakat tarayıcı her zaman doğru olanı yapmaz; bu da sorunlara yol açabilir. Başta doğru markup yazmak daha iyidir.
-
-Not: HTML’nin hoşgörülü ayrıştırılmasının nedeni, web ilk oluşturulduğunda içeriğin yayımlanabilmesinin, sözdiziminin kesinlikle doğru olmasından daha önemli sayılmasıydı. Eğer en başından daha katı olsaydı, web muhtemelen bugün olduğu kadar popüler olmazdı.
-
-Peki markup hatalarını nasıl bulursunuz? Birazdan HTML validator kullanarak HTML’deki hataları nasıl bulacağınızı göstereceğiz; ancak önce DOM inspector ile HTML’nizi elle nasıl inceleyeceğinizi, ardından ne tür markup hataları arayabileceğinizi ve tarayıcının bunları nasıl yorumlayabileceğini göstereceğiz.
-
-## DOM inspector kullanımı
-
-Tüm modern tarayıcıların içinde, geçerli sekmede yüklenen web sayfasını incelemek için kullanılan bir dizi developer tools (devtools) bulunur. Bunlar size sayfada hangi HTML’nin işlendiğini, hangi CSS’nin her DOM düğümüne uygulandığını, hangi JavaScript’in sayfada çalıştığını ve daha fazlasını gösterebilir. Ayrıca şu anda çalışan kodu düzenlemenize ve etkinin sayfada canlı olarak nasıl değiştiğini görmenize olanak tanırlar.
-
-Tarayıcıdan tarayıcıya benzer şekilde devtools açabilirsiniz — bunu öğrenmek için tarayıcınızda devtools nasıl açılır sayfasına bakın.
-
-Bu makale için ilgili tek devtools işlevi DOM inspector’dır; bu araç, şu anda işlenen HTML DOM’unu gösterir ve onu düzenlemenize izin verir. Şimdi buna bakalım:
-
-1. Tarayıcınızda devtools’u açın.
-2. DOM inspector’ı açın. Her tarayıcıda aynı yerde bulunur — devtools içinde, satırın en başındaki ilk sekme. Firefox’ta Inspector, Safari, Edge ve Chrome’da ise Elements olarak etiketlenmiştir. Devtools’u ilk açtığınızda varsayılan olarak seçili olmalıdır; değilse seçin.
-3. Sekmede gösterilen DOM ağacının yapısını inceleyin ve her DOM düğümünün başındaki küçük genişletme oklarına tıklayarak çocuk düğümleri nasıl açıp kapatabildiğinize dikkat edin. Ayrıca yukarı ve aşağı ok tuşlarıyla düğümler arasında yukarı-aşağı hareket edebilir, sağ ve sol ok tuşlarıyla düğümleri genişletip daraltabilirsiniz.
-4. Düğümlerin üzerine gelmeyi (veya ok tuşlarıyla seçmeyi) de deneyin ve şu anda üzerine gelinen (veya seçilen) öğenin viewport içinde nasıl vurgulandığını fark edin.
-5. Render edilmiş DOM’u düzenleyebilirsiniz de. Bu makalede düzenleme özelliğini kullanmayacağız; ancak merak ediyorsanız bunun nasıl yapıldığını araştırmak için biraz zaman ayırın.
-
-## Sıra sizde: DOM inspector ile HTML inceleme
-
-Bu bölümde, DOM inspector kullanarak bazı kodları inceleyecek ve tarayıcının yaygın markup hatalarını nasıl ele aldığını göreceksiniz.
-
-1. Öncelikle aşağıdaki HTML dosyası listesini yerel makinenizde bir yere `debug-example.html` olarak kaydedin. Bu demo, keşfetmemiz için kasıtlı olarak bazı yerleşik hatalarla yazılmıştır.
+Tamamlanmış `index.html` dosyanız şu şekilde görünmelidir:
 
 ```html
 <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms challenge</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <h1>We want your feedback!</h1>
 
-<html lang="en-US">
+    <p>
+      We're very excited that you visited the
+      <a href="#">little house in the woods</a>, and we want to hear what you
+      thought of it! Please fill in the below sections. You don't need to
+      provide your name or contact details, but if you do, we'll enter you into
+      a <a href="#">prize draw</a> where you'll have a chance to win prizes.
+    </p>
 
-<head>
+    <img
+      src="https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg"
+      alt="" />
 
-<meta charset="utf-8">
+    <form>
+      <section class="form-section">
+        <h2>Facilities</h2>
 
-<title>HTML debugging examples</title>
+        <fieldset>
+          <legend>Was the porridge</legend>
+          <input type="radio" id="porridge-hot" name="porridge" value="hot" checked />
+          <label for="porridge-hot">Too hot?</label>
+          <input type="radio" id="porridge-cold" name="porridge" value="cold" />
+          <label for="porridge-cold">Too cold?</label>
+          <input type="radio" id="porridge-right" name="porridge" value="right" />
+          <label for="porridge-right">Just right?</label>
+        </fieldset>
 
-</head>
+        <fieldset>
+          <legend>Were the beds</legend>
+          <input type="radio" id="beds-hard" name="beds" value="hard" checked />
+          <label for="beds-hard">Too hard?</label>
+          <input type="radio" id="beds-soft" name="beds" value="soft" />
+          <label for="beds-soft">Too soft?</label>
+          <input type="radio" id="beds-right" name="beds" value="right" />
+          <label for="beds-right">Just right?</label>
+        </fieldset>
 
-<body>
+        <fieldset>
+          <legend>Describe the chairs (select all you agree with)</legend>
+          <input type="checkbox" id="chairs-comfy" name="chairs" value="comfy" />
+          <label for="chairs-comfy">Comfy</label>
+          <input type="checkbox" id="chairs-luxurious" name="chairs" value="luxurious" />
+          <label for="chairs-luxurious">Luxurious</label>
+          <input type="checkbox" id="chairs-hitech" name="chairs" value="hitech" />
+          <label for="chairs-hitech">Hi-tech</label>
+          <input type="checkbox" id="chairs-pretty" name="chairs" value="pretty" />
+          <label for="chairs-pretty">Pretty</label>
+          <input type="checkbox" id="chairs-majestic" name="chairs" value="majestic" />
+          <label for="chairs-majestic">Majestic</label>
+        </fieldset>
+      </section>
 
-<h1>HTML debugging examples</h1>
+      <section class="form-section">
+        <h2>About your hosts</h2>
 
-<p>What causes errors in HTML?
+        <div class="separator">
+          <label for="bear">Who's your favorite bear?</label>
+          <select id="bear" name="bear">
+            <option value="papa">Papa bear</option>
+            <option value="mama">Mama bear</option>
+            <option value="junior">Junior</option>
+            <option value="dozer">Dozer</option>
+          </select>
+        </div>
 
-<ul>
+        <div class="separator">
+          <label for="greeting">Which greeting did you prefer?</label>
+          <select id="greeting" name="greeting">
+            <option value="wave">Wave</option>
+            <option value="friendly">Friendly greeting</option>
+            <option value="growl">Growl</option>
+            <option value="claw">Claw marks in the door</option>
+          </select>
+        </div>
+      </section>
 
-<li>Unclosed elements: If an element is <strong>not closed properly,then its effect
+      <section class="form-section">
+        <h2>Any other feedback?</h2>
 
-can spread to areas you didn't intend
+        <label for="comments">Give us your comments</label><br />
+        <textarea id="comments" name="comments"></textarea>
+      </section>
 
-<li>Badly nested elements: Nesting elements properly is also very important for
+      <section class="form-section">
+        <h2>Your details</h2>
 
-code behaving correctly. <strong>strong <em>strong emphasized?</strong> what is this?
+        <div class="separator">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
 
-</em>
+        <div class="separator">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
 
-<li>Unclosed attributes: Another common source of HTML problems. Let's look at an
+        <div class="separator">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+      </section>
 
-example: <a href="https://www.mozilla.org/>link to Mozilla homepage</a>
-
-</ul>
-
-</body>
-
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
 ```
 
-2. Ardından bunu tarayıcıda açın. Bunun gibi bir şey görürsünüz:
-3. Bu görünüm hemen çok iyi görünmüyor; nedenini anlamak için kaynak kodu inceleyelim (yalnızca body içeriği gösteriliyor):
+</details>
+
+---
+
+# 25. HTML hata ayıklama
+
+**HTML** > **Debugging HTML** (Debugging HTML) | English (US)
+
+Kod yazmak harika bir histir; ancak bir hata (bug) ortaya çıktığında ve sayfanız beklediğiniz gibi çalışmadığında veya görüntülenmediğinde ne yapacaksınız? Bu makale, HTML belgelerindeki yaygın hataları nasıl teşhis edeceğinizi, tarayıcı Geliştirici Araçları'ndaki (DevTools) DOM Denetçisini (DOM Inspector) nasıl kullanacağınızı ve W3C Doğrulayıcısı (Validator) ile geçerli ve hatasız HTML yazmayı öğretir.
+
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | [Basic HTML syntax](#1-basic-html-syntax) bölümünde açıklandığı gibi temel HTML aşinalığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Hata ayıklamanın (debugging) geliştirme sürecinin doğal bir parçası olduğunu anlama.<br>• HTML'in tarayıcılar tarafından nasıl "bağışlayıcı" (permissive) bir şekilde yorumlandığını ve bunun neden sinsi hatalara yol açabileceğini kavrama.<br>• Tarayıcı DOM Denetçisini (DOM Inspector) kullanarak oluşturulan DOM ağacını inceleme.<br>• W3C HTML Validation servisini kullanarak HTML sözdizimi hatalarını tespit etme ve düzeltme. |
+
+---
+
+## Hata ayıklama korkutucu değildir
+
+Hangi dilde kod yazarsanız yazın, her şey yolunda giderken aniden o korkulan an gelir: bir hata (error) meydana gelir. Bir şeyi yanlış yapmışsınızdır; kodunuz ya hiç çalışmaz ya da tam olarak istediğiniz gibi davranmaz.
+
+Örneğin derlenen dillerde (örneğin Rust), derleyici hatanın yerini ve nedenini açıkça gösterir ve düzeltilmeden programın çalışmasına izin vermez. Ancak web geliştirmede ve özellikle HTML'de durum oldukça farklıdır.
+
+---
+
+## HTML ve hata ayıklama
+
+HTML, derlenen bir programlama dili değildir; **yorumlanan (interpreted)** bir biçimlendirme dilidir. Tarayıcı HTML dosyasını yukarıdan aşağıya okur ve doğrudan ekrana çizer.
+
+En önemli özellik ise şudur: **Tarayıcılar son derece bağışlayıcıdır (permissive).** Bir HTML dosyasında bir etiketi kapatmayı unutsanız, etiketleri yanlış iç içe koysanız veya geçersiz bir nitelik yazsanız bile tarayıcı bir hata ekranı fırlatıp durmaz! Bunun yerine, ne demek istediğinizi tahmin etmeye çalışır ve içeriği elinden geldiğince çizmeye devam eder.
+
+Bu durum ilk bakışta harika gibi görünse de aslında büyük bir tuzaktır:
+- Kodunuz yanlış olsa bile sayfa bir şekilde çalışır.
+- Farklı tarayıcılar bu hataları farklı şekillerde telafi etmeye çalışabilir; bu da sitenizin Chrome'da düzgün görünürken Safari veya Firefox'ta bozulmasına yol açar.
+- Ekran okuyucular ve arama motorları bozuk HTML yapısını doğru çözümleyemeyebilir.
+
+---
+
+## DOM Denetçisini Kullanma
+
+Tüm modern tarayıcılarda (Chrome, Firefox, Edge, Safari) dahili **Geliştirici Araçları (Developer Tools / DevTools)** bulunur. Bu araçların en önemlilerinden biri **Elements / Inspector (DOM Denetçisi)** sekmesidir.
+
+DOM Denetçisi, tarayıcının bellekte oluşturduğu canlı **DOM (Belge Nesne Modeli / Document Object Model)** ağacını gösterir. Bu, kaynak koddaki ham HTML'iniz değil; tarayıcının hatalarınızı düzeltmeye çalıştıktan sonra yorumladığı gerçek yapıdır.
+
+Tarayıcıda bir öğeye sağ tıklayıp **İncele (Inspect)** seçeneğini seçerek veya `F12` / `Ctrl + Shift + I` kısayollarıyla Geliştirici Araçlarını açabilirsiniz.
+
+---
+
+## Sıra sizde: DOM denetçisi ile HTML'i inceleme
+
+Aşağıdaki kasıtlı olarak hatalı yazılmış HTML kodunu inceleyelim:
 
 ```html
-<h1>HTML debugging examples</h1>
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML debugging examples</title>
+  </head>
+  <body>
+    <h1>HTML debugging examples</h1>
 
-<p>What causes errors in HTML?
+    <p>What causes errors in HTML?
 
-<ul>
+    <ul>
+      <li>Unclosed elements: If an element is <strong>not closed properly,
+          then its effect can spread into subsequent elements, and give you
+          some strange results.
 
-<li>Unclosed elements: If an element is <strong>not closed properly,
+      <li>Badly nested elements: Nesting elements properly is also very important
+          for code behaving neatly! <strong><span>famously wrote <q>A string of text</strong></span></q>.</li>
 
-then its effect can spread to areas you didn't intend
-
-<li>Badly nested elements: Nesting elements properly is also very important
-
-for code behaving correctly. <strong>strong <em>strong emphasized?</strong>
-
-what is this?</em>
+      <li>Unclosed attributes: Another common source of HTML problems. Let's look at an <a href="https://www.mozilla.org/>link to the Mozilla homepage</a>.</li>
+    </ul>
+  </body>
+</html>
 ```
 
-4. Sorunları gözden geçirelim:
+Bu sayfayı bir tarayıcıda açıp DOM Denetçisi ile incelediğinizde şunları görürsünüz:
+1. **Kapatılmamış `<p>` etiketi:** Tarayıcı, `<ul>` etiketinin başladığı yerde paragrafın bittiğini tahmin edip kendi kendine bir `</p>` kapanış etiketi yerleştirmiştir.
+2. **Kapatılmamış `<strong>` etiketi:** İlk liste öğesinde kapatılmayan `<strong>`, ikinci liste öğesine sızmış ve oradaki metinlerin de koyu görünmesine yol açmıştır.
+3. **Kötü iç içe geçmiş etiketler (`<strong><span>...</strong></span>`):** Tarayıcı sırayı düzeltmeye çalışırken DOM ağacında fazladan kapanış ve açılış etiketleri oluşturmuştur.
+4. **Kapatılmamış tırnak işareti (`href="https://www.mozilla.org/>`):** Tırnak kapatılmadığı için tarayıcı tırnaktan sonraki metinleri ve hatta `>` işaretini URL'in bir parçası sanmış ve bağlantıyı tamamen bozmuştur.
 
-Paragraf ve liste öğelerinde kapanış etiketleri yok. Yukarıdaki görüntüye bakınca bunun markup’ın sunumunu çok kötü etkilemediği görülüyor; bir öğenin nerede bitip diğerinin nerede başlaması gerektiğini çıkarmak kolaydır.
+---
 
-İlk `strong` öğesinin kapanış etiketi yok. Bu biraz daha sorunludur; çünkü öğenin nerede bitmesi gerektiğini anlamak kolay değildir. Aslında metnin geri kalanının tamamı kalın biçimde gösterilmiştir.
+## HTML doğrulaması
 
-Bu bölüm kötü iç içe geçmiştir: `strong <em>strong emphasized?</strong> what is this?</em>`. Önceki problem nedeniyle bunun nasıl yorumlandığını anlamak kolay değildir.
+Küçük bir belgede hataları gözle bulmak kolay olabilir; ancak binlerce satırlık karmaşık bir web sayfasında hataları tek tek aramak imkansızdır.
 
-`href` öznitelik değeri kapanış çift tırnak işaretini eksik bırakmıştır. Görünüşe göre bu en büyük soruna yol açmıştır — bağlantı hiç render edilmemiştir.
+İşte bu noktada **HTML Doğrulayıcıları (HTML Validators)** devreye girer. Resmi web standartlarını belirleyen konsorsiyum olan W3C, ücretsiz bir doğrulama hizmeti sunar:
+- **[W3C Markup Validation Service](https://validator.w3.org/)**
 
-5. Şimdi kaynak kod yerine render edilmiş DOM’u inceleyelim. Bunun için tarayıcınızın DOM inspector’ını açın. Render edilmiş markup’ın bir gösterimini göreceksiniz:
-6. Tarayıcının HTML hatalarımızı nasıl düzeltmeye çalıştığına bakın (incelemeyi Firefox’ta yaptık; diğer modern tarayıcılar da aynı sonucu vermelidir):
+Doğrulayıcı üç yöntemle kontrol yapabilir:
+1. **Validate by URI:** Canlı yayındaki bir web sayfasının adresini girerek.
+2. **Validate by File Upload:** Bilgisayarınızdaki `.html` dosyasını yükleyerek.
+3. **Validate by Direct Input:** HTML kodunuzu doğrudan bir metin kutusuna yapıştırarak.
 
-Tarayıcı paragraf ve liste öğelerine kapanış etiketleri eklemiştir.
+### Hata mesajlarını yorumlama
 
-İlk `strong` öğesinin nerede kapanması gerektiği net olmadığından, tarayıcı metnin her ayrı bloğunu kendi `strong` öğesine sarmalamış ve bunu belgenin en altına kadar sürdürmüştür!
+Doğrulayıcı bir hata bulduğunda:
+- Hatanın oluştuğu **satır (Line)** ve **sütun (Column)** numarasını bildirir.
+- Hatanın teknik açıklamasını sunar (örneğin: *"End tag strong seen, but there were open elements"* veya *"Unclosed element"*).
+- Bazen bir tek kapatılmamış etiket, sonraki satırlarda art arda 10 farklı hata çıkmasına yol açabilir. Bu nedenle **her zaman listenin en başındaki ilk hatadan başlayarak düzeltin** ve ardından sayfayı tekrar doğrulayın.
 
-Yanlış iç içe geçme, tarayıcı tarafından aşağıdaki gibi düzeltilmiştir:
-
-```html
-<strong>
-strong
-<em>strong emphasized?</em>
-</strong>
-<em> what is this?</em>
-```
-
-Eksik çift tırnaklı bağlantı tamamen silinmiştir. Son liste öğesi şöyle görünür:
-
-```html
-<li>
-<strong>
-Unclosed attributes: Another common source of HTML problems. Let's look
-at an example:
-</strong>
-</li>
-```
-
-## HTML doğrulama
-
-Yukarıdaki örnekten, HTML’nizin iyi biçimlenmiş olduğundan gerçekten emin olmanız gerektiği anlaşılır! Peki nasıl? Yukarıda görülen gibi küçük bir örnekte satırları tarayıp hataları bulmak kolaydır; fakat ya devasa, karmaşık bir HTML belgesinde?
-
-Bu iş için kullanılan araç Markup Validation Service’tir (veya HTML validator); W3C tarafından oluşturulmuş ve sürdürülmektedir (bunu The web standards model bölümünde öğrenmiştiniz). Validator bir HTML belgesini girdi olarak alır, onu işler ve HTML’nizde neyin yanlış olduğunu söyleyen bir rapor verir.
-
-Bir HTML belgesini doğrulamak için bir web adresi verebilir, bir HTML dosyası yükleyebilir veya doğrudan bazı HTML kodu girebilirsiniz.
-
-## Bir HTML belgesini doğrulama
-
-Bu görevde, HTML validator’ı denemeniz istenecek. Daha önce DOM inspector ile incelediğiniz HTML’nin aynısını doğrulayacaksınız.
-
-1. Önce, henüz açık değilse Markup Validation Service’i yeni bir tarayıcı sekmesinde açın.
-2. Validate by Direct Input sekmesine geçin.
-3. Örnek belgeyi kopyalayın ve Markup Validation Service içinde gösterilen büyük metin alanına yapıştırın. Yalnızca `body` içeriğini değil, tüm belge yapısını yapıştırın.
-4. Check düğmesine basın.
-
-Bu, size bir hata ve başka bilgiler listesi vermelidir.
-
-## Hata mesajlarını yorumlama
-
-Hata mesajları genellikle faydalıdır, ancak bazen o kadar kolay anlaşılmazlar. Biraz pratikle, kodunuzu düzeltmek için bunları nasıl yorumlayacağınızı anlayabilirsiniz. Hata mesajlarını ve ne anlama geldiklerini birlikte inceleyelim.
-
-Her mesajın, hatayı kolayca bulmanıza yardımcı olmak için bir satır ve sütun numarasıyla geldiğini göreceksiniz.
-
-`"End tag li implied, but there were open elements"` (2 örnek): Bu mesajlar, kapatılması gereken bir öğenin açık olduğunu gösterir. Bitiş etiketi varsayılmıştır, fakat gerçekte yoktur. Satır/sütun bilgisi, kapanış etiketinin gerçekten olması gereken satırdan sonraki ilk satıra işaret eder; ancak bu, neyin yanlış olduğunu görmek için yeterli bir ipucudur.
-
-`"Unclosed element strong"`: Bunu anlamak daha kolaydır — bir `strong` öğesi kapatılmamıştır ve satır/sütun bilgisi tam olarak ilgili yere işaret eder.
-
-`"End tag strong violates nesting rules"`: Bu, yanlış iç içe geçmiş öğeleri işaret eder; satır/sütun bilgisi de bunların bulunduğu yeri gösterir.
-
-`"End of file reached when inside an attribute value. Ignoring tag"`: Bu biraz şifreli görünür; dosyanın sonunun öznitelik değeri içinde görünmesi nedeniyle, bir yerde düzgün biçimlendirilmemiş bir öznitelik değeri olduğunu ifade eder. Tarayıcının bağlantıyı render etmemesi, hangi öğenin hatalı olduğuna dair iyi bir ipucu vermelidir.
-
-`"End of file seen and there were open elements"`: Bu biraz belirsizdir; ancak temelde düzgün şekilde kapatılması gereken açık öğeler bulunduğunu ifade eder. Satır numaraları dosyanın son birkaç satırını işaret eder ve bu hata mesajı, açık bir öğe örneğini işaret eden bir satır kodla birlikte gelir:
-
-```html
-example: <a href="https://www.mozilla.org/>link to Mozilla homepage</a> ↩ </ul>↩
-</body>↩</html>
-```
-
-Not: Kapanış tırnağı eksik bir öznitelik, belgenin geri kalanının özniteliğin içeriği olarak yorumlanmasına neden olduğundan açık bir öğeyle sonuçlanabilir.
-
-`"Unclosed element ul"`: Bu çok yararlı değildir; çünkü `ul` öğesi doğru şekilde kapatılmıştır. Bu hata, eksik kapanış tırnak işareti nedeniyle `a` öğesi kapatılamadığı için oluşur.
-
-Tüm hata mesajlarının ne anlama geldiğini çözemezseniz endişelenmeyin. İyi bir strateji, birkaç hatayı bir seferde düzeltmek ve ardından HTML’nizi her düzeltme grubundan sonra yeniden doğrulamaktır; böylece geriye hangi hataların kaldığını görürsünüz. Bazen daha önceki bir hatayı düzeltmek, diğer hata mesajlarını da ortadan kaldırır — birden fazla hata tek bir sorundan, domino etkisiyle kaynaklanabilir.
-
-Tüm hatalarınız düzeldiğinde, rapor edilecek hata olmadığını söyleyen hoş bir yeşil bant gördüğünüzü anlayacaksınız. Yazım anında şu ifade yer alıyordu: "Document checking completed. No errors or warnings to show."
+---
 
 ## Özet
 
-Böylece HTML hata ayıklamaya giriş yapmış olduk; bu size yalnızca HTML’yi değil, kursun ilerleyen bölümlerinde CSS ve JavaScript kodunu hata ayıklarken de kullanabileceğiniz faydalı beceriler kazandırmalıdır. Bu aynı zamanda Structuring content with HTML modülünün de sonunu işaret eder.
-
-Sonraki adımınız, CSS styling basics modülümüzde web’i stillendirmeyi öğrenmeye başlamak olacak.
-
-Önceki
-
-Genel bakış: HTML ile içeriği yapılandırma
-
-Sonraki
-
-Your blueprint for a better internet.
-
+Bu makalede HTML hata ayıklamanın temel prensiplerini öğrendiniz:
+- HTML'in yorumlanan ve hataları gizleyen bağışlayıcı yapısını,
+- Tarayıcı DOM Denetçisi ile oluşturulan gerçek öğe ağacını incelemeyi,
+- W3C Markup Validation Service ile profesyonel, standartlara uygun ve hatasız kod yazmayı kavradınız.
 
 ---
 
-# Test your skills: Structuring content with HTML
+# 26. Test: HTML testleri indeksi
 
-HTML ile içeriği yapılandırma becerilerinizi test edin
+**HTML** > **Test: HTML tests index** (Test your skills: Structuring content with HTML) | English (US)
 
-## HTML
-
-## Test: HTML tests index
-
-## English (US)
-
-## Becerilerinizi test edin: HTML ile içeriği yapılandırma
-
-Bu sayfa, bu modülde öğrendiklerinizi doğrulayabilmeniz için deneyebileceğiniz HTML testlerini listeler.
-
-## HTML becerilerinizi konuya göre test edin
-
-### Becerilerinizi test edin: Gelişmiş HTML metni
-
-Bu beceri testinin amacı, gelişmiş anlamsal özellikleri işaretlemek için daha az bilinen HTML öğelerini nasıl kullanacağınızı anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-### Becerilerinizi test edin: Ses ve video
-
-Bu beceri testinin amacı, HTML’de video ve ses içeriğini nasıl gömeceğinizi anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-### Becerilerinizi test edin: Formlar ve düğmeler
-
-Bu beceri testinin amacı, HTML formlarının ve düğmelerinin nasıl çalıştığını anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-### Becerilerinizi test edin: HTML görüntüleri
-
-Bu beceri testinin amacı, görüntüleri ve bunları HTML’ye nasıl gömeceğinizi anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-### Becerilerinizi test edin: HTML metin temelleri
-
-Bu beceri testinin amacı, metni yapı ve anlam kazandıracak şekilde HTML’de nasıl işaretleyeceğinizi anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-### Becerilerinizi test edin: Bağlantılar
-
-Bu beceri testinin amacı, bağlantıları HTML’de nasıl uygulayacağınızı anlayıp anlamadığınızı değerlendirmenize yardımcı olmaktır.
-
-## Ayrıca bakın
-
-Structuring content with HTML
-
-Your blueprint for a better internet.
-
+Bu sayfa, "Structuring content with HTML" modülünde öğrendiğiniz konuları pekiştirmek ve bilginizi ölçmek amacıyla hazırlanmış olan tüm konu bazlı testlerin dizinini sunmaktadır.
 
 ---
 
-# Including vector graphics in HTML
+## Konulara göre HTML testleri
 
-HTML’de vektör grafikleri dahil etme
+Bu modül boyunca yer alan pratik beceri testlerine aşağıdaki bağlantılardan ulaşabilirsiniz:
 
-## HTML
+1. **[Test: HTML text basics](#6-test-html-text-basics):** Temel HTML metin biçimlendirmesi, başlıklar, paragraflar, vurgulama (`<em>`, `<strong>`) ve listeler (`<ul>`, `<ol>`).
+2. **[Test: Advanced HTML text](#8-test-advanced-html-text):** Alıntılar (`<blockquote>`, `<q>`, `<cite>`), kısaltmalar (`<abbr>`), adresler (`<address>`) ve kod etiketleri (`<code>`, `<pre>`).
+3. **[Test: Links](#12-test-links):** Kök/bağıl bağlantılar (`<a>`, `href`), belge içi çıpalar, e-posta bağlantıları (`mailto:`) ve `target="_blank"`.
+4. **[Test: Images](#15-test-images):** Görsel ekleme (`<img>`), `src`, `alt` metni, boyutlandırma ve `<picture>` / `srcset` ile duyarlı görseller.
+5. **[Test: Audio and video](#17-test-audio-and-video):** `<video>` ve `<audio>` etiketleri, çoklu kaynaklar (`<source>`), kontroller ve altyazılar (`<track>`).
+6. **[Test: Forms and buttons](#23-test-forms-and-buttons):** Form kontrolleri (`<input>`, `<select>`, `<textarea>`), etiketleme (`<label>`), gruplama (`<fieldset>`, `<legend>`) ve istemci doğrulaması.
 
-## Vektör grafikleri
+---
 
-## English (US)
+## Ayrıca bakınız
 
-## HTML’de vektör grafikleri dahil etme
+- [Structuring content with HTML (Modül Özeti)](#structuring-content-with-html)
+- [W3C HTML5 Specification](https://www.w3.org/TR/html52/)
 
-Vektör grafikleri birçok durumda çok kullanışlıdır — küçük dosya boyutlarına sahiptirler ve son derece ölçeklenebilirdirler; bu yüzden yakınlaştırıldıklarında veya büyük boyuta çıkarıldıklarında piksellenmezler. Bu makalede, bunlardan birini web sayfanıza nasıl ekleyeceğinizi göstereceğiz.
+---
 
-Önkoşullar:
+# 27. Ek kılavuzlar
 
-HTML’nin temellerini ve belgenize nasıl resim ekleyeceğinizi bilmelisiniz.
+Bu bölüm, temel HTML eğitiminin ötesine geçerek modern web sayfalarında sıklıkla kullanılan vektör grafikleri (SVG) ve gelişmiş ortam yerleştirme teknolojilerini (iframes, embed, object) ele alan ek kılavuzları içermektedir.
 
-Hedef:
+---
 
-Bir web sayfasına SVG (vektör) görüntüsünün nasıl gömüleceğini öğrenin.
+## 27.1. Vektör grafikleri
 
-Not: Bu makale size SVG öğretmeyi amaçlamaz; yalnızca ne olduğunu ve web sayfalarına nasıl ekleneceğini anlatır.
+**HTML** > **Additional tutorials** > **Vector graphics** (Adding vector graphics to the web) | English (US)
 
-## Vektör grafikleri nedir?
+Vektör grafikleri web üzerinde son derece kullanışlıdır. Bu makalede vektör grafiklerinin ne olduğu, popüler XML tabanlı SVG (Ölçeklenebilir Vektör Grafikleri) formatı ve SVG grafiklerinin web sayfalarına nasıl dahil edileceği açıklanmaktadır.
 
-Web’de iki tür görüntüyle çalışırsınız — raster görüntüler ve vektör görüntüler:
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Temel HTML aşinalığı ve [Images](#14-images) bölümünde açıklandığı gibi raster görsellerin çalışma mantığı. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Raster (piksel tabanlı) ve Vektör görseller arasındaki farkları kavrama.<br>• SVG formatının ne olduğunu ve XML yapısını anlama.<br>• SVG dosyalarını `<img>` elementi ile sayfaya ekleme.<br>• Satır içi (inline) `<svg>` kodunu doğrudan HTML içine yerleştirme ve avantajları.<br>• `<iframe>` ile SVG gömme yöntemleri. |
 
-Raster görüntüler piksel ızgarası kullanılarak tanımlanır — bir raster görüntü dosyası, her pikselin tam olarak nereye yerleştirileceği ve tam olarak hangi renkte olması gerektiği hakkında bilgi içerir. Popüler web raster formatları arasında Bitmap (`.bmp`), PNG (`.png`), JPEG (`.jpg`) ve GIF (`.gif`) bulunur.
+---
 
-Vektör görüntüler algoritmalar kullanılarak tanımlanır — bir vektör görüntü dosyası, bilgisayarın ekranda görüntü render edildiğinde nasıl görünmesi gerektiğini hesaplamak için kullanabileceği şekil ve yol tanımlarını içerir. SVG formatı, Web’de kullanılmak üzere güçlü vektör grafikleri oluşturmamıza olanak tanır.
+### Vektör grafikleri nedir?
 
-İkisi arasındaki fark hakkında bir fikir vermek için bir örneğe bakalım:
+Web üzerinde iki ana görsel türüyle çalışırsınız:
 
-```html
-<img src="star.png" alt="A raster star" />
+1. **Raster görseller (Piksel tabanlı):** PNG, JPG, GIF ve WebP gibi formatlardır. Bir piksel ızgarası kullanılarak tanımlanırlar. Dosya, her bir pikselin tam olarak nerede durduğunu ve hangi renge sahip olduğunu saklar.
+   - **Sorun:** Bir raster görseli orijinal boyutundan daha fazla büyüttüğünüzde veya yüksek çözünürlüklü (Retina) ekranlarda görüntülediğinizde piksellenme (bulanıklaşma) oluşur.
+2. **Vektör görseller:** Görseli piksellerle değil; yollar (paths), çizgiler, eğriler, daireler ve çokgenler gibi matematiksel şekil tanımlarıyla saklar.
+   - **Büyük Avantaj:** Vektör görseller kalitelerinden zerre ödün vermeden **sonsuz düzeyde küçültülebilir veya büyütülebilir**. İster bir akıllı saat ekranında, ister dev bir reklam panosunda gösterilsin, kenarlar her zaman kusursuz keskinliktedir!
+   - Dosya boyutları çoğu zaman raster grafiklere kıyasla çok daha küçüktür.
 
-<img src="star.svg" role="img" alt="A vector star" />
-```
+---
 
-Bu, yan yana duran, siyah gölgeli iki görünüşte aynı kırmızı yıldızı gösterir. Fark şudur: soldaki raster (PNG), sağdaki ise vektör (SVG) görüntüdür.
+### SVG nedir?
 
-Sayfayı yakınlaştırdığınızda veya görüntülerin boyutunu artırdığınızda fark belirgin hale gelir. Aşağıdaki örnek, iki yıldızın 300px genişlikte nasıl render edildiğini gösterir:
+**SVG (Scalable Vector Graphics)**, iki boyutlu vektör görsellerini tanımlamak için kullanılan XML tabanlı bir dildir.
 
-PNG görüntü piksellenir; çünkü her pikselin nerede olması gerektiği (ve hangi renkte olması gerektiği) hakkında bilgi içerir. Yakınlaştırıldığında, her piksel ekrandaki birden fazla pikseli dolduracak şekilde boyutlandırılır; bu yüzden görüntü bloklu görünmeye başlar. Ancak SVG görüntü, boyutu ne olursa olsun güzel ve net görünmeye devam eder; çünkü şekiller, büyüdükçe ölçeklenen değerlerle algoritmalar kullanılarak hesaplanır.
+Tıpkı HTML gibi etiketlerden oluşur. Şekilleri tanımlamak için `<circle>`, `<rect>`, `<polygon>`, `<path>` gibi elementler kullanılır.
 
-Ayrıca vektör görüntü dosyaları raster muadillerinden çok daha hafiftir; çünkü görüntüdeki her bir piksele ilişkin bilgi yerine yalnızca birkaç algoritma saklamaları gerekir.
+Örnek bir SVG kodu:
 
-## SVG nedir?
-
-SVG, vektör görüntüleri tanımlamak için XML tabanlı bir dildir. Temelde HTML gibi işaretlemedir; ancak görüntünüzde görünmesini istediğiniz şekilleri ve bu şekillere uygulamak istediğiniz efektleri tanımlamak için birçok farklı öğeniz vardır. SVG, içerik değil grafik işaretlemek içindir. SVG; `<circle>` ve `<rect>` gibi temel şekiller oluşturmak için öğeler, ayrıca `<path>` ve `<polygon>` gibi daha karmaşık şekiller oluşturmak için öğeler tanımlar. Daha gelişmiş SVG özellikleri arasında `<feColorMatrix>` (bir dönüştürme matrisi kullanarak renkleri dönüştürür), `<animate>` (vektör grafiğinizin bölümlerini canlandırır) ve `<mask>` (görselinizin üzerine bir maske uygular) bulunur.
-
-Basit bir örnek olarak, aşağıdaki kod bir daire ve bir dikdörtgen oluşturur:
-
-```html
-<svg
-version="1.1"
-baseProfile="full"
-width="300"
-height="200"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect width="100%" height="100%" fill="black" />
-
-<circle cx="150" cy="100" r="90" fill="blue" />
-
+```xml
+<svg version="1.1"
+     baseProfile="full"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black" />
+  <circle cx="150" cy="100" r="90" fill="blue" />
 </svg>
 ```
 
-Bu aşağıdaki çıktıyı oluşturur:
+---
 
-Yukarıdaki örnekten, SVG’yi elle kodlamanın kolay olduğu izlenimine kapılabilirsiniz. Evet, basit SVG’leri bir metin düzenleyicide elle kodlayabilirsiniz; ancak karmaşık bir görüntü için bu çok hızlı bir şekilde zorlaşır. SVG görüntüleri oluşturmak için çoğu kişi Inkscape veya Illustrator gibi bir vektör grafik düzenleyicisi kullanır. Bu paketler, çeşitli grafik araçlarını kullanarak bir dizi illüstrasyon oluşturmanıza ve fotoğrafların yaklaşık karşılıklarını oluşturmanıza (örneğin Inkscape’in Trace Bitmap özelliği gibi) olanak tanır.
+### Sayfalarınıza SVG ekleme yöntemleri
 
-SVG, şimdiye kadar anlatılanlara ek olarak bazı avantajlara sahiptir:
+#### 1. `<img>` elementi ile hızlı ekleme
 
-Vektör görüntülerdeki metin erişilebilir kalır (bu aynı zamanda SEO’nuzu da iyileştirir).
-
-SVG’ler stil verme ve betik çalıştırmaya çok uygundur; çünkü görüntünün her bileşeni CSS ile stillendirilebilen veya JavaScript ile betiklenebilen bir öğedir.
-
-Peki neden biri raster grafikleri SVG’ye tercih etsin? SVG’nin bazı dezavantajları da vardır:
-
-SVG çok hızlı biçimde karmaşıklaşabilir; bu da dosya boyutlarının büyümesine neden olabilir. Karmaşık SVG’ler tarayıcıda önemli işleme süresi de gerektirebilir.
-
-Oluşturmak istediğiniz görüntü türüne bağlı olarak SVG, raster görüntülere göre oluşturulması daha zor olabilir.
-
-Yukarıda açıklanan nedenlerden dolayı, raster grafikler fotoğraflar gibi karmaşık ve hassas görüntüler için tartışmalı olarak daha iyidir.
-
-Inkscape gibi düzenleyicilerden dışa aktarılan SVG grafiklerinde boyut optimizasyonu için büyük alan vardır. Bunları web’e dağıtmadan önce, muhtemelen bunları bir SVG optimizer’dan, örneğin SVGO’dan geçirmeniz gerekir.
-
-## Sayfalarınıza SVG ekleme
-
-Bu bölümde SVG vektör grafiklerini web sayfalarınıza eklemenin farklı yollarını ele alacağız.
-
-### Hızlı yol: `img` öğesi
-
-Bir SVG’yi `<img>` öğesi aracılığıyla gömmek için, beklediğiniz gibi `src` özniteliğinde ona başvurmanız yeterlidir. SVG’nizin yerleşik bir en-boy oranı yoksa `height` veya `width` özniteliğine (veya ikisine birden) ihtiyacınız olacaktır. Bunu henüz yapmadıysanız lütfen HTML images bölümünü okuyun.
+Tıpkı bir PNG veya JPG gibi, bir SVG dosyasını doğrudan `<img>` etiketinin `src` niteliğine verebilirsiniz:
 
 ```html
 <img
-src="equilateral.svg"
-alt="triangle with all three sides equal"
-height="87"
-width="100" />
+  src="triangle.svg"
+  alt="triangle with equal sides"
+  height="87"
+  width="100" />
 ```
 
-Artılar
+- **Artıları:** Hızlı, tanıdık ve tarayıcı tarafından kolayca önbelleğe alınır.
+- **Eksileri:** SVG içindeki elementler CSS ile doğrudan stillendirilemez ve JavaScript ile SVG'nin iç yapısına müdahale edilemez.
 
-`alt` özniteliğinde yerleşik metin eşdeğeri bulunduğundan, hızlı ve tanıdık bir görüntü sözdizimi.
+#### 2. Satır içi (Inline) SVG kodunu HTML'e dahil etme
 
-`<img>` öğesini bir `<a>` öğesi içine iç içe yerleştirerek görüntüyü kolayca bir köprüye dönüştürebilirsiniz.
-
-SVG dosyası tarayıcı tarafından önbelleğe alınabilir; bu da gelecekte bu görüntüyü kullanan herhangi bir sayfa için daha hızlı yükleme süreleri sağlar.
-
-Eksiler
-
-Görüntüyü JavaScript ile değiştiremezsiniz.
-
-SVG içeriğini CSS ile denetlemek istiyorsanız, SVG kodunuza satır içi CSS stilleri eklemelisiniz. (SVG dosyasından çağrılan harici stil sayfaları hiçbir etki göstermez.)
-
-Görüntüyü CSS sözde sınıflarıyla (örneğin `:focus`) yeniden stillendiremezsiniz.
-
-### Sorun giderme ve tarayıcılar arası destek
-
-SVG desteklemeyen tarayıcılarda (IE 8 ve altı, Android 2.3 ve altı), `src` özniteliğinizde bir PNG veya JPG’ye başvurup SVG’ye atıfta bulunmak için bir `srcset` özniteliği kullanabilirsiniz (bu özniteliği yalnızca yeni tarayıcılar tanır). Böylece, yalnızca destekleyen tarayıcılar SVG’yi yükler — eski tarayıcılar bunun yerine PNG’yi yükler:
+SVG kodunu dosya olarak değil, doğrudan HTML belgenizin içine yazabilirsiniz:
 
 ```html
-<img
-src="equilateral.png"
-alt="triangle with equal sides"
-srcset="equilateral.svg" />
-```
-
-SVG’leri aşağıda gösterildiği gibi CSS background images olarak da kullanabilirsiniz. Aşağıdaki kodda eski tarayıcılar anladıkları PNG ile devam ederken, yenileri SVG’yi yükler:
-
-```css
-background: url("fallback.png") no-repeat center;
-background-image: url("image.svg");
-background-size: contain;
-```
-
-Yukarıda açıklanan `<img>` yöntemi gibi, SVG’leri CSS background images kullanarak eklemek de SVG’nin JavaScript ile değiştirilemeyeceği anlamına gelir ve aynı CSS sınırlamalarına tabidir.
-
-SVG’leriniz hiç görünmüyorsa bunun nedeni sunucunuzun doğru yapılandırılmamış olması olabilir. Sorun buysa, bu makale sizi doğru yöne yönlendirecektir.
-
-## SVG kodunu HTML’nizin içine ekleme
-
-SVG dosyasını bir metin düzenleyicide açıp SVG kodunu kopyalayabilir ve HTML belgenize yapıştırabilirsiniz — buna bazen SVG’yi inline eklemek veya SVG’yi satır içine almak denir. SVG kod parçanızın `<svg>` başlangıç etiketiyle başladığından ve `</svg>` bitiş etiketiyle sona erdiğinden emin olun. İşte belgenize yapıştırabileceğiniz çok basit bir örnek:
-
-```html
-<svg width="300" height="200">
-
-<rect width="100%" height="100%" fill="green" />
-
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
 </svg>
 ```
 
-Artılar
+- **Artıları:**
+  - Fazladan bir HTTP isteği tasarrufu sağlar.
+  - SVG elementlerine CSS sınıfları ve stilleri (`hover` efektleri vb.) uygulanabilir.
+  - JavaScript ile SVG şekilleri dinamik olarak manipüle edilebilir.
+- **Eksileri:** HTML dosyasının boyutunu artırır ve tarayıcı tarafından bağımsız olarak önbelleğe alınamaz.
 
-SVG’yi satır içine yerleştirmek bir HTTP isteğini azaltır ve bu nedenle yükleme sürenizi biraz düşürebilir.
-
-SVG öğelerine `class` ve `id` atayabilir, bunları CSS ile stillendirebilirsiniz; bunu SVG’nin içinde veya HTML belgeniz için CSS stil kurallarını nereye koyarsanız orada yapabilirsiniz. Aslında, herhangi bir SVG presentation attribute’u bir CSS property olarak kullanabilirsiniz.
-
-SVG’yi satır içine almak, CSS etkileşimlerini (`:focus` gibi) ve CSS animasyonlarını SVG görüntünüzde kullanmanıza izin veren tek yaklaşımdır (normal stil sayfanızda bile).
-
-SVG markup’ını bir `<a>` öğesi içine sararak onu bir köprüye dönüştürebilirsiniz.
-
-Eksiler
-
-Bu yöntem yalnızca SVG’yi tek bir yerde kullanıyorsanız uygundur. Yinelenme, kaynak açısından maliyetli bakım demektir.
-
-Ek SVG kodu HTML dosyanızın boyutunu artırır.
-
-Tarayıcı inline SVG’yi, sıradan görüntü varlıklarını önbelleğe aldığı gibi önbelleğe alamaz; bu yüzden görüntüyü içeren sayfalar, görüntüyü içeren ilk sayfa yüklendikten sonra daha hızlı yüklenmez.
-
-`<foreignObject>` öğesinde yedek içerik ekleyebilirsiniz; ancak SVG’yi destekleyen tarayıcılar bile yine de yedek görüntüleri indirir. Yalnızca eski tarayıcıları desteklemek için ekstra yükün gerçekten buna değip değmediğini tartmanız gerekir.
-
-### SVG’yi `iframe` ile gömme
-
-SVG görüntülerini web sayfaları gibi tarayıcınızda açabilirsiniz. Bu yüzden bir SVG belgesini `<iframe>` ile gömmek, From `<object>` to `<iframe>` — general embedding technologies bölümünde öğrendiğimiz gibi yapılır.
-
-Kısa bir hatırlatma:
+#### 3. `<iframe>` ile bir SVG gömme
 
 ```html
-<iframe src="triangle.svg" width="500" height="500" sandbox></iframe>
-```
-
-Bu kesinlikle seçilecek en iyi yöntem değildir:
-
-## Eksiler
-
-`<iframe>` öğeleri, açılış ve kapanış etiketleri arasına yedek içerik ekleyebilir; ancak bu, yalnızca `<iframe>` desteklemeyen tarayıcılarda gösterilir, görüntü yüklenemediğinde değil.
-
-Ayrıca, SVG ile mevcut web sayfanız aynı origin’e sahip değilse, ana web sayfanızda JavaScript kullanarak SVG’yi değiştiremezsiniz.
-
-## SVG ile deneme yapma
-
-Bu alıştırmada biraz SVG ile uğraşmanızı istiyoruz. Play düğmesine basarak bir sonraki örneği MDN Playground’da açın ve orada düzenleyin.
-
-SVG Element Reference sayfasına giderek, size yerleşik birçok işlevsellik sağlayan başka hangi öğeleri kullanabileceğinizi görün. Elips gibi başka şekilleri deneyebilir veya desenlerle ya da hatta filtre efektleriyle denemeler yapabilirsiniz. Bu bölüm, araştırma becerileriniz, yeni bir şey denemeniz ve biraz eğlenmeniz hakkındadır.
-
-Kodu çalıştırmakta takılırsanız, Playground’daki Reset düğmesini kullanarak sıfırlayabilirsiniz.
-
-```html
-<svg width="100%" height="100%">
-
-<rect width="100%" height="100%" fill="red" />
-
-<circle cx="100%" cy="100%" r="150" fill="blue" stroke="black" />
-
-<polygon points="120,0 240,225 0,225" fill="green" />
-
-<text
-x="50"
-y="100"
-font-family="Verdana"
-font-size="55"
-fill="white"
-stroke="black"
-stroke-width="2">
-Hello!
-
-</text>
-
-</svg>
-```
-
-Hello!
-Hello!
-
-## Özet
-
-Bu makale size vektör grafikleri ve SVG’nin ne olduğuna, neden bilinmeye değer olduklarına ve SVG’yi web sayfalarınıza nasıl ekleyebileceğinize dair hızlı bir tur sundu. Hiçbir zaman SVG öğrenmek için tam bir kılavuz olmayı amaçlamadı; yalnızca Web’deki yolculuklarınız sırasında SVG ile karşılaşırsanız onun ne olduğunu bilmeniz için bir ipucu olarak hazırlandı. Bu yüzden henüz kendinizi bir SVG uzmanı gibi hissetmiyorsanız endişelenmeyin. Nasıl çalıştığı hakkında daha fazla bilgi edinmek isterseniz size yardımcı olabilecek bazı bağlantıları aşağıya ekledik.
-
-## Ayrıca bakın
-
-SVG tutorial on MDN
-
-Sara Soueidan's tutorial on responsive SVG images
-
-SVG Properties and CSS
-
-How to scale SVGs
-
-(it's not as simple as raster graphics!)
-
-Your blueprint for a better internet.
-
-
----
-
-# From object to iframe — general embedding technologies
-
-`<object>` öğesinden `<iframe>` öğesine — genel gömme teknolojileri
-
-## HTML
-
-## Gömme teknolojileri
-
-## English (US)
-
-## `<object>` öğesinden `<iframe>` öğesine — genel gömme teknolojileri
-
-Geliştiriciler genellikle resimler, video ve ses gibi ortamları web sayfalarına gömmeyi düşünür. Bu makalede biraz yan bir adım atıyor ve web sayfalarınıza çok çeşitli içerik türlerini gömenize olanak tanıyan bazı öğelere bakıyoruz: `<iframe>`, `<embed>` ve `<object>` öğeleri. Bu öğeler, diğer web sayfaları ve PDF dosyaları gibi harici kaynakları gömmenize olanak tanır.
-
-Önkoşullar:
-
-Hedef:
-
-Temel yazılımın yüklü olması, dosyalarla çalışma hakkında temel bilgi, HTML temellerine aşinalık.
-
-PDF belgeleri ve diğer web sayfaları gibi öğeleri `<object>`, `<embed>` ve `<iframe>` kullanarak web sayfalarına nasıl gömeceğinizi öğrenmek.
-
-## Gömmenin kısa tarihi
-
-Web’in çok eski zamanlarında, web siteleri oluşturmak için frames kullanmak popülerdi — bir web sitesinin küçük bölümleri ayrı HTML sayfalarında saklanırdı. Bunlar, frameset adı verilen ana bir belgeye gömülürdü; bu belge, her frame’in ekranda kaplayacağı alanı belirtmenize izin verirdi; bu, bir tablonun sütun ve satırlarını boyutlandırmaya benzerdi. Bunlar 90’ların ortasından sonuna kadar havalılığın zirvesi sayılıyordu ve bir web sayfasının bu şekilde daha küçük parçalara bölünmesinin indirme hızları açısından daha iyi olduğuna dair kanıtlar vardı — özellikle de ağ bağlantıları o zamanlar çok yavaş olduğu için bu daha belirgindi.
-
-Bununla birlikte pek çok sorunları vardı ve ağ hızları arttıkça olumlu yönlerini fazlasıyla geride bıraktılar; bu nedenle artık kullanılmadıklarını görürsünüz.
-
-Biraz sonra (90’ların sonu, 2000’lerin başı), Java Applets ve Flash gibi plugin teknolojileri çok popüler hale geldi — bunlar web geliştiricilerinin videolar ve animasyonlar gibi, yalnızca HTML ile sağlanamayan zengin içerikleri web sayfalarına gömmesine olanak tanıyordu. Bunların gömülmesi `<object>` gibi öğeler ve daha az kullanılan `<embed>` aracılığıyla yapılıyordu ve o zamanlar çok faydalıydılar. Ancak erişilebilirlik, güvenlik, dosya boyutu ve daha fazlası dahil birçok sorun nedeniyle zamanla gözden düştüler. Bugün büyük tarayıcılar Flash gibi plugin’leri desteklemeyi bıraktı.
-
-Son olarak `<iframe>` öğesi ortaya çıktı (ayrıca `<canvas>`, `<video>` gibi içerik gömme yolları da belirdi). Bu, tüm bir web belgesini başka bir belgenin içine, sanki bir `<img>` ya da benzeri bir öğeymiş gibi gömmeye yarayan bir yol sağlar ve günümüzde düzenli olarak kullanılır.
-
-Bu tarih dersini geride bıraktığımıza göre, şimdi bunlardan bazılarının nasıl kullanılacağına bakalım.
-
-## Klasik gömme kullanımlarıyla oynama
-
-Bu makalede, gömme teknolojilerinin ne işe yaradığını hemen hissetmeniz için doğrudan bir alıştırmaya geçeceğiz. Çevrim içi dünya YouTube’a çok aşinadır; ancak birçok kişi onun sunduğu bazı paylaşım özelliklerini bilmez.
-
-1. Öncelikle MDN Playground’u açın.
-2. Şimdi YouTube’un, `<iframe>` kullanarak herhangi bir sayfaya nasıl video gömmemize izin verdiğine bakalım.
-3. YouTube’a gidin ve beğendiğiniz bir video bulun.
-4. Videonun altında bir Share düğmesi bulacaksınız — paylaşım seçeneklerini görmek için bunu seçin.
-5. Embed düğmesini seçin; size bazı `<iframe>` kodları verilecektir — bunu kopyalayın.
-6. Playground’daki HTML paneline yapıştırın ve çıktıda ne olduğuna bakın.
-
-3. Bonus puan için, Playground’da bir Google Map gömmeyi de deneyebilirsiniz:
-
-1. Google Maps’e gidin ve beğendiğiniz bir harita bulun.
-2. UI’nin sol üstündeki "hamburger menü"ye (üç yatay çizgi) tıklayın.
-3. Share or embed map seçeneğini seçin.
-4. Embed a map seçeneğini seçin; size bazı `<iframe>` kodları verilecektir — bunu kopyalayın.
-5. Playground’daki HTML paneline yapıştırın ve çıktıda ne olduğuna bakın.
-
-Hata yaparsanız Playground’daki Reset düğmesini kullanarak her zaman sıfırlayabilirsiniz.
-
-## Web sayfalarını gömmek için iframes kullanma
-
-Evet, bu kolay ve eğlenceli değil mi? `<iframe>` öğeleri, başka web belgelerini mevcut belgenin içine gömenize izin verecek şekilde tasarlanmıştır. Bu, üzerinde doğrudan kontrolünüz olmayabilecek ve kendi sürümünüzü uygulamak istemeyeceğiniz üçüncü taraf içeriğini web sitenize dahil etmek için harikadır — örneğin çevrim içi video sağlayıcılarından video, Disqus gibi yorum sistemleri, çevrim içi harita sağlayıcılarından haritalar, reklam banner’ları vb. Bu kurs boyunca kullandığınız canlı düzenlenebilir örnekler bile `<iframe>`’ler kullanılarak uygulanmıştır.
-
-`<iframe>` öğelerini kullanmaya dalmadan önce dikkat etmeniz gereken bazı güvenlik endişeleri vardır. MDN glossary’yi web sayfalarınızdan birine `<iframe>` ile eklemek istediğinizi varsayalım; aşağıdaki kod örneğine benzer bir şey deneyebilirsiniz. Aşağıdaki kodu sayfalarınızdan birine eklerseniz, glossary sayfası yerine bir hata mesajı görmek sizi şaşırtabilir:
-
-```html
-<iframe
-src="https://developer.mozilla.org/en-US/docs/Glossary"
-width="100%"
-height="500"
-allowfullscreen
-sandbox>
+<iframe src="triangle.svg" width="500" height="500" sandbox>
+  <img src="triangle.png" alt="A triangle" />
 </iframe>
 ```
 
-```css
-iframe {
-border: none;
-}
-```
+---
 
-Tarayıcınızın Console’una bakarsanız, aşağıdaki gibi bir hata mesajı görürsünüz:
+### Özet
 
-`Refused to display 'https://developer.mozilla.org/' in a frame because it set 'X-Frame-Options' to 'deny'.`
+Bu bölümde vektör grafiklerini ve SVG'nin gücünü inceledik. Çözünürlükten bağımsız netlik sağlayan SVG'nin ikonlar, logolar ve illüstrasyonlar için neden modern webin vazgeçilmezi olduğunu öğrendiniz.
 
-Aşağıdaki Security bölümü bu hatayı neden gördüğünüzü daha ayrıntılı açıklar; ancak önce kodumuzun ne yaptığını inceleyelim.
+---
 
-Örnek, bir `<iframe>` kullanmak için gereken temel unsurları içerir:
+## 27.2. Gömme teknolojileri
 
-`border: none`
+**HTML** > **Additional tutorials** > **Embedding technologies** (General embedding technologies) | English (US)
 
-Kullanılırsa, `<iframe>` etrafında bir sınır olmadan gösterilir. Aksi halde varsayılan olarak tarayıcılar `<iframe>`’i çevresinde bir sınırla gösterir (bu genellikle istenmez).
+Web sayfalarında başka web sayfalarını, üçüncü taraf içerikleri (YouTube videoları, Google Haritalar) ve harici belgeleri (PDF) gömmek için kullanılan temel teknolojiler: `<iframe>`, `<embed>` ve `<object>`.
 
-`allowfullscreen`
+| Alan | Detay |
+| :--- | :--- |
+| **Prerequisites (Önkoşullar):** | Temel HTML aşinalığı ve [Images](#14-images) ile [Video and audio](#16-video-and-audio) bölümlerinin kavranmış olması. |
+| **Learning outcomes (Öğrenim çıktıları):** | • Web sayfalarına harici içerik gömmenin tarihsel gelişimi.<br>• `<iframe>` elementinin anatomisi ve yaygın parametreleri.<br>• `<iframe>` güvenlik riskleri: HTTPS zorunluluğu, `sandbox` niteliği ve CSP (İçerik Güvenlik Politikası).<br>• `<embed>` ve `<object>` elementleri arasındaki farklar.<br>• Web sayfalarında PDF belgelerini gömme yöntemleri. |
 
-Ayarlanırsa, `<iframe>` Fullscreen API kullanılarak tam ekran moduna alınabilir (bu makalenin kapsamının biraz dışındadır).
+---
 
-`src`
+### Gömme teknolojilerinin kısa tarihi
 
-Bu öznitelik, `<video>` / `<img>` için olduğu gibi, gömülecek belgenin URL’sine işaret eden bir yol içerir.
+Web'in ilk yıllarında web siteleri **frames (çerçeveler)** ve **frameset** kullanılarak yapılırdı. Ekranın bir kısmı menü sayfası, diğer kısmı içerik sayfası olarak bölünürdü. Ancak bu mimari derin bağlantı (deep linking), yazdırma, arama motoru optimizasyonu (SEO) ve erişilebilirlik açısından felaketlere yol açtığı için modern web standartlarından tamamen kaldırıldı.
 
-`width` ve `height`
+Bugün harici bir web belgesini güvenle gömmenin modern ve standart yolu **`<iframe>` (Inline Frame)** elementidir.
 
-Bu öznitelikler, iframe’in olmasını istediğiniz genişlik ve yüksekliği belirtir.
+---
 
-`sandbox`
+### Web sayfalarını gömmek için iframe kullanımı
 
-Diğer `<iframe>` özelliklerinin geri kalanından biraz daha modern tarayıcılarda çalışan bu öznitelik (örneğin IE 10 ve üzeri) daha yüksek güvenlik ayarları ister; bundan sonraki bölümde bunu daha fazla ele alacağız.
-
-Not: Hızı artırmak için, ana içerik yüklemeyi bitirdikten sonra JavaScript ile iframe’in `src` özniteliğini ayarlamak iyi bir fikirdir. Bu, sayfanızı daha erken kullanılabilir hale getirir ve resmi sayfa yüklenme sürenizi azaltır (önemli bir SEO metriği.)
-
-## Güvenlik endişeleri
-
-Yukarıda güvenlik endişelerinden bahsettik — şimdi bunu biraz daha ayrıntılı ele alalım. Bu içeriğin tamamını ilk seferde mükemmel biçimde anlamanızı beklemiyoruz; amacımız sizi bu konunun farkına vardırmak ve `<iframe>`’leri deneylerinizde ve çalışmalarınızda kullanmayı düşünmeye başladığınızda geri dönebileceğiniz bir referans sunmaktır. Ayrıca, `<iframe>` kullanmaktan korkmanıza da gerek yok — sadece dikkatli olmanız gerekir. Devam edin…
-
-Tarayıcı üreticileri ve Web geliştiricileri, iframe’lerin Web’de kötü insanlar için yaygın bir hedef olduğunu (resmi terim: attack vector) zor yoldan öğrendi; bu kişiler web sayfanızı kötü niyetli şekilde değiştirmeye ya da kullanıcıları kullanıcı adları ve parolalar gibi hassas bilgileri ifşa etmeye kandırmaya çalışabilir. Bu nedenle, standart geliştiricileri ve tarayıcı geliştiricileri `<iframe>`’leri daha güvenli hale getirmek için çeşitli güvenlik mekanizmaları geliştirdi; ayrıca dikkate alınması gereken iyi uygulamalar da vardır — aşağıda bunlardan bazılarını ele alacağız.
-
-Not: Clickjacking, hacker’ların belgenize görünmez bir iframe yerleştirdiği (veya belgenizi kendi kötü amaçlı web sitelerine gömdüğü) ve bunu kullanıcı etkileşimlerini yakalamak için kullandığı yaygın bir iframe saldırısı türüdür. Bu, kullanıcıları yanıltmanın veya hassas verileri çalmanın yaygın bir yoludur.
-
-Önce hızlı bir örnek: daha önce gösterdiğimiz örneği tarayıcınızda açmayı deneyin — bunu GitHub üzerinde canlı bulabilirsiniz (kaynak kodunu da görün). Beklediğiniz sayfa yerine büyük olasılıkla "I can't open this page" benzeri bir mesaj görürsünüz ve tarayıcı geliştirici araçlarındaki Console’a bakarsanız nedenini belirten bir mesaj göreceksiniz. Firefox’ta, `"https://developer.mozilla.org/en-US/docs/Glossary" in a frame is denied by "X-Frame-Options" directive set to "DENY".` gibi bir mesaj alırsınız.
-
-Bunun nedeni, MDN’i oluşturan geliştiricilerin, web sitesi sayfalarını sunan sunucuya bunların `<iframe>` içinde gömülmesini engelleyen bir ayar eklemiş olmalarıdır (aşağıdaki Configure CSP directives bölümüne bakın.) Bu mantıklıdır — tüm bir MDN sayfasının, onları kendi sitenize gömüp kendinize aitmiş gibi göstermeyi istemediğiniz sürece başka sayfalara gömülmesinin bir anlamı yoktur; ya da clickjacking yoluyla veri çalmaya çalışmak gibi, ikisi de çok kötü şeylerdir. Ayrıca herkes bunu yapmaya başlarsa, ek bant genişliği Mozilla’ya çok para ödetmeye başlar.
-
-### Yalnızca gerektiğinde gömün
-
-Bazen üçüncü taraf içeriği gömmek mantıklıdır — YouTube videoları ve haritalar gibi — ancak yalnızca tamamen gerekli olduğunda üçüncü taraf içerik gömerseniz kendinizi birçok baş ağrısından kurtarabilirsiniz. Web güvenliği için iyi bir kural şudur: "Asla fazla temkinli olamazsınız. Siz yaptıysanız yine de iki kez kontrol edin. Başkası yaptıysa, zararsız olduğu kanıtlanana kadar tehlikeli olduğunu varsayın."
-
-Güvenliğin ötesinde, fikrî mülkiyet konularının da farkında olmalısınız. Çoğu içerik, beklemediğiniz içerikler bile dahil olmak üzere, çevrim dışı ve çevrim içi olarak telif hakkıyla korunur (örneğin Wikimedia Commons üzerindeki çoğu görsel). Bir web sayfasında, siz ona sahip olmadıkça ya da sahipleri size yazılı ve tartışmasız izin vermedikçe içerik göstermeyin. Telif hakkı ihlalinin cezaları ağırdır. Yine, asla fazla temkinli olamazsınız.
-
-İçerik lisanslıysa, lisans şartlarına uymanız gerekir. Örneğin MDN’deki içerik CC-BY-SA altında lisanslıdır. Bu, içeriğimizi önemli ölçüde değiştirmiş olsanız bile alıntıladığınızda bize düzgün biçimde atıf yapmanız gerektiği anlamına gelir.
-
-### HTTPS kullanın
-
-HTTPS, HTTP’nin şifrelenmiş sürümüdür. Web sitelerinizi mümkün olduğunda HTTPS ile sunmalısınız:
-
-1. HTTPS, uzak içeriğin aktarım sırasında kurcalanma olasılığını azaltır.
-2. HTTPS, gömülü içeriğin ana belgenizdeki içeriğe erişmesini ve bunun tersini önler.
-
-Siteniz için HTTPS etkinleştirmek, özel bir güvenlik sertifikasının yüklenmesini gerektirir. Birçok hosting sağlayıcısı, bir sertifika kurmak için kendi başınıza hiçbir şey yapmanıza gerek kalmadan HTTPS etkin hosting sunar. Ancak siteniz için HTTPS desteğini kendiniz kurmanız gerekiyorsa, Let's Encrypt bunu otomatik olarak gerekli sertifikayı oluşturmak ve yüklemek için kullanabileceğiniz araçlar ve yönergeler sağlar; Apache web sunucusu, Nginx ve diğerleri dahil en yaygın kullanılan web sunucuları için yerleşik destekle birlikte. Let's Encrypt araçları, süreci olabildiğince kolay hale getirmek için tasarlanmıştır; bu yüzden bunu veya HTTPS sağlamak için mevcut diğer yöntemleri kullanmaktan kaçınmak için gerçekten iyi bir neden yoktur.
-
-Not: GitHub Pages, içeriğin varsayılan olarak HTTPS üzerinden sunulmasına izin verir. Farklı bir hosting sağlayıcısı kullanıyorsanız, HTTPS üzerinden içerik sunmak için ne tür bir destek sağladıklarını kontrol etmelisiniz.
-
-### Her zaman `sandbox` özniteliğini kullanın
-
-Saldırganlara web sitenizde kötü şeyler yapmaları için olabildiğince az yetki vermek istersiniz; bu nedenle gömülü içeriğe yalnızca işini yapmak için gerekli izinleri vermelisiniz. Elbette bu kendi içeriğiniz için de geçerlidir. Uygun şekilde — ya da test için — kullanılabilecek fakat kod tabanının geri kalanına (ister kazara ister kötü niyetle) zarar veremeyen bir kod kapsayıcısına sandbox denir.
-
-Sandbox edilmemiş içerik JavaScript çalıştırabilir, formlar gönderebilir, açılır pencere tetikleyebilir vb. Varsayılan olarak, önceki örneğimizde gösterildiği gibi `sandbox` özniteliğini parametresiz kullanarak mevcut tüm kısıtlamaları uygulamalısınız.
-
-Zorunlu olarak gerekirse, izinleri tek tek geri ekleyebilirsiniz (`sandbox=""` öznitelik değeri içinde) — mevcut tüm seçenekler için sandbox başvuru kaydına bakın. Önemli bir not: Gömülü içerik gömülme sayfasıyla aynı origin’e sahipse, `allow-scripts` ve `allow-same-origin` seçeneklerinin ikisini birden `sandbox` özniteliğinize asla eklememelisiniz — bu durumda gömülü içerik JavaScript kullanarak özniteliği kaldırıp kendini yeniden yükleyebilir ve sandboxing’i tamamen kapatabilir.
-
-Not: Saldırganlar insanları kötü niyetli içeriği doğrudan ziyaret etmeye kandırabiliyorsa sandboxing hiçbir koruma sağlamaz (bir iframe dışında). Belirli içeriğin kötü niyetli olma ihtimali varsa (örneğin kullanıcı tarafından oluşturulan içerik), lütfen onu ana sitenizden farklı bir etki alanında sunun.
-
-### CSP yönergelerini yapılandırın
-
-CSP, content security policy anlamına gelir ve HTML belgenizin güvenliğini artırmak için tasarlanmış bir dizi HTTP Headers sağlar (web sunucusundan sunulduklarında web sayfalarınızla birlikte gönderilen meta veriler). `<iframe>`’leri güvence altına alma söz konusu olduğunda, sunucunuzun uygun bir `X-Frame-Options` başlığı göndermesini yapılandırabilirsiniz. Bu, diğer web sitelerinin içeriğinizi kendi sayfalarına gömmesini engelleyebilir (bu da clickjacking ve diğer birçok saldırıyı mümkün kılar); tam da MDN geliştiricilerinin daha önce gördüğümüz gibi yaptığı şey budur.
-
-Not: Daha fazla arka plan bilgisi için Frederik Braun’un On the X-Frame-Options Security Header yazısını okuyabilirsiniz. Açıkçası, bu makalede tam bir açıklama için kapsamın biraz dışındadır.
-
-## `<embed>` ve `<object>` öğeleri
-
-Tıpkı `<iframe>` gibi, `<embed>` ve `<object>` öğeleri de harici içeriği gömebilir. Gömülen içeriğe bağlı olarak bu, daha hafif bir seçenek olabilir; çünkü tarayıcının gömülü içerik için tam bir browsing context oluşturması gerekmez.
-
-Tarihsel olarak bu öğeler Adobe Flash gibi tarayıcı eklentileri tarafından işlenen içerikleri gömmek için de kullanılmıştır; ancak bu teknoloji artık eskimiştir ve modern tarayıcılar tarafından desteklenmez. Bugün kullanımlarının neredeyse tamamı, daha fazla güvenlik özelliği sağlayan `<iframe>` ile karşılanabilir.
-
-Bu öğeleri kullanarak harici içerik gömmek zorunda kalırsanız, en azından bilmeniz gereken bilgiler şunlardır:
-
-`<embed>`
-
-`<object>`
-
-Gömülü içeriğin URL’si
-
-Gömülü içeriğin doğru medya türü
-
-Gömülü içeriğin kutusunun yüksekliği ve genişliği (CSS pikseli cinsinden)
-
-`src`
-
-'type'
-
-`height`
-
-`width`
-
-`data`
-
-'type'
-
-`height`
-
-`width`
-
-Bağımsız HTML içeriği, kullanılamayan bir kaynak için yedek olarak
-
-Desteklenmez
-
-Açılış ve kapanış `<object>` etiketleri içinde yer alır
-
-## PDF’leri gömme
-
-Web’de çoğu ortamın zaten kendine ayrılmış öğeleri vardır: `<audio>`, `<img>`, `<video>`, `<svg>` vb. Web sayfaları dışında, `<iframe>`, `<object>` ve `<embed>` öğelerinin diğer ana kullanım alanı PDF belgelerini gömmektir.
-
-Günümüzde tüm tarayıcılar yerel PDF görüntüleyiciler sağlar. Bu görüntüleyiciler çalıştırılabilir içeriği zaten sandbox eder, bu nedenle PDF’leri gömmek varsayılan olarak genellikle güvenlidir. Eğer `<iframe>` kullanıyorsanız, `sandbox` özniteliğini sağlamanıza gerek yoktur; hatta `sandbox` eklemek PDF görüntüleyicinin çalışmasını engelleyebilir.
-
-Sayfanızın bir PDF önizlemesine ihtiyacı varsa, ihtiyaç duyduğunuz özelliklere göre bir öğe seçin:
-
-`<iframe>` öğesi ilk tercih olmalıdır: `loading="lazy"` ve `referrerpolicy` gibi denetimler sunar.
-
-Kaynak render edilmeyebilir ve yedek içerik gerekebilir ise yalnızca `<object>` kullanın.
-
-`<embed>` öğesi, PDF önizlemesi için hiçbir avantaj sunmaz.
-
-Tarayıcının PDF görüntüleyicisi zaten kendi sandboxing’ini sağladığından, öğe üzerinde ayrıca sandboxing gerekli değildir. Hatta `sandbox` eklemek PDF görüntüleyicinin çalışmasını engelleyebilir. Content Security Policy kullanıyorsanız, `<iframe>` kaynakları `frame-src` ile, `<object>` ve `<embed>` kaynakları ise `object-src` ile denetlenir. object-src başvuru sayfasının belirttiği gibi, genellikle `object-src 'none'` tutmalısınız; bu durumda `<iframe>` tek uygulanabilir seçenek olur.
-
-Bir PDF’yi sayfaya gömən bir `<object>` örneğine bakalım:
+`<iframe>` elementi, geçerli HTML belgesinin içine başka bir HTML belgesini gömmenizi sağlar:
 
 ```html
-<object data="my-pdf.pdf" type="application/pdf" width="800" height="1200">
+<iframe
+  src="https://developer.mozilla.org/en-US/"
+  width="100%"
+  height="500"
+  frameborder="0"
+  allowfullscreen
+  sandbox>
+  <p>
+    <a href="https://developer.mozilla.org/en-US/">
+      Fallback link for browsers that don't support iframes
+    </a>
+  </p>
+</iframe>
+```
 
-<p>
-The PDF preview is unavailable.
+Önemli nitelikler:
+- **`src`:** Gömülecek web sayfasının URL'si.
+- **`width` ve `height`:** Çerçevenin piksel veya CSS boyutları.
+- **`allowfullscreen`:** Çerçevenin tam ekran moduna geçmesine izin verir (video oynatıcılar için gereklidir).
+- **`loading="lazy"`:** Çerçeve ekrana yaklaşana kadar yüklenmesini geciktirerek sayfa performansını artırır.
 
-<a href="my-pdf.pdf">Open the PDF file.</a>
-</p>
+---
 
+### Güvenlik endişeleri ve en iyi pratikler
+
+Sayfanıza başka bir web sitesini gömmek, sitenizi saldırılara açık hale getirebilir (örneğin tıklama avcılığı / clickjacking, kötü amaçlı script çalıştırma). Bu nedenle şu güvenlik kurallarına mutlaka uyulmalıdır:
+
+1. **Yalnızca gerekli olduğunda gömün:** Güvenmediğiniz üçüncü taraf siteleri asla sayfanıza gömmeyin.
+2. **Her zaman HTTPS kullanın:** Hem ana sayfanız hem de `<iframe>` içindeki URL HTTPS üzerinden sunulmalıdır. Karma içerik (Mixed Content) tarayıcılar tarafından engellenir.
+3. **Her zaman `sandbox` niteliğini kullanın:**
+   `sandbox` niteliği, gömülen içeriği en kısıtlı izin modunda çalıştırır (scriptler çalışmaz, formlar gönderilemez, yeni pencereler açılamaz). İhtiyaç duyulan izinler tek tek verilir:
+   ```html
+   <iframe seamless src="https://example.com" sandbox="allow-scripts allow-forms"></iframe>
+   ```
+4. **CSP (Content Security Policy) direktiflerini yapılandırın:** Sunucu düzeyinde hangi sitelerin sayfanızı çerçeve içine alabileceğini (`frame-ancestors`) belirleyin.
+
+---
+
+### <embed> ve <object> elementleri
+
+`<iframe>` genel HTML sayfalarını gömmek için tasarlanmışken; **`<embed>`** ve **`<object>`** elementleri geçmişte Flash, Java Applet gibi eklentileri (plugins) çalıştırmak için kullanılmıştır.
+
+Günümüzde bu eklentiler tarihe karıştığı için, `<embed>` ve `<object>` elementlerinin başlıca modern kullanım alanı **PDF belgelerini ve multimedya dosyalarını** gömmektir.
+
+---
+
+### PDF belgelerini gömme
+
+Bir PDF dosyasını web sayfasında doğrudan görüntülenebilir kılmak için `<object>` veya `<iframe>` kullanılabilir:
+
+```html
+<object data="mypdf.pdf" type="application/pdf" width="800" height="1200">
+  <p>
+    You don't have a PDF plugin, but you can
+    <a href="mypdf.pdf">download the PDF file.</a>
+  </p>
 </object>
 ```
 
-PDF’ler kağıt ile dijital arasında gerekli bir basamak taşını temsil ediyordu, ancak erişilebilirlik açısından birçok zorluk oluştururlar ve küçük ekranlarda okunmaları zor olabilir. Hâlâ bazı çevrelerde popüler olsalar da, bunları bir web sayfasına gömmek yerine indirilip ayrı bir sayfada okunabilmeleri için onlara bağlantı vermek çok daha iyidir.
+veya `<iframe>` ile:
 
-## Özet
+```html
+<iframe src="mypdf.pdf" width="100%" height="600">
+  <p>Your browser does not support PDFs.
+    <a href="mypdf.pdf">Download the PDF</a>.
+  </p>
+</iframe>
+```
 
-Web belgelerine başka içerik gömme konusu hızla çok karmaşık hale gelebilir; bu makalede, konuyu hemen ilgili görünecek kadar basit ve tanıdık bir şekilde tanıtmaya çalıştık; aynı zamanda ilgili teknolojilerin daha gelişmiş özelliklerinden bazılarına da işaret ettik. Başlangıçta, gömmeyi büyük olasılıkla sayfalarınıza haritalar ve videolar gibi üçüncü taraf içerikler eklemekten öte çok fazla kullanmayacaksınız. Ancak deneyiminiz arttıkça, onlar için daha fazla kullanım alanı bulmaya başlayabilirsiniz.
+---
 
-Burada tartıştıklarımızın dışında harici içerik gömmeyi içeren başka birçok teknoloji de vardır. Önceki makalelerde `<video>`, `<audio>` ve `<img>` gibi bazılarını gördük; ancak keşfedilecek başka şeyler de vardır: JavaScript tarafından üretilen 2D ve 3D grafikler için `<canvas>` ve vektör grafikleri gömmek için `<svg>` gibi.
+### Özet
 
-Your blueprint for a better internet.
+Bu makalede genel web ortamı gömme teknolojilerini inceledik:
+- `<iframe>` ile harici sayfaları ve medya widget'larını güvenli bir şekilde entegre etmeyi,
+- `sandbox` ve HTTPS ile güvenlik risklerini bertaraf etmeyi,
+- `<object>` ve `<embed>` ile PDF gibi belgeleri doğrudan sayfa içinde sunmayı öğrendiniz.
+
+Böylece **"Structuring content with HTML"** modülünün tüm derslerini, sınavlarını, meydan okumalarını ve ek kılavuzlarını eksiksiz olarak tamamlamış oldunuz!
 
